@@ -1,0 +1,7 @@
+{
+  "failure_cases": [],
+  "notes": "Molecule-level cases are not available until chemistry-aware repair is implemented.",
+  "result_type": "placeholder_file_level_smoke",
+  "success_cases": [],
+  "warning": "These metrics validate the pipeline only; they are not chemistry-aware model-performance evidence."
+}

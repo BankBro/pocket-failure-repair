@@ -1,0 +1,10 @@
+name: smoke_summary
+input:
+  metrics_path: outputs/metrics/baselines_smoke.json
+output:
+  summary_path: outputs/metrics/smoke_summary.json
+  figure_path: outputs/figures/smoke_success_rates.svg
+  cases_path: outputs/molecules/smoke_cases.json
+labels:
+  result_type: placeholder_file_level_smoke
+  warning: These metrics validate the pipeline only; they are not chemistry-aware model-performance evidence.

@@ -46,6 +46,7 @@
 | 2026-05-31 | baseline / metric 模块化 | `pytest -q` | 4 passed | 成功判定和 baseline 汇总已抽到 `src/pfr/evaluation` 与 `src/pfr/baselines` |
 | 2026-05-31 | RCSB smoke 数据下载 | `download_smoke_complexes.py` | 下载 1a4w, 1hvr, 3ptb 并写入 SHA256 manifest | raw 数据不提交 git, 来源记录在 `docs/smoke_data_manifest.md` |
 | 2026-05-31 | 公开样本文件级 smoke | smoke pipeline scripts | 3 examples, 12 failed candidates, 12 feedback records, placeholder metrics written | 输出 `outputs/metrics/baselines_smoke.json`, `outputs/tables/baselines_smoke.csv` |
+| 2026-05-31 | smoke 输出汇总 | `summarize_smoke_results.py` | 生成 summary JSON, SVG figure, cases JSON | 均标注为 placeholder/file-level, 非真实模型性能 |
 
 ## 当前关键判断
 

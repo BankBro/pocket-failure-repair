@@ -587,11 +587,15 @@ PYTHONPATH=src python scripts/eval/eval_baselines.py --config configs/baselines/
 | editable validity | 0.5 | placeholder metric |
 | anchor validity | 0.75 | placeholder metric |
 | clash-free rate | 0.75 | placeholder metric |
+| summary output | PASS | `outputs/metrics/smoke_summary.json` |
+| figure output | PASS | `outputs/figures/smoke_success_rates.svg` |
+| cases output | PASS | `outputs/molecules/smoke_cases.json`, empty until molecule-level repair exists |
 
 ### 结论
 
 - 公开 smoke 数据下载和来源记录已跑通。
 - 当前 pipeline 可从真实文件路径生成 dataset, failed candidates, feedback, metrics 和 table。
+- 已生成 smoke summary JSON, SVG figure 和 cases JSON, 且全部标注为 placeholder/file-level 结果。
 - 当前结果只是占位逻辑验证, 不能作为真实分子修复有效性证据。
 
 ### 失败 / 异常 / 负结果

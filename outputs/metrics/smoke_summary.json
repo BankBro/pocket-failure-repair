@@ -1,0 +1,20 @@
+{
+  "baselines": [
+    "direct_regeneration",
+    "best_of_n",
+    "rerank_only",
+    "no_feedback_repair"
+  ],
+  "name": "smoke_summary",
+  "notes": "Placeholder smoke metrics; replace with chemistry-aware metrics after RDKit data path is available.",
+  "num_baselines": 4,
+  "num_feedback_records": 12,
+  "result_type": "placeholder_file_level_smoke",
+  "success_rates": {
+    "best_of_n": 0.25,
+    "direct_regeneration": 0.25,
+    "no_feedback_repair": 0.25,
+    "rerank_only": 0.25
+  },
+  "warning": "These metrics validate the pipeline only; they are not chemistry-aware model-performance evidence."
+}
