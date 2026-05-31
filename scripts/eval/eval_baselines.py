@@ -8,41 +8,8 @@ import csv
 from pathlib import Path
 from typing import Any
 
+from pfr.baselines.smoke import summarize_baselines
 from pfr.utils.io import ensure_parent, load_yaml, read_jsonl, write_json
-
-
-def success_from_feedback(row: dict[str, Any]) -> bool:
-    geometry = row.get("geometry", {})
-    if geometry.get("editable_region_validity") is False:
-        return False
-    if geometry.get("clash_count", 0) not in (None, 0):
-        return False
-    if float(geometry.get("anchor_distance_error") or 0.0) > 1.0:
-        return False
-    return True
-
-
-def summarize_baseline(name: str, feedback_rows: list[dict[str, Any]]) -> dict[str, Any]:
-    total = len(feedback_rows)
-    successes = sum(success_from_feedback(row) for row in feedback_rows)
-    success_rate = successes / total if total else None
-    return {
-        "baseline": name,
-        "num_candidates": total,
-        "same_budget_success_rate": success_rate,
-        "scaffold_preservation": None,
-        "editable_validity": None,
-        "anchor_validity": None,
-        "clash_count": None,
-        "posebusters_pass": None,
-        "plip_interaction_recovery": None,
-        "vina_delta": None,
-        "qed": None,
-        "sa": None,
-        "logp": None,
-        "rotatable_bonds": None,
-        "source": "smoke_placeholder",
-    }
 
 
 def write_csv(path: str | Path, rows: list[dict[str, Any]]) -> Path:
@@ -66,7 +33,7 @@ def main() -> int:
     table_path = config["output"]["table_path"]
     baselines = list(config.get("baselines", []))
     feedback_rows = read_jsonl(feedback_path)
-    rows = [summarize_baseline(name, feedback_rows) for name in baselines]
+    rows = summarize_baselines(baselines, feedback_rows)
 
     write_json(
         metrics_path,

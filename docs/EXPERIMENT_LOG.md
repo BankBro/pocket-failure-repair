@@ -430,6 +430,7 @@ python scripts/setup/smoke_pipeline_dry_run.py
 | actual processing scripts | 4/4 | 均已实现最小可运行入口 |
 | empty-input end-to-end run | PASS | 生成空 JSONL, split, metrics JSON 和 CSV 后已清理产物 |
 | toy-input pytest | PASS | `pytest -q`: 1 passed |
+| metric module pytest | PASS | `pytest -q`: 4 passed |
 
 ### 结论
 
@@ -438,6 +439,7 @@ python scripts/setup/smoke_pipeline_dry_run.py
 - 四个实际脚本入口已实现: `scripts/data/build_rgroup_dataset.py`, `scripts/data/generate_failed_candidates.py`, `scripts/data/extract_feedback.py`, `scripts/eval/eval_baselines.py`。
 - 空数据端到端运行已通过, 后续需要真实小样本与 RDKit 环境。
 - 已新增 `tests/test_smoke_pipeline.py`, 使用 toy complex fixture 验证非空输入下 dataset, failed candidates, feedback 和 baseline metrics 输出。
+- 已将 success 判定和 baseline 汇总逻辑抽到 `src/pfr/evaluation/metrics.py` 和 `src/pfr/baselines/smoke.py`, 并新增 `tests/test_metrics.py`。
 
 ### 失败 / 异常 / 负结果
 
