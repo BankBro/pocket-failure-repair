@@ -449,8 +449,73 @@ python scripts/setup/smoke_pipeline_dry_run.py
 
 ### 下一步
 
-- 创建 `docs/paper_draft.md`, 写入 BIBM-style working draft。
-- 初稿明确区分文献证据、工程 smoke 结果和未完成的真实分子实验。
-- 初稿包含摘要、引言、相关工作、任务定义、方法概览、实验设计、当前实现状态、初步结果、讨论、局限、可复现与伦理、下一步。
+- 创建并激活 `pfr` conda 环境。
+- 重新运行 `python scripts/setup/check_environment.py`。
+- 准备 1-3 个公开 protein-ligand complex 小样本。
+- 在 RDKit 可用后把占位脚本替换为真实 R-group / failed-candidate / feedback 逻辑。
+
+---
+
+### 2026-05-31 / 写作与数据接入准备
+
+- 日期：2026-05-31
+- 阶段名称：BIBM 论文初稿骨架与 smoke 数据 manifest
+- 负责人 / agent：Claude Code
+- commit：56b0842 Draft BIBM paper scaffold, 8caf76d Modularize smoke metrics
+- 环境：未使用额外环境
+- GPU / CPU：未使用
+- 数据版本：尚无真实数据
+- 随机种子：无
+
+### 阶段目标
+
+- 创建 BIBM-style working draft, 但不夸大当前工程 smoke 结果。
+- 创建 smoke 数据 manifest 模板, 为后续公开小样本接入保留来源、许可、引用和校验信息。
+
+### 命令与配置
+
+```bash
+pytest -q
+```
+
+配置文件：
+
+- `docs/paper_draft.md`
+- `docs/smoke_data_manifest.md`
+
+### 输出文件
+
+- metrics：无真实分子指标。
+- tables：无真实实验表格。
+- figures：无。
+- molecules：无。
+- logs：`docs/EXPERIMENT_LOG.md`。
+- checkpoints：无。
+
+### 主要结果
+
+| 指标 | 结果 | 备注 |
+|---|---:|---|
+| BIBM draft scaffold | PASS | 已创建 `docs/paper_draft.md` |
+| smoke data manifest | PASS | 已创建 `docs/smoke_data_manifest.md` |
+| tests | PASS | `pytest -q`: 4 passed |
+
+### 结论
+
+- 论文初稿已包含摘要、引言、相关工作、任务定义、方法概览、实验设计、当前实现状态、初步结果、讨论、局限、可复现与伦理、下一步。
+- 初稿明确当前没有真实分子实验或模型性能结论。
+- 数据 manifest 明确不提交原始结构文件到 git, 只记录来源和校验信息。
+
+### 失败 / 异常 / 负结果
+
+- 尚未下载真实 protein-ligand complex。
+- 尚未生成真实 metrics、figures、molecules 或 BIBM 可投稿结果。
+- 完整研究闭环仍未完成。
+
+### 下一步
+
+- 创建并激活 `pfr` conda 环境。
+- 下载或准备 1-3 个公开可引用 protein-ligand complex 小样本。
+- 实现真实 RDKit R-group 切分和反馈提取。
 
 

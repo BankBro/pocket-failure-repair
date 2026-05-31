@@ -4,7 +4,7 @@
 
 ## 当前阶段快照
 
-- 当前阶段：最小 smoke pipeline 脚本入口已实现, toy 输入测试通过, baseline/metric 逻辑已模块化；下一步是创建 `pfr` 环境并接入真实小样本数据。
+- 当前阶段：最小 smoke pipeline 脚本入口已实现, toy 输入测试通过, baseline/metric 逻辑已模块化, smoke 数据 manifest 模板已创建；下一步是创建 `pfr` 环境并接入真实小样本数据。
 - 当前主线：Failure-feedback-conditioned repair for pocket-aware 3D local molecular editing。
 - 当前 commit：511daa9 Initialize research project scaffold。
 - 当前环境：`environment.yml` 已创建；当前激活环境为 Python 3.12.11 / flash-vqg, 缺少必需依赖 RDKit；目标 conda 环境 `pfr` 尚未创建。
@@ -44,6 +44,7 @@
 | 2026-05-31 | smoke pipeline 空数据端到端 | `PYTHONPATH=src python scripts/...` | 4 个脚本入口均可运行, 空输入可生成空输出和占位指标 | 等待真实小样本数据与 RDKit 环境 |
 | 2026-05-31 | smoke pipeline toy 测试 | `pytest -q` | 1 passed | toy complex 可生成 dataset, failed candidates, feedback 和 baseline metrics |
 | 2026-05-31 | baseline / metric 模块化 | `pytest -q` | 4 passed | 成功判定和 baseline 汇总已抽到 `src/pfr/evaluation` 与 `src/pfr/baselines` |
+| 2026-05-31 | 数据 manifest 模板 | `docs/smoke_data_manifest.md` | 已定义公开小样本路径、来源、许可、引用和校验字段 | 尚未下载真实样本 |
 
 ## 当前关键判断
 
