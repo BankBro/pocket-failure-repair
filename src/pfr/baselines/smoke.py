@@ -25,7 +25,7 @@ def summarize_baseline(name: str, feedback_rows: list[dict[str, Any]]) -> dict[s
         "sa": None,
         "logp": None,
         "rotatable_bonds": None,
-        "source": "smoke_placeholder",
+        "source": "smoke_rdkit_feedback_template",
     }
 
 

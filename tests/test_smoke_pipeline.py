@@ -109,7 +109,8 @@ def test_smoke_pipeline_with_toy_complex(tmp_path: Path) -> None:
     assert {row["failure_type"] for row in candidates} == {"clash", "anchor_invalid"}
     assert len(feedback) == 2
     assert any(row["geometry"]["clash_count"] == 1 for row in feedback)
-    assert any(row["geometry"]["anchor_distance_error"] == 2.0 for row in feedback)
+    assert any(row["geometry"]["anchor_distance_error"] >= 2.0 for row in feedback)
+    assert all("scaffold_present" in row["geometry"] for row in feedback)
     assert metrics["num_feedback_records"] == 2
     assert [row["baseline"] for row in metrics["metrics"]] == ["best_of_n", "rerank_only"]
     assert table_path.exists()

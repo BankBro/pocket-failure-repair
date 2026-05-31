@@ -42,7 +42,7 @@ def main() -> int:
             "seed": config.get("seed"),
             "num_feedback_records": len(feedback_rows),
             "metrics": rows,
-            "notes": "Placeholder smoke metrics; replace with chemistry-aware metrics after RDKit data path is available.",
+            "notes": "Smoke metrics use RDKit descriptors and scaffold/anchor state plus template failure labels; replace with true repaired molecules before model-performance claims.",
         },
     )
     write_csv(table_path, rows)

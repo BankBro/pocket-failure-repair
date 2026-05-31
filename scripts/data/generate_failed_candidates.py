@@ -16,11 +16,17 @@ def make_candidate(example: dict[str, Any], failure_type: str, index: int, seed:
         "failure_type": failure_type,
         "failure_reason": failure_type,
         "seed": seed,
-        "source": "smoke_placeholder",
+        "source": "smoke_rdkit_descriptor_placeholder",
         "protein_path": example.get("protein_path"),
         "ligand_path": example.get("ligand_path"),
         "failed_ligand_path": example.get("ligand_path"),
+        "ligand_smiles": example.get("ligand_smiles"),
+        "scaffold_smiles": example.get("scaffold_smiles"),
+        "scaffold_atoms": example.get("scaffold_atoms", []),
+        "editable_atoms": example.get("editable_atoms", []),
         "anchor_atoms": example.get("anchor_atoms", []),
+        "descriptors": example.get("descriptors", {}),
+        "dataset_status": example.get("status"),
     }
 
 

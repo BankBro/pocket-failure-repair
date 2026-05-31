@@ -1,7 +1,7 @@
 {
   "metrics": [
     {
-      "anchor_validity": 0.75,
+      "anchor_validity": 0.25,
       "baseline": "direct_regeneration",
       "clash_count": null,
       "clash_free_rate": 0.75,
@@ -13,13 +13,13 @@
       "qed": null,
       "rotatable_bonds": null,
       "sa": null,
-      "same_budget_success_rate": 0.25,
+      "same_budget_success_rate": 0.08333333333333333,
       "scaffold_preservation": null,
-      "source": "smoke_placeholder",
+      "source": "smoke_rdkit_feedback_template",
       "vina_delta": null
     },
     {
-      "anchor_validity": 0.75,
+      "anchor_validity": 0.25,
       "baseline": "best_of_n",
       "clash_count": null,
       "clash_free_rate": 0.75,
@@ -31,13 +31,13 @@
       "qed": null,
       "rotatable_bonds": null,
       "sa": null,
-      "same_budget_success_rate": 0.25,
+      "same_budget_success_rate": 0.08333333333333333,
       "scaffold_preservation": null,
-      "source": "smoke_placeholder",
+      "source": "smoke_rdkit_feedback_template",
       "vina_delta": null
     },
     {
-      "anchor_validity": 0.75,
+      "anchor_validity": 0.25,
       "baseline": "rerank_only",
       "clash_count": null,
       "clash_free_rate": 0.75,
@@ -49,13 +49,13 @@
       "qed": null,
       "rotatable_bonds": null,
       "sa": null,
-      "same_budget_success_rate": 0.25,
+      "same_budget_success_rate": 0.08333333333333333,
       "scaffold_preservation": null,
-      "source": "smoke_placeholder",
+      "source": "smoke_rdkit_feedback_template",
       "vina_delta": null
     },
     {
-      "anchor_validity": 0.75,
+      "anchor_validity": 0.25,
       "baseline": "no_feedback_repair",
       "clash_count": null,
       "clash_free_rate": 0.75,
@@ -67,14 +67,14 @@
       "qed": null,
       "rotatable_bonds": null,
       "sa": null,
-      "same_budget_success_rate": 0.25,
+      "same_budget_success_rate": 0.08333333333333333,
       "scaffold_preservation": null,
-      "source": "smoke_placeholder",
+      "source": "smoke_rdkit_feedback_template",
       "vina_delta": null
     }
   ],
   "name": "baselines_smoke",
-  "notes": "Placeholder smoke metrics; replace with chemistry-aware metrics after RDKit data path is available.",
+  "notes": "Smoke metrics use RDKit descriptors and scaffold/anchor state plus template failure labels; replace with true repaired molecules before model-performance claims.",
   "num_feedback_records": 12,
   "seed": 0
 }

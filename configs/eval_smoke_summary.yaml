@@ -6,5 +6,5 @@ output:
   figure_path: outputs/figures/smoke_success_rates.svg
   cases_path: outputs/molecules/smoke_cases.json
 labels:
-  result_type: placeholder_file_level_smoke
-  warning: These metrics validate the pipeline only; they are not chemistry-aware model-performance evidence.
+  result_type: rdkit_file_level_smoke
+  warning: These metrics validate RDKit-backed pipeline wiring and template failure labels; they are not repaired-molecule model-performance evidence.

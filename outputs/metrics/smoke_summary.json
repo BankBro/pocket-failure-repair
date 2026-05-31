@@ -6,15 +6,15 @@
     "no_feedback_repair"
   ],
   "name": "smoke_summary",
-  "notes": "Placeholder smoke metrics; replace with chemistry-aware metrics after RDKit data path is available.",
+  "notes": "Smoke metrics use RDKit descriptors and scaffold/anchor state plus template failure labels; replace with true repaired molecules before model-performance claims.",
   "num_baselines": 4,
   "num_feedback_records": 12,
-  "result_type": "placeholder_file_level_smoke",
+  "result_type": "rdkit_file_level_smoke",
   "success_rates": {
-    "best_of_n": 0.25,
-    "direct_regeneration": 0.25,
-    "no_feedback_repair": 0.25,
-    "rerank_only": 0.25
+    "best_of_n": 0.08333333333333333,
+    "direct_regeneration": 0.08333333333333333,
+    "no_feedback_repair": 0.08333333333333333,
+    "rerank_only": 0.08333333333333333
   },
-  "warning": "These metrics validate the pipeline only; they are not chemistry-aware model-performance evidence."
+  "warning": "These metrics validate RDKit-backed pipeline wiring and template failure labels; they are not repaired-molecule model-performance evidence."
 }

@@ -48,7 +48,8 @@
 | 2026-05-31 | 公开样本文件级 smoke | smoke pipeline scripts | 3 examples, 12 failed candidates, 12 feedback records, placeholder metrics written | 输出 `outputs/metrics/baselines_smoke.json`, `outputs/tables/baselines_smoke.csv` |
 | 2026-05-31 | pfr base 环境验证 | `conda run -n pfr ...` | RDKit required checks passed, `pytest -q`: 6 passed, smoke pipeline rerun passed | PLIP/Torch/Vina 等仍为可选缺失工具 |
 | 2026-05-31 | RDKit scaffold/R-group 提取 | `build_rgroup_dataset.py` + RDKit | 3/3 ligand 可读, 1HSG 有 scaffold/R-group/anchor, 1A4W/3PTB 无 Murcko scaffold | 无 scaffold 样本作为负例保留, 后续需更合适 benchmark 样本 |
-| 2026-05-31 | smoke 输出汇总 | `summarize_smoke_results.py` | 生成 summary JSON, SVG figure, cases JSON | 均标注为 placeholder/file-level, 非真实模型性能 |
+| 2026-05-31 | RDKit feedback 指标 | `extract_feedback.py` + `eval_baselines.py` | RDKit descriptors 写入 feedback, anchor_validity 0.25, success rate 0.0833 | 仍是 template failure labels, 非 repaired-molecule 性能 |
+| 2026-05-31 | smoke 输出汇总 | `summarize_smoke_results.py` | 生成 summary JSON, SVG figure, cases JSON | 均标注为 RDKit file-level smoke, 非真实模型性能 |
 
 ## 当前关键判断
 
