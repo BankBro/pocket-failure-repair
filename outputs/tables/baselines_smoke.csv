@@ -1,5 +1,5 @@
 baseline,num_candidates,same_budget_success_rate,scaffold_preservation,editable_validity,anchor_validity,clash_count,clash_free_rate,posebusters_pass,plip_interaction_recovery,vina_delta,qed,sa,logp,rotatable_bonds,source
-direct_regeneration,12,0.08333333333333333,,0.5,0.25,,0.75,,,,,,,,smoke_rdkit_feedback_template
-best_of_n,12,0.08333333333333333,,0.5,0.25,,0.75,,,,,,,,smoke_rdkit_feedback_template
-rerank_only,12,0.08333333333333333,,0.5,0.25,,0.75,,,,,,,,smoke_rdkit_feedback_template
-no_feedback_repair,12,0.08333333333333333,,0.5,0.25,,0.75,,,,,,,,smoke_rdkit_feedback_template
+direct_regeneration,12,0.0,,0.5,0.16666666666666666,,0.0,,,,,,,,smoke_rdkit_feedback_template
+best_of_n,12,0.0,,0.5,0.16666666666666666,,0.0,,,,,,,,smoke_rdkit_feedback_template
+rerank_only,12,0.0,,0.5,0.16666666666666666,,0.0,,,,,,,,smoke_rdkit_feedback_template
+no_feedback_repair,12,0.0,,0.5,0.16666666666666666,,0.0,,,,,,,,smoke_rdkit_feedback_template

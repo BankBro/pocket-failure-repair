@@ -168,7 +168,7 @@ RDKit-backed file-level smoke results are available.
 | Real repaired-molecule experiment | Not started | Requires perturbation/repair model and real feedback tools |
 | Model comparison | Not started | Requires implemented repair model and baselines |
 
-Current smoke metrics report same-budget success rate 0.0833, editable validity 0.5, anchor validity 0.25, and clash-free rate 0.75 across 12 template failed candidates. The smoke repair stage generates 36 repaired SDF files across coordinate rollback, identity failed-candidate, and feedback-rule repair baselines. These values primarily reflect template failure labels and the fact that only one smoke ligand currently has a detected scaffold/anchor; they are not learned model-performance results.
+Current smoke metrics report same-budget success rate 0.0, editable validity 0.5, anchor validity 0.1667, and clash-free rate 0.0 across 12 template failed candidates after switching clash and anchor feedback to coordinate-derived geometry. The smoke repair stage generates 36 repaired SDF files across coordinate rollback, identity failed-candidate, and feedback-rule repair baselines. These results are a useful negative smoke finding: the current RCSB protein/ligand files produce severe protein-ligand overlap under the simple coordinate check, so the dataset construction must be improved before any model-performance claim.
 
 No claim is currently made that feedback-conditioned repair improves molecular design performance.
 
@@ -182,6 +182,7 @@ The smoke pipeline is useful because it fixes file contracts and evaluation sche
 
 - Current evidence is not sufficient for publication.
 - Current failed candidates are controlled coordinate perturbations rather than failures produced by a generator or docking loop.
+- The current public smoke data produce severe coordinate-derived protein-ligand overlap; protein preprocessing and ligand/pocket extraction must be fixed before real evaluation.
 - The smoke dataset is tiny and includes two ligands without Murcko scaffolds.
 - No trained feedback-conditioned repair model exists yet.
 - PLIP, PoseBusters, Vina, Torch, and PyG are not part of the validated base environment.

@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 from typing import Any
 
+from pfr.feedback.geometry import anchor_distance_error, protein_ligand_geometry
 from pfr.utils.io import load_yaml, read_jsonl, write_jsonl
 
 
@@ -36,9 +37,21 @@ def build_feedback(candidate: dict[str, Any]) -> dict[str, Any]:
     anchor_present = has_anchor(candidate)
     editable_present = has_editable_region(candidate)
     editable_valid = bool(defaults["editable_region_validity"] and editable_present)
-    anchor_distance_error = float(defaults["anchor_distance_error"])
+    geometry_feedback = protein_ligand_geometry(candidate.get("protein_path"), candidate.get("failed_ligand_path"))
+    structure_anchor_error = anchor_distance_error(
+        candidate.get("ligand_path"), candidate.get("failed_ligand_path"), candidate.get("anchor_atoms", [])
+    )
+    template_anchor_error = float(defaults["anchor_distance_error"])
+    if structure_anchor_error is not None:
+        anchor_distance_error_value = max(template_anchor_error, structure_anchor_error)
+    else:
+        anchor_distance_error_value = template_anchor_error
     if not anchor_present:
-        anchor_distance_error = max(anchor_distance_error, 2.0)
+        anchor_distance_error_value = max(anchor_distance_error_value, 2.0)
+    structure_clash_count = geometry_feedback.get("clash_count")
+    clash_count = defaults["clash_count"] if structure_clash_count is None else int(structure_clash_count)
+    if failure_type == "clash":
+        clash_count = max(clash_count, 1)
     return {
         "candidate_id": candidate.get("candidate_id"),
         "complex_id": candidate.get("complex_id"),
@@ -54,9 +67,9 @@ def build_feedback(candidate: dict[str, Any]) -> dict[str, Any]:
             "posebusters_pass": None,
         },
         "geometry": {
-            "clash_count": defaults["clash_count"],
-            "min_protein_ligand_distance": None,
-            "anchor_distance_error": anchor_distance_error,
+            "clash_count": clash_count,
+            "min_protein_ligand_distance": geometry_feedback.get("min_protein_ligand_distance"),
+            "anchor_distance_error": anchor_distance_error_value,
             "editable_region_validity": editable_valid,
             "scaffold_present": scaffold_present,
             "anchor_present": anchor_present,
@@ -69,7 +82,7 @@ def build_feedback(candidate: dict[str, Any]) -> dict[str, Any]:
             "plip_salt_bridge_count": None,
             "interaction_fingerprint_similarity": None,
         },
-        "source": "smoke_rdkit_descriptors_plus_failure_template",
+        "source": "smoke_rdkit_structure_feedback_plus_failure_template",
     }
 
 

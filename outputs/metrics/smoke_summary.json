@@ -11,10 +11,10 @@
   "num_feedback_records": 12,
   "result_type": "rdkit_file_level_smoke",
   "success_rates": {
-    "best_of_n": 0.08333333333333333,
-    "direct_regeneration": 0.08333333333333333,
-    "no_feedback_repair": 0.08333333333333333,
-    "rerank_only": 0.08333333333333333
+    "best_of_n": 0.0,
+    "direct_regeneration": 0.0,
+    "no_feedback_repair": 0.0,
+    "rerank_only": 0.0
   },
   "warning": "These metrics validate RDKit-backed pipeline wiring and template failure labels; they are not repaired-molecule model-performance evidence."
 }
