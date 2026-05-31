@@ -21,8 +21,3 @@ dependencies:
       - meeko
       - vina
       - posebusters
-      - plip
-      - torch
-      - torch-geometric
-      - pytorch-lightning
-      - torchmetrics

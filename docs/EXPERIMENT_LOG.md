@@ -606,8 +606,10 @@ PYTHONPATH=src python scripts/eval/eval_baselines.py --config configs/baselines/
 
 ### 下一步
 
-- 验证 `pfr` conda 环境。
-- 用 RDKit 读取 ligand SDF, 实现真实 scaffold / editable region / anchor 提取。
-- 让 outputs 中的 metrics 从 placeholder 变成 chemistry-aware 指标。
+- `pfr` base conda 环境已可用于 RDKit-first smoke pipeline。
+- `conda run -n pfr python scripts/setup/check_environment.py` required checks passed, RDKit smoke passed。
+- `conda run -n pfr env PYTHONPATH=src pytest -q` 通过, 6 passed。
+- `conda run -n pfr env PYTHONPATH=src ...` 文件级 smoke pipeline 通过。
+- 原始 `environment.yml` 因 pip 安装 PLIP 触发 Open Babel/SWIG 构建失败, 已将 base 环境改为 RDKit-first, 并把 ML/PLIP 相关内容移到可选说明。
 
 
