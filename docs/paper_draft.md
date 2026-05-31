@@ -159,7 +159,7 @@ RDKit-backed file-level smoke results are available.
 | Public smoke samples | 3 RCSB entries | `docs/smoke_data_manifest.md` |
 | RDKit scaffold extraction | 3/3 readable; 1/3 with Murcko scaffold and anchor | `data/processed/rgroup_smoke.jsonl`, reproducible from scripts |
 | Smoke failed molecules | 12 SDF files | `outputs/molecules/smoke_failed/`, `outputs/molecules/smoke_cases.json` |
-| Smoke repair baselines | 24 SDF files | `outputs/molecules/smoke_repaired/`, `outputs/molecules/smoke_cases.json` |
+| Smoke repair baselines | 36 SDF files | `outputs/molecules/smoke_repaired/`, `outputs/molecules/smoke_cases.json` |
 | Smoke feedback records | 12 records | `data/processed/feedback_smoke.jsonl`, reproducible from scripts |
 | Smoke metrics | RDKit descriptor + template-failure metrics | `outputs/metrics/baselines_smoke.json`, `outputs/tables/baselines_smoke.csv` |
 | Smoke figure | Generated | `outputs/figures/smoke_success_rates.svg` |
@@ -168,7 +168,7 @@ RDKit-backed file-level smoke results are available.
 | Real repaired-molecule experiment | Not started | Requires perturbation/repair model and real feedback tools |
 | Model comparison | Not started | Requires implemented repair model and baselines |
 
-Current smoke metrics report same-budget success rate 0.0833, editable validity 0.5, anchor validity 0.25, and clash-free rate 0.75 across 12 template failed candidates. These values primarily reflect the template failure labels and the fact that only one smoke ligand currently has a detected scaffold/anchor; they are not model-performance results.
+Current smoke metrics report same-budget success rate 0.0833, editable validity 0.5, anchor validity 0.25, and clash-free rate 0.75 across 12 template failed candidates. The smoke repair stage generates 36 repaired SDF files across coordinate rollback, identity failed-candidate, and feedback-rule repair baselines. These values primarily reflect template failure labels and the fact that only one smoke ligand currently has a detected scaffold/anchor; they are not learned model-performance results.
 
 No claim is currently made that feedback-conditioned repair improves molecular design performance.
 

@@ -606,10 +606,10 @@ PYTHONPATH=src python scripts/eval/eval_baselines.py --config configs/baselines/
 
 ### 下一步
 
-- `repair_baselines.py` 已生成 coordinate_rollback 和 identity_failed_candidate 两类最小 repair baseline。
-- 12 个 failed candidates 产生 24 个 repaired candidate SDF, 位于 `outputs/molecules/smoke_repaired/`。
-- `outputs/molecules/smoke_cases.json` 已把 failed candidate 与 repair outputs 关联。
-- 当前 repair baseline 是规则型/文件级 baseline, 尚不是 feedback-conditioned model。
+- `repair_baselines.py` 已新增 `feedback_rule_repair`, 根据 feedback geometry 和 failure_type 在 coordinate rollback 与 identity failed candidate 之间选择。
+- 当前 repaired candidate records 为 36 条: coordinate_rollback 12, identity_failed_candidate 12, feedback_rule_repair 12。
+- `outputs/molecules/smoke_cases.json` 已包含每个 failed candidate 对应的 repair outputs。
+- 该 feedback repair 是规则型最小 baseline, 不是学习模型。
 
 
 

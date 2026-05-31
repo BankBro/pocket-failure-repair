@@ -4,7 +4,7 @@
 
 ## 当前阶段快照
 
-- 当前阶段：`pfr` base conda 环境已验证, RDKit scaffold/R-group/anchor 提取、failed molecule SDF 生成和最小 repair baseline 已接入 smoke pipeline；下一步是实现真正的 feedback-conditioned repair。
+- 当前阶段：`pfr` base conda 环境已验证, RDKit scaffold/R-group/anchor 提取、failed molecule SDF 生成、最小 repair baseline 和规则型 feedback repair 已接入 smoke pipeline；下一步是扩展数据并做真实评估工具集成。
 - 当前主线：Failure-feedback-conditioned repair for pocket-aware 3D local molecular editing。
 - 当前 commit：511daa9 Initialize research project scaffold。
 - 当前环境：`environment.yml` 已创建；当前激活环境为 Python 3.12.11 / flash-vqg, 缺少必需依赖 RDKit；目标 conda 环境 `pfr` 尚未创建。
@@ -51,6 +51,7 @@
 | 2026-05-31 | RDKit feedback 指标 | `extract_feedback.py` + `eval_baselines.py` | RDKit descriptors 写入 feedback, anchor_validity 0.25, success rate 0.0833 | 仍是 template failure labels, 非 repaired-molecule 性能 |
 | 2026-05-31 | failed molecule SDF 生成 | `generate_failed_candidates.py` | 12 个 failed candidate SDF + cases JSON | 仍为可控平移扰动, 不是模型修复结果 |
 | 2026-05-31 | 最小 repair baseline | `repair_baselines.py` | 24 个 repaired SDF, coordinate_rollback 和 identity_failed_candidate | baseline 可运行, 但尚非 feedback-conditioned model |
+| 2026-05-31 | 规则型 feedback repair | `repair_baselines.py` | 36 个 repaired SDF, 其中 feedback_rule_repair 12 个 | 最小 feedback-conditioned baseline 可运行, 仍非学习模型 |
 | 2026-05-31 | smoke 输出汇总 | `summarize_smoke_results.py` | 生成 summary JSON, SVG figure, cases JSON | 均标注为 RDKit file-level smoke, 非真实模型性能 |
 
 ## 当前关键判断
@@ -63,8 +64,8 @@
 
 未来 1-3 天：
 
-1. 实现 feedback-conditioned repair 的最小可运行版本, 先用规则/模板读取 feedback 选择 repair 策略。
-2. 增加更适合 R-group repair 的公开含 scaffold 样本, 避免 smoke 数据中过多无 scaffold ligand。
+1. 增加更适合 R-group repair 的公开含 scaffold 样本, 避免 smoke 数据中过多无 scaffold ligand。
+2. 集成 PoseBusters 或自实现距离 clash 检查, 让 feedback 从 template 进一步转为 structure-derived。
 3. 二轮阅读 DiffDec, DiffLEOP, DecompDPO, DecompDiff, DecompOpt 原文, 核验 AMG / MolJO 歧义方法并补全代码仓库与指标。
 
 ## 中期计划

@@ -2,9 +2,11 @@ name: repair_smoke
 seed: 0
 input:
   candidates_path: data/processed/failed_candidates_smoke.jsonl
+  feedback_path: data/processed/feedback_smoke.jsonl
 output:
   repaired_candidates_path: data/processed/repaired_candidates_smoke.jsonl
   repaired_molecules_dir: outputs/molecules/smoke_repaired
 baselines:
   - coordinate_rollback
   - identity_failed_candidate
+  - feedback_rule_repair
