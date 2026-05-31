@@ -1,0 +1,31 @@
+name: feedback_smoke
+seed: 0
+input:
+  candidates_path: data/processed/failed_candidates_smoke.jsonl
+output:
+  feedback_path: data/processed/feedback_smoke.jsonl
+features:
+  global:
+    - qed
+    - sa
+    - logp
+    - rotatable_bonds
+    - vina_score
+    - posebusters_pass
+  geometry:
+    - clash_count
+    - min_protein_ligand_distance
+    - anchor_distance_error
+    - editable_region_validity
+  interaction:
+    - plip_hbond_count
+    - plip_hydrophobic_count
+    - plip_salt_bridge_count
+    - interaction_fingerprint_similarity
+optional_tools:
+  vina: false
+  posebusters: false
+  plip: false
+fallbacks:
+  use_rdkit_descriptors: true
+  use_distance_based_clash: true

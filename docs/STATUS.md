@@ -4,13 +4,13 @@
 
 ## 当前阶段快照
 
-- 当前阶段：项目初始化 / research scaffold setup。
+- 当前阶段：最小 smoke pipeline 配置和 dry-run 入口已创建；准备实现数据/反馈/baseline 脚本。
 - 当前主线：Failure-feedback-conditioned repair for pocket-aware 3D local molecular editing。
-- 当前 commit：0693688 Initial commit。
-- 当前环境：尚未创建 conda 环境；`environment.yml` 待补。
+- 当前 commit：511daa9 Initialize research project scaffold。
+- 当前环境：`environment.yml` 已创建；当前激活环境为 Python 3.12.11 / flash-vqg, 缺少必需依赖 RDKit；目标 conda 环境 `pfr` 尚未创建。
 - 当前数据版本：尚无数据下载或处理。
 - 当前最好结果：尚无实验结果。
-- 当前主要阻塞：需要先完成文献检索与撞题分析，再确定数据源、baseline 和最小 smoke pipeline。
+- 当前主要阻塞：需要二轮核验 AMG / MolJO 等歧义方法, 并补全 DiffDec / DiffLEOP / DecompDiff / DecompOpt / DecompDPO 的原文指标和代码仓库；工程上下一步是补环境文件与最小 smoke pipeline。
 
 ## 可用工具与插件
 
@@ -25,6 +25,9 @@
 
 ## 最近完成的工作
 
+- 第一轮文献矩阵已更新：`docs/literature_matrix.md` 记录 DiffDec, DiffLEOP, AMG, MolJO, DecompDPO, DecompDiff, DecompOpt, PoseBusters, PLIP, AutoDock Vina 的初步证据和撞题风险。
+- 第一轮未发现同时覆盖 failed candidate 输入、explicit failure feedback、pocket-aware 3D local repair 和 same-budget repair evaluation 的直接撞题工作。
+- 当前直接撞题风险暂定 Low, 相邻工作风险 Medium；需要在二轮原文阅读中重点核验 pocket-aware lead optimization / scaffold decoration / structure-based optimization 方法。
 - 创建项目目录框架：`configs/`, `data/`, `src/pfr/`, `scripts/`, `experiments/`, `outputs/`, `docs/`, `tests/`, `third_party/`。
 - 将原始项目文档归位到 `docs/`。
 - 新增 `README.md`、`docs/method_design.md`、`docs/literature_matrix.md` 骨架。
@@ -35,6 +38,9 @@
 | 日期 | 实验 | 配置 | 结果 | 结论 |
 |---|---|---|---|---|
 | 2026-05-31 | 项目初始化 | N/A | 目录与文档骨架完成 | 可进入文献检索和环境初始化 |
+| 2026-05-31 | 第一轮文献与撞题分析 | OpenAlex + 研究 Agent + 工具文档 | 未发现直接撞题；相邻工作风险 Medium | 保留 failed-candidate-conditioned local repair 定位, 下一步补环境和 smoke pipeline |
+| 2026-05-31 | 环境初始化检查 | `python scripts/setup/check_environment.py` | 当前环境缺少 RDKit, 可用 CUDA RTX 3090 | 已创建 `environment.yml`, 需后续创建 `pfr` conda 环境 |
+| 2026-05-31 | smoke pipeline dry-run | `python scripts/setup/smoke_pipeline_dry_run.py` | YAML 配置可读, 已生成 `experiments/smoke/pipeline_plan.json` | 4 个实际处理脚本仍待实现 |
 
 ## 当前关键判断
 
@@ -46,9 +52,9 @@
 
 未来 1-3 天：
 
-1. 完成第一轮文献检索和 `docs/literature_matrix.md` 撞题分析。
-2. 补 `environment.yml` 和 `scripts/setup/check_environment.py`。
-3. 设计最小 smoke pipeline：少量 protein-ligand complex → R-group 切分 → failed candidate → feedback → baseline metrics。
+1. 实现 smoke pipeline 的 4 个脚本入口: `build_rgroup_dataset.py`, `generate_failed_candidates.py`, `extract_feedback.py`, `eval_baselines.py`。
+2. 创建并激活 `pfr` conda 环境, 运行 `python scripts/setup/check_environment.py` 确认 RDKit 等必需依赖可用。
+3. 二轮阅读 DiffDec, DiffLEOP, DecompDPO, DecompDiff, DecompOpt 原文, 核验 AMG / MolJO 歧义方法并补全代码仓库与指标。
 
 ## 中期计划
 

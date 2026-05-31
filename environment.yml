@@ -1,0 +1,28 @@
+name: pfr
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - pyyaml
+  - tqdm
+  - networkx
+  - biopython
+  - matplotlib
+  - seaborn
+  - rdkit
+  - pytest
+  - ruff
+  - pip:
+      - meeko
+      - vina
+      - posebusters
+      - plip
+      - torch
+      - torch-geometric
+      - pytorch-lightning
+      - torchmetrics

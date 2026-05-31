@@ -1,0 +1,30 @@
+name: baselines_smoke
+seed: 0
+input:
+  dataset_path: data/processed/rgroup_smoke.jsonl
+  candidates_path: data/processed/failed_candidates_smoke.jsonl
+  feedback_path: data/processed/feedback_smoke.jsonl
+output:
+  metrics_path: outputs/metrics/baselines_smoke.json
+  table_path: outputs/tables/baselines_smoke.csv
+  cases_dir: outputs/molecules/smoke
+budget:
+  candidates_per_example: 4
+baselines:
+  - direct_regeneration
+  - best_of_n
+  - rerank_only
+  - no_feedback_repair
+metrics:
+  - same_budget_success_rate
+  - scaffold_preservation
+  - editable_validity
+  - anchor_validity
+  - clash_count
+  - posebusters_pass
+  - plip_interaction_recovery
+  - vina_delta
+  - qed
+  - sa
+  - logp
+  - rotatable_bonds
