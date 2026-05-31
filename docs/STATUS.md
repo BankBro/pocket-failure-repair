@@ -4,7 +4,7 @@
 
 ## 当前阶段快照
 
-- 当前阶段：`pfr` base conda 环境已验证 RDKit required checks, 公开样本文件级 smoke pipeline 在 `pfr` 中可重跑；下一步是实现 RDKit 化学处理。
+- 当前阶段：`pfr` base conda 环境已验证, RDKit scaffold/R-group/anchor 提取已接入文件级 smoke pipeline；下一步是把 feedback 从 placeholder 升级为 RDKit descriptor / geometry 指标。
 - 当前主线：Failure-feedback-conditioned repair for pocket-aware 3D local molecular editing。
 - 当前 commit：511daa9 Initialize research project scaffold。
 - 当前环境：`environment.yml` 已创建；当前激活环境为 Python 3.12.11 / flash-vqg, 缺少必需依赖 RDKit；目标 conda 环境 `pfr` 尚未创建。
@@ -47,6 +47,7 @@
 | 2026-05-31 | RCSB smoke 数据下载 | `download_smoke_complexes.py` | 下载 1a4w, 1hvr, 3ptb 并写入 SHA256 manifest | raw 数据不提交 git, 来源记录在 `docs/smoke_data_manifest.md` |
 | 2026-05-31 | 公开样本文件级 smoke | smoke pipeline scripts | 3 examples, 12 failed candidates, 12 feedback records, placeholder metrics written | 输出 `outputs/metrics/baselines_smoke.json`, `outputs/tables/baselines_smoke.csv` |
 | 2026-05-31 | pfr base 环境验证 | `conda run -n pfr ...` | RDKit required checks passed, `pytest -q`: 6 passed, smoke pipeline rerun passed | PLIP/Torch/Vina 等仍为可选缺失工具 |
+| 2026-05-31 | RDKit scaffold/R-group 提取 | `build_rgroup_dataset.py` + RDKit | 3/3 ligand 可读, 1HSG 有 scaffold/R-group/anchor, 1A4W/3PTB 无 Murcko scaffold | 无 scaffold 样本作为负例保留, 后续需更合适 benchmark 样本 |
 | 2026-05-31 | smoke 输出汇总 | `summarize_smoke_results.py` | 生成 summary JSON, SVG figure, cases JSON | 均标注为 placeholder/file-level, 非真实模型性能 |
 
 ## 当前关键判断
@@ -59,8 +60,8 @@
 
 未来 1-3 天：
 
-1. 将 `build_rgroup_dataset.py` 从文件级 metadata builder 升级为 RDKit scaffold / R-group / anchor 提取。
-2. 将 `extract_feedback.py` 升级为 RDKit descriptor + distance-based clash / anchor metrics。
+1. 将 `extract_feedback.py` 升级为 RDKit descriptor + distance-based clash / anchor metrics。
+2. 增加更适合 R-group repair 的公开含 scaffold 样本, 避免 smoke 数据中过多无 scaffold ligand。
 3. 二轮阅读 DiffDec, DiffLEOP, DecompDPO, DecompDiff, DecompOpt 原文, 核验 AMG / MolJO 歧义方法并补全代码仓库与指标。
 
 ## 中期计划

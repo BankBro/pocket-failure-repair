@@ -1,7 +1,7 @@
 pdb_ids:
   - 1a4w
-  - 1hvr
   - 3ptb
+  - 1hsg
 output:
   complexes_dir: data/raw/smoke_complexes
   manifest_path: data/raw/smoke_complexes/manifest.json

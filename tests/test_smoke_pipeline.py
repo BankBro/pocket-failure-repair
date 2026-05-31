@@ -104,6 +104,7 @@ def test_smoke_pipeline_with_toy_complex(tmp_path: Path) -> None:
     assert len(dataset) == 1
     assert dataset[0]["protein_path"] == str(protein_path)
     assert dataset[0]["ligand_path"] == str(ligand_path)
+    assert dataset[0]["status"] in {"rdkit_ok", "rdkit_read_failed"}
     assert len(candidates) == 2
     assert {row["failure_type"] for row in candidates} == {"clash", "anchor_invalid"}
     assert len(feedback) == 2

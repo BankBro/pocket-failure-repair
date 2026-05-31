@@ -606,10 +606,10 @@ PYTHONPATH=src python scripts/eval/eval_baselines.py --config configs/baselines/
 
 ### 下一步
 
-- `pfr` base conda 环境已可用于 RDKit-first smoke pipeline。
-- `conda run -n pfr python scripts/setup/check_environment.py` required checks passed, RDKit smoke passed。
-- `conda run -n pfr env PYTHONPATH=src pytest -q` 通过, 6 passed。
-- `conda run -n pfr env PYTHONPATH=src ...` 文件级 smoke pipeline 通过。
-- 原始 `environment.yml` 因 pip 安装 PLIP 触发 Open Babel/SWIG 构建失败, 已将 base 环境改为 RDKit-first, 并把 ML/PLIP 相关内容移到可选说明。
+- RDKit scaffold/R-group/anchor extraction 已接入 `build_rgroup_dataset.py`。
+- `conda run -n pfr env PYTHONPATH=src pytest -q`: 7 passed。
+- 公开 smoke 样本更新为 1A4W, 3PTB, 1HSG；3/3 ligand 可被 RDKit 读取。
+- 1HSG 产生 Murcko scaffold `C1CCNC1`, editable atoms 和 anchor atom；1A4W 与 3PTB 无 Murcko scaffold, 作为当前数据选择的负结果保留。
+- 下载脚本增加重试和已存在文件复用, 以处理 RCSB 临时 SSL EOF。
 
 

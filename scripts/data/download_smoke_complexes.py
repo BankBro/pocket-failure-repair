@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import time
 import urllib.request
 from pathlib import Path
 from typing import Any
@@ -12,11 +13,22 @@ from pfr.data.manifest import sha256_file, write_docs_manifest
 from pfr.utils.io import ensure_parent, load_yaml, write_json
 
 
-def download(url: str, path: Path) -> None:
+def download(url: str, path: Path, retries: int = 3) -> None:
     ensure_parent(path)
+    if path.exists() and path.stat().st_size > 0:
+        return
     request = urllib.request.Request(url, headers={"User-Agent": "pocket-failure-repair-smoke/0.1"})
-    with urllib.request.urlopen(request, timeout=60) as response:
-        path.write_bytes(response.read())
+    last_error: Exception | None = None
+    for attempt in range(1, retries + 1):
+        try:
+            with urllib.request.urlopen(request, timeout=60) as response:
+                path.write_bytes(response.read())
+            return
+        except Exception as exc:
+            last_error = exc
+            if attempt < retries:
+                time.sleep(2 * attempt)
+    raise RuntimeError(f"failed to download {url}: {last_error}")
 
 
 def main() -> int:

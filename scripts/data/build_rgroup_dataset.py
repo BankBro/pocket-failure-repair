@@ -7,7 +7,20 @@ import argparse
 from pathlib import Path
 from typing import Any
 
+from pfr.chemistry.rdkit_scaffold import summarize_ligand
 from pfr.utils.io import load_yaml, write_json, write_jsonl
+
+
+def build_row(ligand_path: Path, protein_path: Path | None) -> dict[str, Any]:
+    ligand_summary = summarize_ligand(ligand_path)
+    row = {
+        "complex_id": ligand_path.parent.name,
+        "protein_path": str(protein_path) if protein_path else None,
+        "ligand_path": str(ligand_path),
+        "editable_smiles": None,
+    }
+    row.update(ligand_summary)
+    return row
 
 
 def discover_complexes(complexes_dir: Path, max_complexes: int) -> list[dict[str, Any]]:
@@ -18,17 +31,8 @@ def discover_complexes(complexes_dir: Path, max_complexes: int) -> list[dict[str
         if index >= max_complexes:
             break
         protein_candidates = sorted(ligand_path.parent.glob("*_protein.*"))
-        rows.append(
-            {
-                "complex_id": ligand_path.parent.name,
-                "protein_path": str(protein_candidates[0]) if protein_candidates else None,
-                "ligand_path": str(ligand_path),
-                "scaffold_smiles": None,
-                "editable_smiles": None,
-                "anchor_atoms": [],
-                "status": "metadata_only",
-            }
-        )
+        protein_path = protein_candidates[0] if protein_candidates else None
+        rows.append(build_row(ligand_path, protein_path))
     return rows
 
 
@@ -54,7 +58,8 @@ def main() -> int:
             "validation": [],
             "test": [],
             "num_examples": len(rows),
-            "notes": "Smoke split only; empty if no prepared *_ligand files are present.",
+            "num_rdkit_ok": sum(row.get("status") == "rdkit_ok" for row in rows),
+            "notes": "Smoke split only; all discovered examples are assigned to train.",
         },
     )
 
