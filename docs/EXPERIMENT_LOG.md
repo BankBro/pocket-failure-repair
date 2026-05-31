@@ -427,24 +427,26 @@ python scripts/setup/smoke_pipeline_dry_run.py
 | YAML config load | PASS | 四个配置均可读取 |
 | pipeline steps | 4 | build_rgroup_dataset, generate_failed_candidates, extract_feedback, eval_baselines |
 | dry-run output | PASS | 写入 `experiments/smoke/pipeline_plan.json` |
-| actual processing scripts | 0/4 | 均待实现 |
+| actual processing scripts | 4/4 | 均已实现最小可运行入口 |
+| empty-input end-to-end run | PASS | 生成空 JSONL, split, metrics JSON 和 CSV 后已清理产物 |
 
 ### 结论
 
 - 最小 smoke pipeline 的输入输出协议已固定到配置文件中。
 - dry-run 已能生成命令计划和输出路径。
-- 下一步应实现四个脚本入口, 先支持小样本和可解释失败类型。
+- 四个实际脚本入口已实现: `scripts/data/build_rgroup_dataset.py`, `scripts/data/generate_failed_candidates.py`, `scripts/data/extract_feedback.py`, `scripts/eval/eval_baselines.py`。
+- 空数据端到端运行已通过, 后续需要真实小样本与 RDKit 环境。
 
 ### 失败 / 异常 / 负结果
 
 - 当前没有真实 protein-ligand complex 输入。
-- 四个实际处理脚本仍未实现。
-- 由于 RDKit 缺失, 暂未运行化学结构处理。
+- 四个实际处理脚本仅为最小占位实现, 尚未包含 RDKit R-group 切分、真实构象扰动、PLIP/PoseBusters/Vina 调用或化学指标计算。
+- 由于 RDKit 缺失, 暂未运行真实化学结构处理。
 
 ### 下一步
 
-- 实现 `scripts/data/build_rgroup_dataset.py`。
-- 实现 `scripts/data/generate_failed_candidates.py`。
-- 实现 `scripts/data/extract_feedback.py`。
-- 实现 `scripts/eval/eval_baselines.py`。
+- 创建并激活 `pfr` conda 环境。
+- 重新运行 `python scripts/setup/check_environment.py`。
+- 准备 1-3 个公开 protein-ligand complex 小样本。
+- 在 RDKit 可用后把占位脚本替换为真实 R-group / failed-candidate / feedback 逻辑。
 

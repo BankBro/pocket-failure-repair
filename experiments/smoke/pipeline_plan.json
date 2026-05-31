@@ -9,7 +9,7 @@
       "data/splits/rgroup_smoke_split.json"
     ],
     "command": "python scripts/data/build_rgroup_dataset.py --config configs/data/rgroup_smoke.yaml",
-    "script_exists": false
+    "script_exists": true
   },
   {
     "name": "generate_failed_candidates",
@@ -20,7 +20,7 @@
       "data/processed/failed_candidates_smoke.jsonl"
     ],
     "command": "python scripts/data/generate_failed_candidates.py --config configs/data/failed_candidate_smoke.yaml",
-    "script_exists": false
+    "script_exists": true
   },
   {
     "name": "extract_feedback",
@@ -31,7 +31,7 @@
       "data/processed/feedback_smoke.jsonl"
     ],
     "command": "python scripts/data/extract_feedback.py --config configs/feedback/smoke.yaml",
-    "script_exists": false
+    "script_exists": true
   },
   {
     "name": "eval_baselines",
@@ -43,6 +43,6 @@
       "outputs/tables/baselines_smoke.csv"
     ],
     "command": "python scripts/eval/eval_baselines.py --config configs/baselines/smoke.yaml",
-    "script_exists": false
+    "script_exists": true
   }
 ]

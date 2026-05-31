@@ -4,7 +4,7 @@
 
 ## 当前阶段快照
 
-- 当前阶段：最小 smoke pipeline 配置和 dry-run 入口已创建；准备实现数据/反馈/baseline 脚本。
+- 当前阶段：最小 smoke pipeline 脚本入口已实现并通过空数据端到端验证；下一步是创建 `pfr` 环境并接入真实小样本数据。
 - 当前主线：Failure-feedback-conditioned repair for pocket-aware 3D local molecular editing。
 - 当前 commit：511daa9 Initialize research project scaffold。
 - 当前环境：`environment.yml` 已创建；当前激活环境为 Python 3.12.11 / flash-vqg, 缺少必需依赖 RDKit；目标 conda 环境 `pfr` 尚未创建。
@@ -41,6 +41,7 @@
 | 2026-05-31 | 第一轮文献与撞题分析 | OpenAlex + 研究 Agent + 工具文档 | 未发现直接撞题；相邻工作风险 Medium | 保留 failed-candidate-conditioned local repair 定位, 下一步补环境和 smoke pipeline |
 | 2026-05-31 | 环境初始化检查 | `python scripts/setup/check_environment.py` | 当前环境缺少 RDKit, 可用 CUDA RTX 3090 | 已创建 `environment.yml`, 需后续创建 `pfr` conda 环境 |
 | 2026-05-31 | smoke pipeline dry-run | `python scripts/setup/smoke_pipeline_dry_run.py` | YAML 配置可读, 已生成 `experiments/smoke/pipeline_plan.json` | 4 个实际处理脚本仍待实现 |
+| 2026-05-31 | smoke pipeline 空数据端到端 | `PYTHONPATH=src python scripts/...` | 4 个脚本入口均可运行, 空输入可生成空输出和占位指标 | 等待真实小样本数据与 RDKit 环境 |
 
 ## 当前关键判断
 
@@ -52,8 +53,8 @@
 
 未来 1-3 天：
 
-1. 实现 smoke pipeline 的 4 个脚本入口: `build_rgroup_dataset.py`, `generate_failed_candidates.py`, `extract_feedback.py`, `eval_baselines.py`。
-2. 创建并激活 `pfr` conda 环境, 运行 `python scripts/setup/check_environment.py` 确认 RDKit 等必需依赖可用。
+1. 创建并激活 `pfr` conda 环境, 运行 `python scripts/setup/check_environment.py` 确认 RDKit 等必需依赖可用。
+2. 准备 1-3 个公开 protein-ligand complex 小样本到 `data/raw/smoke_complexes`, 接入 RDKit R-group 切分逻辑。
 3. 二轮阅读 DiffDec, DiffLEOP, DecompDPO, DecompDiff, DecompOpt 原文, 核验 AMG / MolJO 歧义方法并补全代码仓库与指标。
 
 ## 中期计划
