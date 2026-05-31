@@ -1,6 +1,6 @@
 # Failure-Feedback-Conditioned Repair for Pocket-Aware 3D Local Molecular Editing
 
-> BIBM-style working draft. This draft is intentionally conservative: current evidence includes a first-round literature collision check and a runnable smoke pipeline, but not yet real molecular experiments.
+> BIBM-style working draft. This draft is intentionally conservative: current evidence includes a first-round literature collision check, a validated RDKit-first smoke environment, public RCSB smoke samples, and RDKit-backed file-level pipeline outputs, but not yet a trained repair model or repaired-molecule performance evidence.
 
 ## Abstract
 
@@ -69,13 +69,13 @@ The planned pipeline has four stages.
    - Compare direct regeneration, Best-of-N, rerank-only, no-feedback repair, and feedback-conditioned variants.
    - Aggregate metrics across seeds and splits.
 
-The current code implements a minimal smoke version of this pipeline with placeholder chemistry logic. It validates interfaces and output schemas but does not yet perform RDKit-based R-group splitting or real protein-ligand feedback extraction.
+The current code implements a minimal RDKit-first smoke version of this pipeline. It reads public RCSB ligand SDF files, records ligand descriptors, extracts Murcko scaffold atoms where available, derives editable atoms and anchor atoms, propagates template failure labels into feedback records, and writes auditable metrics and summary outputs. It does not yet generate repaired molecules, call PLIP/PoseBusters/Vina, or train a feedback-conditioned model.
 
 ## 5. Experimental Design
 
 ### 5.1 Data
 
-The final dataset should use public protein-ligand complexes. The immediate next step is a small smoke set of 1-3 public complexes under `data/raw/smoke_complexes`. Full experiments should later use a reproducible split with leakage checks across scaffold, protein, and pocket similarity where feasible.
+The current smoke dataset uses public RCSB PDB entries 1A4W, 3PTB, and 1HSG. Sources and SHA256 checksums are recorded in `docs/smoke_data_manifest.md`; raw structures are excluded from git and can be reconstructed by running `scripts/data/download_smoke_complexes.py`. In the current RDKit smoke run, all three ligands are readable; 1HSG yields a Murcko scaffold and anchor atom, while 1A4W and 3PTB have no Murcko scaffold and are retained as negative data-selection examples. Full experiments should later use a larger reproducible split with leakage checks across scaffold, protein, and pocket similarity where feasible.
 
 ### 5.2 Baselines
 
@@ -114,45 +114,59 @@ At least three random seeds are required for any model claim. A single seed or t
 
 Current reproducible artifacts:
 
-- `environment.yml`: target conda environment specification.
+- `environment.yml`: RDKit-first base conda environment specification.
+- `configs/environment_ml_optional.yml`: optional ML environment sketch for Torch/PyG work.
 - `scripts/setup/check_environment.py`: dependency and GPU visibility check.
+- `configs/data/smoke_download.yaml`: public RCSB smoke data download config.
+- `docs/smoke_data_manifest.md`: public smoke sample source and checksum manifest.
 - `configs/data/rgroup_smoke.yaml`: smoke R-group dataset config.
 - `configs/data/failed_candidate_smoke.yaml`: smoke failed-candidate config.
 - `configs/feedback/smoke.yaml`: smoke feedback config.
 - `configs/baselines/smoke.yaml`: smoke baseline config.
+- `configs/eval_smoke_summary.yaml`: smoke summary output config.
 - `scripts/setup/smoke_pipeline_dry_run.py`: dry-run pipeline plan generator.
-- `scripts/data/build_rgroup_dataset.py`: minimal dataset metadata builder.
-- `scripts/data/generate_failed_candidates.py`: minimal failed-candidate record generator.
-- `scripts/data/extract_feedback.py`: minimal feedback record generator.
-- `scripts/eval/eval_baselines.py`: placeholder baseline metrics writer.
-- `tests/test_smoke_pipeline.py`: toy end-to-end test.
+- `scripts/data/download_smoke_complexes.py`: public RCSB smoke downloader.
+- `scripts/data/build_rgroup_dataset.py`: RDKit-backed dataset builder.
+- `scripts/data/generate_failed_candidates.py`: template failed-candidate record generator.
+- `scripts/data/extract_feedback.py`: RDKit descriptor plus template failure feedback extractor.
+- `scripts/eval/eval_baselines.py`: smoke baseline metrics writer.
+- `scripts/analysis/summarize_smoke_results.py`: summary JSON, SVG figure, and case-list writer.
+- `tests/test_smoke_pipeline.py`, `tests/test_metrics.py`, `tests/test_download_smoke_complexes.py`, `tests/test_rdkit_scaffold.py`: smoke and unit tests.
 
 Validation performed:
 
-- Empty-input smoke pipeline runs end-to-end.
-- Toy-input pytest passes: `pytest -q` reports `1 passed`.
+- `conda run -n pfr python scripts/setup/check_environment.py`: required checks passed with Python 3.11.15 and RDKit 2026.03.2.
+- `conda run -n pfr env PYTHONPATH=src pytest -q`: 7 passed.
+- Public RCSB smoke download and file-level RDKit pipeline run completed.
+- Output artifacts exist under `outputs/metrics`, `outputs/tables`, `outputs/figures`, and `outputs/molecules`.
 
 Current limitations:
 
-- The active shell environment lacks RDKit.
-- Real protein-ligand complexes have not yet been downloaded or processed.
-- R-group splitting, conformer handling, PLIP, PoseBusters, and Vina integration are not yet implemented.
+- PLIP, PoseBusters, Vina, Torch, and PyG are optional/missing in the validated base environment.
+- Failed candidates are still template records, not perturbed 3D repaired or failed molecules.
+- Feedback includes RDKit descriptors and scaffold/anchor state, but not PLIP/PoseBusters/Vina outputs.
 - No model has been trained.
-- No real molecular metrics or figures have been produced.
+- No claim is made about repaired-molecule performance.
 
 ## 7. Preliminary Results
 
-Only engineering smoke results are available.
+RDKit-backed file-level smoke results are available.
 
 | Result type | Status | Evidence |
 |---|---|---|
 | Literature collision check | First round complete | `docs/literature_matrix.md` |
-| Environment specification | Complete draft | `environment.yml` |
-| Dependency check script | Implemented | `scripts/setup/check_environment.py` |
-| Empty-input smoke run | Passed | `docs/EXPERIMENT_LOG.md` |
-| Toy pipeline test | Passed | `tests/test_smoke_pipeline.py`, `pytest -q` |
-| Real molecular experiment | Not started | Requires RDKit environment and public complex data |
+| Base RDKit environment | Required checks passed | `docs/optional_tool_notes.md`, `scripts/setup/check_environment.py` |
+| Public smoke samples | 3 RCSB entries | `docs/smoke_data_manifest.md` |
+| RDKit scaffold extraction | 3/3 readable; 1/3 with Murcko scaffold and anchor | `data/processed/rgroup_smoke.jsonl`, reproducible from scripts |
+| Smoke feedback records | 12 records | `data/processed/feedback_smoke.jsonl`, reproducible from scripts |
+| Smoke metrics | RDKit descriptor + template-failure metrics | `outputs/metrics/baselines_smoke.json`, `outputs/tables/baselines_smoke.csv` |
+| Smoke figure | Generated | `outputs/figures/smoke_success_rates.svg` |
+| Smoke case file | Generated, empty molecule-level cases | `outputs/molecules/smoke_cases.json` |
+| Tests | 7 passed | `conda run -n pfr env PYTHONPATH=src pytest -q` |
+| Real repaired-molecule experiment | Not started | Requires perturbation/repair model and real feedback tools |
 | Model comparison | Not started | Requires implemented repair model and baselines |
+
+Current smoke metrics report same-budget success rate 0.0833, editable validity 0.5, anchor validity 0.25, and clash-free rate 0.75 across 12 template failed candidates. These values primarily reflect the template failure labels and the fact that only one smoke ligand currently has a detected scaffold/anchor; they are not model-performance results.
 
 No claim is currently made that feedback-conditioned repair improves molecular design performance.
 
@@ -165,9 +179,10 @@ The smoke pipeline is useful because it fixes file contracts and evaluation sche
 ## 9. Limitations
 
 - Current evidence is not sufficient for publication.
-- Current pipeline uses placeholders and toy metadata.
-- No real protein-ligand data have been processed.
+- Current failed candidates are template records rather than actual perturbed molecular structures.
+- The smoke dataset is tiny and includes two ligands without Murcko scaffolds.
 - No trained feedback-conditioned repair model exists yet.
+- PLIP, PoseBusters, Vina, Torch, and PyG are not part of the validated base environment.
 - AMG and MolJO references remain ambiguous and require second-round verification.
 - Vina, PLIP, and PoseBusters integration must be validated carefully to avoid overclaiming.
 
@@ -185,11 +200,10 @@ Reproducibility targets:
 
 ## 11. Next Steps
 
-1. Create and activate the `pfr` conda environment.
-2. Re-run `python scripts/setup/check_environment.py` until RDKit and required tools are available.
-3. Prepare 1-3 public protein-ligand complexes for smoke testing.
-4. Replace placeholder dataset construction with RDKit-based scaffold / R-group / anchor extraction.
-5. Add real failed-candidate perturbations and feedback extraction.
-6. Implement baseline metrics for direct regeneration, Best-of-N, rerank-only, and no-feedback repair.
-7. Conduct second-round reading of DiffDec, DiffLEOP, DecompDPO, DecompDiff, DecompOpt, AMG, and MolJO.
-8. Only after the above, start model implementation and multi-seed experiments.
+1. Improve smoke sample selection so most ligands contain a meaningful scaffold/editable split.
+2. Replace template failed-candidate records with actual RDKit 3D perturbations and saved failed molecule files.
+3. Add chemistry-aware feedback beyond RDKit descriptors, starting with distance-based clash and anchor metrics.
+4. Add optional PoseBusters, PLIP, and Vina integration only after installation is reproducible.
+5. Implement baseline metrics for direct regeneration, Best-of-N, rerank-only, and no-feedback repair using real candidate structures.
+6. Conduct second-round reading of DiffDec, DiffLEOP, DecompDPO, DecompDiff, DecompOpt, AMG, and MolJO.
+7. Only after the above, start model implementation and multi-seed experiments.
