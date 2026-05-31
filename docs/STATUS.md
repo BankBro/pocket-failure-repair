@@ -4,7 +4,7 @@
 
 ## 当前阶段快照
 
-- 当前阶段：`pfr` base conda 环境已验证, RDKit scaffold/R-group/anchor 提取已接入文件级 smoke pipeline；下一步是把 feedback 从 placeholder 升级为 RDKit descriptor / geometry 指标。
+- 当前阶段：`pfr` base conda 环境已验证, RDKit scaffold/R-group/anchor 提取与 failed molecule SDF 生成已接入 smoke pipeline；下一步是实现真正的 repair baseline。
 - 当前主线：Failure-feedback-conditioned repair for pocket-aware 3D local molecular editing。
 - 当前 commit：511daa9 Initialize research project scaffold。
 - 当前环境：`environment.yml` 已创建；当前激活环境为 Python 3.12.11 / flash-vqg, 缺少必需依赖 RDKit；目标 conda 环境 `pfr` 尚未创建。
@@ -49,6 +49,7 @@
 | 2026-05-31 | pfr base 环境验证 | `conda run -n pfr ...` | RDKit required checks passed, `pytest -q`: 6 passed, smoke pipeline rerun passed | PLIP/Torch/Vina 等仍为可选缺失工具 |
 | 2026-05-31 | RDKit scaffold/R-group 提取 | `build_rgroup_dataset.py` + RDKit | 3/3 ligand 可读, 1HSG 有 scaffold/R-group/anchor, 1A4W/3PTB 无 Murcko scaffold | 无 scaffold 样本作为负例保留, 后续需更合适 benchmark 样本 |
 | 2026-05-31 | RDKit feedback 指标 | `extract_feedback.py` + `eval_baselines.py` | RDKit descriptors 写入 feedback, anchor_validity 0.25, success rate 0.0833 | 仍是 template failure labels, 非 repaired-molecule 性能 |
+| 2026-05-31 | failed molecule SDF 生成 | `generate_failed_candidates.py` | 12 个 failed candidate SDF + cases JSON | 仍为可控平移扰动, 不是模型修复结果 |
 | 2026-05-31 | smoke 输出汇总 | `summarize_smoke_results.py` | 生成 summary JSON, SVG figure, cases JSON | 均标注为 RDKit file-level smoke, 非真实模型性能 |
 
 ## 当前关键判断
@@ -61,7 +62,7 @@
 
 未来 1-3 天：
 
-1. 将 `extract_feedback.py` 升级为 RDKit descriptor + distance-based clash / anchor metrics。
+1. 实现真正的 repair baseline, 至少包括 identity/no-feedback repair 和简单坐标回退修复。
 2. 增加更适合 R-group repair 的公开含 scaffold 样本, 避免 smoke 数据中过多无 scaffold ligand。
 3. 二轮阅读 DiffDec, DiffLEOP, DecompDPO, DecompDiff, DecompOpt 原文, 核验 AMG / MolJO 歧义方法并补全代码仓库与指标。
 

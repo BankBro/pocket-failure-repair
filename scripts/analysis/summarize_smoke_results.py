@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from pfr.utils.io import ensure_parent, load_yaml, write_json
+from pfr.utils.io import ensure_parent, load_yaml, read_jsonl, write_json
 
 
 def load_json(path: str | Path) -> Any:
@@ -63,12 +63,30 @@ def main() -> int:
         "success_rates": {row.get("baseline"): row.get("same_budget_success_rate") for row in rows},
         "notes": metrics.get("notes"),
     }
+    candidates = read_jsonl(config["input"].get("candidates_path", "")) if config["input"].get("candidates_path") else []
+    feedback = read_jsonl(config["input"].get("feedback_path", "")) if config["input"].get("feedback_path") else []
+    feedback_by_id = {row.get("candidate_id"): row for row in feedback}
+    case_rows = []
+    for candidate in candidates:
+        feedback_row = feedback_by_id.get(candidate.get("candidate_id"), {})
+        case_rows.append(
+            {
+                "candidate_id": candidate.get("candidate_id"),
+                "complex_id": candidate.get("complex_id"),
+                "failure_type": candidate.get("failure_type"),
+                "failed_ligand_path": candidate.get("failed_ligand_path"),
+                "scaffold_smiles": candidate.get("scaffold_smiles"),
+                "source": candidate.get("source"),
+                "feedback_source": feedback_row.get("source"),
+                "geometry": feedback_row.get("geometry", {}),
+                "global": feedback_row.get("global", {}),
+            }
+        )
     cases = {
         "result_type": summary["result_type"],
         "warning": summary["warning"],
-        "success_cases": [],
-        "failure_cases": [],
-        "notes": "Molecule-level cases are not available until chemistry-aware repair is implemented.",
+        "failed_candidate_cases": case_rows,
+        "notes": "Failed molecule SDF files are generated for smoke candidates; repaired molecules are not available until a repair model exists.",
     }
 
     write_json(config["output"]["summary_path"], summary)

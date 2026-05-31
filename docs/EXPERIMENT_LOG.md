@@ -606,10 +606,8 @@ PYTHONPATH=src python scripts/eval/eval_baselines.py --config configs/baselines/
 
 ### 下一步
 
-- RDKit scaffold/R-group/anchor extraction 已接入 `build_rgroup_dataset.py`。
-- `conda run -n pfr env PYTHONPATH=src pytest -q`: 7 passed。
-- 公开 smoke 样本更新为 1A4W, 3PTB, 1HSG；3/3 ligand 可被 RDKit 读取。
-- 1HSG 产生 Murcko scaffold `C1CCNC1`, editable atoms 和 anchor atom；1A4W 与 3PTB 无 Murcko scaffold, 作为当前数据选择的负结果保留。
-- 下载脚本增加重试和已存在文件复用, 以处理 RCSB 临时 SSL EOF。
+- 生成 12 个 failed candidate SDF 到 `outputs/molecules/smoke_failed/`。
+- `outputs/molecules/smoke_cases.json` 已列出每个 failed candidate 的 SDF 路径、failure type、scaffold、RDKit descriptors 和 geometry feedback。
+- 这些 SDF 是可控平移扰动产生的失败样本, 不是模型生成或修复结果。
 
 

@@ -127,7 +127,7 @@ Current reproducible artifacts:
 - `scripts/setup/smoke_pipeline_dry_run.py`: dry-run pipeline plan generator.
 - `scripts/data/download_smoke_complexes.py`: public RCSB smoke downloader.
 - `scripts/data/build_rgroup_dataset.py`: RDKit-backed dataset builder.
-- `scripts/data/generate_failed_candidates.py`: template failed-candidate record generator.
+- `scripts/data/generate_failed_candidates.py`: template failed-candidate record and SDF generator.
 - `scripts/data/extract_feedback.py`: RDKit descriptor plus template failure feedback extractor.
 - `scripts/eval/eval_baselines.py`: smoke baseline metrics writer.
 - `scripts/analysis/summarize_smoke_results.py`: summary JSON, SVG figure, and case-list writer.
@@ -158,6 +158,7 @@ RDKit-backed file-level smoke results are available.
 | Base RDKit environment | Required checks passed | `docs/optional_tool_notes.md`, `scripts/setup/check_environment.py` |
 | Public smoke samples | 3 RCSB entries | `docs/smoke_data_manifest.md` |
 | RDKit scaffold extraction | 3/3 readable; 1/3 with Murcko scaffold and anchor | `data/processed/rgroup_smoke.jsonl`, reproducible from scripts |
+| Smoke failed molecules | 12 SDF files | `outputs/molecules/smoke_failed/`, `outputs/molecules/smoke_cases.json` |
 | Smoke feedback records | 12 records | `data/processed/feedback_smoke.jsonl`, reproducible from scripts |
 | Smoke metrics | RDKit descriptor + template-failure metrics | `outputs/metrics/baselines_smoke.json`, `outputs/tables/baselines_smoke.csv` |
 | Smoke figure | Generated | `outputs/figures/smoke_success_rates.svg` |
@@ -179,7 +180,7 @@ The smoke pipeline is useful because it fixes file contracts and evaluation sche
 ## 9. Limitations
 
 - Current evidence is not sufficient for publication.
-- Current failed candidates are template records rather than actual perturbed molecular structures.
+- Current failed candidates are controlled coordinate perturbations rather than failures produced by a generator or docking loop.
 - The smoke dataset is tiny and includes two ligands without Murcko scaffolds.
 - No trained feedback-conditioned repair model exists yet.
 - PLIP, PoseBusters, Vina, Torch, and PyG are not part of the validated base environment.

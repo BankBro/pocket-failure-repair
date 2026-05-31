@@ -4,6 +4,7 @@ input:
   dataset_path: data/processed/rgroup_smoke.jsonl
 output:
   candidates_path: data/processed/failed_candidates_smoke.jsonl
+  failed_molecules_dir: outputs/molecules/smoke_failed
 failure_types:
   - clash
   - interaction_loss
