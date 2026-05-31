@@ -518,4 +518,92 @@ pytest -q
 - 下载或准备 1-3 个公开可引用 protein-ligand complex 小样本。
 - 实现真实 RDKit R-group 切分和反馈提取。
 
+---
+
+### 2026-05-31 / 公开 RCSB smoke 数据与文件级 pipeline
+
+- 日期：2026-05-31
+- 阶段名称：公开 RCSB smoke 数据下载与文件级 pipeline
+- 负责人 / agent：Claude Code
+- commit：c5b8b03 Document smoke data intake
+- 环境：当前 shell Python 3.12.11 / flash-vqg；`pfr` 环境创建仍在后台完成中
+- GPU / CPU：未使用 GPU
+- 数据版本：RCSB PDB entries 1A4W, 1HVR, 3PTB；SHA256 记录在 `docs/smoke_data_manifest.md`
+- 随机种子：0
+
+### 阶段目标
+
+- 从公开 RCSB PDB endpoints 下载 1-3 个可审计 smoke complex。
+- 记录来源 URL, 路径和 SHA256, raw 数据不提交 git。
+- 使用真实文件路径运行当前文件级 smoke pipeline, 生成 metrics 和 table 输出。
+
+### 插件 / Skill / Workflow 使用记录
+
+- 使用的 plugin / skill / agent / workflow：未使用外部插件；使用本地 Python 和 RCSB 公开 endpoints。
+- 使用目的：下载公开 smoke 数据并验证 pipeline 输入输出。
+- 输入：`configs/data/smoke_download.yaml`, RCSB PDB IDs 1A4W, 1HVR, 3PTB。
+- 输出路径：`data/raw/smoke_complexes/`, `docs/smoke_data_manifest.md`, `outputs/metrics/baselines_smoke.json`, `outputs/tables/baselines_smoke.csv`。
+- 是否成功：成功。
+- 失败原因或降级方案：无。
+- 对本阶段结论的影响：证明 pipeline 可处理真实公开文件路径, 但化学逻辑仍是 placeholder, 不能作为模型性能结果。
+
+### 命令与配置
+
+```bash
+PYTHONPATH=src python scripts/data/download_smoke_complexes.py --config configs/data/smoke_download.yaml
+PYTHONPATH=src python scripts/data/build_rgroup_dataset.py --config configs/data/rgroup_smoke.yaml
+PYTHONPATH=src python scripts/data/generate_failed_candidates.py --config configs/data/failed_candidate_smoke.yaml
+PYTHONPATH=src python scripts/data/extract_feedback.py --config configs/feedback/smoke.yaml
+PYTHONPATH=src python scripts/eval/eval_baselines.py --config configs/baselines/smoke.yaml
+```
+
+配置文件：
+
+- `configs/data/smoke_download.yaml`
+- `configs/data/rgroup_smoke.yaml`
+- `configs/data/failed_candidate_smoke.yaml`
+- `configs/feedback/smoke.yaml`
+- `configs/baselines/smoke.yaml`
+
+### 输出文件
+
+- metrics：`outputs/metrics/baselines_smoke.json`
+- tables：`outputs/tables/baselines_smoke.csv`
+- figures：无。
+- molecules：无。
+- logs：`docs/EXPERIMENT_LOG.md`, `docs/smoke_data_manifest.md`
+- checkpoints：无。
+
+### 主要结果
+
+| 指标 | 结果 | 备注 |
+|---|---:|---|
+| public complexes | 3 | 1A4W, 1HVR, 3PTB |
+| dataset examples | 3 | 文件级 metadata |
+| failed candidates | 12 | 4 placeholder failure types per example |
+| feedback records | 12 | placeholder geometry feedback |
+| baseline rows | 4 | direct_regeneration, best_of_n, rerank_only, no_feedback_repair |
+| same-budget success rate | 0.25 | placeholder metric, not chemistry-aware |
+| editable validity | 0.5 | placeholder metric |
+| anchor validity | 0.75 | placeholder metric |
+| clash-free rate | 0.75 | placeholder metric |
+
+### 结论
+
+- 公开 smoke 数据下载和来源记录已跑通。
+- 当前 pipeline 可从真实文件路径生成 dataset, failed candidates, feedback, metrics 和 table。
+- 当前结果只是占位逻辑验证, 不能作为真实分子修复有效性证据。
+
+### 失败 / 异常 / 负结果
+
+- raw 数据位于 `data/raw/`, 按 `.gitignore` 不提交。
+- `data/processed/` 和 `data/splits/` 也不提交, 可由脚本重建。
+- RDKit R-group 切分、PLIP/PoseBusters/Vina 仍未接入。
+
+### 下一步
+
+- 验证 `pfr` conda 环境。
+- 用 RDKit 读取 ligand SDF, 实现真实 scaffold / editable region / anchor 提取。
+- 让 outputs 中的 metrics 从 placeholder 变成 chemistry-aware 指标。
+
 

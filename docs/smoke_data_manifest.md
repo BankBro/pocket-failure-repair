@@ -4,45 +4,22 @@
 
 ## 路径约定
 
-每个 complex 放在独立目录中:
-
 ```text
 data/raw/smoke_complexes/<complex_id>/
   <complex_id>_protein.pdb
   <complex_id>_ligand.sdf
-  README.md
 ```
-
-当前脚本会扫描 `data/raw/smoke_complexes/**/_ligand.*`, 并在同目录中寻找 `*_protein.*`.
 
 ## manifest 表
 
 | complex_id | protein_path | ligand_path | source | source_url | license / terms | citation | checksum_protein | checksum_ligand | notes |
 |---|---|---|---|---|---|---|---|---|---|
-| TBD | data/raw/smoke_complexes/TBD/TBD_protein.pdb | data/raw/smoke_complexes/TBD/TBD_ligand.sdf | TBD | TBD | TBD | TBD | TBD | TBD | 待下载公开样本 |
-
-## 选择标准
-
-- 来源公开且可引用, 优先 PDBBind / RCSB PDB / CrossDocked 常见公开结构.
-- ligand 具有 3D 坐标, 且能被 RDKit 读取.
-- protein 与 ligand 坐标系一致.
-- 结构大小适合 smoke test, 不用于声称模型性能.
-- 每个样本保留来源 URL, 下载日期, 引用信息和校验和.
-
-## 后续命令模板
-
-```bash
-# 创建目标环境后运行
-python scripts/setup/check_environment.py
-
-# 放入 1-3 个公开 complex 后运行
-python scripts/data/build_rgroup_dataset.py --config configs/data/rgroup_smoke.yaml
-python scripts/data/generate_failed_candidates.py --config configs/data/failed_candidate_smoke.yaml
-python scripts/data/extract_feedback.py --config configs/feedback/smoke.yaml
-python scripts/eval/eval_baselines.py --config configs/baselines/smoke.yaml
-```
+| 1a4w | data/raw/smoke_complexes/1a4w/1a4w_protein.pdb | data/raw/smoke_complexes/1a4w/1a4w_ligand.sdf | RCSB PDB | https://www.rcsb.org/structure/1A4W | RCSB PDB usage policies | cite RCSB PDB entry | 11779ea2ad6a87636dd4c86b56660e157a799aef3354e24bbfa991348d473921 | 354351e7cb746a48bc3099a84a71fea5f8997666e686ea2b7012437d548d13e5 | public smoke sample |
+| 1hvr | data/raw/smoke_complexes/1hvr/1hvr_protein.pdb | data/raw/smoke_complexes/1hvr/1hvr_ligand.sdf | RCSB PDB | https://www.rcsb.org/structure/1HVR | RCSB PDB usage policies | cite RCSB PDB entry | c8d3f238d3269a66823454d4681b71467b4677a18751ce094047961620b338cb | 1ea917adbdba4df0ebb5e2a69cbd15600aff5e0168758575735ef57ef4cf4974 | public smoke sample |
+| 3ptb | data/raw/smoke_complexes/3ptb/3ptb_protein.pdb | data/raw/smoke_complexes/3ptb/3ptb_ligand.sdf | RCSB PDB | https://www.rcsb.org/structure/3PTB | RCSB PDB usage policies | cite RCSB PDB entry | 288f7954d4d013fa8eab3808e1037e2958e2dcd12c9eca65a3f1014404a9f9a2 | 606d6739d3ecc6e8feee84cc276fd40a1cd9a628bc01edbac8543b1b810789d5 | public smoke sample |
 
 ## 当前状态
 
-- 尚未下载真实公开样本.
-- 当前 pipeline 已通过 toy fixture 测试, 但真实化学处理需要 RDKit 环境.
+- 已记录 3 个公开 smoke 样本.
+- 原始结构文件位于 `data/raw/smoke_complexes/`, 由 `.gitignore` 排除, 不提交到 git.
+- 机器可复现时应重新运行 `python scripts/data/download_smoke_complexes.py --config configs/data/smoke_download.yaml`.
