@@ -31,6 +31,18 @@ def download(url: str, path: Path, retries: int = 3) -> None:
     raise RuntimeError(f"failed to download {url}: {last_error}")
 
 
+def write_receptor_only_pdb(input_path: Path, output_path: Path) -> Path:
+    ensure_parent(output_path)
+    lines = []
+    for line in input_path.read_text(errors="ignore").splitlines():
+        if line.startswith("ATOM"):
+            lines.append(line)
+        elif line.startswith(("TER", "END")):
+            lines.append(line)
+    output_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return output_path
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", required=True)
@@ -46,20 +58,24 @@ def main() -> int:
         pdb_id = str(pdb_id_raw).lower()
         complex_dir = complexes_dir / pdb_id
         protein_path = complex_dir / f"{pdb_id}_protein.pdb"
+        protein_clean_path = complex_dir / f"{pdb_id}_protein_clean.pdb"
         ligand_path = complex_dir / f"{pdb_id}_ligand.sdf"
         pdb_url = templates["pdb_url_template"].format(pdb_id=pdb_id.upper())
         ligand_url = templates["ligand_sdf_url_template"].format(pdb_id=pdb_id.upper())
 
         download(pdb_url, protein_path)
+        write_receptor_only_pdb(protein_path, protein_clean_path)
         download(ligand_url, ligand_path)
         rows.append(
             {
                 "complex_id": pdb_id,
-                "protein_path": str(protein_path),
+                "protein_path": str(protein_clean_path),
+                "protein_raw_path": str(protein_path),
                 "ligand_path": str(ligand_path),
                 "source_url": f"https://www.rcsb.org/structure/{pdb_id.upper()}",
                 "download_urls": {"protein_pdb": pdb_url, "ligand_sdf": ligand_url},
-                "checksum_protein": sha256_file(protein_path),
+                "checksum_protein": sha256_file(protein_clean_path),
+                "checksum_protein_raw": sha256_file(protein_path),
                 "checksum_ligand": sha256_file(ligand_path),
             }
         )

@@ -19,10 +19,10 @@ ILE
   6  8  1  0
 M  END
 >  <model_server_result.job_id>  (1) 
-ZUROHWqi5qZ0n-h2tLV2Kw
+ITeRGKueK6PveyqSYys0ew
 
 >  <model_server_result.datetime_utc>  (1) 
-2026-05-31 21:54:45
+2026-05-31 22:21:05
 
 >  <model_server_result.server_version>  (1) 
 0.9.12
@@ -37,16 +37,16 @@ pdb-bcif
 3PTB
 
 >  <model_server_stats.io_time_ms>  (1) 
-18
+14
 
 >  <model_server_stats.parse_time_ms>  (1) 
-8
+4
 
 >  <model_server_stats.create_model_time_ms>  (1) 
-5
+2
 
 >  <model_server_stats.query_time_ms>  (1) 
-215
+222
 
 >  <model_server_stats.encode_time_ms>  (1) 
 0

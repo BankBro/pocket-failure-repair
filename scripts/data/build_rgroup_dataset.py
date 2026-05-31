@@ -30,7 +30,7 @@ def discover_complexes(complexes_dir: Path, max_complexes: int) -> list[dict[str
     for index, ligand_path in enumerate(sorted(complexes_dir.glob("**/*_ligand.*"))):
         if index >= max_complexes:
             break
-        protein_candidates = sorted(ligand_path.parent.glob("*_protein.*"))
+        protein_candidates = sorted(ligand_path.parent.glob("*_protein_clean.*")) or sorted(ligand_path.parent.glob("*_protein.*"))
         protein_path = protein_candidates[0] if protein_candidates else None
         rows.append(build_row(ligand_path, protein_path))
     return rows

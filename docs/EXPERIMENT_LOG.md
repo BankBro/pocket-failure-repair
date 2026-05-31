@@ -594,9 +594,10 @@ PYTHONPATH=src python scripts/eval/eval_baselines.py --config configs/baselines/
 ### 结论
 
 - 公开 smoke 数据下载和来源记录已跑通。
-- 结构推导 feedback 已接入: `min_protein_ligand_distance`, `clash_count`, `anchor_distance_error` 来自坐标计算。
-- 当前 smoke 数据的 protein-ligand overlap 很严重, 导致 `clash_free_rate=0` 和 `same_budget_success_rate=0`。
-- 这说明当前 RCSB ligand endpoint / protein 文件组合不适合作为最终评估数据, 下一步需要更严格提取 pocket、去除 ligand HETATM 或改用 curated complex 数据。
+- 下载脚本已生成 receptor-only `_protein_clean.pdb`, 只保留 ATOM/TER/END 记录。
+- `docs/smoke_data_manifest.md` 已更新为 clean receptor 路径和 SHA256。
+- 清理后 coordinate-derived clash 仍未改善到可用水平, 说明当前 smoke ligand/pocket 样本选择或 RCSB ligand endpoint 仍不适合最终评估。
+- 这是重要负结果: 单纯去除 HETATM 不足以得到可用于评价的无重叠 receptor-ligand complex。
 - 已生成 smoke summary JSON, SVG figure 和 cases JSON, 且全部标注为 placeholder/file-level 结果。
 - 当前结果只是占位逻辑验证, 不能作为真实分子修复有效性证据。
 

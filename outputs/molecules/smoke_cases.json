@@ -9,7 +9,7 @@
       "geometry": {
         "anchor_distance_error": 2.0,
         "anchor_present": false,
-        "clash_count": 26,
+        "clash_count": 25,
         "editable_atom_count": 8,
         "editable_region_validity": true,
         "min_protein_ligand_distance": 0.5,
@@ -209,7 +209,7 @@
       "geometry": {
         "anchor_distance_error": 2.0,
         "anchor_present": false,
-        "clash_count": 12,
+        "clash_count": 10,
         "editable_atom_count": 8,
         "editable_region_validity": false,
         "min_protein_ligand_distance": 0.725516367837417,
@@ -673,7 +673,7 @@
       "geometry": {
         "anchor_distance_error": 2.0,
         "anchor_present": true,
-        "clash_count": 11,
+        "clash_count": 10,
         "editable_atom_count": 2,
         "editable_region_validity": false,
         "min_protein_ligand_distance": 0.7877493256106293,

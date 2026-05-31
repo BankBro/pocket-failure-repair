@@ -51,6 +51,7 @@
 | 2026-05-31 | RDKit feedback 指标 | `extract_feedback.py` + `eval_baselines.py` | RDKit descriptors 写入 feedback, anchor_validity 0.25, success rate 0.0833 | 仍是 template failure labels, 非 repaired-molecule 性能 |
 | 2026-05-31 | failed molecule SDF 生成 | `generate_failed_candidates.py` | 12 个 failed candidate SDF + cases JSON | 仍为可控平移扰动, 不是模型修复结果 |
 | 2026-05-31 | 最小 repair baseline | `repair_baselines.py` | 24 个 repaired SDF, coordinate_rollback 和 identity_failed_candidate | baseline 可运行, 但尚非 feedback-conditioned model |
+| 2026-05-31 | receptor-only protein 清理 | `download_smoke_complexes.py` | 生成 `_protein_clean.pdb`, manifest 指向 clean receptor | clash 仍为 0 成功率, 说明样本/ligand 提取仍需改进 |
 | 2026-05-31 | 结构推导 geometry feedback | `pfr.feedback.geometry` | min protein-ligand distance 和 clash_count 已从坐标计算；当前 clash_free_rate 0, success rate 0 | 暴露 smoke 数据坐标/ligand 选择问题, 作为负结果记录 |
 | 2026-05-31 | 规则型 feedback repair | `repair_baselines.py` | 36 个 repaired SDF, 其中 feedback_rule_repair 12 个 | 最小 feedback-conditioned baseline 可运行, 仍非学习模型 |
 | 2026-05-31 | smoke 输出汇总 | `summarize_smoke_results.py` | 生成 summary JSON, SVG figure, cases JSON | 均标注为 RDKit file-level smoke, 非真实模型性能 |

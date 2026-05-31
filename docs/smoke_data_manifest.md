@@ -14,9 +14,9 @@ data/raw/smoke_complexes/<complex_id>/
 
 | complex_id | protein_path | ligand_path | source | source_url | license / terms | citation | checksum_protein | checksum_ligand | notes |
 |---|---|---|---|---|---|---|---|---|---|
-| 1a4w | data/raw/smoke_complexes/1a4w/1a4w_protein.pdb | data/raw/smoke_complexes/1a4w/1a4w_ligand.sdf | RCSB PDB | https://www.rcsb.org/structure/1A4W | RCSB PDB usage policies | cite RCSB PDB entry | 11779ea2ad6a87636dd4c86b56660e157a799aef3354e24bbfa991348d473921 | b7a72cea3334a5a2bba233ac37809668fb18993ba54985522a5abbfd1eaa5f17 | public smoke sample |
-| 3ptb | data/raw/smoke_complexes/3ptb/3ptb_protein.pdb | data/raw/smoke_complexes/3ptb/3ptb_ligand.sdf | RCSB PDB | https://www.rcsb.org/structure/3PTB | RCSB PDB usage policies | cite RCSB PDB entry | 288f7954d4d013fa8eab3808e1037e2958e2dcd12c9eca65a3f1014404a9f9a2 | f3d39512ca218f257c2b3f71b961a0129be8b9aec9224f681184733e9a1365ee | public smoke sample |
-| 1hsg | data/raw/smoke_complexes/1hsg/1hsg_protein.pdb | data/raw/smoke_complexes/1hsg/1hsg_ligand.sdf | RCSB PDB | https://www.rcsb.org/structure/1HSG | RCSB PDB usage policies | cite RCSB PDB entry | d430675c358060808ef614002cfdcfcfa824714d89f1240adf5749d2ba60fed2 | 7c8ca05c575296ff8722c8181464a0e0b8ed5bf25db40c8330e84d0ee60fbdab | public smoke sample |
+| 1a4w | data/raw/smoke_complexes/1a4w/1a4w_protein_clean.pdb | data/raw/smoke_complexes/1a4w/1a4w_ligand.sdf | RCSB PDB | https://www.rcsb.org/structure/1A4W | RCSB PDB usage policies | cite RCSB PDB entry | f1e5d730d8da0466d65610eb2ee50df4441b159186b151dc84967753701427e7 | ab0e8eb8f7ba5208efab96464c6ecb45218fce9efa02933febb1edb1ffaa4d3f | public smoke sample |
+| 3ptb | data/raw/smoke_complexes/3ptb/3ptb_protein_clean.pdb | data/raw/smoke_complexes/3ptb/3ptb_ligand.sdf | RCSB PDB | https://www.rcsb.org/structure/3PTB | RCSB PDB usage policies | cite RCSB PDB entry | f7c892e210f0ae6b1808fe3663310a73351b2847b81fb6d77fe595d3a425541e | aad8c7081fff29df75e055490e582591bcdd7252baa11dfaefdebc1a16ceb7d0 | public smoke sample |
+| 1hsg | data/raw/smoke_complexes/1hsg/1hsg_protein_clean.pdb | data/raw/smoke_complexes/1hsg/1hsg_ligand.sdf | RCSB PDB | https://www.rcsb.org/structure/1HSG | RCSB PDB usage policies | cite RCSB PDB entry | 6d34b641ec8e839e9188000e13c40a80db795d552044410360d807ed2ef341ac | 729ca15705d50ac24900eae6bb75c6f5cdfad3981995066dd00a5ee9aa10fd20 | public smoke sample |
 
 ## 当前状态
 

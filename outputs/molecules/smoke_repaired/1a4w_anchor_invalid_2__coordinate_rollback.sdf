@@ -19,10 +19,10 @@ ASP
   6  8  1  0
 M  END
 >  <model_server_result.job_id>  (1) 
-yG3STE0DxJ3hcBIXirmO6w
+cU1UH9neeqC0I8iGGn50Pg
 
 >  <model_server_result.datetime_utc>  (1) 
-2026-05-31 21:54:44
+2026-05-31 22:21:02
 
 >  <model_server_result.server_version>  (1) 
 0.9.12
@@ -37,16 +37,16 @@ pdb-bcif
 1A4W
 
 >  <model_server_stats.io_time_ms>  (1) 
-19
+24
 
 >  <model_server_stats.parse_time_ms>  (1) 
-7
+5
 
 >  <model_server_stats.create_model_time_ms>  (1) 
-9
+2
 
 >  <model_server_stats.query_time_ms>  (1) 
-369
+216
 
 >  <model_server_stats.encode_time_ms>  (1) 
 0

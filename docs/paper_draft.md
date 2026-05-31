@@ -182,7 +182,7 @@ The smoke pipeline is useful because it fixes file contracts and evaluation sche
 
 - Current evidence is not sufficient for publication.
 - Current failed candidates are controlled coordinate perturbations rather than failures produced by a generator or docking loop.
-- The current public smoke data produce severe coordinate-derived protein-ligand overlap; protein preprocessing and ligand/pocket extraction must be fixed before real evaluation.
+- The current public smoke data still produce severe coordinate-derived protein-ligand overlap even after receptor-only PDB cleaning; sample selection or ligand extraction must be improved before real evaluation.
 - The smoke dataset is tiny and includes two ligands without Murcko scaffolds.
 - No trained feedback-conditioned repair model exists yet.
 - PLIP, PoseBusters, Vina, Torch, and PyG are not part of the validated base environment.

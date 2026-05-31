@@ -18,10 +18,10 @@ PRO
   6  7  1  0
 M  END
 >  <model_server_result.job_id>  (1) 
-Tyhg3itAISl-7FKzuCXYaQ
+vHq9iLw_bzjicGgMCUTNKw
 
 >  <model_server_result.datetime_utc>  (1) 
-2026-05-31 21:54:47
+2026-05-31 22:21:08
 
 >  <model_server_result.server_version>  (1) 
 0.9.12
@@ -36,7 +36,7 @@ pdb-bcif
 1HSG
 
 >  <model_server_stats.io_time_ms>  (1) 
-21
+16
 
 >  <model_server_stats.parse_time_ms>  (1) 
 6
@@ -45,7 +45,7 @@ pdb-bcif
 5
 
 >  <model_server_stats.query_time_ms>  (1) 
-234
+204
 
 >  <model_server_stats.encode_time_ms>  (1) 
 0
