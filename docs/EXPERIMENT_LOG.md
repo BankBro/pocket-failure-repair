@@ -447,8 +447,8 @@ python scripts/setup/smoke_pipeline_dry_run.py
 
 ### 下一步
 
-- 创建并激活 `pfr` conda 环境。
-- 重新运行 `python scripts/setup/check_environment.py`。
-- 准备 1-3 个公开 protein-ligand complex 小样本。
-- 在 RDKit 可用后把占位脚本替换为真实 R-group / failed-candidate / feedback 逻辑。
+- 创建 `docs/paper_draft.md`, 写入 BIBM-style working draft。
+- 初稿明确区分文献证据、工程 smoke 结果和未完成的真实分子实验。
+- 初稿包含摘要、引言、相关工作、任务定义、方法概览、实验设计、当前实现状态、初步结果、讨论、局限、可复现与伦理、下一步。
+
 

@@ -4,7 +4,7 @@
 
 ## 当前阶段快照
 
-- 当前阶段：最小 smoke pipeline 脚本入口已实现, toy 输入测试通过；下一步是创建 `pfr` 环境并接入真实小样本数据。
+- 当前阶段：最小 smoke pipeline 脚本入口已实现, toy 输入测试通过, BIBM 论文初稿骨架已创建；下一步是创建 `pfr` 环境并接入真实小样本数据。
 - 当前主线：Failure-feedback-conditioned repair for pocket-aware 3D local molecular editing。
 - 当前 commit：511daa9 Initialize research project scaffold。
 - 当前环境：`environment.yml` 已创建；当前激活环境为 Python 3.12.11 / flash-vqg, 缺少必需依赖 RDKit；目标 conda 环境 `pfr` 尚未创建。
@@ -101,4 +101,5 @@ python scripts/eval/eval_baselines.py --config configs/baselines/smoke.yaml
 - `docs/method_design.md`
 - `docs/research_brief.md`
 - `docs/project_protocol.md`
+- `docs/paper_draft.md`
 - `docs/bibm_execution_notes.md`
