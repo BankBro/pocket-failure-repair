@@ -159,6 +159,7 @@ RDKit-backed file-level smoke results are available.
 | Public smoke samples | 3 RCSB entries | `docs/smoke_data_manifest.md` |
 | RDKit scaffold extraction | 3/3 readable; 1/3 with Murcko scaffold and anchor | `data/processed/rgroup_smoke.jsonl`, reproducible from scripts |
 | Smoke failed molecules | 12 SDF files | `outputs/molecules/smoke_failed/`, `outputs/molecules/smoke_cases.json` |
+| Smoke repair baselines | 24 SDF files | `outputs/molecules/smoke_repaired/`, `outputs/molecules/smoke_cases.json` |
 | Smoke feedback records | 12 records | `data/processed/feedback_smoke.jsonl`, reproducible from scripts |
 | Smoke metrics | RDKit descriptor + template-failure metrics | `outputs/metrics/baselines_smoke.json`, `outputs/tables/baselines_smoke.csv` |
 | Smoke figure | Generated | `outputs/figures/smoke_success_rates.svg` |

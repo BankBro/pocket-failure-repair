@@ -1,0 +1,57 @@
+ASP
+     RDKit          3D
+
+  8  7  0  0  1  0  0  0  0  0999 V2000
+   13.0950   19.3410   20.1880 N   0  0  0  0  0  0  0  0  0  0  0  0
+   12.0700   18.6340   19.3790 C   0  0  2  0  0  0  0  0  0  0  0  0
+   11.8460   17.1020   19.5030 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.7440   16.5840   19.1620 O   0  0  0  0  0  0  0  0  0  0  0  0
+   12.2550   18.8580   17.8530 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.8360   19.2640   17.4010 C   0  0  0  0  0  0  0  0  0  0  0  0
+   10.0580   19.2920   18.4000 O   0  0  0  0  0  0  0  0  0  0  0  0
+   10.6160   19.6680   16.2440 O   0  0  0  0  0  0  0  0  0  0  0  0
+  2  1  1  1
+  2  3  1  0
+  2  5  1  0
+  3  4  2  0
+  5  6  1  0
+  6  7  2  0
+  6  8  1  0
+M  END
+>  <model_server_result.job_id>  (1) 
+yG3STE0DxJ3hcBIXirmO6w
+
+>  <model_server_result.datetime_utc>  (1) 
+2026-05-31 21:54:44
+
+>  <model_server_result.server_version>  (1) 
+0.9.12
+
+>  <model_server_result.query_name>  (1) 
+ligand
+
+>  <model_server_result.source_id>  (1) 
+pdb-bcif
+
+>  <model_server_result.entry_id>  (1) 
+1A4W
+
+>  <model_server_stats.io_time_ms>  (1) 
+19
+
+>  <model_server_stats.parse_time_ms>  (1) 
+7
+
+>  <model_server_stats.create_model_time_ms>  (1) 
+9
+
+>  <model_server_stats.query_time_ms>  (1) 
+369
+
+>  <model_server_stats.encode_time_ms>  (1) 
+0
+
+>  <model_server_stats.element_count>  (1) 
+8
+
+$$$$

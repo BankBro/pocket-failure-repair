@@ -66,6 +66,14 @@ def main() -> int:
     candidates = read_jsonl(config["input"].get("candidates_path", "")) if config["input"].get("candidates_path") else []
     feedback = read_jsonl(config["input"].get("feedback_path", "")) if config["input"].get("feedback_path") else []
     feedback_by_id = {row.get("candidate_id"): row for row in feedback}
+    repaired_candidates = (
+        read_jsonl(config["input"].get("repaired_candidates_path", ""))
+        if config["input"].get("repaired_candidates_path")
+        else []
+    )
+    repairs_by_candidate: dict[str, list[dict[str, Any]]] = {}
+    for repair in repaired_candidates:
+        repairs_by_candidate.setdefault(str(repair.get("candidate_id")), []).append(repair)
     case_rows = []
     for candidate in candidates:
         feedback_row = feedback_by_id.get(candidate.get("candidate_id"), {})
@@ -75,6 +83,7 @@ def main() -> int:
                 "complex_id": candidate.get("complex_id"),
                 "failure_type": candidate.get("failure_type"),
                 "failed_ligand_path": candidate.get("failed_ligand_path"),
+                "repair_outputs": repairs_by_candidate.get(str(candidate.get("candidate_id")), []),
                 "scaffold_smiles": candidate.get("scaffold_smiles"),
                 "source": candidate.get("source"),
                 "feedback_source": feedback_row.get("source"),

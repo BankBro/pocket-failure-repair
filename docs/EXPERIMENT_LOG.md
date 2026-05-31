@@ -606,8 +606,10 @@ PYTHONPATH=src python scripts/eval/eval_baselines.py --config configs/baselines/
 
 ### 下一步
 
-- 生成 12 个 failed candidate SDF 到 `outputs/molecules/smoke_failed/`。
-- `outputs/molecules/smoke_cases.json` 已列出每个 failed candidate 的 SDF 路径、failure type、scaffold、RDKit descriptors 和 geometry feedback。
-- 这些 SDF 是可控平移扰动产生的失败样本, 不是模型生成或修复结果。
+- `repair_baselines.py` 已生成 coordinate_rollback 和 identity_failed_candidate 两类最小 repair baseline。
+- 12 个 failed candidates 产生 24 个 repaired candidate SDF, 位于 `outputs/molecules/smoke_repaired/`。
+- `outputs/molecules/smoke_cases.json` 已把 failed candidate 与 repair outputs 关联。
+- 当前 repair baseline 是规则型/文件级 baseline, 尚不是 feedback-conditioned model。
+
 
 

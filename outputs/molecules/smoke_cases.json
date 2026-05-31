@@ -26,6 +26,52 @@
         "tpsa": 80.39,
         "vina_score": null
       },
+      "repair_outputs": [
+        {
+          "anchor_atoms": [],
+          "baseline": "coordinate_rollback",
+          "candidate_id": "1a4w_clash_0",
+          "complex_id": "1a4w",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "clash",
+          "repair_id": "1a4w_clash_0__coordinate_rollback",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1a4w_clash_0__coordinate_rollback.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1a4w_clash_0.sdf"
+        },
+        {
+          "anchor_atoms": [],
+          "baseline": "identity_failed_candidate",
+          "candidate_id": "1a4w_clash_0",
+          "complex_id": "1a4w",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "clash",
+          "repair_id": "1a4w_clash_0__identity_failed_candidate",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1a4w_clash_0__identity_failed_candidate.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1a4w_clash_0.sdf"
+        }
+      ],
       "scaffold_smiles": null,
       "source": "smoke_rdkit_perturbed_molecule"
     },
@@ -55,6 +101,52 @@
         "tpsa": 80.39,
         "vina_score": null
       },
+      "repair_outputs": [
+        {
+          "anchor_atoms": [],
+          "baseline": "coordinate_rollback",
+          "candidate_id": "1a4w_interaction_loss_1",
+          "complex_id": "1a4w",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "interaction_loss",
+          "repair_id": "1a4w_interaction_loss_1__coordinate_rollback",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1a4w_interaction_loss_1__coordinate_rollback.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1a4w_interaction_loss_1.sdf"
+        },
+        {
+          "anchor_atoms": [],
+          "baseline": "identity_failed_candidate",
+          "candidate_id": "1a4w_interaction_loss_1",
+          "complex_id": "1a4w",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "interaction_loss",
+          "repair_id": "1a4w_interaction_loss_1__identity_failed_candidate",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1a4w_interaction_loss_1__identity_failed_candidate.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1a4w_interaction_loss_1.sdf"
+        }
+      ],
       "scaffold_smiles": null,
       "source": "smoke_rdkit_perturbed_molecule"
     },
@@ -84,6 +176,52 @@
         "tpsa": 80.39,
         "vina_score": null
       },
+      "repair_outputs": [
+        {
+          "anchor_atoms": [],
+          "baseline": "coordinate_rollback",
+          "candidate_id": "1a4w_anchor_invalid_2",
+          "complex_id": "1a4w",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "anchor_invalid",
+          "repair_id": "1a4w_anchor_invalid_2__coordinate_rollback",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1a4w_anchor_invalid_2__coordinate_rollback.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1a4w_anchor_invalid_2.sdf"
+        },
+        {
+          "anchor_atoms": [],
+          "baseline": "identity_failed_candidate",
+          "candidate_id": "1a4w_anchor_invalid_2",
+          "complex_id": "1a4w",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "anchor_invalid",
+          "repair_id": "1a4w_anchor_invalid_2__identity_failed_candidate",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1a4w_anchor_invalid_2__identity_failed_candidate.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1a4w_anchor_invalid_2.sdf"
+        }
+      ],
       "scaffold_smiles": null,
       "source": "smoke_rdkit_perturbed_molecule"
     },
@@ -113,6 +251,52 @@
         "tpsa": 80.39,
         "vina_score": null
       },
+      "repair_outputs": [
+        {
+          "anchor_atoms": [],
+          "baseline": "coordinate_rollback",
+          "candidate_id": "1a4w_geometry_invalid_3",
+          "complex_id": "1a4w",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "geometry_invalid",
+          "repair_id": "1a4w_geometry_invalid_3__coordinate_rollback",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1a4w_geometry_invalid_3__coordinate_rollback.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1a4w_geometry_invalid_3.sdf"
+        },
+        {
+          "anchor_atoms": [],
+          "baseline": "identity_failed_candidate",
+          "candidate_id": "1a4w_geometry_invalid_3",
+          "complex_id": "1a4w",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "geometry_invalid",
+          "repair_id": "1a4w_geometry_invalid_3__identity_failed_candidate",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1a4w_geometry_invalid_3__identity_failed_candidate.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1a4w_geometry_invalid_3.sdf"
+        }
+      ],
       "scaffold_smiles": null,
       "source": "smoke_rdkit_perturbed_molecule"
     },
@@ -142,6 +326,44 @@
         "tpsa": 29.1,
         "vina_score": null
       },
+      "repair_outputs": [
+        {
+          "anchor_atoms": [
+            1
+          ],
+          "baseline": "coordinate_rollback",
+          "candidate_id": "1hsg_clash_0",
+          "complex_id": "1hsg",
+          "editable_atoms": [
+            2,
+            3
+          ],
+          "failure_type": "clash",
+          "repair_id": "1hsg_clash_0__coordinate_rollback",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1hsg_clash_0__coordinate_rollback.sdf",
+          "scaffold_smiles": "C1CCNC1",
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1hsg_clash_0.sdf"
+        },
+        {
+          "anchor_atoms": [
+            1
+          ],
+          "baseline": "identity_failed_candidate",
+          "candidate_id": "1hsg_clash_0",
+          "complex_id": "1hsg",
+          "editable_atoms": [
+            2,
+            3
+          ],
+          "failure_type": "clash",
+          "repair_id": "1hsg_clash_0__identity_failed_candidate",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1hsg_clash_0__identity_failed_candidate.sdf",
+          "scaffold_smiles": "C1CCNC1",
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1hsg_clash_0.sdf"
+        }
+      ],
       "scaffold_smiles": "C1CCNC1",
       "source": "smoke_rdkit_perturbed_molecule"
     },
@@ -171,6 +393,44 @@
         "tpsa": 29.1,
         "vina_score": null
       },
+      "repair_outputs": [
+        {
+          "anchor_atoms": [
+            1
+          ],
+          "baseline": "coordinate_rollback",
+          "candidate_id": "1hsg_interaction_loss_1",
+          "complex_id": "1hsg",
+          "editable_atoms": [
+            2,
+            3
+          ],
+          "failure_type": "interaction_loss",
+          "repair_id": "1hsg_interaction_loss_1__coordinate_rollback",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1hsg_interaction_loss_1__coordinate_rollback.sdf",
+          "scaffold_smiles": "C1CCNC1",
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1hsg_interaction_loss_1.sdf"
+        },
+        {
+          "anchor_atoms": [
+            1
+          ],
+          "baseline": "identity_failed_candidate",
+          "candidate_id": "1hsg_interaction_loss_1",
+          "complex_id": "1hsg",
+          "editable_atoms": [
+            2,
+            3
+          ],
+          "failure_type": "interaction_loss",
+          "repair_id": "1hsg_interaction_loss_1__identity_failed_candidate",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1hsg_interaction_loss_1__identity_failed_candidate.sdf",
+          "scaffold_smiles": "C1CCNC1",
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1hsg_interaction_loss_1.sdf"
+        }
+      ],
       "scaffold_smiles": "C1CCNC1",
       "source": "smoke_rdkit_perturbed_molecule"
     },
@@ -200,6 +460,44 @@
         "tpsa": 29.1,
         "vina_score": null
       },
+      "repair_outputs": [
+        {
+          "anchor_atoms": [
+            1
+          ],
+          "baseline": "coordinate_rollback",
+          "candidate_id": "1hsg_anchor_invalid_2",
+          "complex_id": "1hsg",
+          "editable_atoms": [
+            2,
+            3
+          ],
+          "failure_type": "anchor_invalid",
+          "repair_id": "1hsg_anchor_invalid_2__coordinate_rollback",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1hsg_anchor_invalid_2__coordinate_rollback.sdf",
+          "scaffold_smiles": "C1CCNC1",
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1hsg_anchor_invalid_2.sdf"
+        },
+        {
+          "anchor_atoms": [
+            1
+          ],
+          "baseline": "identity_failed_candidate",
+          "candidate_id": "1hsg_anchor_invalid_2",
+          "complex_id": "1hsg",
+          "editable_atoms": [
+            2,
+            3
+          ],
+          "failure_type": "anchor_invalid",
+          "repair_id": "1hsg_anchor_invalid_2__identity_failed_candidate",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1hsg_anchor_invalid_2__identity_failed_candidate.sdf",
+          "scaffold_smiles": "C1CCNC1",
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1hsg_anchor_invalid_2.sdf"
+        }
+      ],
       "scaffold_smiles": "C1CCNC1",
       "source": "smoke_rdkit_perturbed_molecule"
     },
@@ -229,6 +527,44 @@
         "tpsa": 29.1,
         "vina_score": null
       },
+      "repair_outputs": [
+        {
+          "anchor_atoms": [
+            1
+          ],
+          "baseline": "coordinate_rollback",
+          "candidate_id": "1hsg_geometry_invalid_3",
+          "complex_id": "1hsg",
+          "editable_atoms": [
+            2,
+            3
+          ],
+          "failure_type": "geometry_invalid",
+          "repair_id": "1hsg_geometry_invalid_3__coordinate_rollback",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1hsg_geometry_invalid_3__coordinate_rollback.sdf",
+          "scaffold_smiles": "C1CCNC1",
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1hsg_geometry_invalid_3.sdf"
+        },
+        {
+          "anchor_atoms": [
+            1
+          ],
+          "baseline": "identity_failed_candidate",
+          "candidate_id": "1hsg_geometry_invalid_3",
+          "complex_id": "1hsg",
+          "editable_atoms": [
+            2,
+            3
+          ],
+          "failure_type": "geometry_invalid",
+          "repair_id": "1hsg_geometry_invalid_3__identity_failed_candidate",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/1hsg_geometry_invalid_3__identity_failed_candidate.sdf",
+          "scaffold_smiles": "C1CCNC1",
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/1hsg_geometry_invalid_3.sdf"
+        }
+      ],
       "scaffold_smiles": "C1CCNC1",
       "source": "smoke_rdkit_perturbed_molecule"
     },
@@ -258,6 +594,52 @@
         "tpsa": 43.09,
         "vina_score": null
       },
+      "repair_outputs": [
+        {
+          "anchor_atoms": [],
+          "baseline": "coordinate_rollback",
+          "candidate_id": "3ptb_clash_0",
+          "complex_id": "3ptb",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "clash",
+          "repair_id": "3ptb_clash_0__coordinate_rollback",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/3ptb_clash_0__coordinate_rollback.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/3ptb_clash_0.sdf"
+        },
+        {
+          "anchor_atoms": [],
+          "baseline": "identity_failed_candidate",
+          "candidate_id": "3ptb_clash_0",
+          "complex_id": "3ptb",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "clash",
+          "repair_id": "3ptb_clash_0__identity_failed_candidate",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/3ptb_clash_0__identity_failed_candidate.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/3ptb_clash_0.sdf"
+        }
+      ],
       "scaffold_smiles": null,
       "source": "smoke_rdkit_perturbed_molecule"
     },
@@ -287,6 +669,52 @@
         "tpsa": 43.09,
         "vina_score": null
       },
+      "repair_outputs": [
+        {
+          "anchor_atoms": [],
+          "baseline": "coordinate_rollback",
+          "candidate_id": "3ptb_interaction_loss_1",
+          "complex_id": "3ptb",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "interaction_loss",
+          "repair_id": "3ptb_interaction_loss_1__coordinate_rollback",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/3ptb_interaction_loss_1__coordinate_rollback.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/3ptb_interaction_loss_1.sdf"
+        },
+        {
+          "anchor_atoms": [],
+          "baseline": "identity_failed_candidate",
+          "candidate_id": "3ptb_interaction_loss_1",
+          "complex_id": "3ptb",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "interaction_loss",
+          "repair_id": "3ptb_interaction_loss_1__identity_failed_candidate",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/3ptb_interaction_loss_1__identity_failed_candidate.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/3ptb_interaction_loss_1.sdf"
+        }
+      ],
       "scaffold_smiles": null,
       "source": "smoke_rdkit_perturbed_molecule"
     },
@@ -316,6 +744,52 @@
         "tpsa": 43.09,
         "vina_score": null
       },
+      "repair_outputs": [
+        {
+          "anchor_atoms": [],
+          "baseline": "coordinate_rollback",
+          "candidate_id": "3ptb_anchor_invalid_2",
+          "complex_id": "3ptb",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "anchor_invalid",
+          "repair_id": "3ptb_anchor_invalid_2__coordinate_rollback",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/3ptb_anchor_invalid_2__coordinate_rollback.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/3ptb_anchor_invalid_2.sdf"
+        },
+        {
+          "anchor_atoms": [],
+          "baseline": "identity_failed_candidate",
+          "candidate_id": "3ptb_anchor_invalid_2",
+          "complex_id": "3ptb",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "anchor_invalid",
+          "repair_id": "3ptb_anchor_invalid_2__identity_failed_candidate",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/3ptb_anchor_invalid_2__identity_failed_candidate.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/3ptb_anchor_invalid_2.sdf"
+        }
+      ],
       "scaffold_smiles": null,
       "source": "smoke_rdkit_perturbed_molecule"
     },
@@ -345,6 +819,52 @@
         "tpsa": 43.09,
         "vina_score": null
       },
+      "repair_outputs": [
+        {
+          "anchor_atoms": [],
+          "baseline": "coordinate_rollback",
+          "candidate_id": "3ptb_geometry_invalid_3",
+          "complex_id": "3ptb",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "geometry_invalid",
+          "repair_id": "3ptb_geometry_invalid_3__coordinate_rollback",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/3ptb_geometry_invalid_3__coordinate_rollback.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/3ptb_geometry_invalid_3.sdf"
+        },
+        {
+          "anchor_atoms": [],
+          "baseline": "identity_failed_candidate",
+          "candidate_id": "3ptb_geometry_invalid_3",
+          "complex_id": "3ptb",
+          "editable_atoms": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "failure_type": "geometry_invalid",
+          "repair_id": "3ptb_geometry_invalid_3__identity_failed_candidate",
+          "repaired_ligand_path": "outputs/molecules/smoke_repaired/3ptb_geometry_invalid_3__identity_failed_candidate.sdf",
+          "scaffold_smiles": null,
+          "source": "smoke_repair_baseline",
+          "source_failed_ligand_path": "outputs/molecules/smoke_failed/3ptb_geometry_invalid_3.sdf"
+        }
+      ],
       "scaffold_smiles": null,
       "source": "smoke_rdkit_perturbed_molecule"
     }
