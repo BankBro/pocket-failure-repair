@@ -1,0 +1,2 @@
+baseline,num_records,plip_available_rate,plip_error_count,mean_plip_interaction_count,vina_available_rate,vina_error_count,mean_vina_score_only_energy,posebusters_available_rate,posebusters_error_count,posebusters_full_pass_rate,source
+feedback_residual_ensemble_policy,84,1.0,0,11.035714285714286,1.0,0,-6.099357142857142,,0,,official_external_eval_summary

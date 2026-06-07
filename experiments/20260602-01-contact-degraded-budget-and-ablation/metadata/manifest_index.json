@@ -1,0 +1,12 @@
+{
+  "experiment_name": "contact-degraded-budget-and-ablation",
+  "experiment_id": "20260602-01-contact-degraded-budget-and-ablation",
+  "experiment_dir": "experiments/20260602-01-contact-degraded-budget-and-ablation",
+  "output_dir": "outputs/20260602-01-contact-degraded-budget-and-ablation",
+  "readme_path": "experiments/20260602-01-contact-degraded-budget-and-ablation/README.md",
+  "notes_path": null,
+  "output_metadata": [],
+  "output_run_metadata": [],
+  "metadata_role": "lightweight experiment-side index; output artifacts and artifact manifests remain under outputs/<experiment_id>/",
+  "created_or_updated": "2026-06-04"
+}

@@ -1,0 +1,17 @@
+name: smoke_plus_summary
+seed: 0
+input:
+  metrics_path: outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/baselines_smoke_plus.json
+  candidates_path: outputs/20260601-02-smoke-plus-expansion-and-variants/processed/failed_candidates_smoke_plus.jsonl
+  feedback_path: outputs/20260601-02-smoke-plus-expansion-and-variants/processed/feedback_smoke_plus.jsonl
+  repaired_candidates_path: outputs/20260601-02-smoke-plus-expansion-and-variants/processed/repaired_candidates_smoke_plus.jsonl
+  repaired_metrics_path: outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/repaired_smoke_plus.json
+  repaired_evaluations_path: outputs/20260601-02-smoke-plus-expansion-and-variants/processed/evaluated_repaired_smoke_plus.jsonl
+  repaired_failure_type_metrics_path: outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/repaired_smoke_plus_by_failure_type.json
+output:
+  summary_path: outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/smoke_plus_summary.json
+  figure_path: outputs/20260601-02-smoke-plus-expansion-and-variants/figures/smoke_plus_success_rates.svg
+  cases_path: outputs/20260601-02-smoke-plus-expansion-and-variants/processed/cases/smoke_plus_cases.json
+labels:
+  result_type: smoke_plus_repaired_molecule_fallback_proxy
+  warning: Larger than the original smoke set, but still not an official benchmark or publication-level split.

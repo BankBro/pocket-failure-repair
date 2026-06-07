@@ -1,0 +1,200 @@
+{
+  "aggregate_metrics": [
+    {
+      "baseline": "best_of_n",
+      "mean_anchor_validity": 0.5,
+      "mean_clash_count": 2.0833333333333335,
+      "mean_clash_free_rate": 0.5833333333333334,
+      "mean_contact_fingerprint_similarity": 0.7798240267109343,
+      "mean_contact_recovery": 0.9398330622288956,
+      "mean_editable_validity": 1.0,
+      "mean_ligand_efficiency_proxy": 0.14728562218675753,
+      "mean_posebusters_like_pass": 0.5833333333333334,
+      "mean_repaired_success_rate": 0.5,
+      "mean_sa_fallback": 4.376666666666668,
+      "mean_scaffold_preservation": 1.0,
+      "mean_vina_like_proxy": 5.04839198945925,
+      "num_seeds": 3,
+      "seed_values": {
+        "0": 0.5,
+        "1": 0.5,
+        "2": 0.5
+      }
+    },
+    {
+      "baseline": "coordinate_rollback",
+      "mean_anchor_validity": 1.0,
+      "mean_clash_count": 0.0,
+      "mean_clash_free_rate": 1.0,
+      "mean_contact_fingerprint_similarity": 1.0,
+      "mean_contact_recovery": 1.0,
+      "mean_editable_validity": 1.0,
+      "mean_ligand_efficiency_proxy": 0.012734293611028562,
+      "mean_posebusters_like_pass": 1.0,
+      "mean_repaired_success_rate": 1.0,
+      "mean_sa_fallback": 4.376666666666668,
+      "mean_scaffold_preservation": 1.0,
+      "mean_vina_like_proxy": 0.45610117348889484,
+      "num_seeds": 3,
+      "seed_values": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0
+      }
+    },
+    {
+      "baseline": "direct_regeneration",
+      "mean_anchor_validity": 0.4444444444444445,
+      "mean_clash_count": 1.6388888888888886,
+      "mean_clash_free_rate": 0.6111111111111112,
+      "mean_contact_fingerprint_similarity": 0.7520476821500487,
+      "mean_contact_recovery": 0.9253341883550217,
+      "mean_editable_validity": 1.0,
+      "mean_ligand_efficiency_proxy": 0.1512256572589705,
+      "mean_posebusters_like_pass": 0.6111111111111112,
+      "mean_repaired_success_rate": 0.4444444444444445,
+      "mean_sa_fallback": 4.376666666666668,
+      "mean_scaffold_preservation": 1.0,
+      "mean_vina_like_proxy": 4.2644570772668615,
+      "num_seeds": 3,
+      "seed_values": {
+        "0": 0.4166666666666667,
+        "1": 0.4166666666666667,
+        "2": 0.5
+      }
+    },
+    {
+      "baseline": "feedback_geometry_refinement",
+      "mean_anchor_validity": 0.6666666666666666,
+      "mean_clash_count": 0.16666666666666666,
+      "mean_clash_free_rate": 0.8611111111111112,
+      "mean_contact_fingerprint_similarity": 0.8698900844266163,
+      "mean_contact_recovery": 0.9492383008008008,
+      "mean_editable_validity": 1.0,
+      "mean_ligand_efficiency_proxy": 0.051292600770371684,
+      "mean_posebusters_like_pass": 0.8611111111111112,
+      "mean_repaired_success_rate": 0.6388888888888888,
+      "mean_sa_fallback": 4.376666666666668,
+      "mean_scaffold_preservation": 1.0,
+      "mean_vina_like_proxy": 1.1022774388777676,
+      "num_seeds": 3,
+      "seed_values": {
+        "0": 0.5833333333333334,
+        "1": 0.6666666666666666,
+        "2": 0.6666666666666666
+      }
+    },
+    {
+      "baseline": "feedback_linear_refinement",
+      "mean_anchor_validity": 1.0,
+      "mean_clash_count": 0.0,
+      "mean_clash_free_rate": 1.0,
+      "mean_contact_fingerprint_similarity": 1.0,
+      "mean_contact_recovery": 1.0,
+      "mean_editable_validity": 1.0,
+      "mean_ligand_efficiency_proxy": 0.012771546340802964,
+      "mean_posebusters_like_pass": 1.0,
+      "mean_repaired_success_rate": 1.0,
+      "mean_sa_fallback": 4.376666666666668,
+      "mean_scaffold_preservation": 1.0,
+      "mean_vina_like_proxy": 0.4560746189089098,
+      "num_seeds": 3,
+      "seed_values": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0
+      }
+    },
+    {
+      "baseline": "feedback_rule_repair",
+      "mean_anchor_validity": 1.0,
+      "mean_clash_count": 0.0,
+      "mean_clash_free_rate": 1.0,
+      "mean_contact_fingerprint_similarity": 1.0,
+      "mean_contact_recovery": 1.0,
+      "mean_editable_validity": 1.0,
+      "mean_ligand_efficiency_proxy": 0.012734293611028562,
+      "mean_posebusters_like_pass": 1.0,
+      "mean_repaired_success_rate": 1.0,
+      "mean_sa_fallback": 4.376666666666668,
+      "mean_scaffold_preservation": 1.0,
+      "mean_vina_like_proxy": 0.45610117348889484,
+      "num_seeds": 3,
+      "seed_values": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0
+      }
+    },
+    {
+      "baseline": "identity_failed_candidate",
+      "mean_anchor_validity": 0.5,
+      "mean_clash_count": 2.3333333333333335,
+      "mean_clash_free_rate": 0.5833333333333334,
+      "mean_contact_fingerprint_similarity": 0.7808484739456372,
+      "mean_contact_recovery": 0.9406672297297298,
+      "mean_editable_validity": 1.0,
+      "mean_ligand_efficiency_proxy": 0.15891046661231636,
+      "mean_posebusters_like_pass": 0.5833333333333334,
+      "mean_repaired_success_rate": 0.5,
+      "mean_sa_fallback": 4.376666666666668,
+      "mean_scaffold_preservation": 1.0,
+      "mean_vina_like_proxy": 5.627466386105791,
+      "num_seeds": 3,
+      "seed_values": {
+        "0": 0.5,
+        "1": 0.5,
+        "2": 0.5
+      }
+    },
+    {
+      "baseline": "no_feedback_repair",
+      "mean_anchor_validity": 0.5,
+      "mean_clash_count": 2.3333333333333335,
+      "mean_clash_free_rate": 0.5833333333333334,
+      "mean_contact_fingerprint_similarity": 0.7808484739456372,
+      "mean_contact_recovery": 0.9406672297297298,
+      "mean_editable_validity": 1.0,
+      "mean_ligand_efficiency_proxy": 0.15891046661231636,
+      "mean_posebusters_like_pass": 0.5833333333333334,
+      "mean_repaired_success_rate": 0.5,
+      "mean_sa_fallback": 4.376666666666668,
+      "mean_scaffold_preservation": 1.0,
+      "mean_vina_like_proxy": 5.627466386105791,
+      "num_seeds": 3,
+      "seed_values": {
+        "0": 0.5,
+        "1": 0.5,
+        "2": 0.5
+      }
+    },
+    {
+      "baseline": "rerank_only",
+      "mean_anchor_validity": 0.5,
+      "mean_clash_count": 2.3333333333333335,
+      "mean_clash_free_rate": 0.5833333333333334,
+      "mean_contact_fingerprint_similarity": 0.7808484739456372,
+      "mean_contact_recovery": 0.9406672297297298,
+      "mean_editable_validity": 1.0,
+      "mean_ligand_efficiency_proxy": 0.15891046661231636,
+      "mean_posebusters_like_pass": 0.5833333333333334,
+      "mean_repaired_success_rate": 0.5,
+      "mean_sa_fallback": 4.376666666666668,
+      "mean_scaffold_preservation": 1.0,
+      "mean_vina_like_proxy": 5.627466386105791,
+      "num_seeds": 3,
+      "seed_values": {
+        "0": 0.5,
+        "1": 0.5,
+        "2": 0.5
+      }
+    }
+  ],
+  "name": "repaired_smoke_multiseed",
+  "notes": "Multi-seed smoke over deterministic/rule/linear refinement baselines; seeds currently affect feedback_geometry_refinement translation search while feedback_linear_refinement is leave-one-complex supervised smoke.",
+  "seeds": [
+    0,
+    1,
+    2
+  ]
+}

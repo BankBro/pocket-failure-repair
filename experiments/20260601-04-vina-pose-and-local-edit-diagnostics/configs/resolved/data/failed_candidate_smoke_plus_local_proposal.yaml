@@ -1,0 +1,14 @@
+name: failed_candidate_smoke_plus_local_proposal
+seed: 0
+input:
+  dataset_path: data/datasets/rgroup_smoke_plus/entries/index.jsonl
+output:
+  candidates_path: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_local_proposal.jsonl
+  failed_molecules_dir: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_molecules/smoke_plus_local_proposal_failed
+limits:
+  proposals_per_example: 6
+labels:
+  store_reference_ligand: true
+  store_failure_reason: true
+  store_random_seed: true
+  source: smoke_local_proposal_pool_rdkit

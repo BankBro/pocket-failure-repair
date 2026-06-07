@@ -1,0 +1,78 @@
+{
+  "input": "outputs/metrics/official_eval_smoke_plus_expanded_posebusters_subset35.jsonl",
+  "metrics": [
+    {
+      "baseline": "best_of_n",
+      "mean_plip_interaction_count": null,
+      "mean_vina_score_only_energy": null,
+      "num_records": 7,
+      "plip_available_rate": null,
+      "plip_error_count": 0,
+      "posebusters_available_rate": 1.0,
+      "posebusters_error_count": 7,
+      "posebusters_full_pass_rate": null,
+      "source": "official_external_eval_summary",
+      "vina_available_rate": null,
+      "vina_error_count": 0
+    },
+    {
+      "baseline": "direct_regeneration",
+      "mean_plip_interaction_count": null,
+      "mean_vina_score_only_energy": null,
+      "num_records": 7,
+      "plip_available_rate": null,
+      "plip_error_count": 0,
+      "posebusters_available_rate": 1.0,
+      "posebusters_error_count": 1,
+      "posebusters_full_pass_rate": 0.0,
+      "source": "official_external_eval_summary",
+      "vina_available_rate": null,
+      "vina_error_count": 0
+    },
+    {
+      "baseline": "feedback_geometry_refinement",
+      "mean_plip_interaction_count": null,
+      "mean_vina_score_only_energy": null,
+      "num_records": 7,
+      "plip_available_rate": null,
+      "plip_error_count": 0,
+      "posebusters_available_rate": 1.0,
+      "posebusters_error_count": 1,
+      "posebusters_full_pass_rate": 0.0,
+      "source": "official_external_eval_summary",
+      "vina_available_rate": null,
+      "vina_error_count": 0
+    },
+    {
+      "baseline": "feedback_learned_geometry_policy",
+      "mean_plip_interaction_count": null,
+      "mean_vina_score_only_energy": null,
+      "num_records": 7,
+      "plip_available_rate": null,
+      "plip_error_count": 0,
+      "posebusters_available_rate": 1.0,
+      "posebusters_error_count": 1,
+      "posebusters_full_pass_rate": 0.0,
+      "source": "official_external_eval_summary",
+      "vina_available_rate": null,
+      "vina_error_count": 0
+    },
+    {
+      "baseline": "no_feedback_repair",
+      "mean_plip_interaction_count": null,
+      "mean_vina_score_only_energy": null,
+      "num_records": 7,
+      "plip_available_rate": null,
+      "plip_error_count": 0,
+      "posebusters_available_rate": 1.0,
+      "posebusters_error_count": 1,
+      "posebusters_full_pass_rate": 0.0,
+      "source": "official_external_eval_summary",
+      "vina_available_rate": null,
+      "vina_error_count": 0
+    }
+  ],
+  "name": "official_eval_smoke_plus_expanded_posebusters_subset35",
+  "notes": "Official external-tool summary. Vina values are score-only energies, not redocking success. PLIP values are interaction counts from generated protein-ligand complex PDBs.",
+  "num_records": 35
+}

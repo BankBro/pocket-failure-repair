@@ -1,0 +1,15 @@
+name: smoke_summary
+input:
+  metrics_path: outputs/20260531-01-smoke-file-pipeline/metrics/baselines_smoke.json
+  candidates_path: outputs/20260531-01-smoke-file-pipeline/processed/failed_candidates_smoke.jsonl
+  feedback_path: outputs/20260531-01-smoke-file-pipeline/processed/feedback_smoke.jsonl
+  repaired_candidates_path: outputs/20260601-01-smoke-repair-baselines/processed/repaired_candidates_smoke.jsonl
+  repaired_metrics_path: outputs/20260601-01-smoke-repair-baselines/metrics/repaired_smoke.json
+  repaired_evaluations_path: outputs/20260601-01-smoke-repair-baselines/processed/evaluated_repaired_smoke.jsonl
+output:
+  summary_path: outputs/20260531-01-smoke-file-pipeline/metrics/smoke_summary.json
+  figure_path: outputs/20260531-01-smoke-file-pipeline/figures/smoke_success_rates.svg
+  cases_path: outputs/20260531-01-smoke-file-pipeline/processed/cases/smoke_cases.json
+labels:
+  result_type: rdkit_file_level_smoke
+  warning: These metrics validate RDKit-backed pipeline wiring and template failure labels; they are not repaired-molecule model-performance evidence.

@@ -1,0 +1,17 @@
+name: smoke_plus_baselines
+seed: 0
+input:
+  feedback_path: outputs/20260601-02-smoke-plus-expansion-and-variants/processed/feedback_smoke_plus.jsonl
+output:
+  metrics_path: outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/baselines_smoke_plus.json
+  table_path: outputs/20260601-02-smoke-plus-expansion-and-variants/tables/baselines_smoke_plus.csv
+baselines:
+  - direct_regeneration
+  - best_of_n
+  - rerank_only
+  - no_feedback_repair
+  - feedback_geometry_refinement
+  - feedback_learned_geometry_policy
+  - feedback_kernel_geometry_policy
+  - feedback_knn_geometry_policy
+  - feedback_linear_refinement

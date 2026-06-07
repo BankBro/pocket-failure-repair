@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="490.0" y="32" text-anchor="middle" font-family="Arial" font-size="22" font-weight="bold">Contact-degraded local-edit official PLIP recovery</text>
+<text x="22" y="222.5" transform="rotate(-90 22 222.5)" text-anchor="middle" font-family="Arial" font-size="14">Official PLIP recovery gain</text>
+<line x1="95" y1="145.76" x2="950" y2="145.76" stroke="#333" stroke-width="1.5"/>
+<line x1="95" y1="70" x2="95" y2="375" stroke="#333" stroke-width="1"/>
+<line x1="90" y1="347.75" x2="950" y2="347.75" stroke="#ddd" stroke-width="1"/>
+<text x="85" y="351.75" text-anchor="end" font-family="Arial" font-size="12">-0.15</text>
+<line x1="90" y1="280.42" x2="950" y2="280.42" stroke="#ddd" stroke-width="1"/>
+<text x="85" y="284.42" text-anchor="end" font-family="Arial" font-size="12">-0.10</text>
+<line x1="90" y1="213.09" x2="950" y2="213.09" stroke="#ddd" stroke-width="1"/>
+<text x="85" y="217.09" text-anchor="end" font-family="Arial" font-size="12">-0.05</text>
+<line x1="90" y1="145.76" x2="950" y2="145.76" stroke="#ddd" stroke-width="1"/>
+<text x="85" y="149.76" text-anchor="end" font-family="Arial" font-size="12">0.00</text>
+<line x1="90" y1="78.43" x2="950" y2="78.43" stroke="#ddd" stroke-width="1"/>
+<text x="85" y="82.43" text-anchor="end" font-family="Arial" font-size="12">0.05</text>
+<rect x="95.00" y="145.76" width="106.71" height="1.00" fill="#9aa0a6"/>
+<text x="148.36" y="138.76" text-anchor="middle" font-family="Arial" font-size="12">+0.0000</text>
+<text x="148.36" y="395.00" transform="rotate(45 148.36 395.00)" text-anchor="start" font-family="Arial" font-size="12">No-feedback</text>
+<rect x="219.71" y="145.76" width="106.71" height="1.00" fill="#9aa0a6"/>
+<text x="273.07" y="138.76" text-anchor="middle" font-family="Arial" font-size="12">+0.0000</text>
+<text x="273.07" y="395.00" transform="rotate(45 273.07 395.00)" text-anchor="start" font-family="Arial" font-size="12">Rerank</text>
+<rect x="344.43" y="133.63" width="106.71" height="12.14" fill="#4e79a7"/>
+<text x="397.79" y="126.63" text-anchor="middle" font-family="Arial" font-size="12">+0.0090</text>
+<text x="397.79" y="395.00" transform="rotate(45 397.79 395.00)" text-anchor="start" font-family="Arial" font-size="12">Classified</text>
+<rect x="469.14" y="132.50" width="106.71" height="13.27" fill="#59a14f"/>
+<text x="522.50" y="125.50" text-anchor="middle" font-family="Arial" font-size="12">+0.0099</text>
+<text x="522.50" y="395.00" transform="rotate(45 522.50 395.00)" text-anchor="start" font-family="Arial" font-size="12">Budgeted learned</text>
+<rect x="593.86" y="105.19" width="106.71" height="40.57" fill="#f28e2b"/>
+<text x="647.21" y="98.19" text-anchor="middle" font-family="Arial" font-size="12">+0.0301</text>
+<text x="647.21" y="395.00" transform="rotate(45 647.21 395.00)" text-anchor="start" font-family="Arial" font-size="12">Editable search</text>
+<rect x="718.57" y="145.76" width="106.71" height="79.59" fill="#e15759"/>
+<text x="771.93" y="242.35" text-anchor="middle" font-family="Arial" font-size="12">-0.0591</text>
+<text x="771.93" y="395.00" transform="rotate(45 771.93 395.00)" text-anchor="start" font-family="Arial" font-size="12">Best-of-N</text>
+<rect x="843.29" y="145.76" width="106.71" height="194.04" fill="#e15759"/>
+<text x="896.64" y="356.81" text-anchor="middle" font-family="Arial" font-size="12">-0.1441</text>
+<text x="896.64" y="395.00" transform="rotate(45 896.64 395.00)" text-anchor="start" font-family="Arial" font-size="12">Direct regen</text>
+</svg>

@@ -1,0 +1,13 @@
+baseline,num_records,plip_available_rate,plip_error_count,mean_plip_interaction_count,vina_available_rate,vina_error_count,mean_vina_score_only_energy,posebusters_available_rate,posebusters_error_count,posebusters_full_pass_rate,source
+best_of_n,84,1.0,0,11.095238095238095,1.0,0,-3.53147619047619,,0,,official_external_eval_summary
+coordinate_rollback,84,1.0,0,11.666666666666666,1.0,0,-8.812916666666657,,0,,official_external_eval_summary
+direct_regeneration,84,1.0,0,10.738095238095237,1.0,0,-0.4444047619047621,,0,,official_external_eval_summary
+feedback_geometry_refinement,84,1.0,0,10.845238095238095,1.0,0,-4.696404761904759,,0,,official_external_eval_summary
+feedback_kernel_geometry_policy,84,1.0,0,11.095238095238095,1.0,0,-4.33882142857143,,0,,official_external_eval_summary
+feedback_knn_geometry_policy,84,1.0,0,10.619047619047619,1.0,0,-3.757714285714287,,0,,official_external_eval_summary
+feedback_learned_geometry_policy,84,1.0,0,11.214285714285714,1.0,0,-5.978023809523809,,0,,official_external_eval_summary
+feedback_linear_refinement,84,1.0,0,11.595238095238095,1.0,0,-7.750083333333332,,0,,official_external_eval_summary
+feedback_rule_repair,84,1.0,0,11.416666666666666,1.0,0,-8.428952380952378,,0,,official_external_eval_summary
+identity_failed_candidate,84,1.0,0,11.25,1.0,0,-3.568202380952379,,0,,official_external_eval_summary
+no_feedback_repair,84,1.0,0,11.25,1.0,0,-3.568202380952379,,0,,official_external_eval_summary
+rerank_only,84,1.0,0,11.261904761904763,1.0,0,-3.568202380952379,,0,,official_external_eval_summary

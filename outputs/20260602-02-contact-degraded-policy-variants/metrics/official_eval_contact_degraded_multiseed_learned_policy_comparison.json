@@ -1,0 +1,162 @@
+{
+  "name": "official_eval_contact_degraded_multiseed_learned_policy_comparison",
+  "rows": [
+    {
+      "comparison_role": "no_feedback_budget1_reference",
+      "baseline": "no_feedback_repair",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 1.0,
+      "internal_budget_types": "single_failed_candidate",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.0,
+      "official_plip_similarity_gain": 0.0,
+      "vina_score_only_energy": -6.985490566037734
+    },
+    {
+      "comparison_role": "rerank_budget1_reference",
+      "baseline": "rerank_only",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 1.0,
+      "internal_budget_types": "single_failed_candidate",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.0,
+      "official_plip_similarity_gain": 0.0,
+      "vina_score_only_energy": -6.985490566037734
+    },
+    {
+      "comparison_role": "shuffled_learned_budget1",
+      "baseline": "feedback_learned_editable_contact_shuffled_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 1.0,
+      "internal_budget_types": "single_policy_output",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.0006561214356646396,
+      "official_plip_similarity_gain": -0.01882844618693675,
+      "vina_score_only_energy": -6.942150943396224
+    },
+    {
+      "comparison_role": "shuffled_ridge_budget1",
+      "baseline": "feedback_ridge_editable_contact_shuffled_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 1.0,
+      "internal_budget_types": "single_policy_output",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": -0.005287984111221444,
+      "official_plip_similarity_gain": -0.025090527920716598,
+      "vina_score_only_energy": -6.862641509433961
+    },
+    {
+      "comparison_role": "learned_budget1",
+      "baseline": "feedback_learned_editable_contact_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 1.0,
+      "internal_budget_types": "single_policy_output",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.006451269683643074,
+      "official_plip_similarity_gain": -0.011851670342236373,
+      "vina_score_only_energy": -6.599094339622639
+    },
+    {
+      "comparison_role": "ridge_budget1",
+      "baseline": "feedback_ridge_editable_contact_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 1.0,
+      "internal_budget_types": "single_policy_output",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.007646474677259188,
+      "official_plip_similarity_gain": 0.008316531752480118,
+      "vina_score_only_energy": -6.559283018867925
+    },
+    {
+      "comparison_role": "classified_budget1",
+      "baseline": "feedback_classified_editable_contact_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 1.0,
+      "internal_budget_types": "single_policy_output",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.009011916583912613,
+      "official_plip_similarity_gain": -0.01075852868305698,
+      "vina_score_only_energy": -6.549849056603771
+    },
+    {
+      "comparison_role": "shuffled_budgeted_learned_budget10",
+      "baseline": "feedback_budgeted_learned_editable_contact_shuffled_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 10.0,
+      "internal_budget_types": "editable_offset_selection",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": -0.0012306710171655485,
+      "official_plip_similarity_gain": -0.020543712053146007,
+      "vina_score_only_energy": -6.94733962264151
+    },
+    {
+      "comparison_role": "budgeted_learned_budget10",
+      "baseline": "feedback_budgeted_learned_editable_contact_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 10.0,
+      "internal_budget_types": "editable_offset_selection",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.009852461342034342,
+      "official_plip_similarity_gain": -0.0083047455688965,
+      "vina_score_only_energy": -6.9294339622641505
+    },
+    {
+      "comparison_role": "editable_search_budget10_reference",
+      "baseline": "feedback_editable_contact_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 10.0,
+      "internal_budget_types": "editable_offset_selection",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.03012838700524897,
+      "official_plip_similarity_gain": -0.007117314441048291,
+      "vina_score_only_energy": -6.993377358490563
+    },
+    {
+      "comparison_role": "editable_full_budget10_reference",
+      "baseline": "feedback_editable_full_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 10.0,
+      "internal_budget_types": "editable_offset_selection",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.03012838700524897,
+      "official_plip_similarity_gain": -0.007117314441048291,
+      "vina_score_only_energy": -6.993377358490563
+    },
+    {
+      "comparison_role": "best_of_n_higher_budget_reference",
+      "baseline": "best_of_n",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 16.11320754716981,
+      "internal_budget_types": "candidate_pool_selection",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": -0.05910058164278622,
+      "official_plip_similarity_gain": -0.05530643360832039,
+      "vina_score_only_energy": -6.898471698113207
+    },
+    {
+      "comparison_role": "direct_regeneration_higher_budget_reference",
+      "baseline": "direct_regeneration",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 16.11320754716981,
+      "internal_budget_types": "candidate_pool_index_selection",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": -0.1440984536813732,
+      "official_plip_similarity_gain": -0.18995401144293675,
+      "vina_score_only_energy": -4.709037735849058
+    }
+  ],
+  "notes": "Includes budget=1 learned/ridge/classified, shuffled controls, budget=10 learned/editable-search, and higher-budget references."
+}

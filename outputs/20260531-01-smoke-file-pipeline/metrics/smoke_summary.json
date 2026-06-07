@@ -1,0 +1,34 @@
+{
+  "baselines": [
+    "direct_regeneration",
+    "best_of_n",
+    "rerank_only",
+    "no_feedback_repair"
+  ],
+  "name": "smoke_summary",
+  "non_evaluable_feedback_records": 5,
+  "notes": "Smoke metrics use RDKit descriptors and scaffold/anchor state plus template failure labels; non-evaluable sample_quality records must be excluded from model-performance claims; replace with true repaired molecules before model-performance claims.",
+  "num_baselines": 4,
+  "num_evaluable_for_repair": 7,
+  "repaired_molecule_metrics_path": "outputs/metrics/repaired_smoke.json",
+  "repaired_molecule_success_rates": {
+    "best_of_n": 0.5,
+    "coordinate_rollback": 1.0,
+    "direct_regeneration": 0.4166666666666667,
+    "feedback_geometry_refinement": 0.5833333333333334,
+    "feedback_linear_refinement": 1.0,
+    "feedback_rule_repair": 1.0,
+    "identity_failed_candidate": 0.5,
+    "no_feedback_repair": 0.5,
+    "rerank_only": 0.5
+  },
+  "repaired_num_records": 108,
+  "result_type": "rdkit_file_level_smoke",
+  "success_rates": {
+    "best_of_n": 0.5,
+    "direct_regeneration": 0.5,
+    "no_feedback_repair": 0.5,
+    "rerank_only": 0.5
+  },
+  "warning": "These metrics validate RDKit-backed pipeline wiring and template failure labels; they are not repaired-molecule model-performance evidence."
+}

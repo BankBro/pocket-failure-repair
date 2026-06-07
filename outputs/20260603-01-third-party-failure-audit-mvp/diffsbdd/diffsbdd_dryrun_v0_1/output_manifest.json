@@ -1,0 +1,10 @@
+{
+  "run_id": "diffsbdd_dryrun_v0_1",
+  "captured_outputs": [],
+  "logs": [
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/third_party_audit/diffsbdd/diffsbdd_dryrun_v0_1/logs/stdout.log",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/third_party_audit/diffsbdd/diffsbdd_dryrun_v0_1/logs/stderr.log"
+  ],
+  "n_final_sdf_records": 0,
+  "sha256": {}
+}

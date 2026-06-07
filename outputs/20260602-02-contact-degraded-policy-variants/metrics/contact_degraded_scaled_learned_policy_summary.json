@@ -1,0 +1,141 @@
+{
+  "baseline": "feedback_scaled_learned_editable_contact_policy",
+  "metrics": [
+    {
+      "baseline": "feedback_scaled_learned_editable_contact_policy",
+      "mean_anchor_error_reduction": 0.0,
+      "mean_clash_count_reduction": -0.13312693498452013,
+      "mean_contact_recovery_gain": 0.02210789922376274,
+      "mean_contact_similarity_gain": 0.0005899166935292426,
+      "mean_repair_gain_success_rate": 0.24664602683178538,
+      "mean_repaired_success_rate": 0.8864809081527348,
+      "num_seeds": 3,
+      "source": "contact_degraded_scaled_learned_policy_summary",
+      "total_repaired": 53
+    }
+  ],
+  "name": "contact_degraded_scaled_learned_policy_summary",
+  "runs": [
+    {
+      "candidate_count": 19,
+      "evaluated_repaired_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_contact_degraded_scaled_learned_seed0.jsonl",
+      "metrics_path": "outputs/metrics/contact_degraded_scaled_learned_policy/seed0.json",
+      "repaired_candidates_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_scaled_learned_seed0.jsonl",
+      "seed": 0
+    },
+    {
+      "candidate_count": 17,
+      "evaluated_repaired_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_contact_degraded_scaled_learned_seed1.jsonl",
+      "metrics_path": "outputs/metrics/contact_degraded_scaled_learned_policy/seed1.json",
+      "repaired_candidates_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_scaled_learned_seed1.jsonl",
+      "seed": 1
+    },
+    {
+      "candidate_count": 17,
+      "evaluated_repaired_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_contact_degraded_scaled_learned_seed2.jsonl",
+      "metrics_path": "outputs/metrics/contact_degraded_scaled_learned_policy/seed2.json",
+      "repaired_candidates_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_scaled_learned_seed2.jsonl",
+      "seed": 2
+    }
+  ],
+  "seed_metrics": [
+    {
+      "anchor_validity": 1.0,
+      "baseline": "feedback_scaled_learned_editable_contact_policy",
+      "clash_free_rate": 0.8947368421052632,
+      "editable_validity": 1.0,
+      "internal_budget_types": [
+        "single_policy_output"
+      ],
+      "mean_anchor_error_reduction": 0.0,
+      "mean_clash_count": 0.10526315789473684,
+      "mean_clash_count_reduction": -0.10526315789473684,
+      "mean_contact_fingerprint_similarity": 0.8750490060877874,
+      "mean_contact_fingerprint_similarity_gain": 0.0033377784520373624,
+      "mean_contact_recovery": 0.9093121437401598,
+      "mean_contact_recovery_gain": 0.021257627765064843,
+      "mean_internal_candidate_budget": 1.0,
+      "mean_ligand_efficiency_proxy": 0.027224012795979514,
+      "mean_logp": 0.7418000000000013,
+      "mean_posebusters_like_pass": 0.8947368421052632,
+      "mean_qed": 0.3962849946115537,
+      "mean_sa_fallback": 3.8584210526315768,
+      "mean_vina_like_gain": -0.22341683032197351,
+      "mean_vina_like_proxy": 0.9149414375236514,
+      "num_repaired": 19,
+      "num_sample_evaluable": 19,
+      "repair_gain_success_rate": 0.21052631578947367,
+      "repaired_success_rate": 0.8947368421052632,
+      "scaffold_preservation": 1.0,
+      "seed": 0,
+      "source": "repaired_molecule_rdkit_geometry_eval_with_fallback_external_proxies"
+    },
+    {
+      "anchor_validity": 1.0,
+      "baseline": "feedback_scaled_learned_editable_contact_policy",
+      "clash_free_rate": 0.8823529411764706,
+      "editable_validity": 1.0,
+      "internal_budget_types": [
+        "single_policy_output"
+      ],
+      "mean_anchor_error_reduction": 0.0,
+      "mean_clash_count": 0.11764705882352941,
+      "mean_clash_count_reduction": -0.11764705882352941,
+      "mean_contact_fingerprint_similarity": 0.8671135950392918,
+      "mean_contact_fingerprint_similarity_gain": 0.003632419054237841,
+      "mean_contact_recovery": 0.9029512292173241,
+      "mean_contact_recovery_gain": 0.023865089514066504,
+      "mean_internal_candidate_budget": 1.0,
+      "mean_ligand_efficiency_proxy": 0.02700296958954794,
+      "mean_logp": 0.5994705882352958,
+      "mean_posebusters_like_pass": 0.8823529411764706,
+      "mean_qed": 0.37805054423109263,
+      "mean_sa_fallback": 4.012352941176469,
+      "mean_vina_like_gain": -0.25525660554548973,
+      "mean_vina_like_proxy": 0.9091822101454727,
+      "num_repaired": 17,
+      "num_sample_evaluable": 17,
+      "repair_gain_success_rate": 0.29411764705882354,
+      "repaired_success_rate": 0.8823529411764706,
+      "scaffold_preservation": 1.0,
+      "seed": 1,
+      "source": "repaired_molecule_rdkit_geometry_eval_with_fallback_external_proxies"
+    },
+    {
+      "anchor_validity": 1.0,
+      "baseline": "feedback_scaled_learned_editable_contact_policy",
+      "clash_free_rate": 0.8823529411764706,
+      "editable_validity": 1.0,
+      "internal_budget_types": [
+        "single_policy_output"
+      ],
+      "mean_anchor_error_reduction": 0.0,
+      "mean_clash_count": 0.17647058823529413,
+      "mean_clash_count_reduction": -0.17647058823529413,
+      "mean_contact_fingerprint_similarity": 0.8582807285593663,
+      "mean_contact_fingerprint_similarity_gain": -0.005200447425687475,
+      "mean_contact_recovery": 0.9002871200954145,
+      "mean_contact_recovery_gain": 0.021200980392156867,
+      "mean_internal_candidate_budget": 1.0,
+      "mean_ligand_efficiency_proxy": 0.03078459629494119,
+      "mean_logp": 0.5994705882352958,
+      "mean_posebusters_like_pass": 0.8823529411764706,
+      "mean_qed": 0.37805054423109263,
+      "mean_sa_fallback": 4.012352941176469,
+      "mean_vina_like_gain": -0.3612528927857508,
+      "mean_vina_like_proxy": 1.0318660623889013,
+      "num_repaired": 17,
+      "num_sample_evaluable": 17,
+      "repair_gain_success_rate": 0.23529411764705882,
+      "repaired_success_rate": 0.8823529411764706,
+      "scaffold_preservation": 1.0,
+      "seed": 2,
+      "source": "repaired_molecule_rdkit_geometry_eval_with_fallback_external_proxies"
+    }
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ]
+}

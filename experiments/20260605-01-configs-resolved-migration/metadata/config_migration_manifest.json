@@ -1,0 +1,353 @@
+{
+  "schema_version": "config_migration_manifest_v1",
+  "experiment_id": "20260605-01-configs-resolved-migration",
+  "experiment_name": "configs-resolved-migration",
+  "created_date": "2026-06-05",
+  "purpose": "Move single-experiment resolved-ish configs from project-level configs/ into experiments/<experiment_id>/configs/resolved/ while preserving project-level stable templates/protocols.",
+  "boundary": "Historical docs and output metadata retaining old configs/... paths are provenance records and were not batch rewritten.",
+  "moved_resolved_configs": [
+    {
+      "source_path": "configs/data/failed_candidate_smoke.yaml",
+      "target_path": "experiments/20260531-01-smoke-file-pipeline/configs/resolved/data/failed_candidate_smoke.yaml",
+      "owner_experiment_id": "20260531-01-smoke-file-pipeline",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "4f36ec57f4972ff7c8a8e08f2db8edc54c5c6e938641820465597c2ab7b1ccb5",
+      "sha256_after": "4f36ec57f4972ff7c8a8e08f2db8edc54c5c6e938641820465597c2ab7b1ccb5"
+    },
+    {
+      "source_path": "configs/feedback/smoke.yaml",
+      "target_path": "experiments/20260531-01-smoke-file-pipeline/configs/resolved/feedback/smoke.yaml",
+      "owner_experiment_id": "20260531-01-smoke-file-pipeline",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "33eeb58e01f0f427599633622606d780560a9f555ae3ed73815d065bd035983d",
+      "sha256_after": "33eeb58e01f0f427599633622606d780560a9f555ae3ed73815d065bd035983d"
+    },
+    {
+      "source_path": "configs/baselines/smoke.yaml",
+      "target_path": "experiments/20260531-01-smoke-file-pipeline/configs/resolved/baselines/smoke.yaml",
+      "owner_experiment_id": "20260531-01-smoke-file-pipeline",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "2b6009185caa7f1e50619f5546b20fb664034355e24502d4275cd8f664320f64",
+      "sha256_after": "2b6009185caa7f1e50619f5546b20fb664034355e24502d4275cd8f664320f64"
+    },
+    {
+      "source_path": "configs/eval_smoke_summary.yaml",
+      "target_path": "experiments/20260531-01-smoke-file-pipeline/configs/resolved/analysis/eval_smoke_summary.yaml",
+      "owner_experiment_id": "20260531-01-smoke-file-pipeline",
+      "action": "cross_experiment_summary_snapshot",
+      "status": "moved",
+      "sha256_before": "3ed5394cd6befd6092b15670f8219d1d4d3046422f16c575bc79ad5eb0fe8e96",
+      "sha256_after": "3ed5394cd6befd6092b15670f8219d1d4d3046422f16c575bc79ad5eb0fe8e96"
+    },
+    {
+      "source_path": "configs/baselines/repair_smoke.yaml",
+      "target_path": "experiments/20260601-01-smoke-repair-baselines/configs/resolved/baselines/repair_smoke.yaml",
+      "owner_experiment_id": "20260601-01-smoke-repair-baselines",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "b9356b11416cd8c5cf154ae01837a0d41ed1eddd37e69be642d637b05453c6e3",
+      "sha256_after": "b9356b11416cd8c5cf154ae01837a0d41ed1eddd37e69be642d637b05453c6e3"
+    },
+    {
+      "source_path": "configs/baselines/eval_repaired_smoke.yaml",
+      "target_path": "experiments/20260601-01-smoke-repair-baselines/configs/resolved/baselines/eval_repaired_smoke.yaml",
+      "owner_experiment_id": "20260601-01-smoke-repair-baselines",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "f4f71238a5f07f9e30f38c9451571f67afc9eb279d8c21e082e59dcb62a13dec",
+      "sha256_after": "f4f71238a5f07f9e30f38c9451571f67afc9eb279d8c21e082e59dcb62a13dec"
+    },
+    {
+      "source_path": "configs/data/failed_candidate_smoke_plus.yaml",
+      "target_path": "experiments/20260601-02-smoke-plus-expansion-and-variants/configs/resolved/data/failed_candidate_smoke_plus.yaml",
+      "owner_experiment_id": "20260601-02-smoke-plus-expansion-and-variants",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "cd2fcf31dd0b361a1b2f525238f7fcb6ae17f459f5cc2b402831bccd56a94acb",
+      "sha256_after": "cd2fcf31dd0b361a1b2f525238f7fcb6ae17f459f5cc2b402831bccd56a94acb"
+    },
+    {
+      "source_path": "configs/feedback/smoke_plus.yaml",
+      "target_path": "experiments/20260601-02-smoke-plus-expansion-and-variants/configs/resolved/feedback/smoke_plus.yaml",
+      "owner_experiment_id": "20260601-02-smoke-plus-expansion-and-variants",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "94317ef971cb5332b94ff717be90ca5b9d3a0c3ad5d6277d762af56479b24ab5",
+      "sha256_after": "94317ef971cb5332b94ff717be90ca5b9d3a0c3ad5d6277d762af56479b24ab5"
+    },
+    {
+      "source_path": "configs/baselines/smoke_plus.yaml",
+      "target_path": "experiments/20260601-02-smoke-plus-expansion-and-variants/configs/resolved/baselines/smoke_plus.yaml",
+      "owner_experiment_id": "20260601-02-smoke-plus-expansion-and-variants",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "7f4fbe392d308f7a61c60cca619baeab6a66223865357a86800b7818721c425e",
+      "sha256_after": "7f4fbe392d308f7a61c60cca619baeab6a66223865357a86800b7818721c425e"
+    },
+    {
+      "source_path": "configs/baselines/repair_smoke_plus.yaml",
+      "target_path": "experiments/20260601-02-smoke-plus-expansion-and-variants/configs/resolved/baselines/repair_smoke_plus.yaml",
+      "owner_experiment_id": "20260601-02-smoke-plus-expansion-and-variants",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "548aeb15de34cd62a9cfee75ef7d0a52448f139aa31bc91c38b98d86736175ef",
+      "sha256_after": "548aeb15de34cd62a9cfee75ef7d0a52448f139aa31bc91c38b98d86736175ef"
+    },
+    {
+      "source_path": "configs/baselines/eval_repaired_smoke_plus.yaml",
+      "target_path": "experiments/20260601-02-smoke-plus-expansion-and-variants/configs/resolved/baselines/eval_repaired_smoke_plus.yaml",
+      "owner_experiment_id": "20260601-02-smoke-plus-expansion-and-variants",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "5820853ab6d5b895f714b0865b634ed00e7ee0ce0f9aad471f8466e0219597aa",
+      "sha256_after": "5820853ab6d5b895f714b0865b634ed00e7ee0ce0f9aad471f8466e0219597aa"
+    },
+    {
+      "source_path": "configs/eval_smoke_plus_summary.yaml",
+      "target_path": "experiments/20260601-02-smoke-plus-expansion-and-variants/configs/resolved/analysis/eval_smoke_plus_summary.yaml",
+      "owner_experiment_id": "20260601-02-smoke-plus-expansion-and-variants",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "ce2ee2cde91efb5d001628d409cf732d2052e9de68bd289d9547b9cad5f21f5e",
+      "sha256_after": "ce2ee2cde91efb5d001628d409cf732d2052e9de68bd289d9547b9cad5f21f5e"
+    },
+    {
+      "source_path": "configs/data/failed_candidate_smoke_plus_local_proposal.yaml",
+      "target_path": "experiments/20260601-04-vina-pose-and-local-edit-diagnostics/configs/resolved/data/failed_candidate_smoke_plus_local_proposal.yaml",
+      "owner_experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "59479ce88e3fca5edf3c92ce9f9a5b138770d74f153f0aacaa9e84a506ef1806",
+      "sha256_after": "59479ce88e3fca5edf3c92ce9f9a5b138770d74f153f0aacaa9e84a506ef1806"
+    },
+    {
+      "source_path": "configs/data/failed_candidate_smoke_plus_vina_local_edit.yaml",
+      "target_path": "experiments/20260601-04-vina-pose-and-local-edit-diagnostics/configs/resolved/data/failed_candidate_smoke_plus_vina_local_edit.yaml",
+      "owner_experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "36fbf6fd50fb8b1ddb5985d1ed913fd3d4574a78c83dac90aa237416f1a543e5",
+      "sha256_after": "36fbf6fd50fb8b1ddb5985d1ed913fd3d4574a78c83dac90aa237416f1a543e5"
+    },
+    {
+      "source_path": "configs/feedback/smoke_plus_docking_like.yaml",
+      "target_path": "experiments/20260601-04-vina-pose-and-local-edit-diagnostics/configs/resolved/feedback/smoke_plus_docking_like.yaml",
+      "owner_experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "action": "mixed_output_root_snapshot",
+      "status": "moved",
+      "sha256_before": "d93d6b2a626e9c0fe0ec6f584daac830adac0b1249cf0980c2bdd7902a6de5a5",
+      "sha256_after": "d93d6b2a626e9c0fe0ec6f584daac830adac0b1249cf0980c2bdd7902a6de5a5"
+    },
+    {
+      "source_path": "configs/feedback/smoke_plus_local_proposal.yaml",
+      "target_path": "experiments/20260601-04-vina-pose-and-local-edit-diagnostics/configs/resolved/feedback/smoke_plus_local_proposal.yaml",
+      "owner_experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "268e2186f6670628e800b0e1534e8bb38593f9b8074b5107438d082bf0946211",
+      "sha256_after": "268e2186f6670628e800b0e1534e8bb38593f9b8074b5107438d082bf0946211"
+    },
+    {
+      "source_path": "configs/feedback/smoke_plus_vina_docked_pose_smoke.yaml",
+      "target_path": "experiments/20260601-04-vina-pose-and-local-edit-diagnostics/configs/resolved/feedback/smoke_plus_vina_docked_pose_smoke.yaml",
+      "owner_experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "7c27044255d3bd8cb9dd18380bd2361e76512eb732ed00ec0dc7a8bff69de77a",
+      "sha256_after": "7c27044255d3bd8cb9dd18380bd2361e76512eb732ed00ec0dc7a8bff69de77a"
+    },
+    {
+      "source_path": "configs/feedback/smoke_plus_vina_local_edit.yaml",
+      "target_path": "experiments/20260601-04-vina-pose-and-local-edit-diagnostics/configs/resolved/feedback/smoke_plus_vina_local_edit.yaml",
+      "owner_experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "b56c7a057a2929292d9919accdc27cab21cedd711bbf2e5124ce36069d9e8579",
+      "sha256_after": "b56c7a057a2929292d9919accdc27cab21cedd711bbf2e5124ce36069d9e8579"
+    },
+    {
+      "source_path": "configs/baselines/repair_smoke_plus_docking_like.yaml",
+      "target_path": "experiments/20260601-04-vina-pose-and-local-edit-diagnostics/configs/resolved/baselines/repair_smoke_plus_docking_like.yaml",
+      "owner_experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "action": "mixed_output_root_snapshot",
+      "status": "moved",
+      "sha256_before": "3945f469680a4464567a86c3a487f3d6cd41ad249da2645eeee3cf3a8881aaad",
+      "sha256_after": "3945f469680a4464567a86c3a487f3d6cd41ad249da2645eeee3cf3a8881aaad"
+    },
+    {
+      "source_path": "configs/baselines/eval_repaired_smoke_plus_docking_like.yaml",
+      "target_path": "experiments/20260601-04-vina-pose-and-local-edit-diagnostics/configs/resolved/baselines/eval_repaired_smoke_plus_docking_like.yaml",
+      "owner_experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "action": "mixed_output_root_snapshot",
+      "status": "moved",
+      "sha256_before": "93d22762944f0bdebd34f2234d39e88e27cb17bbd7bd1f2c33264de52eb9fe88",
+      "sha256_after": "93d22762944f0bdebd34f2234d39e88e27cb17bbd7bd1f2c33264de52eb9fe88"
+    },
+    {
+      "source_path": "configs/baselines/repair_smoke_plus_local_proposal.yaml",
+      "target_path": "experiments/20260601-04-vina-pose-and-local-edit-diagnostics/configs/resolved/baselines/repair_smoke_plus_local_proposal.yaml",
+      "owner_experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "action": "mixed_output_root_snapshot",
+      "status": "moved",
+      "sha256_before": "4b39580627e359d914d530bc6278dfc02e86c57da688f17aaac41677dbf53d98",
+      "sha256_after": "4b39580627e359d914d530bc6278dfc02e86c57da688f17aaac41677dbf53d98"
+    },
+    {
+      "source_path": "configs/baselines/eval_repaired_smoke_plus_local_proposal.yaml",
+      "target_path": "experiments/20260601-04-vina-pose-and-local-edit-diagnostics/configs/resolved/baselines/eval_repaired_smoke_plus_local_proposal.yaml",
+      "owner_experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "action": "mixed_output_root_snapshot",
+      "status": "moved",
+      "sha256_before": "f84987f9488b02e48905eb78fee4a02e8013da847bf844a6e16acae3df2f3ce3",
+      "sha256_after": "f84987f9488b02e48905eb78fee4a02e8013da847bf844a6e16acae3df2f3ce3"
+    },
+    {
+      "source_path": "configs/baselines/repair_smoke_plus_vina_docked_pose_smoke.yaml",
+      "target_path": "experiments/20260601-04-vina-pose-and-local-edit-diagnostics/configs/resolved/baselines/repair_smoke_plus_vina_docked_pose_smoke.yaml",
+      "owner_experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "a010561d3f2bb4afaf4965e146fa7fda2ed0abd52f630d2efc6311fc706e6baf",
+      "sha256_after": "a010561d3f2bb4afaf4965e146fa7fda2ed0abd52f630d2efc6311fc706e6baf"
+    },
+    {
+      "source_path": "configs/baselines/eval_repaired_smoke_plus_vina_docked_pose_smoke.yaml",
+      "target_path": "experiments/20260601-04-vina-pose-and-local-edit-diagnostics/configs/resolved/baselines/eval_repaired_smoke_plus_vina_docked_pose_smoke.yaml",
+      "owner_experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "272bd4df1224ced0c1113af2982492da67cf36d8a13abc2314f5d5a2a672bcfc",
+      "sha256_after": "272bd4df1224ced0c1113af2982492da67cf36d8a13abc2314f5d5a2a672bcfc"
+    },
+    {
+      "source_path": "configs/baselines/repair_smoke_plus_vina_local_edit.yaml",
+      "target_path": "experiments/20260601-04-vina-pose-and-local-edit-diagnostics/configs/resolved/baselines/repair_smoke_plus_vina_local_edit.yaml",
+      "owner_experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "39972c9f897b85bc1b4609548429bb0119baea04bdff2269245b28af7532e9b2",
+      "sha256_after": "39972c9f897b85bc1b4609548429bb0119baea04bdff2269245b28af7532e9b2"
+    },
+    {
+      "source_path": "configs/baselines/eval_repaired_smoke_plus_vina_local_edit.yaml",
+      "target_path": "experiments/20260601-04-vina-pose-and-local-edit-diagnostics/configs/resolved/baselines/eval_repaired_smoke_plus_vina_local_edit.yaml",
+      "owner_experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "bc6c97edaf3c3addf2af1a902e71da3aaa9b2af9ee7e638fb285d772aa3d2a84",
+      "sha256_after": "bc6c97edaf3c3addf2af1a902e71da3aaa9b2af9ee7e638fb285d772aa3d2a84"
+    },
+    {
+      "source_path": "configs/eval_local_proposal_failed_vina.yaml",
+      "target_path": "experiments/20260601-04-vina-pose-and-local-edit-diagnostics/configs/resolved/analysis/eval_local_proposal_failed_vina.yaml",
+      "owner_experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "0616f47c32101da01db5b060098287ab5276235949f4f5851d587a1005834307",
+      "sha256_after": "0616f47c32101da01db5b060098287ab5276235949f4f5851d587a1005834307"
+    },
+    {
+      "source_path": "configs/data/failed_candidate_smoke_plus_contact_degraded_local_edit.yaml",
+      "target_path": "experiments/20260601-05-contact-degraded-local-edit-core/configs/resolved/data/failed_candidate_smoke_plus_contact_degraded_local_edit.yaml",
+      "owner_experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "67053ca6f4454e1de5de01a1eb1fcdcecdd7935e03f2ae7a23f43475eadf2f47",
+      "sha256_after": "67053ca6f4454e1de5de01a1eb1fcdcecdd7935e03f2ae7a23f43475eadf2f47"
+    },
+    {
+      "source_path": "configs/feedback/smoke_plus_contact_degraded_local_edit.yaml",
+      "target_path": "experiments/20260601-05-contact-degraded-local-edit-core/configs/resolved/feedback/smoke_plus_contact_degraded_local_edit.yaml",
+      "owner_experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "dd44f111e0550326eb2f026cdf92d8dd4ace4b9823e6df2e44668929fb81bb5b",
+      "sha256_after": "dd44f111e0550326eb2f026cdf92d8dd4ace4b9823e6df2e44668929fb81bb5b"
+    },
+    {
+      "source_path": "configs/baselines/repair_smoke_plus_contact_degraded_local_edit.yaml",
+      "target_path": "experiments/20260601-05-contact-degraded-local-edit-core/configs/resolved/baselines/repair_smoke_plus_contact_degraded_local_edit.yaml",
+      "owner_experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "c3f978d3b89e8a6a8dfbef0b036247b657784460235ecf907e53d1509ec8c6fb",
+      "sha256_after": "c3f978d3b89e8a6a8dfbef0b036247b657784460235ecf907e53d1509ec8c6fb"
+    },
+    {
+      "source_path": "configs/baselines/eval_repaired_smoke_plus_contact_degraded_local_edit.yaml",
+      "target_path": "experiments/20260601-05-contact-degraded-local-edit-core/configs/resolved/baselines/eval_repaired_smoke_plus_contact_degraded_local_edit.yaml",
+      "owner_experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "action": "single_experiment_resolved",
+      "status": "moved",
+      "sha256_before": "408d3fe02a809919257e1224c527ea91a5b46af12daa52f10e8a41cf51e19fef",
+      "sha256_after": "408d3fe02a809919257e1224c527ea91a5b46af12daa52f10e8a41cf51e19fef"
+    }
+  ],
+  "mixed_config_snapshots_and_templates": [
+    {
+      "source_path": "configs/data/smoke_download.yaml",
+      "target_path": "experiments/20260531-01-smoke-file-pipeline/configs/resolved/data/smoke_download.yaml",
+      "owner_experiment_id": "20260531-01-smoke-file-pipeline",
+      "action": "mixed_dataset_download_snapshot",
+      "status": "copied_resolved_snapshot",
+      "sha256": "8342948ce1b9a468a8e6cfaa07f82002564421897eaf965342ccc74667b05276"
+    },
+    {
+      "source_path": "configs/data/smoke_plus_download.yaml",
+      "target_path": "experiments/20260601-02-smoke-plus-expansion-and-variants/configs/resolved/data/smoke_plus_download.yaml",
+      "owner_experiment_id": "20260601-02-smoke-plus-expansion-and-variants",
+      "action": "mixed_dataset_download_snapshot",
+      "status": "copied_resolved_snapshot",
+      "sha256": "e6c6dc244736a1bfc636d207103d5a2fa0e5d7f6bbc545e83f95aa79ecbe6183"
+    },
+    {
+      "source_path": "configs/third_party/diffsbdd_audit_protocol.yaml",
+      "target_path": "experiments/20260603-01-third-party-failure-audit-mvp/configs/resolved/third_party/diffsbdd_audit_protocol.yaml",
+      "owner_experiment_id": "20260603-01-third-party-failure-audit-mvp",
+      "action": "mixed_third_party_mvp_snapshot",
+      "status": "copied_resolved_snapshot",
+      "sha256": "d28ffe08da728d9bc7f8ceb522eee748b881b0456882e23817361b63dfc87517"
+    },
+    {
+      "source_path": "configs/third_party/difflinker_audit_protocol.yaml",
+      "target_path": "experiments/20260603-01-third-party-failure-audit-mvp/configs/resolved/third_party/difflinker_audit_protocol.yaml",
+      "owner_experiment_id": "20260603-01-third-party-failure-audit-mvp",
+      "action": "mixed_third_party_mvp_snapshot",
+      "status": "copied_resolved_snapshot",
+      "sha256": "87e6c43fa6a8b1a5faeac36747c8c39154350232917a8c3fe86aa4ad5ca4918d"
+    },
+    {
+      "source_path": "configs/data/smoke_download.yaml",
+      "target_path": "configs/data/download_templates/rcsb_smoke.yaml",
+      "owner_experiment_id": null,
+      "action": "project_level_download_template_without_experiment_docs_manifest",
+      "status": "template_created"
+    },
+    {
+      "source_path": "configs/data/smoke_plus_download.yaml",
+      "target_path": "configs/data/download_templates/rcsb_smoke_plus.yaml",
+      "owner_experiment_id": null,
+      "action": "project_level_download_template_without_experiment_docs_manifest",
+      "status": "template_created"
+    }
+  ],
+  "project_level_configs_retained": [
+    "configs/README.md",
+    "configs/CLAUDE.md",
+    "configs/environment_ml_optional.yml",
+    "configs/audit/**",
+    "configs/data/rgroup_smoke.yaml",
+    "configs/data/rgroup_smoke_plus.yaml",
+    "configs/data/download_templates/*.yaml",
+    "configs/third_party/*_original_protocol.yaml",
+    "configs/third_party/*_audit_protocol.yaml for stable templates and blocked/pending method protocols"
+  ],
+  "risk_notes": [
+    "Some migrated configs are current snapshots and may not exactly match every historical run-time config.",
+    "docking_like/local_proposal configs retain mixed output roots as historical snapshots; output paths were not silently normalized.",
+    "DiffSBDD/DiffLinker project-level audit configs were templated after exact MVP resolved copies were saved in the experiment directory."
+  ]
+}

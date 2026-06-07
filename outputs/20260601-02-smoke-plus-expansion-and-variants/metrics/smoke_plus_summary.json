@@ -1,0 +1,48 @@
+{
+  "baselines": [
+    "direct_regeneration",
+    "best_of_n",
+    "rerank_only",
+    "no_feedback_repair",
+    "feedback_geometry_refinement",
+    "feedback_learned_geometry_policy",
+    "feedback_kernel_geometry_policy",
+    "feedback_knn_geometry_policy",
+    "feedback_linear_refinement"
+  ],
+  "name": "smoke_plus_summary",
+  "non_evaluable_feedback_records": 21,
+  "notes": "Smoke metrics use RDKit descriptors and scaffold/anchor state plus template failure labels; non-evaluable sample_quality records must be excluded from model-performance claims; replace with true repaired molecules before model-performance claims.",
+  "num_baselines": 9,
+  "num_evaluable_for_repair": 63,
+  "repaired_failure_type_metrics_path": "outputs/metrics/repaired_smoke_plus_by_failure_type.json",
+  "repaired_molecule_metrics_path": "outputs/metrics/repaired_smoke_plus.json",
+  "repaired_molecule_success_rates": {
+    "best_of_n": 0.6904761904761905,
+    "coordinate_rollback": 1.0,
+    "direct_regeneration": 0.5476190476190477,
+    "feedback_geometry_refinement": 0.7857142857142857,
+    "feedback_kernel_geometry_policy": 0.7023809523809523,
+    "feedback_knn_geometry_policy": 0.6904761904761905,
+    "feedback_learned_geometry_policy": 0.75,
+    "feedback_linear_refinement": 0.8809523809523809,
+    "feedback_rule_repair": 1.0,
+    "identity_failed_candidate": 0.6904761904761905,
+    "no_feedback_repair": 0.6904761904761905,
+    "rerank_only": 0.6904761904761905
+  },
+  "repaired_num_records": 1008,
+  "result_type": "smoke_plus_repaired_molecule_fallback_proxy",
+  "success_rates": {
+    "best_of_n": 0.4523809523809524,
+    "direct_regeneration": 0.4523809523809524,
+    "feedback_geometry_refinement": 0.4523809523809524,
+    "feedback_kernel_geometry_policy": 0.4523809523809524,
+    "feedback_knn_geometry_policy": 0.4523809523809524,
+    "feedback_learned_geometry_policy": 0.4523809523809524,
+    "feedback_linear_refinement": 0.4523809523809524,
+    "no_feedback_repair": 0.4523809523809524,
+    "rerank_only": 0.4523809523809524
+  },
+  "warning": "Larger than the original smoke set, but still not an official benchmark or publication-level split."
+}

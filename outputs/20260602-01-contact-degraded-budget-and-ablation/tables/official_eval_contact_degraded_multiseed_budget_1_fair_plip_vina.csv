@@ -1,0 +1,5 @@
+budget_tier,baseline,num_records,mean_internal_candidate_budget,internal_budget_types,plip_error_count,vina_error_count,official_plip_recovery_gain,official_plip_similarity_gain,official_plip_repaired_interaction_count,vina_score_only_energy,interpretation_role
+budget_1_fair,feedback_ridge_editable_contact_policy,53,1.0,single_policy_output,0,0,0.007646474677259188,0.008316531752480118,9.49056603773585,-6.559283018867925,fair_within_budget_1
+budget_1_fair,feedback_learned_editable_contact_policy,53,1.0,single_policy_output,0,0,0.006451269683643074,-0.011851670342236373,9.679245283018869,-6.599094339622639,fair_within_budget_1
+budget_1_fair,no_feedback_repair,53,1.0,single_failed_candidate,0,0,0.0,0.0,9.433962264150944,-6.985490566037734,fair_within_budget_1
+budget_1_fair,rerank_only,53,1.0,single_failed_candidate,0,0,0.0,0.0,9.433962264150944,-6.985490566037734,fair_within_budget_1

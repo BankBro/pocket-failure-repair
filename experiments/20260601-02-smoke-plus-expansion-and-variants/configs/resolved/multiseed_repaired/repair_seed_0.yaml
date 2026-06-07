@@ -1,0 +1,26 @@
+{
+  "name": "repair_smoke_plus",
+  "seed": 0,
+  "input": {
+    "candidates_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/failed_candidates_smoke_plus.jsonl",
+    "feedback_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/feedback_smoke_plus.jsonl"
+  },
+  "output": {
+    "repaired_candidates_path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260601-02-smoke-plus-expansion-and-variants/processed/multiseed_repaired/repaired_candidates_seed_0.jsonl",
+    "repaired_molecules_dir": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260601-02-smoke-plus-expansion-and-variants/processed/multiseed_repaired/molecules_seed_0"
+  },
+  "baselines": [
+    "direct_regeneration",
+    "best_of_n",
+    "rerank_only",
+    "no_feedback_repair",
+    "feedback_geometry_refinement",
+    "feedback_learned_geometry_policy",
+    "feedback_kernel_geometry_policy",
+    "feedback_knn_geometry_policy",
+    "feedback_linear_refinement",
+    "coordinate_rollback",
+    "identity_failed_candidate",
+    "feedback_rule_repair"
+  ]
+}

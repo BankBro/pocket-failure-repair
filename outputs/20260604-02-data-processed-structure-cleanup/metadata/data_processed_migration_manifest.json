@@ -1,0 +1,1903 @@
+{
+  "copy_verification": {
+    "copied": [
+      {
+        "sha256_verified": "de712364ff99763e25f9113acbc29fc21f7e4836f4336f1781acec70d7533757",
+        "source_path": "data/processed/evaluated_repaired_contact_degraded_directional_learned_seed0.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_contact_degraded_directional_learned_seed0.jsonl"
+      },
+      {
+        "sha256_verified": "cef4dbb7806cb99849d2bb8987b9209d767778e62641ea00f8eb1033ea3701e2",
+        "source_path": "data/processed/evaluated_repaired_contact_degraded_directional_learned_seed1.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_contact_degraded_directional_learned_seed1.jsonl"
+      },
+      {
+        "sha256_verified": "e6d778860ddf8f1c1b8f14b5a94e896520d5f4342d03e16e048dacf76f920fd2",
+        "source_path": "data/processed/evaluated_repaired_contact_degraded_directional_learned_seed2.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_contact_degraded_directional_learned_seed2.jsonl"
+      },
+      {
+        "sha256_verified": "f7a251f1f0a3a3b778484e597a803c836a23da33f60bac8d14d917f2f1c8178d",
+        "source_path": "data/processed/evaluated_repaired_contact_degraded_scaled_learned_seed0.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_contact_degraded_scaled_learned_seed0.jsonl"
+      },
+      {
+        "sha256_verified": "3f0642ff970b34a01e00699cb0c5da95042700ec606744b357b90e33933308f2",
+        "source_path": "data/processed/evaluated_repaired_contact_degraded_scaled_learned_seed1.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_contact_degraded_scaled_learned_seed1.jsonl"
+      },
+      {
+        "sha256_verified": "23464fcfec75c260657d888f639d6377f06f39cbb128ab877c8e42911ef25320",
+        "source_path": "data/processed/evaluated_repaired_contact_degraded_scaled_learned_seed2.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_contact_degraded_scaled_learned_seed2.jsonl"
+      },
+      {
+        "sha256_verified": "b24b79d8f9a56153730eb8e3328f54f1962ffaa4e37c1d7d66deb9f4021c9dc4",
+        "source_path": "data/processed/evaluated_repaired_smoke.jsonl",
+        "target_path": "outputs/20260601-01-smoke-repair-baselines/processed/evaluated_repaired_smoke.jsonl"
+      },
+      {
+        "sha256_verified": "c1150e54d03e86ab4c4eea227510839e97f3aa7e78ba22e408db3645e46faccc",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus.jsonl",
+        "target_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/evaluated_repaired_smoke_plus.jsonl"
+      },
+      {
+        "sha256_verified": "79638d5e1fc81b053f4b7208a6c63107c5a6e01bc972b78f6093ee6f76f78b87",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit.jsonl"
+      },
+      {
+        "sha256_verified": "045b61008cdae8918cc98109e4b65fcbfcc69780c46cd222433086451bd55358",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_multiseed_classified_policy.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_multiseed_classified_policy.jsonl"
+      },
+      {
+        "sha256_verified": "3ac620d80eab1088110b59bf8e15b264f68bc38cc06124266681876aebca6901",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_multiseed_key_equalized_budget.jsonl",
+        "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_multiseed_key_equalized_budget.jsonl"
+      },
+      {
+        "sha256_verified": "c8ac0877662394263e9aa255cfd0857049727cf1dab4d9b7980cbe47b87b13b1",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_multiseed_shuffled_ablation.jsonl",
+        "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_multiseed_shuffled_ablation.jsonl"
+      },
+      {
+        "sha256_verified": "97ffabd8859e33cd4cde1ac47322fbe9992b2d5c4c6e95962e3851ad35337c64",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0.jsonl"
+      },
+      {
+        "sha256_verified": "bb3b858243360ed055140479b7a3d52150b659093b160385774df748b1463af7",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_classified_policy.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_classified_policy.jsonl"
+      },
+      {
+        "sha256_verified": "20d2a673084a7d7634357d4c062e8e508b9254c93586b9984779dc5ed762f0ca",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_directional_classified_policy.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_directional_classified_policy.jsonl"
+      },
+      {
+        "sha256_verified": "2a5d5b05f27a34c1d3f11aeb02bcf4f86380d0a8c6d515f18927c81c01ce4d6b",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_key_equalized_budget.jsonl",
+        "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_key_equalized_budget.jsonl"
+      },
+      {
+        "sha256_verified": "ee320737e5e1b86e09a3c38258e86cc28374849e688523679d35c0120378e6b6",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_shuffled_ablation.jsonl",
+        "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_shuffled_ablation.jsonl"
+      },
+      {
+        "sha256_verified": "96ba950494d7862af95d055950ab237b8a2c5b4cbfb55333d0cf49ffc87ee770",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1.jsonl"
+      },
+      {
+        "sha256_verified": "6a1485f901d953afa45a79c7c3cad225e4ab9a6cd0803bb057165d6fa5d378f1",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1_classified_policy.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1_classified_policy.jsonl"
+      },
+      {
+        "sha256_verified": "b3a553d5e106384734efef75c136756b862597d5434a045f23c99582de07cbf7",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1_directional_classified_policy.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1_directional_classified_policy.jsonl"
+      },
+      {
+        "sha256_verified": "38e9d901ec460d5d443fce3444fefff1349d861d8ed3b782e81a67eef9c36193",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1_shuffled_ablation.jsonl",
+        "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1_shuffled_ablation.jsonl"
+      },
+      {
+        "sha256_verified": "aef5820e64c8dcddfda0bef2223d0cfeb08a7398176110fd13af99031e478f6a",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2.jsonl"
+      },
+      {
+        "sha256_verified": "0b6803e4edaa73a115a6a158dd16064170c178da1744efe8a8f3ee8c1561c0cb",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2_classified_policy.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2_classified_policy.jsonl"
+      },
+      {
+        "sha256_verified": "97c7de4fef8fc01cec1efd69e632249fa0cd0c78527c5418550a198ed2e3dbd6",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2_directional_classified_policy.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2_directional_classified_policy.jsonl"
+      },
+      {
+        "sha256_verified": "9e0df77f28f8a113a18519aac1a54ee754cc437d810972842e078ed7ad4d265e",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2_shuffled_ablation.jsonl",
+        "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2_shuffled_ablation.jsonl"
+      },
+      {
+        "sha256_verified": "31b6a31811c5c67266150dc45b8a582b96e81172df8357612eb536a2d667b3af",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_docking_like.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/evaluated_repaired_smoke_plus_docking_like.jsonl"
+      },
+      {
+        "sha256_verified": "35b68d70259916e5c475b269ed3a3799276544987441c19279d1d6ccf9cd8b7c",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_local_proposal.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/evaluated_repaired_smoke_plus_local_proposal.jsonl"
+      },
+      {
+        "sha256_verified": "1e8a9573dfcb568ef6551b7d266f66a0234a3a8a3dbc1dcee1333c151b672df8",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_vina_docked_pose_smoke.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/evaluated_repaired_smoke_plus_vina_docked_pose_smoke.jsonl"
+      },
+      {
+        "sha256_verified": "67dcb6bb6b697ae17b063ceedb2fbf27f53103fd2e15d29af4f06716c184ee06",
+        "source_path": "data/processed/evaluated_repaired_smoke_plus_vina_local_edit.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/evaluated_repaired_smoke_plus_vina_local_edit.jsonl"
+      },
+      {
+        "sha256_verified": "af5718523862abf7f4e4039f9c635d2deea0c5fcad31344f4d55db9f3b9fd874",
+        "source_path": "data/processed/failed_candidates_smoke.jsonl",
+        "target_path": "outputs/20260531-01-smoke-file-pipeline/processed/failed_candidates_smoke.jsonl"
+      },
+      {
+        "sha256_verified": "15ab8a5f080fd8a5847878a2d1898dae6e8ac5acc5b28ce3b8604d0b072dc028",
+        "source_path": "data/processed/failed_candidates_smoke_plus.jsonl",
+        "target_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/failed_candidates_smoke_plus.jsonl"
+      },
+      {
+        "sha256_verified": "81fe41e3b3289a327e6fb1ef1803a37d17ba84c007b8e871e42f84151f894c87",
+        "source_path": "data/processed/failed_candidates_smoke_plus_contact_degraded_local_edit.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_candidates_smoke_plus_contact_degraded_local_edit.jsonl"
+      },
+      {
+        "sha256_verified": "a29f13fb44d7c9260e9624576bbc069fa9ee93c9af27dfc32d0ea701219e5c74",
+        "source_path": "data/processed/failed_candidates_smoke_plus_contact_degraded_local_edit_seed0.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_candidates_smoke_plus_contact_degraded_local_edit_seed0.jsonl"
+      },
+      {
+        "sha256_verified": "748bdcccf733e456672cb60b863308f6876a0fcef18f4c46829ff89a8492b3d3",
+        "source_path": "data/processed/failed_candidates_smoke_plus_contact_degraded_local_edit_seed1.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_candidates_smoke_plus_contact_degraded_local_edit_seed1.jsonl"
+      },
+      {
+        "sha256_verified": "23634c90be16db23f6649c508bce0922f2ce6bf8161f2faa8cd86e338a7ceeb5",
+        "source_path": "data/processed/failed_candidates_smoke_plus_contact_degraded_local_edit_seed2.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_candidates_smoke_plus_contact_degraded_local_edit_seed2.jsonl"
+      },
+      {
+        "sha256_verified": "18aba00ae532a73635be7a4edc9a41625a15277ed20329af0c6580f1b8173144",
+        "source_path": "data/processed/failed_candidates_smoke_plus_docking_like.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_docking_like.jsonl"
+      },
+      {
+        "sha256_verified": "a430953139ef70d9f2cc7371fb897c1a743e2a9643249c9d427bc46a76141300",
+        "source_path": "data/processed/failed_candidates_smoke_plus_local_proposal.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_local_proposal.jsonl"
+      },
+      {
+        "sha256_verified": "66a19b3707af3fb56c0a5228fe2e49f37d551f2b61706ee1b9474308296a3f4c",
+        "source_path": "data/processed/failed_candidates_smoke_plus_local_proposal_for_vina.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_local_proposal_for_vina.jsonl"
+      },
+      {
+        "sha256_verified": "d799c6c8877aa249c26b61489fb42914fcd7f30f74ce8c21b85f8aa1e28c8476",
+        "source_path": "data/processed/failed_candidates_smoke_plus_vina_docked_pose_smoke.errors.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_vina_docked_pose_smoke.errors.jsonl"
+      },
+      {
+        "sha256_verified": "19f7f11c128a6f9541cef797e9c5da9dc5b1a602da7bedb90c5399fe8f1c0d05",
+        "source_path": "data/processed/failed_candidates_smoke_plus_vina_docked_pose_smoke.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_vina_docked_pose_smoke.jsonl"
+      },
+      {
+        "sha256_verified": "50d6bdd63fa12ef588d29301e22d63ec2a5a78168bc40f0cb65b405db11ff390",
+        "source_path": "data/processed/failed_candidates_smoke_plus_vina_local_edit.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_vina_local_edit.jsonl"
+      },
+      {
+        "sha256_verified": "f4380d53c6721500ca1fb52f55472863b7243533d20cd034bcab808d6bcfe448",
+        "source_path": "data/processed/feedback_smoke.jsonl",
+        "target_path": "outputs/20260531-01-smoke-file-pipeline/processed/feedback_smoke.jsonl"
+      },
+      {
+        "sha256_verified": "05e1078b6dbcca4aa85ec401ba65608e3f14ae32df4ac41f81b5612388e259e4",
+        "source_path": "data/processed/feedback_smoke_plus.jsonl",
+        "target_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/feedback_smoke_plus.jsonl"
+      },
+      {
+        "sha256_verified": "fab8f31d1b4f8382d4d0fcc9237a6198920f20c602858d378b09c5e0b4effda0",
+        "source_path": "data/processed/feedback_smoke_plus_contact_degraded_local_edit.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/feedback_smoke_plus_contact_degraded_local_edit.jsonl"
+      },
+      {
+        "sha256_verified": "a3d71d15f4fb5c9ab836b98d65fb2ac8f72a6af9dc5fcbe94af7d8270ac4479d",
+        "source_path": "data/processed/feedback_smoke_plus_contact_degraded_local_edit_seed0.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/feedback_smoke_plus_contact_degraded_local_edit_seed0.jsonl"
+      },
+      {
+        "sha256_verified": "89bba971eb0316beff898f5711c3b31b31fd19e66e74f92f6e6eceff2a7ac7b4",
+        "source_path": "data/processed/feedback_smoke_plus_contact_degraded_local_edit_seed1.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/feedback_smoke_plus_contact_degraded_local_edit_seed1.jsonl"
+      },
+      {
+        "sha256_verified": "09483093594792a5424f37273afa8e51f6708c9298be5668314b4795b5cd7bff",
+        "source_path": "data/processed/feedback_smoke_plus_contact_degraded_local_edit_seed2.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/feedback_smoke_plus_contact_degraded_local_edit_seed2.jsonl"
+      },
+      {
+        "sha256_verified": "8a547788e3a1a6e038bd5dc219462e7dac828475b82052529db854283818801b",
+        "source_path": "data/processed/feedback_smoke_plus_docking_like.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/feedback_smoke_plus_docking_like.jsonl"
+      },
+      {
+        "sha256_verified": "917e468dee0e211b974f84490e57c19e01c1f32c8c09a47dcdf1304fd3236b97",
+        "source_path": "data/processed/feedback_smoke_plus_local_proposal.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/feedback_smoke_plus_local_proposal.jsonl"
+      },
+      {
+        "sha256_verified": "bd79700c315e63edd12ab9f7d26eb69f8b37bdf69a902ce6613311811f77aedb",
+        "source_path": "data/processed/feedback_smoke_plus_vina_docked_pose_smoke.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/feedback_smoke_plus_vina_docked_pose_smoke.jsonl"
+      },
+      {
+        "sha256_verified": "64e7161248dbbcf6e768b55355251d99641b2c587c115d49af423000231f5f50",
+        "source_path": "data/processed/feedback_smoke_plus_vina_local_edit.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/feedback_smoke_plus_vina_local_edit.jsonl"
+      },
+      {
+        "sha256_verified": "69465c5db71a7ee79d625cf3de7fbc511fdde79bd9be995d914a2f2c8d3c4635",
+        "source_path": "data/processed/repaired_candidates_contact_degraded_directional_learned_seed0.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_directional_learned_seed0.jsonl"
+      },
+      {
+        "sha256_verified": "873ab6a9c62c5763701e5c78660c642c53ea923b1f9b518041a6d203942d48f4",
+        "source_path": "data/processed/repaired_candidates_contact_degraded_directional_learned_seed1.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_directional_learned_seed1.jsonl"
+      },
+      {
+        "sha256_verified": "38aae45732893af5ba3f1f7a8b571773f5ea4e54c46ccf0b6b1b8170eac34198",
+        "source_path": "data/processed/repaired_candidates_contact_degraded_directional_learned_seed2.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_directional_learned_seed2.jsonl"
+      },
+      {
+        "sha256_verified": "3d6155b36560dfa5428a15b0ab92cd9f592ed3e0fe3e38fa6c5d3bc0f2710482",
+        "source_path": "data/processed/repaired_candidates_contact_degraded_scaled_learned_multiseed.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_scaled_learned_multiseed.jsonl"
+      },
+      {
+        "sha256_verified": "5089a8b984aa269167dc666c3c31b9169c86d29cff218d3be3c4832e5f7331ec",
+        "source_path": "data/processed/repaired_candidates_contact_degraded_scaled_learned_seed0.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_scaled_learned_seed0.jsonl"
+      },
+      {
+        "sha256_verified": "21c0ec7c19ae5d20924c372e74cde20616e9fc45802ac3b48a995e2060e02745",
+        "source_path": "data/processed/repaired_candidates_contact_degraded_scaled_learned_seed1.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_scaled_learned_seed1.jsonl"
+      },
+      {
+        "sha256_verified": "fa42db7e9f16a7fe5a23bbe3ed9cb39518e1fc2693188b3319f04f48f844f6f0",
+        "source_path": "data/processed/repaired_candidates_contact_degraded_scaled_learned_seed2.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_scaled_learned_seed2.jsonl"
+      },
+      {
+        "sha256_verified": "90a6391344cb170081f4973caffb5a70efa9f2ef454c1a3884fb5c63da143297",
+        "source_path": "data/processed/repaired_candidates_smoke.jsonl",
+        "target_path": "outputs/20260601-01-smoke-repair-baselines/processed/repaired_candidates_smoke.jsonl"
+      },
+      {
+        "sha256_verified": "e3b0cff0e16770195cac5bda9fddbdeb324cb5aa5db32ca6a40b59828bc99423",
+        "source_path": "data/processed/repaired_candidates_smoke_plus.jsonl",
+        "target_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/repaired_candidates_smoke_plus.jsonl"
+      },
+      {
+        "sha256_verified": "7b63834c541df2d5ff50e8151131336eeb931bc8dc81c4525dc3601c0e384781",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit.jsonl"
+      },
+      {
+        "sha256_verified": "937ef43fc547fcd401ce1275aef286560f0146aee25de6ba1e3b01593444bc80",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_expanded_key_baselines.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_expanded_key_baselines.jsonl"
+      },
+      {
+        "sha256_verified": "471dcdfa1ca9aad155613663d822d93e39253b665443db618afbddffcec6477e",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_multiseed.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_multiseed.jsonl"
+      },
+      {
+        "sha256_verified": "44244dbe904591824fa29d7ce553fd3ae8d1bea7f60802420951cc1825f5dd17",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_multiseed_key_baselines.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_multiseed_key_baselines.jsonl"
+      },
+      {
+        "sha256_verified": "646ca49ed04700b9cf256769125a19582454e9aa07cea546297799bcff4c0927",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0.jsonl"
+      },
+      {
+        "sha256_verified": "a0a49492ee154a2c0730c36172783a9af9de881b2c2ba94ebf7dd5aa09d33c57",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_classified_policy.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_classified_policy.jsonl"
+      },
+      {
+        "sha256_verified": "6357384cc6336f21fef6cc2e2503aef6e6d2b2b12d91facead767e583f7018ed",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_classified_probe.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_classified_probe.jsonl"
+      },
+      {
+        "sha256_verified": "120c07950ab7846be53d65a02b1c70b32523b1d0406c50bd3aec9df0bdf55015",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_directional_classified_policy.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_directional_classified_policy.jsonl"
+      },
+      {
+        "sha256_verified": "0441ec56051f211e1a4f47f29edd9dd0e1125b884fd50d22583be52a4726269c",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_directional_probe.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_directional_probe.jsonl"
+      },
+      {
+        "sha256_verified": "86f5dccebb41c0177ff1436ffa02ef9f711bf6803f5a1ec3f59442089822f815",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_shuffled_ablation.jsonl",
+        "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_shuffled_ablation.jsonl"
+      },
+      {
+        "sha256_verified": "78b88ce4ae55b9077f8e3ef7a7752ed0707a28393f1b1d4876161a455bcbffff",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_shuffled_probe.jsonl",
+        "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_shuffled_probe.jsonl"
+      },
+      {
+        "sha256_verified": "99d9bc6bf519460373065712da60ba63299f1c4832e80378add167cd06bb44ef",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1.jsonl"
+      },
+      {
+        "sha256_verified": "0c9f49ad4f72c61d4089f9bd8a6a4b8207f32fa29d7a77f6dbfb514b67318bef",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1_classified_policy.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1_classified_policy.jsonl"
+      },
+      {
+        "sha256_verified": "4c05e2e273ce5633970829bcb33c0e421065be9376feee1d0c3381212a7dcc50",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1_directional_classified_policy.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1_directional_classified_policy.jsonl"
+      },
+      {
+        "sha256_verified": "afff4551370184e593bff36ccce69595c2a8f79d2926c29b2ba0930997774560",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1_shuffled_ablation.jsonl",
+        "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1_shuffled_ablation.jsonl"
+      },
+      {
+        "sha256_verified": "403bbb4aaf8c8bb6462231d2f06fb4b364b8758391c6368f57a7dfe0cbaec19c",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2.jsonl",
+        "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2.jsonl"
+      },
+      {
+        "sha256_verified": "7c9e3b0a3d29b630a91a2f80b6d973ff91112d1cbfb9926b7638fff8d9dbbdc3",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2_classified_policy.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2_classified_policy.jsonl"
+      },
+      {
+        "sha256_verified": "f29b0f29d09c05a220a06a397f882c41b17d77158f3ab84f9155e231e5071c32",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2_directional_classified_policy.jsonl",
+        "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2_directional_classified_policy.jsonl"
+      },
+      {
+        "sha256_verified": "23c4b737d45fc9a0cc1975a98931b360d0526d97bfa839151f3a46afcc3b0f6a",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2_shuffled_ablation.jsonl",
+        "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2_shuffled_ablation.jsonl"
+      },
+      {
+        "sha256_verified": "95fd9c3c6516d80fa7dd77626d3e92c54b4dc573a2ae6bc0b1c1aa142c48a7d4",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_docking_like.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/repaired_candidates_smoke_plus_docking_like.jsonl"
+      },
+      {
+        "sha256_verified": "4330804fdd24b58852c860985ac3134afeeb083d47f890ad7872e477313bf4ca",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_local_proposal.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/repaired_candidates_smoke_plus_local_proposal.jsonl"
+      },
+      {
+        "sha256_verified": "95187f5e61b594b31cae87e3d7cfa28a8055a0e28fd31a2816432dd41b353405",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_posebusters_diagnostic_subset10.jsonl",
+        "target_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/processed/repaired_candidates_smoke_plus_posebusters_diagnostic_subset10.jsonl"
+      },
+      {
+        "sha256_verified": "de4e3a7402a423d7e5349996847b397a0806331f90dc11733fc53584b4a83926",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_posebusters_expanded_subset35.jsonl",
+        "target_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/processed/repaired_candidates_smoke_plus_posebusters_expanded_subset35.jsonl"
+      },
+      {
+        "sha256_verified": "c0314f80b4da58f25ef34b40d8766a4dfab3d68915b57c6e4d7fe828d1494796",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_posebusters_subset20.jsonl",
+        "target_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/processed/repaired_candidates_smoke_plus_posebusters_subset20.jsonl"
+      },
+      {
+        "sha256_verified": "84b16b3219f397e1d25c44224fd3f8cea5e02d8bce8dee796b8725bb0656d040",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_residual_only.jsonl",
+        "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_candidates_smoke_plus_residual_only.jsonl"
+      },
+      {
+        "sha256_verified": "8be99cf2b016245e431760b8d2c0c5ff586944b0e32f1efb93f9961bfb67b803",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_vina_docked_pose_smoke.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/repaired_candidates_smoke_plus_vina_docked_pose_smoke.jsonl"
+      },
+      {
+        "sha256_verified": "9bace92c8d52fc3c49db634609783a313e403db9e6b00af5ebd9d24224f3dce3",
+        "source_path": "data/processed/repaired_candidates_smoke_plus_vina_local_edit.jsonl",
+        "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/repaired_candidates_smoke_plus_vina_local_edit.jsonl"
+      }
+    ],
+    "copied_count": 87,
+    "method": "shutil.copy2 plus sha256 equality check"
+  },
+  "experiment_id": "20260604-02-data-processed-structure-cleanup",
+  "experiment_name": "data-processed-structure-cleanup",
+  "migration_date": "2026-06-04",
+  "moves": [
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 19,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 3,
+      "sha256": "de712364ff99763e25f9113acbc29fc21f7e4836f4336f1781acec70d7533757",
+      "size_bytes": 45249,
+      "source_path": "data/processed/evaluated_repaired_contact_degraded_directional_learned_seed0.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_contact_degraded_directional_learned_seed0.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 3,
+      "sha256": "cef4dbb7806cb99849d2bb8987b9209d767778e62641ea00f8eb1033ea3701e2",
+      "size_bytes": 40297,
+      "source_path": "data/processed/evaluated_repaired_contact_degraded_directional_learned_seed1.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_contact_degraded_directional_learned_seed1.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 3,
+      "sha256": "e6d778860ddf8f1c1b8f14b5a94e896520d5f4342d03e16e048dacf76f920fd2",
+      "size_bytes": 40354,
+      "source_path": "data/processed/evaluated_repaired_contact_degraded_directional_learned_seed2.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_contact_degraded_directional_learned_seed2.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 19,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 2,
+      "sha256": "f7a251f1f0a3a3b778484e597a803c836a23da33f60bac8d14d917f2f1c8178d",
+      "size_bytes": 44811,
+      "source_path": "data/processed/evaluated_repaired_contact_degraded_scaled_learned_seed0.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_contact_degraded_scaled_learned_seed0.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 2,
+      "sha256": "3f0642ff970b34a01e00699cb0c5da95042700ec606744b357b90e33933308f2",
+      "size_bytes": 40113,
+      "source_path": "data/processed/evaluated_repaired_contact_degraded_scaled_learned_seed1.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_contact_degraded_scaled_learned_seed1.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 2,
+      "sha256": "23464fcfec75c260657d888f639d6377f06f39cbb128ab877c8e42911ef25320",
+      "size_bytes": 40143,
+      "source_path": "data/processed/evaluated_repaired_contact_degraded_scaled_learned_seed2.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_contact_degraded_scaled_learned_seed2.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-01-smoke-repair-baselines",
+      "line_count": 132,
+      "rationale": "Smoke repair/evaluation result artifact.",
+      "reference_count": 4,
+      "sha256": "b24b79d8f9a56153730eb8e3328f54f1962ffaa4e37c1d7d66deb9f4021c9dc4",
+      "size_bytes": 150646,
+      "source_path": "data/processed/evaluated_repaired_smoke.jsonl",
+      "target_path": "outputs/20260601-01-smoke-repair-baselines/processed/evaluated_repaired_smoke.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-02-smoke-plus-expansion-and-variants",
+      "line_count": 1092,
+      "rationale": "Smoke-plus expansion baseline chain artifact.",
+      "reference_count": 7,
+      "sha256": "c1150e54d03e86ab4c4eea227510839e97f3aa7e78ba22e408db3645e46faccc",
+      "size_bytes": 1282444,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus.jsonl",
+      "target_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/evaluated_repaired_smoke_plus.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 95,
+      "rationale": "Contact-degraded local-edit core artifact.",
+      "reference_count": 3,
+      "sha256": "79638d5e1fc81b053f4b7208a6c63107c5a6e01bc972b78f6093ee6f76f78b87",
+      "size_bytes": 185531,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 53,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 0,
+      "sha256": "045b61008cdae8918cc98109e4b65fcbfcc69780c46cd222433086451bd55358",
+      "size_bytes": 125773,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_multiseed_classified_policy.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_multiseed_classified_policy.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-01-contact-degraded-budget-and-ablation",
+      "line_count": 477,
+      "rationale": "Contact-degraded budget/key/shuffled/residual ablation artifact.",
+      "reference_count": 3,
+      "sha256": "3ac620d80eab1088110b59bf8e15b264f68bc38cc06124266681876aebca6901",
+      "size_bytes": 1103481,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_multiseed_key_equalized_budget.jsonl",
+      "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_multiseed_key_equalized_budget.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-01-contact-degraded-budget-and-ablation",
+      "line_count": 159,
+      "rationale": "Contact-degraded budget/key/shuffled/residual ablation artifact.",
+      "reference_count": 1,
+      "sha256": "c8ac0877662394263e9aa255cfd0857049727cf1dab4d9b7980cbe47b87b13b1",
+      "size_bytes": 382193,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_multiseed_shuffled_ablation.jsonl",
+      "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_multiseed_shuffled_ablation.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 418,
+      "rationale": "Contact-degraded local-edit core base seed artifact.",
+      "reference_count": 7,
+      "sha256": "97ffabd8859e33cd4cde1ac47322fbe9992b2d5c4c6e95962e3851ad35337c64",
+      "size_bytes": 971240,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 19,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 1,
+      "sha256": "bb3b858243360ed055140479b7a3d52150b659093b160385774df748b1463af7",
+      "size_bytes": 45075,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_classified_policy.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_classified_policy.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 19,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 1,
+      "sha256": "20d2a673084a7d7634357d4c062e8e508b9254c93586b9984779dc5ed762f0ca",
+      "size_bytes": 46028,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_directional_classified_policy.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_directional_classified_policy.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-01-contact-degraded-budget-and-ablation",
+      "line_count": 171,
+      "rationale": "Contact-degraded budget/key/shuffled/residual ablation artifact.",
+      "reference_count": 3,
+      "sha256": "2a5d5b05f27a34c1d3f11aeb02bcf4f86380d0a8c6d515f18927c81c01ce4d6b",
+      "size_bytes": 395232,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_key_equalized_budget.jsonl",
+      "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_key_equalized_budget.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-01-contact-degraded-budget-and-ablation",
+      "line_count": 57,
+      "rationale": "Contact-degraded budget/key/shuffled/residual ablation artifact.",
+      "reference_count": 1,
+      "sha256": "ee320737e5e1b86e09a3c38258e86cc28374849e688523679d35c0120378e6b6",
+      "size_bytes": 137052,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_shuffled_ablation.jsonl",
+      "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_shuffled_ablation.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 374,
+      "rationale": "Contact-degraded local-edit core base seed artifact.",
+      "reference_count": 5,
+      "sha256": "96ba950494d7862af95d055950ab237b8a2c5b4cbfb55333d0cf49ffc87ee770",
+      "size_bytes": 869176,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 1,
+      "sha256": "6a1485f901d953afa45a79c7c3cad225e4ab9a6cd0803bb057165d6fa5d378f1",
+      "size_bytes": 40334,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1_classified_policy.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1_classified_policy.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 1,
+      "sha256": "b3a553d5e106384734efef75c136756b862597d5434a045f23c99582de07cbf7",
+      "size_bytes": 40994,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1_directional_classified_policy.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1_directional_classified_policy.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-01-contact-degraded-budget-and-ablation",
+      "line_count": 51,
+      "rationale": "Contact-degraded budget/key/shuffled/residual ablation artifact.",
+      "reference_count": 1,
+      "sha256": "38e9d901ec460d5d443fce3444fefff1349d861d8ed3b782e81a67eef9c36193",
+      "size_bytes": 122521,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1_shuffled_ablation.jsonl",
+      "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1_shuffled_ablation.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 374,
+      "rationale": "Contact-degraded local-edit core base seed artifact.",
+      "reference_count": 5,
+      "sha256": "aef5820e64c8dcddfda0bef2223d0cfeb08a7398176110fd13af99031e478f6a",
+      "size_bytes": 869217,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 1,
+      "sha256": "0b6803e4edaa73a115a6a158dd16064170c178da1744efe8a8f3ee8c1561c0cb",
+      "size_bytes": 40364,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2_classified_policy.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2_classified_policy.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 1,
+      "sha256": "97c7de4fef8fc01cec1efd69e632249fa0cd0c78527c5418550a198ed2e3dbd6",
+      "size_bytes": 41051,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2_directional_classified_policy.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2_directional_classified_policy.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-01-contact-degraded-budget-and-ablation",
+      "line_count": 51,
+      "rationale": "Contact-degraded budget/key/shuffled/residual ablation artifact.",
+      "reference_count": 1,
+      "sha256": "9e0df77f28f8a113a18519aac1a54ee754cc437d810972842e078ed7ad4d265e",
+      "size_bytes": 122620,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2_shuffled_ablation.jsonl",
+      "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2_shuffled_ablation.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 156,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 2,
+      "sha256": "31b6a31811c5c67266150dc45b8a582b96e81172df8357612eb536a2d667b3af",
+      "size_bytes": 192684,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_docking_like.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/evaluated_repaired_smoke_plus_docking_like.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 936,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 2,
+      "sha256": "35b68d70259916e5c475b269ed3a3799276544987441c19279d1d6ccf9cd8b7c",
+      "size_bytes": 1161793,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_local_proposal.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/evaluated_repaired_smoke_plus_local_proposal.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 42,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 2,
+      "sha256": "1e8a9573dfcb568ef6551b7d266f66a0234a3a8a3dbc1dcee1333c151b672df8",
+      "size_bytes": 81737,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_vina_docked_pose_smoke.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/evaluated_repaired_smoke_plus_vina_docked_pose_smoke.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 42,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 2,
+      "sha256": "67dcb6bb6b697ae17b063ceedb2fbf27f53103fd2e15d29af4f06716c184ee06",
+      "size_bytes": 81694,
+      "source_path": "data/processed/evaluated_repaired_smoke_plus_vina_local_edit.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/evaluated_repaired_smoke_plus_vina_local_edit.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260531-01-smoke-file-pipeline",
+      "line_count": 12,
+      "rationale": "Smoke file pipeline derived failed-candidate/feedback artifact.",
+      "reference_count": 10,
+      "sha256": "af5718523862abf7f4e4039f9c635d2deea0c5fcad31344f4d55db9f3b9fd874",
+      "size_bytes": 14720,
+      "source_path": "data/processed/failed_candidates_smoke.jsonl",
+      "target_path": "outputs/20260531-01-smoke-file-pipeline/processed/failed_candidates_smoke.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-02-smoke-plus-expansion-and-variants",
+      "line_count": 84,
+      "rationale": "Smoke-plus expansion baseline chain artifact.",
+      "reference_count": 9,
+      "sha256": "15ab8a5f080fd8a5847878a2d1898dae6e8ac5acc5b28ce3b8604d0b072dc028",
+      "size_bytes": 105431,
+      "source_path": "data/processed/failed_candidates_smoke_plus.jsonl",
+      "target_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/failed_candidates_smoke_plus.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 19,
+      "rationale": "Contact-degraded local-edit core artifact.",
+      "reference_count": 5,
+      "sha256": "81fe41e3b3289a327e6fb1ef1803a37d17ba84c007b8e871e42f84151f894c87",
+      "size_bytes": 32210,
+      "source_path": "data/processed/failed_candidates_smoke_plus_contact_degraded_local_edit.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_candidates_smoke_plus_contact_degraded_local_edit.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 19,
+      "rationale": "Contact-degraded local-edit core base seed artifact.",
+      "reference_count": 11,
+      "sha256": "a29f13fb44d7c9260e9624576bbc069fa9ee93c9af27dfc32d0ea701219e5c74",
+      "size_bytes": 32324,
+      "source_path": "data/processed/failed_candidates_smoke_plus_contact_degraded_local_edit_seed0.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_candidates_smoke_plus_contact_degraded_local_edit_seed0.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 17,
+      "rationale": "Contact-degraded local-edit core base seed artifact.",
+      "reference_count": 6,
+      "sha256": "748bdcccf733e456672cb60b863308f6876a0fcef18f4c46829ff89a8492b3d3",
+      "size_bytes": 28778,
+      "source_path": "data/processed/failed_candidates_smoke_plus_contact_degraded_local_edit_seed1.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_candidates_smoke_plus_contact_degraded_local_edit_seed1.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 17,
+      "rationale": "Contact-degraded local-edit core base seed artifact.",
+      "reference_count": 6,
+      "sha256": "23634c90be16db23f6649c508bce0922f2ce6bf8161f2faa8cd86e338a7ceeb5",
+      "size_bytes": 28779,
+      "source_path": "data/processed/failed_candidates_smoke_plus_contact_degraded_local_edit_seed2.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_candidates_smoke_plus_contact_degraded_local_edit_seed2.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 12,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 5,
+      "sha256": "18aba00ae532a73635be7a4edc9a41625a15277ed20329af0c6580f1b8173144",
+      "size_bytes": 17598,
+      "source_path": "data/processed/failed_candidates_smoke_plus_docking_like.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_docking_like.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 72,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 5,
+      "sha256": "a430953139ef70d9f2cc7371fb897c1a743e2a9643249c9d427bc46a76141300",
+      "size_bytes": 99594,
+      "source_path": "data/processed/failed_candidates_smoke_plus_local_proposal.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_local_proposal.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 72,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 2,
+      "sha256": "66a19b3707af3fb56c0a5228fe2e49f37d551f2b61706ee1b9474308296a3f4c",
+      "size_bytes": 45036,
+      "source_path": "data/processed/failed_candidates_smoke_plus_local_proposal_for_vina.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_local_proposal_for_vina.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 1,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 2,
+      "sha256": "d799c6c8877aa249c26b61489fb42914fcd7f30f74ce8c21b85f8aa1e28c8476",
+      "size_bytes": 2198,
+      "source_path": "data/processed/failed_candidates_smoke_plus_vina_docked_pose_smoke.errors.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_vina_docked_pose_smoke.errors.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 3,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 8,
+      "sha256": "19f7f11c128a6f9541cef797e9c5da9dc5b1a602da7bedb90c5399fe8f1c0d05",
+      "size_bytes": 7110,
+      "source_path": "data/processed/failed_candidates_smoke_plus_vina_docked_pose_smoke.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_vina_docked_pose_smoke.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 3,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 4,
+      "sha256": "50d6bdd63fa12ef588d29301e22d63ec2a5a78168bc40f0cb65b405db11ff390",
+      "size_bytes": 3435,
+      "source_path": "data/processed/failed_candidates_smoke_plus_vina_local_edit.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_vina_local_edit.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260531-01-smoke-file-pipeline",
+      "line_count": 12,
+      "rationale": "Smoke file pipeline derived failed-candidate/feedback artifact.",
+      "reference_count": 9,
+      "sha256": "f4380d53c6721500ca1fb52f55472863b7243533d20cd034bcab808d6bcfe448",
+      "size_bytes": 11726,
+      "source_path": "data/processed/feedback_smoke.jsonl",
+      "target_path": "outputs/20260531-01-smoke-file-pipeline/processed/feedback_smoke.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-02-smoke-plus-expansion-and-variants",
+      "line_count": 84,
+      "rationale": "Smoke-plus expansion baseline chain artifact.",
+      "reference_count": 9,
+      "sha256": "05e1078b6dbcca4aa85ec401ba65608e3f14ae32df4ac41f81b5612388e259e4",
+      "size_bytes": 81536,
+      "source_path": "data/processed/feedback_smoke_plus.jsonl",
+      "target_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/feedback_smoke_plus.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 5,
+      "rationale": "Contact-degraded local-edit core artifact.",
+      "reference_count": 3,
+      "sha256": "fab8f31d1b4f8382d4d0fcc9237a6198920f20c602858d378b09c5e0b4effda0",
+      "size_bytes": 4924,
+      "source_path": "data/processed/feedback_smoke_plus_contact_degraded_local_edit.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/feedback_smoke_plus_contact_degraded_local_edit.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 19,
+      "rationale": "Contact-degraded local-edit core base seed artifact.",
+      "reference_count": 7,
+      "sha256": "a3d71d15f4fb5c9ab836b98d65fb2ac8f72a6af9dc5fcbe94af7d8270ac4479d",
+      "size_bytes": 18751,
+      "source_path": "data/processed/feedback_smoke_plus_contact_degraded_local_edit_seed0.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/feedback_smoke_plus_contact_degraded_local_edit_seed0.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 17,
+      "rationale": "Contact-degraded local-edit core base seed artifact.",
+      "reference_count": 4,
+      "sha256": "89bba971eb0316beff898f5711c3b31b31fd19e66e74f92f6e6eceff2a7ac7b4",
+      "size_bytes": 16775,
+      "source_path": "data/processed/feedback_smoke_plus_contact_degraded_local_edit_seed1.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/feedback_smoke_plus_contact_degraded_local_edit_seed1.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 17,
+      "rationale": "Contact-degraded local-edit core base seed artifact.",
+      "reference_count": 4,
+      "sha256": "09483093594792a5424f37273afa8e51f6708c9298be5668314b4795b5cd7bff",
+      "size_bytes": 16776,
+      "source_path": "data/processed/feedback_smoke_plus_contact_degraded_local_edit_seed2.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/feedback_smoke_plus_contact_degraded_local_edit_seed2.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 12,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 3,
+      "sha256": "8a547788e3a1a6e038bd5dc219462e7dac828475b82052529db854283818801b",
+      "size_bytes": 12036,
+      "source_path": "data/processed/feedback_smoke_plus_docking_like.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/feedback_smoke_plus_docking_like.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 72,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 2,
+      "sha256": "917e468dee0e211b974f84490e57c19e01c1f32c8c09a47dcdf1304fd3236b97",
+      "size_bytes": 71590,
+      "source_path": "data/processed/feedback_smoke_plus_local_proposal.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/feedback_smoke_plus_local_proposal.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 3,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 2,
+      "sha256": "bd79700c315e63edd12ab9f7d26eb69f8b37bdf69a902ce6613311811f77aedb",
+      "size_bytes": 2860,
+      "source_path": "data/processed/feedback_smoke_plus_vina_docked_pose_smoke.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/feedback_smoke_plus_vina_docked_pose_smoke.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 3,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 2,
+      "sha256": "64e7161248dbbcf6e768b55355251d99641b2c587c115d49af423000231f5f50",
+      "size_bytes": 2854,
+      "source_path": "data/processed/feedback_smoke_plus_vina_local_edit.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/feedback_smoke_plus_vina_local_edit.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 19,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 4,
+      "sha256": "69465c5db71a7ee79d625cf3de7fbc511fdde79bd9be995d914a2f2c8d3c4635",
+      "size_bytes": 32064,
+      "source_path": "data/processed/repaired_candidates_contact_degraded_directional_learned_seed0.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_directional_learned_seed0.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 4,
+      "sha256": "873ab6a9c62c5763701e5c78660c642c53ea923b1f9b518041a6d203942d48f4",
+      "size_bytes": 28611,
+      "source_path": "data/processed/repaired_candidates_contact_degraded_directional_learned_seed1.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_directional_learned_seed1.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 4,
+      "sha256": "38aae45732893af5ba3f1f7a8b571773f5ea4e54c46ccf0b6b1b8170eac34198",
+      "size_bytes": 28610,
+      "source_path": "data/processed/repaired_candidates_contact_degraded_directional_learned_seed2.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_directional_learned_seed2.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 53,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 2,
+      "sha256": "3d6155b36560dfa5428a15b0ab92cd9f592ed3e0fe3e38fa6c5d3bc0f2710482",
+      "size_bytes": 88328,
+      "source_path": "data/processed/repaired_candidates_contact_degraded_scaled_learned_multiseed.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_scaled_learned_multiseed.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 19,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 2,
+      "sha256": "5089a8b984aa269167dc666c3c31b9169c86d29cff218d3be3c4832e5f7331ec",
+      "size_bytes": 31718,
+      "source_path": "data/processed/repaired_candidates_contact_degraded_scaled_learned_seed0.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_scaled_learned_seed0.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 2,
+      "sha256": "21c0ec7c19ae5d20924c372e74cde20616e9fc45802ac3b48a995e2060e02745",
+      "size_bytes": 28308,
+      "source_path": "data/processed/repaired_candidates_contact_degraded_scaled_learned_seed1.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_scaled_learned_seed1.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 2,
+      "sha256": "fa42db7e9f16a7fe5a23bbe3ed9cb39518e1fc2693188b3319f04f48f844f6f0",
+      "size_bytes": 28302,
+      "source_path": "data/processed/repaired_candidates_contact_degraded_scaled_learned_seed2.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_contact_degraded_scaled_learned_seed2.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-01-smoke-repair-baselines",
+      "line_count": 132,
+      "rationale": "Smoke repair/evaluation result artifact.",
+      "reference_count": 3,
+      "sha256": "90a6391344cb170081f4973caffb5a70efa9f2ef454c1a3884fb5c63da143297",
+      "size_bytes": 156882,
+      "source_path": "data/processed/repaired_candidates_smoke.jsonl",
+      "target_path": "outputs/20260601-01-smoke-repair-baselines/processed/repaired_candidates_smoke.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-02-smoke-plus-expansion-and-variants",
+      "line_count": 1092,
+      "rationale": "Smoke-plus expansion baseline chain artifact.",
+      "reference_count": 6,
+      "sha256": "e3b0cff0e16770195cac5bda9fddbdeb324cb5aa5db32ca6a40b59828bc99423",
+      "size_bytes": 1360989,
+      "source_path": "data/processed/repaired_candidates_smoke_plus.jsonl",
+      "target_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/repaired_candidates_smoke_plus.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 95,
+      "rationale": "Contact-degraded local-edit core artifact.",
+      "reference_count": 6,
+      "sha256": "7b63834c541df2d5ff50e8151131336eeb931bc8dc81c4525dc3601c0e384781",
+      "size_bytes": 129485,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 530,
+      "rationale": "Contact-degraded expanded/multiseed key-baseline artifact kept with core due official-eval linkage.",
+      "reference_count": 0,
+      "sha256": "937ef43fc547fcd401ce1275aef286560f0146aee25de6ba1e3b01593444bc80",
+      "size_bytes": 753103,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_expanded_key_baselines.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_expanded_key_baselines.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 285,
+      "rationale": "Contact-degraded local-edit core artifact.",
+      "reference_count": 0,
+      "sha256": "471dcdfa1ca9aad155613663d822d93e39253b665443db618afbddffcec6477e",
+      "size_bytes": 391858,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_multiseed.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_multiseed.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 477,
+      "rationale": "Contact-degraded expanded/multiseed key-baseline artifact kept with core due official-eval linkage.",
+      "reference_count": 0,
+      "sha256": "44244dbe904591824fa29d7ce553fd3ae8d1bea7f60802420951cc1825f5dd17",
+      "size_bytes": 675721,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_multiseed_key_baselines.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_multiseed_key_baselines.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 418,
+      "rationale": "Contact-degraded local-edit core base seed artifact.",
+      "reference_count": 5,
+      "sha256": "646ca49ed04700b9cf256769125a19582454e9aa07cea546297799bcff4c0927",
+      "size_bytes": 665491,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 19,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 2,
+      "sha256": "a0a49492ee154a2c0730c36172783a9af9de881b2c2ba94ebf7dd5aa09d33c57",
+      "size_bytes": 31814,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_classified_policy.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_classified_policy.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 19,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 1,
+      "sha256": "6357384cc6336f21fef6cc2e2503aef6e6d2b2b12d91facead767e583f7018ed",
+      "size_bytes": 31890,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_classified_probe.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_classified_probe.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 19,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 2,
+      "sha256": "120c07950ab7846be53d65a02b1c70b32523b1d0406c50bd3aec9df0bdf55015",
+      "size_bytes": 32957,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_directional_classified_policy.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_directional_classified_policy.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 38,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 1,
+      "sha256": "0441ec56051f211e1a4f47f29edd9dd0e1125b884fd50d22583be52a4726269c",
+      "size_bytes": 64733,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_directional_probe.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_directional_probe.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-01-contact-degraded-budget-and-ablation",
+      "line_count": 57,
+      "rationale": "Contact-degraded budget/key/shuffled/residual ablation artifact.",
+      "reference_count": 2,
+      "sha256": "86f5dccebb41c0177ff1436ffa02ef9f711bf6803f5a1ec3f59442089822f815",
+      "size_bytes": 97399,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_shuffled_ablation.jsonl",
+      "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_shuffled_ablation.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-01-contact-degraded-budget-and-ablation",
+      "line_count": 57,
+      "rationale": "Contact-degraded budget/key/shuffled/residual ablation artifact.",
+      "reference_count": 1,
+      "sha256": "78b88ce4ae55b9077f8e3ef7a7752ed0707a28393f1b1d4876161a455bcbffff",
+      "size_bytes": 97285,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_shuffled_probe.jsonl",
+      "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_shuffled_probe.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 374,
+      "rationale": "Contact-degraded local-edit core base seed artifact.",
+      "reference_count": 2,
+      "sha256": "99d9bc6bf519460373065712da60ba63299f1c4832e80378add167cd06bb44ef",
+      "size_bytes": 593832,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 2,
+      "sha256": "0c9f49ad4f72c61d4089f9bd8a6a4b8207f32fa29d7a77f6dbfb514b67318bef",
+      "size_bytes": 28393,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1_classified_policy.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1_classified_policy.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 2,
+      "sha256": "4c05e2e273ce5633970829bcb33c0e421065be9376feee1d0c3381212a7dcc50",
+      "size_bytes": 29410,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1_directional_classified_policy.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1_directional_classified_policy.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-01-contact-degraded-budget-and-ablation",
+      "line_count": 51,
+      "rationale": "Contact-degraded budget/key/shuffled/residual ablation artifact.",
+      "reference_count": 2,
+      "sha256": "afff4551370184e593bff36ccce69595c2a8f79d2926c29b2ba0930997774560",
+      "size_bytes": 86935,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1_shuffled_ablation.jsonl",
+      "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1_shuffled_ablation.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-05-contact-degraded-local-edit-core",
+      "line_count": 374,
+      "rationale": "Contact-degraded local-edit core base seed artifact.",
+      "reference_count": 2,
+      "sha256": "403bbb4aaf8c8bb6462231d2f06fb4b364b8758391c6368f57a7dfe0cbaec19c",
+      "size_bytes": 593868,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2.jsonl",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 2,
+      "sha256": "7c9e3b0a3d29b630a91a2f80b6d973ff91112d1cbfb9926b7638fff8d9dbbdc3",
+      "size_bytes": 28387,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2_classified_policy.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2_classified_policy.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-02-contact-degraded-policy-variants",
+      "line_count": 17,
+      "rationale": "Contact-degraded classified/directional/learned policy variant artifact.",
+      "reference_count": 2,
+      "sha256": "f29b0f29d09c05a220a06a397f882c41b17d77158f3ab84f9155e231e5071c32",
+      "size_bytes": 29409,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2_directional_classified_policy.jsonl",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2_directional_classified_policy.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-01-contact-degraded-budget-and-ablation",
+      "line_count": 51,
+      "rationale": "Contact-degraded budget/key/shuffled/residual ablation artifact.",
+      "reference_count": 2,
+      "sha256": "23c4b737d45fc9a0cc1975a98931b360d0526d97bfa839151f3a46afcc3b0f6a",
+      "size_bytes": 86932,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2_shuffled_ablation.jsonl",
+      "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2_shuffled_ablation.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 156,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 3,
+      "sha256": "95fd9c3c6516d80fa7dd77626d3e92c54b4dc573a2ae6bc0b1c1aa142c48a7d4",
+      "size_bytes": 207573,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_docking_like.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/repaired_candidates_smoke_plus_docking_like.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 936,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 3,
+      "sha256": "4330804fdd24b58852c860985ac3134afeeb083d47f890ad7872e477313bf4ca",
+      "size_bytes": 1257763,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_local_proposal.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/repaired_candidates_smoke_plus_local_proposal.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-03-smoke-plus-official-tool-evaluation",
+      "line_count": 10,
+      "rationale": "PoseBusters official-tool diagnostic subset repaired-candidate records.",
+      "reference_count": 0,
+      "sha256": "95187f5e61b594b31cae87e3d7cfa28a8055a0e28fd31a2816432dd41b353405",
+      "size_bytes": 13296,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_posebusters_diagnostic_subset10.jsonl",
+      "target_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/processed/repaired_candidates_smoke_plus_posebusters_diagnostic_subset10.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-03-smoke-plus-official-tool-evaluation",
+      "line_count": 35,
+      "rationale": "PoseBusters official-tool diagnostic subset repaired-candidate records.",
+      "reference_count": 2,
+      "sha256": "de4e3a7402a423d7e5349996847b397a0806331f90dc11733fc53584b4a83926",
+      "size_bytes": 45716,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_posebusters_expanded_subset35.jsonl",
+      "target_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/processed/repaired_candidates_smoke_plus_posebusters_expanded_subset35.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-03-smoke-plus-official-tool-evaluation",
+      "line_count": 20,
+      "rationale": "PoseBusters official-tool diagnostic subset repaired-candidate records.",
+      "reference_count": 2,
+      "sha256": "c0314f80b4da58f25ef34b40d8766a4dfab3d68915b57c6e4d7fe828d1494796",
+      "size_bytes": 25578,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_posebusters_subset20.jsonl",
+      "target_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/processed/repaired_candidates_smoke_plus_posebusters_subset20.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260602-01-contact-degraded-budget-and-ablation",
+      "line_count": 84,
+      "rationale": "Residual-only ablation artifact.",
+      "reference_count": 2,
+      "sha256": "84b16b3219f397e1d25c44224fd3f8cea5e02d8bce8dee796b8725bb0656d040",
+      "size_bytes": 109757,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_residual_only.jsonl",
+      "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_candidates_smoke_plus_residual_only.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 42,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 5,
+      "sha256": "8be99cf2b016245e431760b8d2c0c5ff586944b0e32f1efb93f9961bfb67b803",
+      "size_bytes": 55046,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_vina_docked_pose_smoke.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/repaired_candidates_smoke_plus_vina_docked_pose_smoke.jsonl"
+    },
+    {
+      "action": "copy_and_retarget",
+      "experiment_id": "20260601-04-vina-pose-and-local-edit-diagnostics",
+      "line_count": 42,
+      "rationale": "Vina/local-proposal/docking-like diagnostic branch artifact.",
+      "reference_count": 5,
+      "sha256": "9bace92c8d52fc3c49db634609783a313e403db9e6b00af5ebd9d24224f3dce3",
+      "size_bytes": 56650,
+      "source_path": "data/processed/repaired_candidates_smoke_plus_vina_local_edit.jsonl",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/repaired_candidates_smoke_plus_vina_local_edit.jsonl"
+    },
+    {
+      "action": "keep",
+      "experiment_id": "canonical",
+      "line_count": 3,
+      "rationale": "Canonical reusable R-group processed dataset; keep in data/processed.",
+      "reference_count": 5,
+      "sha256": "a124f784f5734c616ae2578142c688186e3357afae81a36134de76c6a51aef72",
+      "size_bytes": 2993,
+      "source_path": "data/datasets/rgroup_smoke/entries/index.jsonl",
+      "target_path": "data/datasets/rgroup_smoke/entries/index.jsonl"
+    },
+    {
+      "action": "keep",
+      "experiment_id": "canonical",
+      "line_count": 12,
+      "rationale": "Canonical reusable R-group processed dataset; keep in data/processed.",
+      "reference_count": 7,
+      "sha256": "1f7a4ec7de28d4b07c94afff1633b037ab8f030f119ea9e53e885010762876bf",
+      "size_bytes": 12005,
+      "source_path": "data/datasets/rgroup_smoke_plus/entries/index.jsonl",
+      "target_path": "data/datasets/rgroup_smoke_plus/entries/index.jsonl"
+    }
+  ],
+  "policy": "copy-and-retarget; keep canonical rgroup_smoke*.jsonl in data/processed; do not delete source files in this batch; do not modify .gitignore.",
+  "retarget_verification": {
+    "changed_file_count": 81,
+    "changed_files": [
+      {
+        "path": "configs/baselines/eval_repaired_smoke.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "configs/baselines/eval_repaired_smoke_plus.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "configs/baselines/eval_repaired_smoke_plus_contact_degraded_local_edit.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "configs/baselines/eval_repaired_smoke_plus_docking_like.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "configs/baselines/eval_repaired_smoke_plus_local_proposal.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "configs/baselines/eval_repaired_smoke_plus_vina_docked_pose_smoke.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "configs/baselines/eval_repaired_smoke_plus_vina_local_edit.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "configs/baselines/repair_smoke.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "configs/baselines/repair_smoke_plus.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "configs/baselines/repair_smoke_plus_contact_degraded_local_edit.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "configs/baselines/repair_smoke_plus_docking_like.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "configs/baselines/repair_smoke_plus_local_proposal.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "configs/baselines/repair_smoke_plus_vina_docked_pose_smoke.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "configs/baselines/repair_smoke_plus_vina_local_edit.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "configs/baselines/smoke.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "configs/baselines/smoke_plus.yaml",
+        "replacements": 1
+      },
+      {
+        "path": "configs/data/failed_candidate_smoke.yaml",
+        "replacements": 1
+      },
+      {
+        "path": "configs/data/failed_candidate_smoke_plus.yaml",
+        "replacements": 1
+      },
+      {
+        "path": "configs/data/failed_candidate_smoke_plus_contact_degraded_local_edit.yaml",
+        "replacements": 1
+      },
+      {
+        "path": "configs/data/failed_candidate_smoke_plus_local_proposal.yaml",
+        "replacements": 1
+      },
+      {
+        "path": "configs/data/failed_candidate_smoke_plus_vina_local_edit.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "configs/eval_local_proposal_failed_vina.yaml",
+        "replacements": 1
+      },
+      {
+        "path": "configs/eval_smoke_plus_summary.yaml",
+        "replacements": 4
+      },
+      {
+        "path": "configs/eval_smoke_summary.yaml",
+        "replacements": 4
+      },
+      {
+        "path": "configs/feedback/smoke.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "configs/feedback/smoke_plus.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "configs/feedback/smoke_plus_contact_degraded_local_edit.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "configs/feedback/smoke_plus_docking_like.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "configs/feedback/smoke_plus_local_proposal.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "configs/feedback/smoke_plus_vina_docked_pose_smoke.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "configs/feedback/smoke_plus_vina_local_edit.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "scripts/eval/cross_validate_repaired.py",
+        "replacements": 1
+      },
+      {
+        "path": "scripts/eval/summarize_repaired_by_failure_type.py",
+        "replacements": 1
+      },
+      {
+        "path": "scripts/eval/summarize_repaired_split.py",
+        "replacements": 1
+      },
+      {
+        "path": "scripts/setup/smoke_pipeline_dry_run.py",
+        "replacements": 2
+      },
+      {
+        "path": "docs/EXPERIMENT_LOG.md",
+        "replacements": 89
+      },
+      {
+        "path": "experiments/20260601-01-smoke-repair-baselines/configs/resolved/multiseed_repaired/repair_seed_0.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "experiments/20260601-01-smoke-repair-baselines/configs/resolved/multiseed_repaired/repair_seed_1.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "experiments/20260601-01-smoke-repair-baselines/configs/resolved/multiseed_repaired/repair_seed_2.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "experiments/20260531-01-smoke-file-pipeline/metadata/pipeline_plan.json",
+        "replacements": 2
+      },
+      {
+        "path": "experiments/20260601-02-smoke-plus-expansion-and-variants/configs/resolved/multiseed_repaired/repair_seed_0.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "experiments/20260601-02-smoke-plus-expansion-and-variants/configs/resolved/multiseed_repaired/repair_seed_1.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "experiments/20260601-02-smoke-plus-expansion-and-variants/configs/resolved/multiseed_repaired/repair_seed_2.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260601-01-smoke-repair-baselines/metrics/repaired_smoke_leave_one_complex.json",
+        "replacements": 1
+      },
+      {
+        "path": "outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/repaired_smoke_plus_by_failure_type.json",
+        "replacements": 1
+      },
+      {
+        "path": "outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/repaired_smoke_plus_split.json",
+        "replacements": 1
+      },
+      {
+        "path": "outputs/20260601-05-contact-degraded-local-edit-core/metrics/contact_degraded_multiseed/summary.json",
+        "replacements": 6
+      },
+      {
+        "path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/contact_degraded_multiseed_seed0_eval_tmp.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/contact_degraded_multiseed_seed0_shuffled_probe_repair.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/contact_degraded_seed0_classified_probe_repair.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/contact_degraded_seed0_directional_probe_repair.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/contact_degraded_multiseed_blocker_fix_check/summary.json",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/contact_degraded_multiseed_budgeted_check/summary.json",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/contact_degraded_shuffled_ablation/eval_seed0.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/contact_degraded_shuffled_ablation/eval_seed1.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/contact_degraded_shuffled_ablation/eval_seed2.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/contact_degraded_shuffled_ablation/repair_seed0.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/contact_degraded_shuffled_ablation/repair_seed1.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/contact_degraded_shuffled_ablation/repair_seed2.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/same_budget_audit_smoke_plus_contact_degraded_local_edit_multiseed.json",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/same_budget_audit_smoke_plus_contact_degraded_local_edit_seed0_blocker_fix_check.json",
+        "replacements": 1
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_classified_policy/eval_seed0.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_classified_policy/eval_seed1.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_classified_policy/eval_seed2.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_classified_policy/repair_seed0.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_classified_policy/repair_seed1.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_classified_policy/repair_seed2.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_classified_policy/eval_seed0.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_classified_policy/eval_seed1.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_classified_policy/eval_seed2.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_classified_policy/repair_seed0.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_classified_policy/repair_seed1.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_classified_policy/repair_seed2.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_learned_policy/configs/eval_seed0.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_learned_policy/configs/eval_seed1.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_learned_policy/configs/eval_seed2.yaml",
+        "replacements": 2
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_learned_policy/configs/repair_seed0.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_learned_policy/configs/repair_seed1.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_learned_policy/configs/repair_seed2.yaml",
+        "replacements": 3
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_learned_policy_summary.json",
+        "replacements": 6
+      },
+      {
+        "path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_scaled_learned_policy_summary.json",
+        "replacements": 6
+      }
+    ],
+    "method": "literal string replacement outside this migration manifest",
+    "note": "The migration manifest preserves legacy source_path fields for auditability.",
+    "replacement_count": 275
+  },
+  "source_cleanup": {
+    "already_missing": [],
+    "already_missing_count": 0,
+    "date": "2026-06-04",
+    "kept": [
+      "data/datasets/rgroup_smoke/entries/index.jsonl",
+      "data/datasets/rgroup_smoke_plus/entries/index.jsonl"
+    ],
+    "kept_count": 2,
+    "policy": "deleted old data/processed derived source files after copy-and-retarget validation; kept canonical rgroup files",
+    "removed": [
+      "data/processed/evaluated_repaired_contact_degraded_directional_learned_seed0.jsonl",
+      "data/processed/evaluated_repaired_contact_degraded_directional_learned_seed1.jsonl",
+      "data/processed/evaluated_repaired_contact_degraded_directional_learned_seed2.jsonl",
+      "data/processed/evaluated_repaired_contact_degraded_scaled_learned_seed0.jsonl",
+      "data/processed/evaluated_repaired_contact_degraded_scaled_learned_seed1.jsonl",
+      "data/processed/evaluated_repaired_contact_degraded_scaled_learned_seed2.jsonl",
+      "data/processed/evaluated_repaired_smoke.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_multiseed_classified_policy.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_multiseed_key_equalized_budget.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_multiseed_shuffled_ablation.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_classified_policy.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_directional_classified_policy.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_key_equalized_budget.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed0_shuffled_ablation.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1_classified_policy.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1_directional_classified_policy.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed1_shuffled_ablation.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2_classified_policy.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2_directional_classified_policy.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_contact_degraded_local_edit_seed2_shuffled_ablation.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_docking_like.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_local_proposal.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_vina_docked_pose_smoke.jsonl",
+      "data/processed/evaluated_repaired_smoke_plus_vina_local_edit.jsonl",
+      "data/processed/failed_candidates_smoke.jsonl",
+      "data/processed/failed_candidates_smoke_plus.jsonl",
+      "data/processed/failed_candidates_smoke_plus_contact_degraded_local_edit.jsonl",
+      "data/processed/failed_candidates_smoke_plus_contact_degraded_local_edit_seed0.jsonl",
+      "data/processed/failed_candidates_smoke_plus_contact_degraded_local_edit_seed1.jsonl",
+      "data/processed/failed_candidates_smoke_plus_contact_degraded_local_edit_seed2.jsonl",
+      "data/processed/failed_candidates_smoke_plus_docking_like.jsonl",
+      "data/processed/failed_candidates_smoke_plus_local_proposal.jsonl",
+      "data/processed/failed_candidates_smoke_plus_local_proposal_for_vina.jsonl",
+      "data/processed/failed_candidates_smoke_plus_vina_docked_pose_smoke.errors.jsonl",
+      "data/processed/failed_candidates_smoke_plus_vina_docked_pose_smoke.jsonl",
+      "data/processed/failed_candidates_smoke_plus_vina_local_edit.jsonl",
+      "data/processed/feedback_smoke.jsonl",
+      "data/processed/feedback_smoke_plus.jsonl",
+      "data/processed/feedback_smoke_plus_contact_degraded_local_edit.jsonl",
+      "data/processed/feedback_smoke_plus_contact_degraded_local_edit_seed0.jsonl",
+      "data/processed/feedback_smoke_plus_contact_degraded_local_edit_seed1.jsonl",
+      "data/processed/feedback_smoke_plus_contact_degraded_local_edit_seed2.jsonl",
+      "data/processed/feedback_smoke_plus_docking_like.jsonl",
+      "data/processed/feedback_smoke_plus_local_proposal.jsonl",
+      "data/processed/feedback_smoke_plus_vina_docked_pose_smoke.jsonl",
+      "data/processed/feedback_smoke_plus_vina_local_edit.jsonl",
+      "data/processed/repaired_candidates_contact_degraded_directional_learned_seed0.jsonl",
+      "data/processed/repaired_candidates_contact_degraded_directional_learned_seed1.jsonl",
+      "data/processed/repaired_candidates_contact_degraded_directional_learned_seed2.jsonl",
+      "data/processed/repaired_candidates_contact_degraded_scaled_learned_multiseed.jsonl",
+      "data/processed/repaired_candidates_contact_degraded_scaled_learned_seed0.jsonl",
+      "data/processed/repaired_candidates_contact_degraded_scaled_learned_seed1.jsonl",
+      "data/processed/repaired_candidates_contact_degraded_scaled_learned_seed2.jsonl",
+      "data/processed/repaired_candidates_smoke.jsonl",
+      "data/processed/repaired_candidates_smoke_plus.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_expanded_key_baselines.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_multiseed.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_multiseed_key_baselines.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_classified_policy.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_classified_probe.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_directional_classified_policy.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_directional_probe.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_shuffled_ablation.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed0_shuffled_probe.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1_classified_policy.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1_directional_classified_policy.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed1_shuffled_ablation.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2_classified_policy.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2_directional_classified_policy.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit_seed2_shuffled_ablation.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_docking_like.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_local_proposal.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_posebusters_diagnostic_subset10.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_posebusters_expanded_subset35.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_posebusters_subset20.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_residual_only.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_vina_docked_pose_smoke.jsonl",
+      "data/processed/repaired_candidates_smoke_plus_vina_local_edit.jsonl"
+    ],
+    "removed_count": 87
+  },
+  "source_cleanup_validation": {
+    "expected_remaining_data_processed_jsonl": [
+      "data/datasets/rgroup_smoke/entries/index.jsonl",
+      "data/datasets/rgroup_smoke_plus/entries/index.jsonl"
+    ],
+    "missing_target_count": 0,
+    "missing_targets": [],
+    "remaining_data_processed_jsonl": [
+      "data/datasets/rgroup_smoke/entries/index.jsonl",
+      "data/datasets/rgroup_smoke_plus/entries/index.jsonl"
+    ],
+    "remaining_matches_expected": true,
+    "residual_noncanonical_old_reference_count": 0,
+    "residual_noncanonical_old_reference_examples": []
+  },
+  "source_root": "data/processed",
+  "summary": {
+    "copy_and_retarget_count": 87,
+    "keep_count": 2,
+    "target_experiment_counts": {
+      "20260531-01-smoke-file-pipeline": 2,
+      "20260601-01-smoke-repair-baselines": 2,
+      "20260601-02-smoke-plus-expansion-and-variants": 4,
+      "20260601-03-smoke-plus-official-tool-evaluation": 3,
+      "20260601-04-vina-pose-and-local-edit-diagnostics": 18,
+      "20260601-05-contact-degraded-local-edit-core": 19,
+      "20260602-01-contact-degraded-budget-and-ablation": 11,
+      "20260602-02-contact-degraded-policy-variants": 28,
+      "canonical": 2
+    },
+    "total_jsonl": 89
+  },
+  "validation": {
+    "missing_config_path_parent_count": 0,
+    "missing_config_path_parent_examples": [],
+    "missing_target_count": 0,
+    "missing_targets": [],
+    "remaining_exact_old_path_reference_count": 0,
+    "remaining_exact_old_path_references": [],
+    "remaining_noncanonical_data_processed_pattern_count": 0,
+    "remaining_noncanonical_data_processed_pattern_examples": []
+  }
+}

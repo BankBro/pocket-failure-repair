@@ -1,0 +1,12 @@
+{
+  "experiment_name": "smoke-plus-official-tool-evaluation",
+  "experiment_id": "20260601-03-smoke-plus-official-tool-evaluation",
+  "experiment_dir": "experiments/20260601-03-smoke-plus-official-tool-evaluation",
+  "output_dir": "outputs/20260601-03-smoke-plus-official-tool-evaluation",
+  "readme_path": "experiments/20260601-03-smoke-plus-official-tool-evaluation/README.md",
+  "notes_path": null,
+  "output_metadata": [],
+  "output_run_metadata": [],
+  "metadata_role": "lightweight experiment-side index; output artifacts and artifact manifests remain under outputs/<experiment_id>/",
+  "created_or_updated": "2026-06-04"
+}

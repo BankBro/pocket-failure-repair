@@ -1,0 +1,89 @@
+{
+  "input": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_shuffled_ablation_plip_vina.jsonl",
+  "metrics": [
+    {
+      "baseline": "feedback_budgeted_learned_editable_contact_shuffled_policy",
+      "internal_budget_types": [
+        "editable_offset_selection"
+      ],
+      "mean_internal_candidate_budget": 10.0,
+      "mean_plip_failed_interaction_count": 9.433962264150944,
+      "mean_plip_failed_interaction_recovery": 0.8136437792594694,
+      "mean_plip_failed_interaction_similarity": 0.7329569277682486,
+      "mean_plip_interaction_count": 9.830188679245284,
+      "mean_plip_interaction_recovery": 0.8124131082423038,
+      "mean_plip_interaction_recovery_gain": -0.0012306710171655485,
+      "mean_plip_interaction_similarity": 0.7124132157151025,
+      "mean_plip_interaction_similarity_gain": -0.020543712053146007,
+      "mean_plip_reference_interaction_count": 10.81132075471698,
+      "mean_plip_repaired_interaction_count": 9.830188679245284,
+      "mean_vina_score_only_energy": -6.94733962264151,
+      "num_records": 53,
+      "plip_available_rate": 1.0,
+      "plip_error_count": 0,
+      "posebusters_available_rate": null,
+      "posebusters_error_count": 0,
+      "posebusters_full_pass_rate": null,
+      "source": "official_external_eval_summary",
+      "vina_available_rate": 1.0,
+      "vina_error_count": 0
+    },
+    {
+      "baseline": "feedback_learned_editable_contact_shuffled_policy",
+      "internal_budget_types": [
+        "single_policy_output"
+      ],
+      "mean_internal_candidate_budget": 1.0,
+      "mean_plip_failed_interaction_count": 9.433962264150944,
+      "mean_plip_failed_interaction_recovery": 0.8136437792594694,
+      "mean_plip_failed_interaction_similarity": 0.7329569277682486,
+      "mean_plip_interaction_count": 9.716981132075471,
+      "mean_plip_interaction_recovery": 0.814299900695134,
+      "mean_plip_interaction_recovery_gain": 0.0006561214356646396,
+      "mean_plip_interaction_similarity": 0.7141284815813118,
+      "mean_plip_interaction_similarity_gain": -0.01882844618693675,
+      "mean_plip_reference_interaction_count": 10.81132075471698,
+      "mean_plip_repaired_interaction_count": 9.716981132075471,
+      "mean_vina_score_only_energy": -6.942150943396224,
+      "num_records": 53,
+      "plip_available_rate": 1.0,
+      "plip_error_count": 0,
+      "posebusters_available_rate": null,
+      "posebusters_error_count": 0,
+      "posebusters_full_pass_rate": null,
+      "source": "official_external_eval_summary",
+      "vina_available_rate": 1.0,
+      "vina_error_count": 0
+    },
+    {
+      "baseline": "feedback_ridge_editable_contact_shuffled_policy",
+      "internal_budget_types": [
+        "single_policy_output"
+      ],
+      "mean_internal_candidate_budget": 1.0,
+      "mean_plip_failed_interaction_count": 9.433962264150944,
+      "mean_plip_failed_interaction_recovery": 0.8136437792594694,
+      "mean_plip_failed_interaction_similarity": 0.7329569277682486,
+      "mean_plip_interaction_count": 9.547169811320755,
+      "mean_plip_interaction_recovery": 0.808355795148248,
+      "mean_plip_interaction_recovery_gain": -0.005287984111221444,
+      "mean_plip_interaction_similarity": 0.707866399847532,
+      "mean_plip_interaction_similarity_gain": -0.025090527920716598,
+      "mean_plip_reference_interaction_count": 10.81132075471698,
+      "mean_plip_repaired_interaction_count": 9.547169811320755,
+      "mean_vina_score_only_energy": -6.862641509433961,
+      "num_records": 53,
+      "plip_available_rate": 1.0,
+      "plip_error_count": 0,
+      "posebusters_available_rate": null,
+      "posebusters_error_count": 0,
+      "posebusters_full_pass_rate": null,
+      "source": "official_external_eval_summary",
+      "vina_available_rate": 1.0,
+      "vina_error_count": 0
+    }
+  ],
+  "name": "contact_degraded_multiseed_shuffled_ablation_plip_vina",
+  "notes": "Official external-tool summary. Vina values are score-only energies, not redocking success. PLIP values are interaction counts from generated protein-ligand complex PDBs.",
+  "num_records": 159
+}

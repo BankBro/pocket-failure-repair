@@ -1,0 +1,8 @@
+name: repaired_smoke_plus
+seed: 0
+input:
+  repaired_candidates_path: outputs/20260601-02-smoke-plus-expansion-and-variants/processed/repaired_candidates_smoke_plus.jsonl
+output:
+  evaluated_repaired_path: outputs/20260601-02-smoke-plus-expansion-and-variants/processed/evaluated_repaired_smoke_plus.jsonl
+  metrics_path: outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/repaired_smoke_plus.json
+  table_path: outputs/20260601-02-smoke-plus-expansion-and-variants/tables/repaired_smoke_plus.csv

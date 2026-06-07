@@ -1,0 +1,11 @@
+baseline,num_records,plip_available_rate,plip_error_count,mean_plip_interaction_count,vina_available_rate,vina_error_count,mean_vina_score_only_energy,posebusters_available_rate,posebusters_error_count,posebusters_full_pass_rate,source
+best_of_n,48,1.0,0,10.541666666666666,1.0,20,9.221535714285713,,0,,official_external_eval_summary
+coordinate_rollback,48,1.0,0,11.666666666666666,1.0,20,-9.418428571428574,,0,,official_external_eval_summary
+direct_regeneration,48,1.0,0,11.229166666666666,1.0,20,11.435821428571431,,0,,official_external_eval_summary
+feedback_geometry_refinement,48,1.0,0,11.020833333333334,1.0,20,-4.096785714285714,,0,,official_external_eval_summary
+feedback_learned_geometry_policy,48,1.0,0,10.479166666666666,1.0,20,-3.8814285714285712,,0,,official_external_eval_summary
+feedback_linear_refinement,48,1.0,0,11.666666666666666,1.0,20,-9.418464285714288,,0,,official_external_eval_summary
+feedback_rule_repair,48,1.0,0,11.666666666666666,1.0,20,-9.418428571428574,,0,,official_external_eval_summary
+identity_failed_candidate,48,1.0,0,10.895833333333334,1.0,20,9.068392857142857,,0,,official_external_eval_summary
+no_feedback_repair,48,1.0,0,10.895833333333334,1.0,20,9.068392857142857,,0,,official_external_eval_summary
+rerank_only,48,1.0,0,10.895833333333334,1.0,20,9.068392857142857,,0,,official_external_eval_summary

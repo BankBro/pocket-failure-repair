@@ -1,0 +1,114 @@
+{
+  "name": "official_eval_contact_degraded_multiseed_shuffled_feedback_comparison",
+  "rows": [
+    {
+      "comparison_role": "no_feedback_budget1_reference",
+      "baseline": "no_feedback_repair",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 1.0,
+      "internal_budget_types": "single_failed_candidate",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.0,
+      "official_plip_similarity_gain": 0.0,
+      "vina_score_only_energy": -6.985490566037734
+    },
+    {
+      "comparison_role": "rerank_budget1_reference",
+      "baseline": "rerank_only",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 1.0,
+      "internal_budget_types": "single_failed_candidate",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.0,
+      "official_plip_similarity_gain": 0.0,
+      "vina_score_only_energy": -6.985490566037734
+    },
+    {
+      "comparison_role": "normal_learned_budget1",
+      "baseline": "feedback_learned_editable_contact_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 1.0,
+      "internal_budget_types": "single_policy_output",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.006451269683643074,
+      "official_plip_similarity_gain": -0.011851670342236373,
+      "vina_score_only_energy": -6.599094339622639
+    },
+    {
+      "comparison_role": "shuffled_learned_budget1",
+      "baseline": "feedback_learned_editable_contact_shuffled_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 1.0,
+      "internal_budget_types": "single_policy_output",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.0006561214356646396,
+      "official_plip_similarity_gain": -0.01882844618693675,
+      "vina_score_only_energy": -6.942150943396224
+    },
+    {
+      "comparison_role": "normal_ridge_budget1",
+      "baseline": "feedback_ridge_editable_contact_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 1.0,
+      "internal_budget_types": "single_policy_output",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.007646474677259188,
+      "official_plip_similarity_gain": 0.008316531752480118,
+      "vina_score_only_energy": -6.559283018867925
+    },
+    {
+      "comparison_role": "shuffled_ridge_budget1",
+      "baseline": "feedback_ridge_editable_contact_shuffled_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 1.0,
+      "internal_budget_types": "single_policy_output",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": -0.005287984111221444,
+      "official_plip_similarity_gain": -0.025090527920716598,
+      "vina_score_only_energy": -6.862641509433961
+    },
+    {
+      "comparison_role": "normal_budgeted_learned_budget10",
+      "baseline": "feedback_budgeted_learned_editable_contact_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 10.0,
+      "internal_budget_types": "editable_offset_selection",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.009852461342034342,
+      "official_plip_similarity_gain": -0.0083047455688965,
+      "vina_score_only_energy": -6.9294339622641505
+    },
+    {
+      "comparison_role": "shuffled_budgeted_learned_budget10",
+      "baseline": "feedback_budgeted_learned_editable_contact_shuffled_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 10.0,
+      "internal_budget_types": "editable_offset_selection",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": -0.0012306710171655485,
+      "official_plip_similarity_gain": -0.020543712053146007,
+      "vina_score_only_energy": -6.94733962264151
+    },
+    {
+      "comparison_role": "editable_search_budget10_reference",
+      "baseline": "feedback_editable_contact_policy",
+      "num_records": 53,
+      "mean_internal_candidate_budget": 10.0,
+      "internal_budget_types": "editable_offset_selection",
+      "plip_error_count": 0,
+      "vina_error_count": 0,
+      "official_plip_recovery_gain": 0.03012838700524897,
+      "official_plip_similarity_gain": -0.007117314441048291,
+      "vina_score_only_energy": -6.993377358490563
+    }
+  ],
+  "notes": "Normal vs shuffled diagnostic feedback comparison for learned/ridge editable-contact policies. Editable search is included as budget-10 reference because it does not consume feedback features in the same way."
+}

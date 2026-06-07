@@ -1,0 +1,22 @@
+{
+  "input": "outputs/metrics/official_eval_smoke_plus_local_proposal_failed_vina.jsonl",
+  "metrics": [
+    {
+      "baseline": "failed_candidate_vina_probe",
+      "mean_plip_interaction_count": null,
+      "mean_vina_score_only_energy": -7.42675,
+      "num_records": 72,
+      "plip_available_rate": null,
+      "plip_error_count": 0,
+      "posebusters_available_rate": null,
+      "posebusters_error_count": 0,
+      "posebusters_full_pass_rate": null,
+      "source": "official_external_eval_summary",
+      "vina_available_rate": 1.0,
+      "vina_error_count": 0
+    }
+  ],
+  "name": "official_eval_smoke_plus_local_proposal_failed_vina",
+  "notes": "Official external-tool summary. Vina values are score-only energies, not redocking success. PLIP values are interaction counts from generated protein-ligand complex PDBs.",
+  "num_records": 72
+}

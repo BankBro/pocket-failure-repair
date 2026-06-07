@@ -1,0 +1,1034 @@
+{
+  "migration_date": "2026-06-04",
+  "note": "Moved legacy outputs type-bucket artifacts into outputs/<experiment_id>/ groups. No result values were changed.",
+  "moves": [
+    {
+      "old_path": "outputs/metrics/baselines_smoke.json",
+      "new_path": "outputs/20260531-01-smoke-file-pipeline/metrics/baselines_smoke.json"
+    },
+    {
+      "old_path": "outputs/metrics/baselines_smoke_plus.json",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/baselines_smoke_plus.json"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_classified_policy",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_classified_policy"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_classified_policy_summary.json",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_classified_policy_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_directional_classified_policy",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_classified_policy"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_directional_classified_policy_summary.json",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_classified_policy_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_directional_learned_policy",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_learned_policy"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_directional_learned_policy_summary.json",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_directional_learned_policy_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_multiseed",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/metrics/contact_degraded_multiseed"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_multiseed_blocker_fix_check",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/contact_degraded_multiseed_blocker_fix_check"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_multiseed_budgeted_check",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/contact_degraded_multiseed_budgeted_check"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_multiseed_seed0_eval_tmp.yaml",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/contact_degraded_multiseed_seed0_eval_tmp.yaml"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_multiseed_seed0_shuffled_probe_repair.yaml",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/contact_degraded_multiseed_seed0_shuffled_probe_repair.yaml"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_scaled_learned_policy",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_scaled_learned_policy"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_scaled_learned_policy_summary.json",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/contact_degraded_scaled_learned_policy_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_seed0_classified_probe_repair.yaml",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/contact_degraded_seed0_classified_probe_repair.yaml"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_seed0_directional_probe_repair.yaml",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/contact_degraded_seed0_directional_probe_repair.yaml"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_shuffled_ablation",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/contact_degraded_shuffled_ablation"
+    },
+    {
+      "old_path": "outputs/metrics/contact_degraded_shuffled_ablation_summary.json",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/contact_degraded_shuffled_ablation_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_contact_degraded_multiseed_budget_fair_plip_vina.json",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/official_eval_contact_degraded_multiseed_budget_fair_plip_vina.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_contact_degraded_multiseed_learned_policy_comparison.json",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/official_eval_contact_degraded_multiseed_learned_policy_comparison.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_contact_degraded_multiseed_shuffled_feedback_comparison.json",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/official_eval_contact_degraded_multiseed_shuffled_feedback_comparison.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_contact_degraded_scaled_learned_plip_vina.jsonl",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/official_eval_contact_degraded_scaled_learned_plip_vina.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_contact_degraded_scaled_learned_plip_vina_summary.json",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/official_eval_contact_degraded_scaled_learned_plip_vina_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_head_robust.jsonl",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/official_eval_smoke_head_robust.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plip_head.jsonl",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/official_eval_smoke_plip_head.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plip_vina.jsonl",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/official_eval_smoke_plip_vina.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plip_vina_head.jsonl",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/official_eval_smoke_plip_vina_head.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plip_vina_summary.json",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/official_eval_smoke_plip_vina_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_equalized_budget_plip_vina.jsonl",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/official_eval_smoke_plus_contact_degraded_local_edit_equalized_budget_plip_vina.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_equalized_budget_plip_vina_summary.json",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/official_eval_smoke_plus_contact_degraded_local_edit_equalized_budget_plip_vina_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_expanded_key_baselines_plip_gain.jsonl",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/metrics/official_eval_smoke_plus_contact_degraded_local_edit_expanded_key_baselines_plip_gain.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_expanded_key_baselines_plip_gain_by_failure_type.json",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/metrics/official_eval_smoke_plus_contact_degraded_local_edit_expanded_key_baselines_plip_gain_by_failure_type.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_expanded_key_baselines_plip_gain_summary.json",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/metrics/official_eval_smoke_plus_contact_degraded_local_edit_expanded_key_baselines_plip_gain_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_classified_policy_plip_vina.jsonl",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_classified_policy_plip_vina.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_classified_policy_plip_vina_summary.json",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_classified_policy_plip_vina_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_key_equalized_budget_plip_vina.jsonl",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_key_equalized_budget_plip_vina.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_key_equalized_budget_plip_vina_summary.csv",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_key_equalized_budget_plip_vina_summary.csv"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_key_equalized_budget_plip_vina_summary.json",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_key_equalized_budget_plip_vina_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_plip_gain.jsonl",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_plip_gain.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_plip_gain_by_failure_type.json",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_plip_gain_by_failure_type.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_plip_gain_summary.json",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_plip_gain_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_shuffled_ablation_plip_vina.jsonl",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_shuffled_ablation_plip_vina.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_shuffled_ablation_plip_vina_summary.json",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_shuffled_ablation_plip_vina_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_plip_gain.jsonl",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/metrics/official_eval_smoke_plus_contact_degraded_local_edit_plip_gain.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_plip_gain_by_failure_type.json",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/metrics/official_eval_smoke_plus_contact_degraded_local_edit_plip_gain_by_failure_type.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_plip_gain_summary.json",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/metrics/official_eval_smoke_plus_contact_degraded_local_edit_plip_gain_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_seed0_key_equalized_budget_plip_vina.jsonl",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/official_eval_smoke_plus_contact_degraded_local_edit_seed0_key_equalized_budget_plip_vina.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_contact_degraded_local_edit_seed0_key_equalized_budget_plip_vina_summary.json",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/official_eval_smoke_plus_contact_degraded_local_edit_seed0_key_equalized_budget_plip_vina_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_expanded_plip_vina_retry.jsonl",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_expanded_plip_vina_retry.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_expanded_plip_vina_retry_by_failure_type.json",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_expanded_plip_vina_retry_by_failure_type.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_expanded_plip_vina_retry_summary.json",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_expanded_plip_vina_retry_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_expanded_posebusters_subset35.jsonl",
+      "new_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/metrics/official_eval_smoke_plus_expanded_posebusters_subset35.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_expanded_posebusters_subset35_summary.json",
+      "new_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/metrics/official_eval_smoke_plus_expanded_posebusters_subset35_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_local_proposal_failed_vina.jsonl",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_local_proposal_failed_vina.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_local_proposal_failed_vina_summary.json",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_local_proposal_failed_vina_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_plip_vina.jsonl",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_plip_vina.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_plip_vina_retry.jsonl",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_plip_vina_retry.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_plip_vina_retry_summary.json",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_plip_vina_retry_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_plip_vina_summary.json",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_plip_vina_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_posebusters_diagnostic_subset10.jsonl",
+      "new_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/metrics/official_eval_smoke_plus_posebusters_diagnostic_subset10.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_posebusters_diagnostic_subset10_submetrics.json",
+      "new_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/metrics/official_eval_smoke_plus_posebusters_diagnostic_subset10_submetrics.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_posebusters_subset20.jsonl",
+      "new_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/metrics/official_eval_smoke_plus_posebusters_subset20.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_posebusters_subset20_summary.json",
+      "new_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/metrics/official_eval_smoke_plus_posebusters_subset20_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_residual_plip_vina.jsonl",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_residual_plip_vina.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_residual_plip_vina_summary.json",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_residual_plip_vina_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_vina_docked_pose_plip_gain.jsonl",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_vina_docked_pose_plip_gain.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_vina_docked_pose_plip_gain_by_failure_type.json",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_vina_docked_pose_plip_gain_by_failure_type.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_vina_docked_pose_plip_gain_summary.json",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_vina_docked_pose_plip_gain_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_vina_docked_pose_plip_vina.jsonl",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_vina_docked_pose_plip_vina.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_vina_docked_pose_plip_vina_summary.json",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_vina_docked_pose_plip_vina_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_vina_local_edit_plip_gain.jsonl",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_vina_local_edit_plip_gain.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_vina_local_edit_plip_gain_by_failure_type.json",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_vina_local_edit_plip_gain_by_failure_type.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_vina_local_edit_plip_gain_head.jsonl",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/official_eval_smoke_plus_vina_local_edit_plip_gain_head.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_vina_local_edit_plip_gain_summary.json",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_vina_local_edit_plip_gain_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_vina_local_edit_plip_vina.jsonl",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_vina_local_edit_plip_vina.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_plus_vina_local_edit_plip_vina_summary.json",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_vina_local_edit_plip_vina_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_posebusters_head.jsonl",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/official_eval_smoke_posebusters_head.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_posebusters_head_robust.jsonl",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/official_eval_smoke_posebusters_head_robust.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_smoke_vina_head.jsonl",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/official_eval_smoke_vina_head.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/official_eval_vina_failure_probe_retry.jsonl",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/official_eval_vina_failure_probe_retry.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/paper_case_contact_degraded_3ert_seed2.json",
+      "new_path": "outputs/20260602-03-paper-ready-contact-degraded-reporting/metrics/paper_case_contact_degraded_3ert_seed2.json"
+    },
+    {
+      "old_path": "outputs/metrics/posebusters_one_0.jsonl",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/posebusters_one_0.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/posebusters_one_out_of_range.jsonl",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/metrics/posebusters_one_out_of_range.jsonl"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke.json",
+      "new_path": "outputs/20260601-01-smoke-repair-baselines/metrics/repaired_smoke.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_leave_one_complex.json",
+      "new_path": "outputs/20260601-01-smoke-repair-baselines/metrics/repaired_smoke_leave_one_complex.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_multiseed.json",
+      "new_path": "outputs/20260601-01-smoke-repair-baselines/metrics/repaired_smoke_multiseed.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus.json",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/repaired_smoke_plus.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_by_failure_type.json",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/repaired_smoke_plus_by_failure_type.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_contact_degraded_local_edit.json",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/metrics/repaired_smoke_plus_contact_degraded_local_edit.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed0.json",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed0.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed0_classified_policy.json",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed0_classified_policy.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed0_directional_classified_policy.json",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed0_directional_classified_policy.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed0_shuffled_ablation.json",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed0_shuffled_ablation.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed1.json",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed1.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed1_classified_policy.json",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed1_classified_policy.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed1_directional_classified_policy.json",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed1_directional_classified_policy.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed1_shuffled_ablation.json",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed1_shuffled_ablation.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed2.json",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed2.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed2_classified_policy.json",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed2_classified_policy.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed2_directional_classified_policy.json",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed2_directional_classified_policy.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed2_shuffled_ablation.json",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/repaired_smoke_plus_contact_degraded_local_edit_seed2_shuffled_ablation.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_docking_like.json",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/repaired_smoke_plus_docking_like.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_local_proposal.json",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/repaired_smoke_plus_local_proposal.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_multiseed.json",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/repaired_smoke_plus_multiseed.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_split.json",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/repaired_smoke_plus_split.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_vina_docked_pose_smoke.json",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/repaired_smoke_plus_vina_docked_pose_smoke.json"
+    },
+    {
+      "old_path": "outputs/metrics/repaired_smoke_plus_vina_local_edit.json",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/repaired_smoke_plus_vina_local_edit.json"
+    },
+    {
+      "old_path": "outputs/metrics/same_budget_audit_smoke_plus_contact_degraded_local_edit_multiseed.json",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/same_budget_audit_smoke_plus_contact_degraded_local_edit_multiseed.json"
+    },
+    {
+      "old_path": "outputs/metrics/same_budget_audit_smoke_plus_contact_degraded_local_edit_seed0_blocker_fix_check.json",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/metrics/same_budget_audit_smoke_plus_contact_degraded_local_edit_seed0_blocker_fix_check.json"
+    },
+    {
+      "old_path": "outputs/metrics/smoke_plus_summary.json",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/metrics/smoke_plus_summary.json"
+    },
+    {
+      "old_path": "outputs/metrics/smoke_summary.json",
+      "new_path": "outputs/20260531-01-smoke-file-pipeline/metrics/smoke_summary.json"
+    },
+    {
+      "old_path": "outputs/tables/baselines_smoke.csv",
+      "new_path": "outputs/20260531-01-smoke-file-pipeline/tables/baselines_smoke.csv"
+    },
+    {
+      "old_path": "outputs/tables/baselines_smoke_plus.csv",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/tables/baselines_smoke_plus.csv"
+    },
+    {
+      "old_path": "outputs/tables/contact_degraded_directional_learned_policy_seed0.csv",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/tables/contact_degraded_directional_learned_policy_seed0.csv"
+    },
+    {
+      "old_path": "outputs/tables/contact_degraded_directional_learned_policy_seed1.csv",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/tables/contact_degraded_directional_learned_policy_seed1.csv"
+    },
+    {
+      "old_path": "outputs/tables/contact_degraded_directional_learned_policy_seed2.csv",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/tables/contact_degraded_directional_learned_policy_seed2.csv"
+    },
+    {
+      "old_path": "outputs/tables/contact_degraded_scaled_learned_policy_seed0.csv",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/tables/contact_degraded_scaled_learned_policy_seed0.csv"
+    },
+    {
+      "old_path": "outputs/tables/contact_degraded_scaled_learned_policy_seed1.csv",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/tables/contact_degraded_scaled_learned_policy_seed1.csv"
+    },
+    {
+      "old_path": "outputs/tables/contact_degraded_scaled_learned_policy_seed2.csv",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/tables/contact_degraded_scaled_learned_policy_seed2.csv"
+    },
+    {
+      "old_path": "outputs/tables/contact_degraded_shuffled_ablation_summary.csv",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/tables/contact_degraded_shuffled_ablation_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_contact_degraded_multiseed_budget_10_fair_plip_vina.csv",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/tables/official_eval_contact_degraded_multiseed_budget_10_fair_plip_vina.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_contact_degraded_multiseed_budget_1_fair_plip_vina.csv",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/tables/official_eval_contact_degraded_multiseed_budget_1_fair_plip_vina.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_contact_degraded_multiseed_budget_fair_plip_vina.csv",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/tables/official_eval_contact_degraded_multiseed_budget_fair_plip_vina.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_contact_degraded_multiseed_higher_budget_reference_not_fair_plip_vina.csv",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/tables/official_eval_contact_degraded_multiseed_higher_budget_reference_not_fair_plip_vina.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_contact_degraded_multiseed_learned_policy_comparison.csv",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/tables/official_eval_contact_degraded_multiseed_learned_policy_comparison.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_contact_degraded_multiseed_shuffled_feedback_comparison.csv",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/tables/official_eval_contact_degraded_multiseed_shuffled_feedback_comparison.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_contact_degraded_scaled_learned_plip_vina_summary.csv",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/tables/official_eval_contact_degraded_scaled_learned_plip_vina_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plip_vina_summary.csv",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/tables/official_eval_smoke_plip_vina_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_contact_degraded_local_edit_equalized_budget_plip_vina_summary.csv",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/tables/official_eval_smoke_plus_contact_degraded_local_edit_equalized_budget_plip_vina_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_contact_degraded_local_edit_expanded_key_baselines_plip_gain_by_failure_type.csv",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/tables/official_eval_smoke_plus_contact_degraded_local_edit_expanded_key_baselines_plip_gain_by_failure_type.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_contact_degraded_local_edit_expanded_key_baselines_plip_gain_summary.csv",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/tables/official_eval_smoke_plus_contact_degraded_local_edit_expanded_key_baselines_plip_gain_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_classified_policy_plip_vina_summary.csv",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/tables/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_classified_policy_plip_vina_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_plip_gain_by_failure_type.csv",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/tables/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_plip_gain_by_failure_type.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_plip_gain_summary.csv",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/tables/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_plip_gain_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_shuffled_ablation_plip_vina_summary.csv",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/tables/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_shuffled_ablation_plip_vina_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_contact_degraded_local_edit_plip_gain_by_failure_type.csv",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/tables/official_eval_smoke_plus_contact_degraded_local_edit_plip_gain_by_failure_type.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_contact_degraded_local_edit_plip_gain_summary.csv",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/tables/official_eval_smoke_plus_contact_degraded_local_edit_plip_gain_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_contact_degraded_local_edit_seed0_key_equalized_budget_plip_vina_summary.csv",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/tables/official_eval_smoke_plus_contact_degraded_local_edit_seed0_key_equalized_budget_plip_vina_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_expanded_plip_vina_retry_by_failure_type.csv",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/official_eval_smoke_plus_expanded_plip_vina_retry_by_failure_type.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_expanded_plip_vina_retry_summary.csv",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/official_eval_smoke_plus_expanded_plip_vina_retry_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_expanded_posebusters_subset35_summary.csv",
+      "new_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/tables/official_eval_smoke_plus_expanded_posebusters_subset35_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_local_proposal_failed_vina_summary.csv",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/official_eval_smoke_plus_local_proposal_failed_vina_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_plip_vina_retry_summary.csv",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/official_eval_smoke_plus_plip_vina_retry_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_plip_vina_summary.csv",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/official_eval_smoke_plus_plip_vina_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_posebusters_diagnostic_subset10_submetrics.csv",
+      "new_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/tables/official_eval_smoke_plus_posebusters_diagnostic_subset10_submetrics.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_posebusters_subset20_summary.csv",
+      "new_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/tables/official_eval_smoke_plus_posebusters_subset20_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_residual_plip_vina_summary.csv",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/official_eval_smoke_plus_residual_plip_vina_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_vina_docked_pose_plip_gain_by_failure_type.csv",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/official_eval_smoke_plus_vina_docked_pose_plip_gain_by_failure_type.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_vina_docked_pose_plip_gain_summary.csv",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/official_eval_smoke_plus_vina_docked_pose_plip_gain_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_vina_docked_pose_plip_vina_summary.csv",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/official_eval_smoke_plus_vina_docked_pose_plip_vina_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_vina_local_edit_plip_gain_by_failure_type.csv",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/official_eval_smoke_plus_vina_local_edit_plip_gain_by_failure_type.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_vina_local_edit_plip_gain_summary.csv",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/official_eval_smoke_plus_vina_local_edit_plip_gain_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/official_eval_smoke_plus_vina_local_edit_plip_vina_summary.csv",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/official_eval_smoke_plus_vina_local_edit_plip_vina_summary.csv"
+    },
+    {
+      "old_path": "outputs/tables/paper_case_contact_degraded_3ert_seed2.md",
+      "new_path": "outputs/20260602-03-paper-ready-contact-degraded-reporting/tables/paper_case_contact_degraded_3ert_seed2.md"
+    },
+    {
+      "old_path": "outputs/tables/paper_contact_degraded_feedback_ablation.csv",
+      "new_path": "outputs/20260602-03-paper-ready-contact-degraded-reporting/tables/paper_contact_degraded_feedback_ablation.csv"
+    },
+    {
+      "old_path": "outputs/tables/paper_contact_degraded_feedback_ablation.md",
+      "new_path": "outputs/20260602-03-paper-ready-contact-degraded-reporting/tables/paper_contact_degraded_feedback_ablation.md"
+    },
+    {
+      "old_path": "outputs/tables/paper_contact_degraded_main_results.csv",
+      "new_path": "outputs/20260602-03-paper-ready-contact-degraded-reporting/tables/paper_contact_degraded_main_results.csv"
+    },
+    {
+      "old_path": "outputs/tables/paper_contact_degraded_main_results.md",
+      "new_path": "outputs/20260602-03-paper-ready-contact-degraded-reporting/tables/paper_contact_degraded_main_results.md"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke.csv",
+      "new_path": "outputs/20260601-01-smoke-repair-baselines/tables/repaired_smoke.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_leave_one_complex.csv",
+      "new_path": "outputs/20260601-01-smoke-repair-baselines/tables/repaired_smoke_leave_one_complex.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus.csv",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/tables/repaired_smoke_plus.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_by_failure_type.csv",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/tables/repaired_smoke_plus_by_failure_type.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_contact_degraded_local_edit.csv",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/tables/repaired_smoke_plus_contact_degraded_local_edit.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_contact_degraded_local_edit_seed0.csv",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/tables/repaired_smoke_plus_contact_degraded_local_edit_seed0.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_contact_degraded_local_edit_seed0_classified_policy.csv",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/tables/repaired_smoke_plus_contact_degraded_local_edit_seed0_classified_policy.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_contact_degraded_local_edit_seed0_directional_classified_policy.csv",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/tables/repaired_smoke_plus_contact_degraded_local_edit_seed0_directional_classified_policy.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_contact_degraded_local_edit_seed0_shuffled_ablation.csv",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/tables/repaired_smoke_plus_contact_degraded_local_edit_seed0_shuffled_ablation.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_contact_degraded_local_edit_seed1.csv",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/tables/repaired_smoke_plus_contact_degraded_local_edit_seed1.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_contact_degraded_local_edit_seed1_classified_policy.csv",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/tables/repaired_smoke_plus_contact_degraded_local_edit_seed1_classified_policy.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_contact_degraded_local_edit_seed1_directional_classified_policy.csv",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/tables/repaired_smoke_plus_contact_degraded_local_edit_seed1_directional_classified_policy.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_contact_degraded_local_edit_seed1_shuffled_ablation.csv",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/tables/repaired_smoke_plus_contact_degraded_local_edit_seed1_shuffled_ablation.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_contact_degraded_local_edit_seed2.csv",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/tables/repaired_smoke_plus_contact_degraded_local_edit_seed2.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_contact_degraded_local_edit_seed2_classified_policy.csv",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/tables/repaired_smoke_plus_contact_degraded_local_edit_seed2_classified_policy.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_contact_degraded_local_edit_seed2_directional_classified_policy.csv",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/tables/repaired_smoke_plus_contact_degraded_local_edit_seed2_directional_classified_policy.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_contact_degraded_local_edit_seed2_shuffled_ablation.csv",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/tables/repaired_smoke_plus_contact_degraded_local_edit_seed2_shuffled_ablation.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_docking_like.csv",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/tables/repaired_smoke_plus_docking_like.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_local_proposal.csv",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/tables/repaired_smoke_plus_local_proposal.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_split.csv",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/tables/repaired_smoke_plus_split.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_vina_docked_pose_smoke.csv",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/repaired_smoke_plus_vina_docked_pose_smoke.csv"
+    },
+    {
+      "old_path": "outputs/tables/repaired_smoke_plus_vina_local_edit.csv",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/repaired_smoke_plus_vina_local_edit.csv"
+    },
+    {
+      "old_path": "outputs/tables/same_budget_audit_smoke_plus_contact_degraded_local_edit_multiseed.csv",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/tables/same_budget_audit_smoke_plus_contact_degraded_local_edit_multiseed.csv"
+    },
+    {
+      "old_path": "outputs/tables/same_budget_audit_smoke_plus_contact_degraded_local_edit_seed0_blocker_fix_check.csv",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/tables/same_budget_audit_smoke_plus_contact_degraded_local_edit_seed0_blocker_fix_check.csv"
+    },
+    {
+      "old_path": "outputs/figures/paper_case_contact_degraded_3ert_seed2_interactions.svg",
+      "new_path": "outputs/20260602-03-paper-ready-contact-degraded-reporting/figures/paper_case_contact_degraded_3ert_seed2_interactions.svg"
+    },
+    {
+      "old_path": "outputs/figures/paper_contact_degraded_feedback_ablation.svg",
+      "new_path": "outputs/20260602-03-paper-ready-contact-degraded-reporting/figures/paper_contact_degraded_feedback_ablation.svg"
+    },
+    {
+      "old_path": "outputs/figures/paper_contact_degraded_main_results.svg",
+      "new_path": "outputs/20260602-03-paper-ready-contact-degraded-reporting/figures/paper_contact_degraded_main_results.svg"
+    },
+    {
+      "old_path": "outputs/figures/smoke_plus_success_rates.svg",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/figures/smoke_plus_success_rates.svg"
+    },
+    {
+      "old_path": "outputs/figures/smoke_success_rates.svg",
+      "new_path": "outputs/20260531-01-smoke-file-pipeline/figures/smoke_success_rates.svg"
+    },
+    {
+      "old_path": "outputs/molecules/contact_degraded_directional_learned_repaired_seed0",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/contact_degraded_directional_learned_repaired_seed0"
+    },
+    {
+      "old_path": "outputs/molecules/contact_degraded_directional_learned_repaired_seed1",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/contact_degraded_directional_learned_repaired_seed1"
+    },
+    {
+      "old_path": "outputs/molecules/contact_degraded_directional_learned_repaired_seed2",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/contact_degraded_directional_learned_repaired_seed2"
+    },
+    {
+      "old_path": "outputs/molecules/contact_degraded_scaled_learned_repaired_seed0",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/contact_degraded_scaled_learned_repaired_seed0"
+    },
+    {
+      "old_path": "outputs/molecules/contact_degraded_scaled_learned_repaired_seed1",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/contact_degraded_scaled_learned_repaired_seed1"
+    },
+    {
+      "old_path": "outputs/molecules/contact_degraded_scaled_learned_repaired_seed2",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/contact_degraded_scaled_learned_repaired_seed2"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_cases.json",
+      "new_path": "outputs/20260531-01-smoke-file-pipeline/processed/cases/smoke_cases.json"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_failed",
+      "new_path": "outputs/20260531-01-smoke-file-pipeline/processed/failed_molecules/smoke_failed"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_cases.json",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/cases/smoke_plus_cases.json"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_failed",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_molecules/smoke_plus_contact_degraded_local_edit_failed"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_failed_seed0",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_molecules/smoke_plus_contact_degraded_local_edit_failed_seed0"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_failed_seed1",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_molecules/smoke_plus_contact_degraded_local_edit_failed_seed1"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_failed_seed2",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_molecules/smoke_plus_contact_degraded_local_edit_failed_seed2"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_classified_policy",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_classified_policy"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_classified_probe",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_classified_probe"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_directional_classified_policy",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_directional_classified_policy"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_directional_probe",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_directional_probe"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_shuffled_ablation",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_shuffled_ablation"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_shuffled_probe",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_shuffled_probe"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired_seed1",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed1"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired_seed1_classified_policy",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed1_classified_policy"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired_seed1_directional_classified_policy",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed1_directional_classified_policy"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired_seed1_shuffled_ablation",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed1_shuffled_ablation"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired_seed2",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed2"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired_seed2_classified_policy",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed2_classified_policy"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired_seed2_directional_classified_policy",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed2_directional_classified_policy"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_contact_degraded_local_edit_repaired_seed2_shuffled_ablation",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed2_shuffled_ablation"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_docking_like_repaired",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/repaired_molecules/smoke_plus_docking_like_repaired"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_failed",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/failed_molecules/smoke_plus_failed"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_local_proposal_failed",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_molecules/smoke_plus_local_proposal_failed"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_local_proposal_repaired",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/repaired_molecules/smoke_plus_local_proposal_repaired"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_repaired",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/repaired_molecules/smoke_plus_repaired"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_vina_docked_failed",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_molecules/smoke_plus_vina_docked_failed"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_vina_docked_pose_repaired",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/repaired_molecules/smoke_plus_vina_docked_pose_repaired"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_vina_local_edit_failed",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_molecules/smoke_plus_vina_local_edit_failed"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_plus_vina_local_edit_repaired",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/repaired_molecules/smoke_plus_vina_local_edit_repaired"
+    },
+    {
+      "old_path": "outputs/molecules/smoke_repaired",
+      "new_path": "outputs/20260601-01-smoke-repair-baselines/processed/repaired_molecules/smoke_repaired"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_head",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/logs/official_eval_smoke_head"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_head_robust",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/logs/official_eval_smoke_head_robust"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_head_v2",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/logs/official_eval_smoke_head_v2"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plip_head",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/logs/official_eval_smoke_plip_head"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plip_vina",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/logs/official_eval_smoke_plip_vina"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plip_vina_head",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/logs/official_eval_smoke_plip_vina_head"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plus_contact_degraded_local_edit_expanded_key_baselines_plip_gain",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/logs/official_eval_smoke_plus_contact_degraded_local_edit_expanded_key_baselines_plip_gain"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_plip_gain",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/logs/official_eval_smoke_plus_contact_degraded_local_edit_multiseed_plip_gain"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plus_contact_degraded_local_edit_plip_gain",
+      "new_path": "outputs/20260601-05-contact-degraded-local-edit-core/logs/official_eval_smoke_plus_contact_degraded_local_edit_plip_gain"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plus_expanded_plip_vina_retry.log",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/logs/official_eval_smoke_plus_expanded_plip_vina_retry.log"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plus_expanded_posebusters_subset35.log",
+      "new_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/logs/official_eval_smoke_plus_expanded_posebusters_subset35.log"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plus_plip_vina",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/logs/official_eval_smoke_plus_plip_vina"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plus_plip_vina.log",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/logs/official_eval_smoke_plus_plip_vina.log"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plus_plip_vina_retry",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/logs/official_eval_smoke_plus_plip_vina_retry"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plus_plip_vina_retry.log",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/logs/official_eval_smoke_plus_plip_vina_retry.log"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plus_posebusters_subset20",
+      "new_path": "outputs/20260601-03-smoke-plus-official-tool-evaluation/logs/official_eval_smoke_plus_posebusters_subset20"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plus_vina_docked_pose_plip_gain",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/logs/official_eval_smoke_plus_vina_docked_pose_plip_gain"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plus_vina_local_edit_plip_gain",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/logs/official_eval_smoke_plus_vina_local_edit_plip_gain"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_plus_vina_local_edit_plip_gain_head",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/logs/official_eval_smoke_plus_vina_local_edit_plip_gain_head"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_posebusters_head",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/logs/official_eval_smoke_posebusters_head"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_posebusters_head_robust",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/logs/official_eval_smoke_posebusters_head_robust"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_vina_head",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/logs/official_eval_smoke_vina_head"
+    },
+    {
+      "old_path": "outputs/logs/official_eval_smoke_vina_head_v2",
+      "new_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/logs/official_eval_smoke_vina_head_v2"
+    },
+    {
+      "old_path": "outputs/logs/repair_smoke_plus_tmux.log",
+      "new_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/logs/repair_smoke_plus_tmux.log"
+    },
+    {
+      "old_path": "outputs/logs/vina_failure_diagnosis",
+      "new_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/logs/vina_failure_diagnosis"
+    },
+    {
+      "old_path": "outputs/official_eval_work/contact_degraded_equalized_budget",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/work/official_eval/contact_degraded_equalized_budget"
+    },
+    {
+      "old_path": "outputs/official_eval_work/contact_degraded_multiseed_classified_policy",
+      "new_path": "outputs/20260602-02-contact-degraded-policy-variants/work/official_eval/contact_degraded_multiseed_classified_policy"
+    },
+    {
+      "old_path": "outputs/official_eval_work/contact_degraded_multiseed_key_equalized_budget",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/work/official_eval/contact_degraded_multiseed_key_equalized_budget"
+    },
+    {
+      "old_path": "outputs/official_eval_work/contact_degraded_multiseed_shuffled_ablation",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/work/official_eval/contact_degraded_multiseed_shuffled_ablation"
+    },
+    {
+      "old_path": "outputs/official_eval_work/contact_degraded_seed0_key_equalized_budget",
+      "new_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/work/official_eval/contact_degraded_seed0_key_equalized_budget"
+    }
+  ]
+}

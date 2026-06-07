@@ -1,0 +1,620 @@
+{
+  "experiment_name": "experiments-legacy-output-cleanup",
+  "experiment_id": "20260604-03-experiments-legacy-output-cleanup",
+  "date": "2026-06-04",
+  "policy": "Move legacy experiments artifacts and generated raw/normalized output artifacts into experiment-scoped processed namespaces; centralize split/raw manifests; do not modify .gitignore.",
+  "moves": [
+    {
+      "source_path": "experiments/smoke/pipeline_plan.json",
+      "target_path": "experiments/20260531-01-smoke-file-pipeline/metadata/pipeline_plan.json",
+      "reason": "pipeline plan belongs to smoke file pipeline experiment metadata",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 1,
+      "source_size_bytes": 1759,
+      "action": "moved",
+      "target_file_count": 1,
+      "target_size_bytes": 1759
+    },
+    {
+      "source_path": "experiments/smoke/multiseed_repaired",
+      "target_path": "outputs/20260601-01-smoke-repair-baselines/processed/multiseed_repaired",
+      "reason": "legacy smoke multiseed generated artifacts belong to smoke repair baseline outputs",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 2334,
+      "source_size_bytes": 7182085,
+      "action": "moved",
+      "target_file_count": 2334,
+      "target_size_bytes": 7182085
+    },
+    {
+      "source_path": "experiments/smoke_plus/multiseed_repaired",
+      "target_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/multiseed_repaired",
+      "reason": "legacy smoke-plus multiseed generated artifacts belong to smoke-plus outputs",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 11346,
+      "source_size_bytes": 38345307,
+      "action": "moved",
+      "target_file_count": 11346,
+      "target_size_bytes": 38345307
+    },
+    {
+      "source_path": "outputs/20260531-01-smoke-file-pipeline/raw/smoke_cases.json",
+      "target_path": "outputs/20260531-01-smoke-file-pipeline/processed/cases/smoke_cases.json",
+      "reason": "generated failed/case artifact moved from outputs raw to processed",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 1,
+      "source_size_bytes": 373879,
+      "action": "moved",
+      "target_file_count": 1,
+      "target_size_bytes": 373879
+    },
+    {
+      "source_path": "outputs/20260531-01-smoke-file-pipeline/raw/smoke_failed",
+      "target_path": "outputs/20260531-01-smoke-file-pipeline/processed/failed_molecules/smoke_failed",
+      "reason": "generated failed/case artifact moved from outputs raw to processed",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 12,
+      "source_size_bytes": 33160,
+      "action": "moved",
+      "target_file_count": 12,
+      "target_size_bytes": 33160
+    },
+    {
+      "source_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/raw/smoke_plus_cases.json",
+      "target_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/cases/smoke_plus_cases.json",
+      "reason": "generated failed/case artifact moved from outputs raw to processed",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 1,
+      "source_size_bytes": 3515321,
+      "action": "moved",
+      "target_file_count": 1,
+      "target_size_bytes": 3515321
+    },
+    {
+      "source_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/raw/smoke_plus_failed",
+      "target_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/failed_molecules/smoke_plus_failed",
+      "reason": "generated failed/case artifact moved from outputs raw to processed",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 84,
+      "source_size_bytes": 228382,
+      "action": "moved",
+      "target_file_count": 84,
+      "target_size_bytes": 228382
+    },
+    {
+      "source_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/raw/smoke_plus_local_proposal_failed",
+      "target_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/failed_molecules/smoke_plus_local_proposal_failed",
+      "reason": "generated failed/case artifact moved from outputs raw to processed",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 72,
+      "source_size_bytes": 195756,
+      "action": "moved",
+      "target_file_count": 72,
+      "target_size_bytes": 195756
+    },
+    {
+      "source_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/raw/smoke_plus_vina_docked_failed",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_molecules/smoke_plus_vina_docked_failed",
+      "reason": "generated failed/case artifact moved from outputs raw to processed",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 4,
+      "source_size_bytes": 15350,
+      "action": "moved",
+      "target_file_count": 4,
+      "target_size_bytes": 15350
+    },
+    {
+      "source_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/raw/smoke_plus_vina_local_edit_failed",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_molecules/smoke_plus_vina_local_edit_failed",
+      "reason": "generated failed/case artifact moved from outputs raw to processed",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 3,
+      "source_size_bytes": 9976,
+      "action": "moved",
+      "target_file_count": 3,
+      "target_size_bytes": 9976
+    },
+    {
+      "source_path": "outputs/20260601-05-contact-degraded-local-edit-core/raw/smoke_plus_contact_degraded_local_edit_failed",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_molecules/smoke_plus_contact_degraded_local_edit_failed",
+      "reason": "generated failed/case artifact moved from outputs raw to processed",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 197,
+      "source_size_bytes": 534247,
+      "action": "moved",
+      "target_file_count": 197,
+      "target_size_bytes": 534247
+    },
+    {
+      "source_path": "outputs/20260601-05-contact-degraded-local-edit-core/raw/smoke_plus_contact_degraded_local_edit_failed_seed0",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_molecules/smoke_plus_contact_degraded_local_edit_failed_seed0",
+      "reason": "generated failed/case artifact moved from outputs raw to processed",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 197,
+      "source_size_bytes": 534247,
+      "action": "moved",
+      "target_file_count": 197,
+      "target_size_bytes": 534247
+    },
+    {
+      "source_path": "outputs/20260601-05-contact-degraded-local-edit-core/raw/smoke_plus_contact_degraded_local_edit_failed_seed1",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_molecules/smoke_plus_contact_degraded_local_edit_failed_seed1",
+      "reason": "generated failed/case artifact moved from outputs raw to processed",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 197,
+      "source_size_bytes": 534247,
+      "action": "moved",
+      "target_file_count": 197,
+      "target_size_bytes": 534247
+    },
+    {
+      "source_path": "outputs/20260601-05-contact-degraded-local-edit-core/raw/smoke_plus_contact_degraded_local_edit_failed_seed2",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_molecules/smoke_plus_contact_degraded_local_edit_failed_seed2",
+      "reason": "generated failed/case artifact moved from outputs raw to processed",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 197,
+      "source_size_bytes": 534247,
+      "action": "moved",
+      "target_file_count": 197,
+      "target_size_bytes": 534247
+    },
+    {
+      "source_path": "outputs/20260601-01-smoke-repair-baselines/normalized/smoke_repaired",
+      "target_path": "outputs/20260601-01-smoke-repair-baselines/processed/repaired_molecules/smoke_repaired",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 796,
+      "source_size_bytes": 2192904,
+      "action": "moved",
+      "target_file_count": 796,
+      "target_size_bytes": 2192904
+    },
+    {
+      "source_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/normalized/smoke_plus_docking_like_repaired",
+      "target_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/repaired_molecules/smoke_plus_docking_like_repaired",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 632,
+      "source_size_bytes": 1723366,
+      "action": "moved",
+      "target_file_count": 632,
+      "target_size_bytes": 1723366
+    },
+    {
+      "source_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/normalized/smoke_plus_local_proposal_repaired",
+      "target_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/repaired_molecules/smoke_plus_local_proposal_repaired",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 3816,
+      "source_size_bytes": 10399690,
+      "action": "moved",
+      "target_file_count": 3816,
+      "target_size_bytes": 10399690
+    },
+    {
+      "source_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/normalized/smoke_plus_repaired",
+      "target_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/repaired_molecules/smoke_plus_repaired",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 4448,
+      "source_size_bytes": 12123056,
+      "action": "moved",
+      "target_file_count": 4448,
+      "target_size_bytes": 12123056
+    },
+    {
+      "source_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/normalized/smoke_plus_vina_docked_pose_repaired",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/repaired_molecules/smoke_plus_vina_docked_pose_repaired",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 234,
+      "source_size_bytes": 894495,
+      "action": "moved",
+      "target_file_count": 234,
+      "target_size_bytes": 894495
+    },
+    {
+      "source_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/normalized/smoke_plus_vina_local_edit_repaired",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/repaired_molecules/smoke_plus_vina_local_edit_repaired",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 170,
+      "source_size_bytes": 565860,
+      "action": "moved",
+      "target_file_count": 170,
+      "target_size_bytes": 565860
+    },
+    {
+      "source_path": "outputs/20260601-05-contact-degraded-local-edit-core/normalized/smoke_plus_contact_degraded_local_edit_repaired",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 540,
+      "source_size_bytes": 1320948,
+      "action": "moved",
+      "target_file_count": 540,
+      "target_size_bytes": 1320948
+    },
+    {
+      "source_path": "outputs/20260601-05-contact-degraded-local-edit-core/normalized/smoke_plus_contact_degraded_local_edit_repaired_seed0",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 3088,
+      "source_size_bytes": 8025530,
+      "action": "moved",
+      "target_file_count": 3088,
+      "target_size_bytes": 8025530
+    },
+    {
+      "source_path": "outputs/20260601-05-contact-degraded-local-edit-core/normalized/smoke_plus_contact_degraded_local_edit_repaired_seed1",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed1",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 2826,
+      "source_size_bytes": 7220404,
+      "action": "moved",
+      "target_file_count": 2826,
+      "target_size_bytes": 7220404
+    },
+    {
+      "source_path": "outputs/20260601-05-contact-degraded-local-edit-core/normalized/smoke_plus_contact_degraded_local_edit_repaired_seed2",
+      "target_path": "outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed2",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 2826,
+      "source_size_bytes": 7220404,
+      "action": "moved",
+      "target_file_count": 2826,
+      "target_size_bytes": 7220404
+    },
+    {
+      "source_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/normalized/smoke_plus_contact_degraded_local_edit_repaired_seed0_classified_probe",
+      "target_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_classified_probe",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 19,
+      "source_size_bytes": 50043,
+      "action": "moved",
+      "target_file_count": 19,
+      "target_size_bytes": 50043
+    },
+    {
+      "source_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/normalized/smoke_plus_contact_degraded_local_edit_repaired_seed0_directional_probe",
+      "target_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_directional_probe",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 38,
+      "source_size_bytes": 100086,
+      "action": "moved",
+      "target_file_count": 38,
+      "target_size_bytes": 100086
+    },
+    {
+      "source_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/normalized/smoke_plus_contact_degraded_local_edit_repaired_seed0_shuffled_probe",
+      "target_path": "outputs/20260601-99-misc-official-heads-and-failed-probes/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_shuffled_probe",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 247,
+      "source_size_bytes": 650559,
+      "action": "moved",
+      "target_file_count": 247,
+      "target_size_bytes": 650559
+    },
+    {
+      "source_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/normalized/smoke_plus_contact_degraded_local_edit_repaired_seed0_shuffled_ablation",
+      "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_shuffled_ablation",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 247,
+      "source_size_bytes": 650559,
+      "action": "moved",
+      "target_file_count": 247,
+      "target_size_bytes": 650559
+    },
+    {
+      "source_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/normalized/smoke_plus_contact_degraded_local_edit_repaired_seed1_shuffled_ablation",
+      "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed1_shuffled_ablation",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 221,
+      "source_size_bytes": 570661,
+      "action": "moved",
+      "target_file_count": 221,
+      "target_size_bytes": 570661
+    },
+    {
+      "source_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/normalized/smoke_plus_contact_degraded_local_edit_repaired_seed2_shuffled_ablation",
+      "target_path": "outputs/20260602-01-contact-degraded-budget-and-ablation/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed2_shuffled_ablation",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 221,
+      "source_size_bytes": 570661,
+      "action": "moved",
+      "target_file_count": 221,
+      "target_size_bytes": 570661
+    },
+    {
+      "source_path": "outputs/20260602-02-contact-degraded-policy-variants/normalized/contact_degraded_directional_learned_repaired_seed0",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/contact_degraded_directional_learned_repaired_seed0",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 19,
+      "source_size_bytes": 50043,
+      "action": "moved",
+      "target_file_count": 19,
+      "target_size_bytes": 50043
+    },
+    {
+      "source_path": "outputs/20260602-02-contact-degraded-policy-variants/normalized/contact_degraded_directional_learned_repaired_seed1",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/contact_degraded_directional_learned_repaired_seed1",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 17,
+      "source_size_bytes": 43897,
+      "action": "moved",
+      "target_file_count": 17,
+      "target_size_bytes": 43897
+    },
+    {
+      "source_path": "outputs/20260602-02-contact-degraded-policy-variants/normalized/contact_degraded_directional_learned_repaired_seed2",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/contact_degraded_directional_learned_repaired_seed2",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 17,
+      "source_size_bytes": 43897,
+      "action": "moved",
+      "target_file_count": 17,
+      "target_size_bytes": 43897
+    },
+    {
+      "source_path": "outputs/20260602-02-contact-degraded-policy-variants/normalized/contact_degraded_scaled_learned_repaired_seed0",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/contact_degraded_scaled_learned_repaired_seed0",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 19,
+      "source_size_bytes": 50043,
+      "action": "moved",
+      "target_file_count": 19,
+      "target_size_bytes": 50043
+    },
+    {
+      "source_path": "outputs/20260602-02-contact-degraded-policy-variants/normalized/contact_degraded_scaled_learned_repaired_seed1",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/contact_degraded_scaled_learned_repaired_seed1",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 17,
+      "source_size_bytes": 43897,
+      "action": "moved",
+      "target_file_count": 17,
+      "target_size_bytes": 43897
+    },
+    {
+      "source_path": "outputs/20260602-02-contact-degraded-policy-variants/normalized/contact_degraded_scaled_learned_repaired_seed2",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/contact_degraded_scaled_learned_repaired_seed2",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 17,
+      "source_size_bytes": 43897,
+      "action": "moved",
+      "target_file_count": 17,
+      "target_size_bytes": 43897
+    },
+    {
+      "source_path": "outputs/20260602-02-contact-degraded-policy-variants/normalized/smoke_plus_contact_degraded_local_edit_repaired_seed0_classified_policy",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_classified_policy",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 19,
+      "source_size_bytes": 50043,
+      "action": "moved",
+      "target_file_count": 19,
+      "target_size_bytes": 50043
+    },
+    {
+      "source_path": "outputs/20260602-02-contact-degraded-policy-variants/normalized/smoke_plus_contact_degraded_local_edit_repaired_seed0_directional_classified_policy",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed0_directional_classified_policy",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 19,
+      "source_size_bytes": 50043,
+      "action": "moved",
+      "target_file_count": 19,
+      "target_size_bytes": 50043
+    },
+    {
+      "source_path": "outputs/20260602-02-contact-degraded-policy-variants/normalized/smoke_plus_contact_degraded_local_edit_repaired_seed1_classified_policy",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed1_classified_policy",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 17,
+      "source_size_bytes": 43897,
+      "action": "moved",
+      "target_file_count": 17,
+      "target_size_bytes": 43897
+    },
+    {
+      "source_path": "outputs/20260602-02-contact-degraded-policy-variants/normalized/smoke_plus_contact_degraded_local_edit_repaired_seed1_directional_classified_policy",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed1_directional_classified_policy",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 17,
+      "source_size_bytes": 43897,
+      "action": "moved",
+      "target_file_count": 17,
+      "target_size_bytes": 43897
+    },
+    {
+      "source_path": "outputs/20260602-02-contact-degraded-policy-variants/normalized/smoke_plus_contact_degraded_local_edit_repaired_seed2_classified_policy",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed2_classified_policy",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 17,
+      "source_size_bytes": 43897,
+      "action": "moved",
+      "target_file_count": 17,
+      "target_size_bytes": 43897
+    },
+    {
+      "source_path": "outputs/20260602-02-contact-degraded-policy-variants/normalized/smoke_plus_contact_degraded_local_edit_repaired_seed2_directional_classified_policy",
+      "target_path": "outputs/20260602-02-contact-degraded-policy-variants/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired_seed2_directional_classified_policy",
+      "reason": "generated repaired molecule artifact moved from normalized to processed/repaired_molecules",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 17,
+      "source_size_bytes": 43897,
+      "action": "moved",
+      "target_file_count": 17,
+      "target_size_bytes": 43897
+    },
+    {
+      "source_path": "data/splits/rgroup_smoke_split.json",
+      "target_path": "data/datasets/rgroup_smoke/splits/rgroup_smoke_split_v1.json",
+      "reason": "canonical split moved to tracked manifest namespace",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 1,
+      "source_size_bytes": 387,
+      "action": "moved",
+      "target_file_count": 1,
+      "target_size_bytes": 387
+    },
+    {
+      "source_path": "data/splits/rgroup_smoke_plus_split.json",
+      "target_path": "data/datasets/rgroup_smoke_plus/splits/rgroup_smoke_plus_split_v1.json",
+      "reason": "canonical split moved to tracked manifest namespace",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 1,
+      "source_size_bytes": 519,
+      "action": "moved",
+      "target_file_count": 1,
+      "target_size_bytes": 519
+    },
+    {
+      "source_path": "data/datasets/rgroup_smoke/raw/manifest.json",
+      "target_path": "data/datasets/rgroup_smoke/manifests/raw/rcsb_smoke_complexes_raw_manifest_v1.json",
+      "reason": "raw dataset manifest organized under data/datasets/<dataset_id>/raw",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 1,
+      "source_size_bytes": 3103,
+      "action": "moved",
+      "target_file_count": 1,
+      "target_size_bytes": 3103
+    },
+    {
+      "source_path": "data/datasets/rgroup_smoke_plus/raw/manifest.json",
+      "target_path": "data/datasets/rgroup_smoke_plus/manifests/raw/rcsb_smoke_plus_complexes_raw_manifest_v1.json",
+      "reason": "raw dataset manifest organized under data/datasets/<dataset_id>/raw",
+      "source_exists_before": true,
+      "target_exists_before": false,
+      "source_file_count": 1,
+      "source_size_bytes": 12516,
+      "action": "moved",
+      "target_file_count": 1,
+      "target_size_bytes": 12516
+    },
+    {
+      "cleanup_dir": {
+        "path": "experiments/smoke",
+        "action": "removed_empty_dir"
+      }
+    },
+    {
+      "cleanup_dir": {
+        "path": "experiments/smoke_plus",
+        "action": "removed_empty_dir"
+      }
+    },
+    {
+      "cleanup_dir": {
+        "path": "experiments/ablations",
+        "action": "removed_empty_dir"
+      }
+    },
+    {
+      "cleanup_dir": {
+        "path": "experiments/baselines",
+        "action": "removed_empty_dir"
+      }
+    },
+    {
+      "cleanup_dir": {
+        "path": "experiments/main",
+        "action": "removed_empty_dir"
+      }
+    },
+    {
+      "cleanup_dir": {
+        "path": "data/splits/third_party_audit",
+        "action": "removed_empty_dir"
+      }
+    },
+    {
+      "cleanup_dir": {
+        "path": "data/splits",
+        "action": "removed_empty_dir"
+      }
+    },
+    {
+      "source_path": "outputs/20260601-02-smoke-plus-expansion-and-variants/processed/failed_molecules/smoke_plus_local_proposal_failed",
+      "target_path": "outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_molecules/smoke_plus_local_proposal_failed",
+      "reason": "secondary correction: local proposal failed molecules belong to vina-pose-and-local-edit diagnostics experiment for experiment-id closure",
+      "action": "moved",
+      "target_file_count": 72
+    }
+  ],
+  "summary": {
+    "move_records": 47,
+    "moved_records": 47,
+    "skipped_target_exists": 0,
+    "source_missing": 0
+  },
+  "notes": [
+    "data/raw clean receptor and extracted ligand files were not deleted in this pass because duplicate raw roots have ligand checksum discrepancies requiring provenance reconciliation.",
+    "Existing migration manifests from earlier cleanup experiments intentionally keep historical source paths.",
+    "Secondary correction moved smoke_plus_local_proposal_failed under 20260601-04 to keep failed molecules with their candidate generation experiment."
+  ]
+}

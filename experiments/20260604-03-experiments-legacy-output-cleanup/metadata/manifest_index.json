@@ -1,0 +1,14 @@
+{
+  "experiment_name": "experiments-legacy-output-cleanup",
+  "experiment_id": "20260604-03-experiments-legacy-output-cleanup",
+  "experiment_dir": "experiments/20260604-03-experiments-legacy-output-cleanup",
+  "output_dir": "outputs/20260604-03-experiments-legacy-output-cleanup",
+  "readme_path": "experiments/20260604-03-experiments-legacy-output-cleanup/README.md",
+  "notes_path": "experiments/20260604-03-experiments-legacy-output-cleanup/notes.md",
+  "output_metadata": [
+    "outputs/20260604-03-experiments-legacy-output-cleanup/metadata/experiments_legacy_output_cleanup_manifest.json"
+  ],
+  "output_run_metadata": [],
+  "metadata_role": "lightweight experiment-side index; output artifacts and artifact manifests remain under outputs/<experiment_id>/",
+  "created_or_updated": "2026-06-04"
+}

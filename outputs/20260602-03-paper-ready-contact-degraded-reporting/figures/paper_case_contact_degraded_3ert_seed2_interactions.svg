@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="490.0" y="32" text-anchor="middle" font-family="Arial" font-size="22" font-weight="bold">3ERT seed2 case: repaired PLIP interaction count</text>
+<text x="22" y="222.5" transform="rotate(-90 22 222.5)" text-anchor="middle" font-family="Arial" font-size="14">Repaired PLIP interaction count</text>
+<line x1="95" y1="339.81" x2="950" y2="339.81" stroke="#333" stroke-width="1.5"/>
+<line x1="95" y1="70" x2="95" y2="375" stroke="#333" stroke-width="1"/>
+<line x1="90" y1="343.72" x2="950" y2="343.72" stroke="#ddd" stroke-width="1"/>
+<text x="85" y="347.72" text-anchor="end" font-family="Arial" font-size="12">-0.15</text>
+<line x1="90" y1="342.41" x2="950" y2="342.41" stroke="#ddd" stroke-width="1"/>
+<text x="85" y="346.41" text-anchor="end" font-family="Arial" font-size="12">-0.10</text>
+<line x1="90" y1="341.11" x2="950" y2="341.11" stroke="#ddd" stroke-width="1"/>
+<text x="85" y="345.11" text-anchor="end" font-family="Arial" font-size="12">-0.05</text>
+<line x1="90" y1="339.81" x2="950" y2="339.81" stroke="#ddd" stroke-width="1"/>
+<text x="85" y="343.81" text-anchor="end" font-family="Arial" font-size="12">0.00</text>
+<line x1="90" y1="338.50" x2="950" y2="338.50" stroke="#ddd" stroke-width="1"/>
+<text x="85" y="342.50" text-anchor="end" font-family="Arial" font-size="12">0.05</text>
+<rect x="95.00" y="131.26" width="106.71" height="208.55" fill="#9aa0a6"/>
+<text x="148.36" y="124.26" text-anchor="middle" font-family="Arial" font-size="12">+8.0000</text>
+<text x="148.36" y="395.00" transform="rotate(45 148.36 395.00)" text-anchor="start" font-family="Arial" font-size="12">No-feedback</text>
+<rect x="219.71" y="131.26" width="106.71" height="208.55" fill="#9aa0a6"/>
+<text x="273.07" y="124.26" text-anchor="middle" font-family="Arial" font-size="12">+8.0000</text>
+<text x="273.07" y="395.00" transform="rotate(45 273.07 395.00)" text-anchor="start" font-family="Arial" font-size="12">Rerank</text>
+<rect x="344.43" y="105.19" width="106.71" height="234.62" fill="#4e79a7"/>
+<text x="397.79" y="98.19" text-anchor="middle" font-family="Arial" font-size="12">+9.0000</text>
+<text x="397.79" y="395.00" transform="rotate(45 397.79 395.00)" text-anchor="start" font-family="Arial" font-size="12">Classified</text>
+<rect x="469.14" y="105.19" width="106.71" height="234.62" fill="#4e79a7"/>
+<text x="522.50" y="98.19" text-anchor="middle" font-family="Arial" font-size="12">+9.0000</text>
+<text x="522.50" y="395.00" transform="rotate(45 522.50 395.00)" text-anchor="start" font-family="Arial" font-size="12">Learned</text>
+<rect x="593.86" y="105.19" width="106.71" height="234.62" fill="#4e79a7"/>
+<text x="647.21" y="98.19" text-anchor="middle" font-family="Arial" font-size="12">+9.0000</text>
+<text x="647.21" y="395.00" transform="rotate(45 647.21 395.00)" text-anchor="start" font-family="Arial" font-size="12">Budgeted</text>
+<rect x="718.57" y="105.19" width="106.71" height="234.62" fill="#4e79a7"/>
+<text x="771.93" y="98.19" text-anchor="middle" font-family="Arial" font-size="12">+9.0000</text>
+<text x="771.93" y="395.00" transform="rotate(45 771.93 395.00)" text-anchor="start" font-family="Arial" font-size="12">Editable search</text>
+<rect x="843.29" y="105.19" width="106.71" height="234.62" fill="#4e79a7"/>
+<text x="896.64" y="98.19" text-anchor="middle" font-family="Arial" font-size="12">+9.0000</text>
+<text x="896.64" y="395.00" transform="rotate(45 896.64 395.00)" text-anchor="start" font-family="Arial" font-size="12">Full search</text>
+</svg>

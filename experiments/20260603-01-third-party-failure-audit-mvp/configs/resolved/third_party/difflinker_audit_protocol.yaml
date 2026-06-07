@@ -1,0 +1,44 @@
+schema_version: config_third_party_method_protocol_v0_1
+schema_path: schemas/configs/third_party/method_protocol_config_v0_1.json
+method: DiffLinker
+protocol_config_version: difflinker_audit_protocol_v0_1_draft
+status: mvp_trial_prepared_not_executed
+created_date: '2026-06-03'
+run_boundary_label: instrumented_reproduction
+algorithm_changed: false
+purpose: minimal output-capture sanity on bundled case studies using official Zenodo pocket checkpoint
+upstream:
+  repo_url: https://github.com/igashov/DiffLinker
+  local_path: third_party/difflinker
+  commit: fafbe47afe6cf068e9e1b23e7145377fb0f89f89
+  license: MIT
+checkpoint:
+  local_path: third_party/difflinker/models/pockets_difflinker_full.ckpt
+  source_url: https://zenodo.org/records/10988017/files/pockets_difflinker_full_no_anchors_fc_pdb_excluded.ckpt?download=1
+  sha256: 695ef7d634c09db4b9635c4e5efebad23385b8432f0687b6eae5e726ba7883f9
+dataset_view:
+  dataset_view_id: difflinker_case_studies_v1
+  split_id: example_only_no_formal_split
+  leakage_check_status: unknown_risk
+mvp_trial:
+  run_id_template: difflinker_hsp90_n{n_samples}_seed{seed}_v0_1
+  primary_trial_type: pocket_conditioned_linker_generation
+  case_study_inputs:
+    fragments: case_studies/hsp90/3hz1_modified_fragments_obabel.sdf
+    protein: case_studies/hsp90/3hz1_protein.pdb
+  command_template: >-
+    python scripts/third_party/run_difflinker_instrumented.py --repo third_party/difflinker --fragments case_studies/hsp90/3hz1_modified_fragments_obabel.sdf --protein case_studies/hsp90/3hz1_protein.pdb --model third_party/difflinker/models/pockets_difflinker_full.ckpt --linker-size 5 --anchors 1,2 --n-samples 10 --run-id {run_id} --output-root outputs/20260603-01-third-party-failure-audit-mvp/difflinker/{run_id}
+  output_expectations:
+    metadata_schemas:
+      run_metadata: schemas/third_party_audit/run/run_metadata_v0_1.json
+      output_manifest: schemas/third_party_audit/run/output_manifest_v0_1.json
+      sample_metadata: schemas/third_party_audit/samples/failure_sample_metadata_v0_1.json
+      stage_attrition: schemas/third_party_audit/attrition/stage_attrition_v0_1.json
+    captured_outputs: outputs/20260603-01-third-party-failure-audit-mvp/difflinker/<run_id>/captured_outputs/
+    run_metadata: outputs/20260603-01-third-party-failure-audit-mvp/difflinker/<run_id>/run_metadata.json
+    sample_metadata: outputs/20260603-01-third-party-failure-audit-mvp/difflinker/<run_id>/samples.jsonl
+  denominator_plan:
+    N_budget: n_samples
+    N_final: count .sdf/.xyz generated files
+    N_raw_attempt_metadata: wrapper emits intended attempt rows; method-level retry/tool failures must be flagged separately
+  caution: linker task is not full de novo SBDD; report as linker/stage-limited unless raw attempt lineage is proven

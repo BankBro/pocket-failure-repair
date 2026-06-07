@@ -1,0 +1,8 @@
+name: repaired_smoke_plus_vina_local_edit
+seed: 0
+input:
+  repaired_candidates_path: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/repaired_candidates_smoke_plus_vina_local_edit.jsonl
+output:
+  evaluated_repaired_path: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/evaluated_repaired_smoke_plus_vina_local_edit.jsonl
+  metrics_path: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/repaired_smoke_plus_vina_local_edit.json
+  table_path: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/repaired_smoke_plus_vina_local_edit.csv

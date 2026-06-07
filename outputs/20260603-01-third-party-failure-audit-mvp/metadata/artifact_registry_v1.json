@@ -1,0 +1,66 @@
+{
+  "schema_version": "artifact_registry_v1",
+  "created_date": "2026-06-03",
+  "artifacts": [
+    {
+      "artifact_id": "repo_diffsbdd",
+      "artifact_type": "third_party_repo",
+      "source_url": "https://github.com/arneschneuing/DiffSBDD",
+      "license": "MIT",
+      "checksum": "commit 5d0d38d16c8932a0339fd2ce3f67ade98bbdff27",
+      "storage_location": "third_party/diffsbdd",
+      "public_release_decision": "Tier C external repo, do not vendor in release tarball",
+      "risk_note": "method env not created"
+    },
+    {
+      "artifact_id": "repo_difflinker",
+      "artifact_type": "third_party_repo",
+      "source_url": "https://github.com/igashov/DiffLinker",
+      "license": "MIT",
+      "checksum": "commit fafbe47afe6cf068e9e1b23e7145377fb0f89f89",
+      "storage_location": "third_party/difflinker",
+      "public_release_decision": "Tier C external repo, do not vendor in release tarball",
+      "risk_note": "method env not created"
+    },
+    {
+      "artifact_id": "repo_pocket2mol",
+      "artifact_type": "third_party_repo",
+      "source_url": "https://github.com/pengxingang/Pocket2Mol",
+      "license": "MIT",
+      "checksum": "commit 836a0c4ce487297ad24bc54ac2ebd163de13242c",
+      "storage_location": "third_party/pocket2mol",
+      "public_release_decision": "Tier C external repo, do not vendor in release tarball",
+      "risk_note": "checkpoint/data unknown size"
+    },
+    {
+      "artifact_id": "repo_targetdiff",
+      "artifact_type": "third_party_repo",
+      "source_url": "https://github.com/guanjq/targetdiff",
+      "license": "MIT",
+      "checksum": "commit 142f1eb7178480d435fe0b8cb95a99beb48997c7",
+      "storage_location": "third_party/targetdiff",
+      "public_release_decision": "Tier C external repo, do not vendor in release tarball",
+      "risk_note": "checkpoint/data unknown size"
+    },
+    {
+      "artifact_id": "ckpt_diffsbdd_crossdocked_fullatom_cond",
+      "artifact_type": "checkpoint",
+      "source_url": "https://zenodo.org/record/8183747/files/crossdocked_fullatom_cond.ckpt?download=1",
+      "license": "external checkpoint terms not separately frozen",
+      "checksum": "07f86764bf569aafbc40a9c15fc02de8e2550437dd0f17f657eab3abe66c372c",
+      "storage_location": "third_party/diffsbdd/checkpoints/crossdocked_fullatom_cond.ckpt",
+      "public_release_decision": "Tier C, do not commit or redistribute; provide source URL and checksum",
+      "risk_note": "training data overlap unknown"
+    },
+    {
+      "artifact_id": "ckpt_difflinker_pockets_full",
+      "artifact_type": "checkpoint",
+      "source_url": "https://zenodo.org/records/10988017/files/pockets_difflinker_full_no_anchors_fc_pdb_excluded.ckpt?download=1",
+      "license": "external checkpoint terms not separately frozen",
+      "checksum": "695ef7d634c09db4b9635c4e5efebad23385b8432f0687b6eae5e726ba7883f9",
+      "storage_location": "third_party/difflinker/models/pockets_difflinker_full.ckpt",
+      "public_release_decision": "Tier C, do not commit or redistribute; provide source URL and checksum",
+      "risk_note": "pdb_excluded claim not independently verified for trial cases"
+    }
+  ]
+}

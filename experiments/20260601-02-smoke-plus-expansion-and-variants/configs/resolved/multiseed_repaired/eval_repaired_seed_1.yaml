@@ -1,0 +1,12 @@
+{
+  "name": "repaired_smoke_seed_1",
+  "seed": 1,
+  "input": {
+    "repaired_candidates_path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260601-02-smoke-plus-expansion-and-variants/processed/multiseed_repaired/repaired_candidates_seed_1.jsonl"
+  },
+  "output": {
+    "evaluated_repaired_path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260601-02-smoke-plus-expansion-and-variants/processed/multiseed_repaired/evaluated_repaired_seed_1.jsonl",
+    "metrics_path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260601-02-smoke-plus-expansion-and-variants/processed/multiseed_repaired/repaired_metrics_seed_1.json",
+    "table_path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260601-02-smoke-plus-expansion-and-variants/processed/multiseed_repaired/repaired_metrics_seed_1.csv"
+  }
+}

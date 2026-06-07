@@ -1,0 +1,9 @@
+name: failed_candidate_smoke_plus_vina_local_edit
+seed: 0
+input:
+  docked_candidates_path: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_vina_docked_pose_smoke.jsonl
+output:
+  candidates_path: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_vina_local_edit.jsonl
+  failed_molecules_dir: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_molecules/smoke_plus_vina_local_edit_failed
+labels:
+  source: vina_local_edit_template_topology

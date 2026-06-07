@@ -1,0 +1,11 @@
+baseline,failure_type,num_records,num_judged,timeout_or_error_count,full_pass_rate,loading_and_sanitization_pass_rate,loading_and_sanitization_all_pass_rate,reference_consistency_pass_rate,reference_consistency_all_pass_rate,ligand_geometry_pass_rate,ligand_geometry_all_pass_rate,pocket_geometry_pass_rate,pocket_geometry_all_pass_rate,redock_rmsd_pass_rate,redock_rmsd_all_pass_rate
+direct_regeneration,anchor_invalid,1,1,0,0.0,1.0,1.0,0.35714285714285715,0.0,1.0,1.0,0.7777777777777778,0.0,0.0,0.0
+direct_regeneration,clash,1,1,0,0.0,1.0,1.0,0.35714285714285715,0.0,1.0,1.0,1.0,1.0,1.0,1.0
+direct_regeneration,drug_likeness_drop,1,0,1,,,,,,,,,,,
+direct_regeneration,geometry_invalid,1,1,0,0.0,1.0,1.0,0.35714285714285715,0.0,0.7142857142857143,0.0,0.8888888888888888,0.0,1.0,1.0
+direct_regeneration,interaction_loss,1,1,0,0.0,1.0,1.0,0.35714285714285715,0.0,0.5714285714285714,0.0,0.8888888888888888,0.0,1.0,1.0
+feedback_learned_geometry_policy,anchor_invalid,1,1,0,0.0,1.0,1.0,0.35714285714285715,0.0,1.0,1.0,0.8888888888888888,0.0,1.0,1.0
+feedback_learned_geometry_policy,clash,1,1,0,0.0,1.0,1.0,0.35714285714285715,0.0,1.0,1.0,1.0,1.0,1.0,1.0
+feedback_learned_geometry_policy,drug_likeness_drop,1,0,1,,,,,,,,,,,
+feedback_learned_geometry_policy,geometry_invalid,1,1,0,0.0,1.0,1.0,0.35714285714285715,0.0,0.7142857142857143,0.0,1.0,1.0,1.0,1.0
+feedback_learned_geometry_policy,interaction_loss,1,1,0,0.0,1.0,1.0,0.35714285714285715,0.0,0.5714285714285714,0.0,0.8888888888888888,0.0,1.0,1.0

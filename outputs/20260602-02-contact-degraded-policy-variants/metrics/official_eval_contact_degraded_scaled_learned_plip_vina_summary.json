@@ -1,0 +1,35 @@
+{
+  "input": "outputs/metrics/official_eval_contact_degraded_scaled_learned_plip_vina.jsonl",
+  "metrics": [
+    {
+      "baseline": "feedback_scaled_learned_editable_contact_policy",
+      "internal_budget_types": [
+        "single_policy_output"
+      ],
+      "mean_internal_candidate_budget": 1.0,
+      "mean_plip_failed_interaction_count": 9.433962264150944,
+      "mean_plip_failed_interaction_recovery": 0.8136437792594694,
+      "mean_plip_failed_interaction_similarity": 0.7329569277682486,
+      "mean_plip_interaction_count": 9.81132075471698,
+      "mean_plip_interaction_recovery": 0.8226556958433818,
+      "mean_plip_interaction_recovery_gain": 0.009011916583912613,
+      "mean_plip_interaction_similarity": 0.715384981894416,
+      "mean_plip_interaction_similarity_gain": -0.017571945873832664,
+      "mean_plip_reference_interaction_count": 10.81132075471698,
+      "mean_plip_repaired_interaction_count": 9.81132075471698,
+      "mean_vina_score_only_energy": -6.581169811320751,
+      "num_records": 53,
+      "plip_available_rate": 1.0,
+      "plip_error_count": 0,
+      "posebusters_available_rate": null,
+      "posebusters_error_count": 0,
+      "posebusters_full_pass_rate": null,
+      "source": "official_external_eval_summary",
+      "vina_available_rate": 1.0,
+      "vina_error_count": 0
+    }
+  ],
+  "name": "official_eval_contact_degraded_scaled_learned_plip_vina",
+  "notes": "Official external-tool summary. Vina values are score-only energies, not redocking success. PLIP values are interaction counts from generated protein-ligand complex PDBs.",
+  "num_records": 53
+}

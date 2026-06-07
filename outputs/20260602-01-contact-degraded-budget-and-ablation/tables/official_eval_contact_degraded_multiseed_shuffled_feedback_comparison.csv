@@ -1,0 +1,10 @@
+comparison_role,baseline,num_records,mean_internal_candidate_budget,internal_budget_types,plip_error_count,vina_error_count,official_plip_recovery_gain,official_plip_similarity_gain,vina_score_only_energy
+no_feedback_budget1_reference,no_feedback_repair,53,1.0,single_failed_candidate,0,0,0.0,0.0,-6.985490566037734
+rerank_budget1_reference,rerank_only,53,1.0,single_failed_candidate,0,0,0.0,0.0,-6.985490566037734
+normal_learned_budget1,feedback_learned_editable_contact_policy,53,1.0,single_policy_output,0,0,0.006451269683643074,-0.011851670342236373,-6.599094339622639
+shuffled_learned_budget1,feedback_learned_editable_contact_shuffled_policy,53,1.0,single_policy_output,0,0,0.0006561214356646396,-0.01882844618693675,-6.942150943396224
+normal_ridge_budget1,feedback_ridge_editable_contact_policy,53,1.0,single_policy_output,0,0,0.007646474677259188,0.008316531752480118,-6.559283018867925
+shuffled_ridge_budget1,feedback_ridge_editable_contact_shuffled_policy,53,1.0,single_policy_output,0,0,-0.005287984111221444,-0.025090527920716598,-6.862641509433961
+normal_budgeted_learned_budget10,feedback_budgeted_learned_editable_contact_policy,53,10.0,editable_offset_selection,0,0,0.009852461342034342,-0.0083047455688965,-6.9294339622641505
+shuffled_budgeted_learned_budget10,feedback_budgeted_learned_editable_contact_shuffled_policy,53,10.0,editable_offset_selection,0,0,-0.0012306710171655485,-0.020543712053146007,-6.94733962264151
+editable_search_budget10_reference,feedback_editable_contact_policy,53,10.0,editable_offset_selection,0,0,0.03012838700524897,-0.007117314441048291,-6.993377358490563

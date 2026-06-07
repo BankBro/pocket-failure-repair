@@ -1,0 +1,9 @@
+{
+  "run_id": "difflinker_dryrun_v0_1",
+  "captured_outputs": [],
+  "logs": [
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/third_party_audit/difflinker/difflinker_dryrun_v0_1/logs/stdout.log",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/third_party_audit/difflinker/difflinker_dryrun_v0_1/logs/stderr.log"
+  ],
+  "sha256": {}
+}

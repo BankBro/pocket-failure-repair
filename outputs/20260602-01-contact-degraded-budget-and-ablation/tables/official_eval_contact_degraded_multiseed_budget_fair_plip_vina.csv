@@ -1,0 +1,10 @@
+budget_tier,baseline,num_records,mean_internal_candidate_budget,internal_budget_types,plip_error_count,vina_error_count,official_plip_recovery_gain,official_plip_similarity_gain,official_plip_repaired_interaction_count,vina_score_only_energy,interpretation_role
+budget_10_fair,feedback_editable_contact_policy,53,10.0,editable_offset_selection,0,0,0.03012838700524897,-0.007117314441048291,10.226415094339623,-6.993377358490563,fair_within_budget_10
+budget_10_fair,feedback_editable_full_policy,53,10.0,editable_offset_selection,0,0,0.03012838700524897,-0.007117314441048291,10.226415094339623,-6.993377358490563,fair_within_budget_10
+budget_10_fair,feedback_budgeted_learned_editable_contact_policy,53,10.0,editable_offset_selection,0,0,0.009852461342034342,-0.0083047455688965,9.773584905660377,-6.9294339622641505,fair_within_budget_10
+budget_1_fair,feedback_ridge_editable_contact_policy,53,1.0,single_policy_output,0,0,0.007646474677259188,0.008316531752480118,9.49056603773585,-6.559283018867925,fair_within_budget_1
+budget_1_fair,feedback_learned_editable_contact_policy,53,1.0,single_policy_output,0,0,0.006451269683643074,-0.011851670342236373,9.679245283018869,-6.599094339622639,fair_within_budget_1
+budget_1_fair,no_feedback_repair,53,1.0,single_failed_candidate,0,0,0.0,0.0,9.433962264150944,-6.985490566037734,fair_within_budget_1
+budget_1_fair,rerank_only,53,1.0,single_failed_candidate,0,0,0.0,0.0,9.433962264150944,-6.985490566037734,fair_within_budget_1
+higher_budget_reference_not_fair,best_of_n,53,16.11320754716981,candidate_pool_selection,0,0,-0.05910058164278622,-0.05530643360832039,8.566037735849056,-6.898471698113207,not_same_internal_budget_reference
+higher_budget_reference_not_fair,direct_regeneration,53,16.11320754716981,candidate_pool_index_selection,0,0,-0.1440984536813732,-0.18995401144293675,9.283018867924529,-4.709037735849058,not_same_internal_budget_reference

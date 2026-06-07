@@ -1,0 +1,24 @@
+name: failed_candidate_smoke_plus
+seed: 0
+input:
+  dataset_path: data/datasets/rgroup_smoke_plus/entries/index.jsonl
+output:
+  candidates_path: outputs/20260601-02-smoke-plus-expansion-and-variants/processed/failed_candidates_smoke_plus.jsonl
+  failed_molecules_dir: outputs/20260601-02-smoke-plus-expansion-and-variants/processed/failed_molecules/smoke_plus_failed
+failure_types:
+  - clash
+  - interaction_loss
+  - anchor_invalid
+  - geometry_invalid
+  - linker_too_flexible
+  - drug_likeness_drop
+  - score_hacking
+limits:
+  candidates_per_example: 7
+  max_translation_angstrom: 1.5
+  max_rotation_degree: 30
+  max_anchor_perturbation_angstrom: 2.0
+labels:
+  store_reference_ligand: true
+  store_failure_reason: true
+  store_random_seed: true

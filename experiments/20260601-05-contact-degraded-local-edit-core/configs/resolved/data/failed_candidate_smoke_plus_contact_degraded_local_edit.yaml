@@ -1,0 +1,12 @@
+name: failed_candidate_smoke_plus_contact_degraded_local_edit
+seed: 0
+input:
+  dataset_path: data/datasets/rgroup_smoke_plus/entries/index.jsonl
+output:
+  candidates_path: outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_candidates_smoke_plus_contact_degraded_local_edit.jsonl
+  failed_molecules_dir: outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_molecules/smoke_plus_contact_degraded_local_edit_failed
+limits:
+  max_per_example: 3
+  min_contact_recovery_loss: 0.03
+labels:
+  source: contact_degraded_anchor_preserved_local_edit

@@ -1,0 +1,9 @@
+name: official_eval_local_proposal_failed_vina
+seed: 0
+input:
+  candidates_path: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_local_proposal.jsonl
+output:
+  official_eval_path: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_local_proposal_failed_vina.jsonl
+  summary_path: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/metrics/official_eval_smoke_plus_local_proposal_failed_vina_summary.json
+  table_path: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/tables/official_eval_smoke_plus_local_proposal_failed_vina_summary.csv
+notes: Vina score-only evaluation for RDKit local-proposal failed candidates; not redocking success.

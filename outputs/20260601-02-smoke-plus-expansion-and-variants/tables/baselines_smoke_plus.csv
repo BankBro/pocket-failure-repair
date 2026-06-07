@@ -1,0 +1,10 @@
+baseline,num_candidates,num_evaluable_for_repair,repair_evaluable_rate,same_budget_success_rate,scaffold_preservation,editable_validity,anchor_validity,clash_count,clash_free_rate,posebusters_pass,plip_interaction_recovery,vina_delta,qed,sa,logp,rotatable_bonds,source
+direct_regeneration,84,63,0.75,0.4523809523809524,,0.5714285714285714,0.8571428571428571,,0.75,,,,,,,,smoke_rdkit_feedback_template
+best_of_n,84,63,0.75,0.4523809523809524,,0.5714285714285714,0.8571428571428571,,0.75,,,,,,,,smoke_rdkit_feedback_template
+rerank_only,84,63,0.75,0.4523809523809524,,0.5714285714285714,0.8571428571428571,,0.75,,,,,,,,smoke_rdkit_feedback_template
+no_feedback_repair,84,63,0.75,0.4523809523809524,,0.5714285714285714,0.8571428571428571,,0.75,,,,,,,,smoke_rdkit_feedback_template
+feedback_geometry_refinement,84,63,0.75,0.4523809523809524,,0.5714285714285714,0.8571428571428571,,0.75,,,,,,,,smoke_rdkit_feedback_template
+feedback_learned_geometry_policy,84,63,0.75,0.4523809523809524,,0.5714285714285714,0.8571428571428571,,0.75,,,,,,,,smoke_rdkit_feedback_template
+feedback_kernel_geometry_policy,84,63,0.75,0.4523809523809524,,0.5714285714285714,0.8571428571428571,,0.75,,,,,,,,smoke_rdkit_feedback_template
+feedback_knn_geometry_policy,84,63,0.75,0.4523809523809524,,0.5714285714285714,0.8571428571428571,,0.75,,,,,,,,smoke_rdkit_feedback_template
+feedback_linear_refinement,84,63,0.75,0.4523809523809524,,0.5714285714285714,0.8571428571428571,,0.75,,,,,,,,smoke_rdkit_feedback_template

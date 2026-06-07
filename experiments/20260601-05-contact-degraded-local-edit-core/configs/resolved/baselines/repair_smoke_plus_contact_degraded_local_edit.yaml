@@ -1,0 +1,30 @@
+name: repair_smoke_plus_contact_degraded_local_edit
+seed: 0
+input:
+  candidates_path: outputs/20260601-05-contact-degraded-local-edit-core/processed/failed_candidates_smoke_plus_contact_degraded_local_edit.jsonl
+  feedback_path: outputs/20260601-05-contact-degraded-local-edit-core/processed/feedback_smoke_plus_contact_degraded_local_edit.jsonl
+output:
+  repaired_candidates_path: outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_candidates_smoke_plus_contact_degraded_local_edit.jsonl
+  repaired_molecules_dir: outputs/20260601-05-contact-degraded-local-edit-core/processed/repaired_molecules/smoke_plus_contact_degraded_local_edit_repaired
+baselines:
+  - direct_regeneration
+  - best_of_n
+  - rerank_only
+  - no_failed_candidate_policy
+  - no_feedback_repair
+  - feedback_editable_contact_policy
+  - feedback_editable_geometry_only_policy
+  - feedback_editable_interaction_only_policy
+  - feedback_editable_global_only_policy
+  - feedback_editable_full_policy
+  - feedback_learned_editable_contact_policy
+  - feedback_ridge_editable_contact_policy
+  - feedback_geometry_refinement
+  - feedback_learned_geometry_policy
+  - feedback_kernel_geometry_policy
+  - feedback_knn_geometry_policy
+  - feedback_residual_ensemble_policy
+  - feedback_linear_refinement
+  - coordinate_rollback
+  - identity_failed_candidate
+  - feedback_rule_repair

@@ -1,0 +1,38 @@
+{
+  "schema_version": "third_party_stage_attrition_v0_1",
+  "summary_mode": "metadata_only_no_formal_labels",
+  "method": "DiffSBDD",
+  "run_id": "diffsbdd_dryrun_v0_1",
+  "dataset_view_id": "diffsbdd_example_3rfm_5ndu_v1",
+  "denominator_policy_version": "pfr_failure_statistics_v0_1_draft",
+  "rows": [
+    {
+      "method": "DiffSBDD",
+      "run_id": "diffsbdd_dryrun_v0_1",
+      "seed": null,
+      "dataset_view_id": "diffsbdd_example_3rfm_5ndu_v1",
+      "complex_id": "3rfm",
+      "pocket_id": null,
+      "N_budget": 3,
+      "N_raw_attempt_metadata": 3,
+      "N_raw_captured": 0,
+      "N_original_failed_samples": 0,
+      "N_parse_fail": null,
+      "N_parsed": null,
+      "N_rdkit_invalid": null,
+      "N_rdkit_valid": null,
+      "N_anchor_fail": null,
+      "N_anchor_preserved": null,
+      "N_docking_attempted": null,
+      "N_docking_failed": null,
+      "N_pose_available": 0,
+      "N_not_evaluable": 3,
+      "N_evaluable": 0,
+      "N_rejected": 0,
+      "N_selected": 0,
+      "N_final": 0,
+      "N_repair_eligible": null,
+      "notes": "metadata-only attrition; no formal labels assigned"
+    }
+  ]
+}

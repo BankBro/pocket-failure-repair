@@ -1,0 +1,38 @@
+{
+  "metrics": [
+    {
+      "anchor_validity": 1.0,
+      "baseline": "feedback_scaled_learned_editable_contact_policy",
+      "clash_free_rate": 0.8947368421052632,
+      "editable_validity": 1.0,
+      "internal_budget_types": [
+        "single_policy_output"
+      ],
+      "mean_anchor_error_reduction": 0.0,
+      "mean_clash_count": 0.10526315789473684,
+      "mean_clash_count_reduction": -0.10526315789473684,
+      "mean_contact_fingerprint_similarity": 0.8750490060877874,
+      "mean_contact_fingerprint_similarity_gain": 0.0033377784520373624,
+      "mean_contact_recovery": 0.9093121437401598,
+      "mean_contact_recovery_gain": 0.021257627765064843,
+      "mean_internal_candidate_budget": 1.0,
+      "mean_ligand_efficiency_proxy": 0.027224012795979514,
+      "mean_logp": 0.7418000000000013,
+      "mean_posebusters_like_pass": 0.8947368421052632,
+      "mean_qed": 0.3962849946115537,
+      "mean_sa_fallback": 3.8584210526315768,
+      "mean_vina_like_gain": -0.22341683032197351,
+      "mean_vina_like_proxy": 0.9149414375236514,
+      "num_repaired": 19,
+      "num_sample_evaluable": 19,
+      "repair_gain_success_rate": 0.21052631578947367,
+      "repaired_success_rate": 0.8947368421052632,
+      "scaffold_preservation": 1.0,
+      "source": "repaired_molecule_rdkit_geometry_eval_with_fallback_external_proxies"
+    }
+  ],
+  "name": "evaluated_contact_degraded_scaled_learned_seed0",
+  "notes": "Repaired-molecule RDKit/geometry smoke evaluation; includes deterministic/rule baselines, oracle sanity checks, and lightweight oracle-free learned geometry policy where configured. Fallback proxy metrics are not official PoseBusters/PLIP/Vina results.",
+  "num_repaired_records": 19,
+  "seed": 0
+}

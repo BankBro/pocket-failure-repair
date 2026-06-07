@@ -1,0 +1,12 @@
+{
+  "experiment_name": "paper-ready-contact-degraded-reporting",
+  "experiment_id": "20260602-03-paper-ready-contact-degraded-reporting",
+  "experiment_dir": "experiments/20260602-03-paper-ready-contact-degraded-reporting",
+  "output_dir": "outputs/20260602-03-paper-ready-contact-degraded-reporting",
+  "readme_path": "experiments/20260602-03-paper-ready-contact-degraded-reporting/README.md",
+  "notes_path": null,
+  "output_metadata": [],
+  "output_run_metadata": [],
+  "metadata_role": "lightweight experiment-side index; output artifacts and artifact manifests remain under outputs/<experiment_id>/",
+  "created_or_updated": "2026-06-04"
+}

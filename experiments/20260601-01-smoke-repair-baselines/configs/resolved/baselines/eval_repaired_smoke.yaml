@@ -1,0 +1,8 @@
+name: repaired_smoke
+seed: 0
+input:
+  repaired_candidates_path: outputs/20260601-01-smoke-repair-baselines/processed/repaired_candidates_smoke.jsonl
+output:
+  evaluated_repaired_path: outputs/20260601-01-smoke-repair-baselines/processed/evaluated_repaired_smoke.jsonl
+  metrics_path: outputs/20260601-01-smoke-repair-baselines/metrics/repaired_smoke.json
+  table_path: outputs/20260601-01-smoke-repair-baselines/tables/repaired_smoke.csv

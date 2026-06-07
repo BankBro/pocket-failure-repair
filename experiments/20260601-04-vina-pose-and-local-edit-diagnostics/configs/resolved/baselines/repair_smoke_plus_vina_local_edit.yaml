@@ -1,0 +1,23 @@
+name: repair_smoke_plus_vina_local_edit
+seed: 0
+input:
+  candidates_path: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/failed_candidates_smoke_plus_vina_local_edit.jsonl
+  feedback_path: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/feedback_smoke_plus_vina_local_edit.jsonl
+output:
+  repaired_candidates_path: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/repaired_candidates_smoke_plus_vina_local_edit.jsonl
+  repaired_molecules_dir: outputs/20260601-04-vina-pose-and-local-edit-diagnostics/processed/repaired_molecules/smoke_plus_vina_local_edit_repaired
+baselines:
+  - direct_regeneration
+  - best_of_n
+  - rerank_only
+  - no_feedback_repair
+  - feedback_anchor_alignment_policy
+  - feedback_geometry_refinement
+  - feedback_learned_geometry_policy
+  - feedback_kernel_geometry_policy
+  - feedback_knn_geometry_policy
+  - feedback_residual_ensemble_policy
+  - feedback_linear_refinement
+  - coordinate_rollback
+  - identity_failed_candidate
+  - feedback_rule_repair

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560">
+<rect width="100%" height="100%" fill="white"/>
+<text x="490.0" y="32" text-anchor="middle" font-family="Arial" font-size="22" font-weight="bold">Diagnostic feedback ablation</text>
+<text x="22" y="242.5" transform="rotate(-90 22 242.5)" text-anchor="middle" font-family="Arial" font-size="14">Official PLIP recovery gain</text>
+<line x1="95" y1="319.82" x2="950" y2="319.82" stroke="#333" stroke-width="1.5"/>
+<line x1="95" y1="70" x2="95" y2="415" stroke="#333" stroke-width="1"/>
+<line x1="90" y1="319.82" x2="950" y2="319.82" stroke="#ddd" stroke-width="1"/>
+<text x="85" y="323.82" text-anchor="end" font-family="Arial" font-size="12">0.00</text>
+<rect x="95.00" y="319.82" width="79.00" height="1.00" fill="#9aa0a6"/>
+<text x="134.50" y="312.82" text-anchor="middle" font-family="Arial" font-size="12">+0.0000</text>
+<text x="134.50" y="435.00" transform="rotate(45 134.50 435.00)" text-anchor="start" font-family="Arial" font-size="12">No-feedback</text>
+<rect x="192.00" y="315.74" width="79.00" height="4.08" fill="#bab0ab"/>
+<text x="231.50" y="308.74" text-anchor="middle" font-family="Arial" font-size="12">+0.0007</text>
+<text x="231.50" y="435.00" transform="rotate(45 231.50 435.00)" text-anchor="start" font-family="Arial" font-size="12">Shuf learned</text>
+<rect x="289.00" y="279.66" width="79.00" height="40.16" fill="#4e79a7"/>
+<text x="328.50" y="272.66" text-anchor="middle" font-family="Arial" font-size="12">+0.0065</text>
+<text x="328.50" y="435.00" transform="rotate(45 328.50 435.00)" text-anchor="start" font-family="Arial" font-size="12">Learned</text>
+<rect x="386.00" y="319.82" width="79.00" height="32.92" fill="#bab0ab"/>
+<text x="425.50" y="369.74" text-anchor="middle" font-family="Arial" font-size="12">-0.0053</text>
+<text x="425.50" y="435.00" transform="rotate(45 425.50 435.00)" text-anchor="start" font-family="Arial" font-size="12">Shuf ridge</text>
+<rect x="483.00" y="272.22" width="79.00" height="47.60" fill="#4e79a7"/>
+<text x="522.50" y="265.22" text-anchor="middle" font-family="Arial" font-size="12">+0.0076</text>
+<text x="522.50" y="435.00" transform="rotate(45 522.50 435.00)" text-anchor="start" font-family="Arial" font-size="12">Ridge</text>
+<rect x="580.00" y="263.72" width="79.00" height="56.10" fill="#4e79a7"/>
+<text x="619.50" y="256.72" text-anchor="middle" font-family="Arial" font-size="12">+0.0090</text>
+<text x="619.50" y="435.00" transform="rotate(45 619.50 435.00)" text-anchor="start" font-family="Arial" font-size="12">Classified</text>
+<rect x="677.00" y="319.82" width="79.00" height="7.66" fill="#bab0ab"/>
+<text x="716.50" y="344.48" text-anchor="middle" font-family="Arial" font-size="12">-0.0012</text>
+<text x="716.50" y="435.00" transform="rotate(45 716.50 435.00)" text-anchor="start" font-family="Arial" font-size="12">Shuf budgeted</text>
+<rect x="774.00" y="258.49" width="79.00" height="61.34" fill="#59a14f"/>
+<text x="813.50" y="251.49" text-anchor="middle" font-family="Arial" font-size="12">+0.0099</text>
+<text x="813.50" y="435.00" transform="rotate(45 813.50 435.00)" text-anchor="start" font-family="Arial" font-size="12">Budgeted</text>
+<rect x="871.00" y="132.26" width="79.00" height="187.57" fill="#f28e2b"/>
+<text x="910.50" y="125.26" text-anchor="middle" font-family="Arial" font-size="12">+0.0301</text>
+<text x="910.50" y="435.00" transform="rotate(45 910.50 435.00)" text-anchor="start" font-family="Arial" font-size="12">Editable search</text>
+</svg>
