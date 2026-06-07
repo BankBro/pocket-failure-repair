@@ -17,14 +17,35 @@
 5. AMG 与 MolJO 名称在公开检索中存在歧义或证据不足, 第一轮只保留可核验线索, 不把未确认信息写成事实.
 6. 最稳妥的新颖性表述是: 在相同预算下, 利用 failed local candidate 及 clash, interaction loss, anchor invalid 等可解释失败诊断, 进行 pocket-aware 3D local repair, 并对比 direct regeneration, Best-of-N 和 rerank-only.
 
-## 撞题风险总表
+## 第二轮检索结论摘要
+
+日期: 2026-06-01.
+
+1. 使用 `research-lookup` skill 触发二轮检索后, 发现 `parallel-cli` 不存在, `PARALLEL_API_KEY` 与 `OPENROUTER_API_KEY` 未设置, CCS WebSearch 仍返回反爬 HTML；本轮降级到 OpenAlex API, arXiv API, GitHub API, Explore agent 和本地脚本。
+2. 原始检索结果已保存到 `sources/`, 包括 `research_20260601_literature_openalex_summary.json`, `research_20260601_arxiv_core_methods_summary.json`, `research_20260601_literature_github_summary.json` 及逐方法 JSON。
+3. MolJO 已确认对应 `Empower Structure-Based Molecule Optimization with Gradient Guided Bayesian Flow Networks` 中的 Molecule Joint Optimization, 是 structure-based molecule optimization / SBMO, 支持 R-group optimization 和 scaffold hopping, 但摘要证据显示其目标是梯度引导优化, 不是 failed-candidate diagnostic repair。
+4. DecompDPO 摘要证据显示其可用于生成模型 fine-tuning 和特定 subpocket 的 molecular optimization, 使用 preference pairs 与 physics-informed energy, 但不是以 failed candidate 及 explicit failure taxonomy 作为条件的 repair setting。
+5. DecompOpt, DiffLEOP/Diffleop, Delete, D3FG 和 BoKDiff 均提高相邻工作风险: 它们覆盖 pocket-aware lead optimization, molecule elaboration, R-group/scaffold hopping 或 Best-of-N/Best-of-K 对齐, 因此本项目必须把实验协议收窄到 failed-candidate-conditioned local repair 与 same-budget baseline。
+6. 二轮仍未发现同时满足 `failed candidate 作为输入`, `explicit failure feedback`, `pocket-aware 3D local repair`, `same-budget repair vs Best-of-N/rerank-only` 的直接撞题工作。
+
+## 第三轮 workflow 撞题复核摘要
+
+日期: 2026-06-01.
+
+1. 使用 Workflow 并行从四个 lens 复核撞题风险: 相邻方法族, failure-feedback 关键词, docking/affinity/reward/preference guidance, benchmark/evaluation framing。
+2. Workflow 输出保存于 `/tmp/claude-1001/-home-lyj-mnt-project-pocket-failure-repair/77d0dfd2-ff1d-402b-85df-4dae3054ad8b/tasks/w170tixb0.output`, transcript 目录为 `/home/lyj/.claude/projects/-home-lyj-mnt-project-pocket-failure-repair/99dcac94-7446-40e1-b108-7b733f6113fa/subagents/workflows/wf_dc68b5c0-d07`。
+3. 综合结论: 直接撞题风险仍为 Low, 相邻工作风险为 Medium。未发现同时满足 `protein pocket`, `fixed scaffold/editable region`, `concrete failed local candidate`, `explicit structured failure feedback`, `same-budget repair evaluation` 的已有工作。
+4. 最强相邻风险来自 DiffDec / D3FG 的 pocket-aware scaffold decoration / elaboration, DiffLEOP / DecompOpt / Delete / MolJO 的 structure-based lead/local optimization, DecompDPO 的 preference / energy alignment, BoKDiff 的 Best-of-N / Best-of-K reranking, 以及 CBGBench 的 benchmark 统一框架。
+5. 论文定位必须收窄为 `failed-candidate-conditioned diagnostic local repair under same generation budget`。不能把贡献写成泛泛的 pocket-aware molecule generation, R-group generation, affinity-guided lead optimization, diffusion molecular optimization 或 docking-score optimization。
+6. 必须正面保留 no-feedback, no-failed-candidate 或 direct regeneration, Best-of-N, rerank-only, geometry-only, interaction-only, full feedback 等 ablation, 否则容易被认为只是已有 generation / rerank / optimization 方法的变体。
+
 
 | 风险 | 方法 / 方向 | 判断 |
 |---|---|---|
 | High | 暂无 | 第一轮未找到完全覆盖 failed-candidate-conditioned pocket-aware local repair 的工作. |
-| Medium | DiffDec, DiffLEOP, DecompDiff, DecompOpt, DecompDPO, Delete, DeepFrag, D3FG, STRIFE, SLOGEN, BoKDiff | 覆盖 pocket-aware generation, scaffold decoration, lead optimization, preference optimization 或 Best-of-N 相关思想, 但未见完整 failure-feedback repair setting. |
+| Medium | DiffDec, DiffLEOP/Diffleop, DecompDiff, DecompOpt, DecompDPO, Delete, DeepFrag, D3FG, SLOGEN, MolJO, BoKDiff, CBGBench | 覆盖 pocket-aware generation, scaffold/R-group decoration, lead optimization, preference optimization, benchmark 或 Best-of-N/Best-of-K 相关思想, 但未见完整 failure-feedback repair setting. |
 | Low | PoseBusters, PLIP, AutoDock Vina | 主要是验证, interaction profiling 或 docking/scoring 工具, 与本项目互补. |
-| 待验证 | AMG, MolJO | 名称或方法归属仍需二轮检索核验. |
+| 待验证 | AMG, STRIFE | AMG 名称或方法归属仍需核验；STRIFE 的精确题名/代码/任务需用更可靠来源补查, 本轮 OpenAlex 查询噪声较大. |
 
 ## 文献矩阵
 
@@ -37,7 +58,10 @@
 | DecompDPO: Decomposed Direct Preference Optimization for Structure-Based Drug Design | 2024 | Structure-based drug design preference optimization | Protein-ligand / SBDD samples and preference decomposition线索 | Fine-tuned / optimized generative model outputs | Yes, structure-based | Not specifically local repair in first-round evidence | No evidence | Direct Preference Optimization / decomposed preference, not failed-candidate feedback | Preference / SBDD metrics待复查原文 | arXiv DOI: https://doi.org/10.48550/arxiv.2407.13981 | 相关于用偏好或 reward 改善 SBDD, 可作为 feedback/guidance related work, 但不是 failed candidate repair. | Medium | 需要读原文确认是否可作为 preference baseline. |
 | DecompDiff: Diffusion Models with Decomposed Priors for Structure-Based Drug Design | 2024 | Structure-based molecular generation with decomposed priors | Protein pocket / structure context, decomposed priors | Generated molecules | Yes | No evidence of local repair | No evidence | Decomposed prior in diffusion, not explicit failure feedback | SBDD generation metrics待复查原文 | arXiv DOI: https://doi.org/10.48550/arxiv.2403.07902 | 强相关 SBDD diffusion baseline / related work. 本项目应避免只做另一个 pocket generator. | Medium | OpenAlex 确认标题, 年份, 作者和 DOI. |
 | DecompOpt: Controllable and Decomposed Diffusion Models for Structure-based Molecular Optimization | 2024 | Structure-based molecular optimization | Protein structure / initial molecule / optimization controls线索 | Optimized molecule | Yes | Optimization, not confirmed local repair | No evidence | Controllable decomposed diffusion / optimization guidance | Optimization metrics待复查原文 | arXiv DOI: https://doi.org/10.48550/arxiv.2403.13829 | 相关于 structure-based optimization, 但第一轮未见 failed candidate diagnostic repair. | Medium | 需要二轮确认输入是否含 initial molecule 和具体控制信号. |
+| MolJO: Empower Structure-Based Molecule Optimization with Gradient Guided Bayesian Flow Networks | 2024 / updated 2025 | Structure-based molecule optimization | Protein target, molecule with continuous coordinates and discrete types, gradient guidance in Bayesian-inference-derived differentiable space | Optimized molecule | Yes | Yes for optimization settings, including R-group optimization and scaffold hopping per arXiv摘要 | No evidence | Gradient-guided Bayesian flow / joint guidance signals, backward correction over past histories | CrossDocked2020 success rate, Vina Dock, SA, Me-Better ratio per摘要 | arXiv DOI: https://doi.org/10.48550/arxiv.2411.13280; code in摘要: https://github.com/AlgoMole/MolCRAFT | 强相邻 SBMO / optimization method. 必须在 related work 中区分: 本项目输入是已失败的 local candidate 和显式失败诊断, 目标是 same-budget repair 可靠性, 不是通用梯度引导优化. | Medium | 二轮 arXiv 摘要确认 MolJO 是 Molecule Joint Optimization, 不再只是名称歧义；仍需读原文表格与代码确认可否作为 baseline. |
+| CBGBench: Fill in the Blank of Protein-Molecule Complex Binding Graph | 2024 | Structure-based drug design benchmark | Protein-molecule complex binding graph, graph completion setting | Molecules/linkers/fragments/scaffolds/sidechains | Yes | Yes, includes fragments, scaffolds, sidechains tasks | No evidence | Benchmark/evaluation framework, not repair feedback | Interaction, chemical properties, geometry authenticity, substructure validity per摘要 | arXiv: 2406.10840; code in摘要: https://github.com/Edapinenut/CBGBench | 可能可借鉴 split, task framing 和 metrics, 但不是 failed-candidate repair 方法. | Medium for benchmark framing | 二轮 arXiv 摘要显示其统一多类 SBDD tasks, 对本项目评估协议有参考价值. |
 | PoseBusters | 2024 | Pose / molecule validation and plausibility checking | Predicted/generated molecule pose, optional protein and reference ligand | Validation report / per-check pass-fail table | Yes for protein-conditioned checks | No | No, but failed pose can be evaluated as input | Rule-based validation: sanitization, bond lengths, steric clashes, protein-ligand distance/overlap, RMSD等 | Pass/fail checks, pose plausibility, RMSD and geometry checks | Paper: https://doi.org/10.1039/d3sc04185a; arXiv: https://arxiv.org/abs/2308.05777; docs: https://posebusters.readthedocs.io/en/latest/; code: https://github.com/maabuu/posebusters | 可作为 failure taxonomy, geometry feedback 和 evaluation component. | Low | 若项目只做 pose validity benchmark, 与 PoseBusters 接近; 作为组件风险低. |
+
 | PLIP: Protein-Ligand Interaction Profiler | 2015 | Automated protein-ligand interaction profiling | Protein-ligand complex / PDB file | Interaction profile, tables, XML/text, visualization | Yes | No | No, but failed complex can be profiled | Rule-based interaction detection: H-bond, hydrophobic, salt bridge, pi-stacking, pi-cation, halogen, metal等 | Interaction types, residues, atoms, distances, angles | Paper: https://doi.org/10.1093/nar/gkv315; web: https://plip-tool.biotec.tu-dresden.de/plip-web/plip/index; code/docs: https://github.com/pharmai/plip | 可作为 interaction feedback, interaction recovery 和相互作用指纹来源. | Low | 本项目不能只声称 PLIP 打分即为创新, 应把它作为反馈来源之一. |
 | AutoDock Vina | 2010 | Docking, pose search and scoring | Receptor PDBQT, ligand PDBQT, search box / maps | Ranked poses and affinity scores | Yes, via receptor and pocket search box | No molecular graph editing; supports pose local optimization | No | Docking score, local search / BFGS pose optimization | Affinity kcal/mol, ranked poses, RMSD bounds, docking success | Paper: https://pmc.ncbi.nlm.nih.gov/articles/PMC3041641/; docs: https://autodock-vina.readthedocs.io/en/latest/; code: https://github.com/ccsb-scripps/AutoDock-Vina | 可作为 docking score, redocking evaluator, Vina / Delta Vina feedback. | Low for tool, Medium if used as only novelty | Vina-guided optimization 很常规, 不能作为唯一创新点. |
 
@@ -88,11 +112,12 @@
 | 2026-05-31 | AMG molecular generation protein pocket | OpenAlex API | 名称歧义. 最相关线索是 fragment-based 3D molecular generation for protein pockets, 但 AMG 是否为正式方法名待核验. | https://doi.org/10.1093/bib/bbae531 |
 | 2026-05-31 | MolJO | OpenAlex API | 名称歧义. 最相关线索是 structure-based molecule optimization with gradient-guided Bayesian flow networks, 但 MolJO 是否为正式方法名待核验. | https://doi.org/10.48550/arxiv.2411.13280 |
 | 2026-05-31 | PoseBusters, PLIP, AutoDock Vina | general-purpose research agent | 找到原始论文, 官方文档和代码来源, 判断均为工具组件而非 repair 方法. | PoseBusters: https://doi.org/10.1039/d3sc04185a; PLIP: https://doi.org/10.1093/nar/gkv315; Vina: https://pmc.ncbi.nlm.nih.gov/articles/PMC3041641/ |
-| 2026-05-31 | failed candidate molecular repair, failure feedback molecule generation, pocket-aware local molecular editing, same-budget Best-of-N molecular generation | general-purpose research agent + OpenAlex 线索 | 未找到直接撞题. 找到 Delete, DeepFrag, D3FG, STRIFE, ACFIS, SLOGEN, CACM, BoKDiff 等相邻方向. | Delete: https://arxiv.org/abs/2308.02172; DeepFrag: https://doi.org/10.1039/d1sc00163a; D3FG: https://arxiv.org/abs/2306.13769; STRIFE: https://doi.org/10.1021/acs.jcim.1c01311; CACM: https://arxiv.org/abs/2604.09308; BoKDiff: https://arxiv.org/abs/2501.15631 |
+| 2026-06-01 | 二轮核心方法核验: DiffLEOP, DecompDPO, DecompDiff, DecompOpt, MolJO, Delete, D3FG, BoKDiff, CBGBench | research-lookup skill 触发, 降级到 OpenAlex API + arXiv API + GitHub API | `parallel-cli` 和 API key 不可用, CCS WebSearch 反爬失败；OpenAlex/arXiv/GitHub 成功保存原始结果. 二轮仍未发现直接撞题, 但 MolJO/DecompDPO/DecompOpt/BoKDiff 相邻风险升高. | `sources/research_20260601_literature_openalex_summary.json`; `sources/research_20260601_arxiv_core_methods_summary.json`; `sources/research_20260601_literature_github_summary.json` |
+| 2026-06-01 | Workflow 撞题复核: DiffDec, DiffLEOP, DecompOpt, DecompDPO, MolJO, Delete, D3FG, BoKDiff, CBGBench, failed-candidate repair keywords | Workflow + subagents + WebSearch/WebFetch/OpenAlex/arXiv/GitHub/Semantic Scholar evidence already in `sources/` | 直接撞题风险 Low, 相邻工作风险 Medium. 未发现完整覆盖 failed candidate + explicit failure feedback + same-budget pocket-aware local repair 的工作；最安全定位是 failed-candidate-conditioned diagnostic local repair protocol. | `/tmp/claude-1001/-home-lyj-mnt-project-pocket-failure-repair/77d0dfd2-ff1d-402b-85df-4dae3054ad8b/tasks/w170tixb0.output`; workflow transcript: `/home/lyj/.claude/projects/-home-lyj-mnt-project-pocket-failure-repair/99dcac94-7446-40e1-b108-7b733f6113fa/subagents/workflows/wf_dc68b5c0-d07` |
 
 ## 下一轮需要补查
 
 - 逐篇读 DiffDec, DiffLEOP, DecompDPO, DecompDiff, DecompOpt 的方法和实验部分, 补全数据集, 指标, 官方仓库和 baseline.
 - 核验 AMG 与 MolJO 是否为用户所指方法名, 是否存在官方仓库或论文缩写.
 - 增补 Delete, DeepFrag, D3FG, STRIFE, ACFIS, SLOGEN, BoKDiff 到扩展 related work 表, 用于论文 related work.
-- 若后续发现直接撞题, 立即更新 `docs/method_design.md` 的任务切口.
+- 若后续发现直接撞题, 立即更新 `docs/plan/20260601-01-method-design-plan.md` 的任务切口.

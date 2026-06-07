@@ -1,12 +1,92 @@
+# Python/cache
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
 
+# Local environments
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Build/package artifacts
+build/
+dist/
+*.egg-info/
+
+# Editor/notebook artifacts
+.ipynb_checkpoints/
+.DS_Store
+.vscode/
+.idea/
+
+# Local session artifacts
+/.claude/
+
+# Legacy data layout paths, kept ignored for migration safety
 /data/raw/
 /data/processed/
 /data/splits/
-/outputs/logs/
 
+# Canonical dataset raw/heavy local files; keep entries, splits, views, manifests, catalog, templates visible
+/data/datasets/*/raw/
+/data/datasets/*/work/
+/data/datasets/*/downloads/
+
+# Experiment/output heavy artifacts
+/outputs/**/logs/
+/outputs/**/work/
+/outputs/**/captured_outputs/
+/outputs/**/raw_captured/
+/outputs/**/raw_outputs/
+/outputs/**/normalized_outputs/
+/outputs/**/processed/**/*.jsonl
+/outputs/**/processed/cases/*.json
+/outputs/**/metrics/**/*.jsonl
+/outputs/**/*.yaml
+/outputs/**/*.yml
+/outputs/**/*.log
+/outputs/**/*.out
+/outputs/**/*.err
+/outputs/**/*.tmp
+/outputs/**/*.sdf
+/outputs/**/*.pdb
+/outputs/**/*.mol
+/outputs/**/*.mol2
+/outputs/**/*.pdbqt
+/outputs/**/*.cif
+/outputs/**/*.mmcif
+/outputs/**/*.xml
+
+# Experiment trackers
+wandb/
+mlruns/
+lightning_logs/
+runs/
+
+# Third-party repos/checkpoints
+/third_party/*
+!/third_party/AGENTS.md
+!/third_party/README.md
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+*.onnx
+*.xyz
+*.smi
+
+# Literature/source cache
+/sources/*
+!/sources/AGENTS.md
+!/sources/README.md
+
+# Generic local artifacts
 *.log
 *.tmp
