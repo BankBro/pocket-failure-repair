@@ -19,8 +19,8 @@ def load_first_molecule(path: str | Path) -> Chem.Mol | None:
             if mol is not None:
                 return mol
         return None
-    if suffix in {".mol", ".mol2"}:
-        return Chem.MolFromMolFile(str(input_path), removeHs=False, sanitize=True)
+    if suffix == ".pdb":
+        return Chem.MolFromPDBFile(str(input_path), removeHs=False, sanitize=True, proximityBonding=True)
     return None
 
 

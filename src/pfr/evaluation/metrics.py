@@ -5,6 +5,10 @@ from __future__ import annotations
 from typing import Any
 
 
+def is_evaluable_for_repair(row: dict[str, Any]) -> bool:
+    return row.get("sample_quality", {}).get("evaluable_for_repair") is not False
+
+
 def is_successful_feedback(row: dict[str, Any]) -> bool:
     geometry = row.get("geometry", {})
     if geometry.get("editable_region_validity") is False:
@@ -23,12 +27,15 @@ def fraction(values: list[bool]) -> float | None:
 
 
 def summarize_feedback_quality(feedback_rows: list[dict[str, Any]]) -> dict[str, Any]:
+    evaluable = [is_evaluable_for_repair(row) for row in feedback_rows]
     successes = [is_successful_feedback(row) for row in feedback_rows]
     editable_valid = [row.get("geometry", {}).get("editable_region_validity") is not False for row in feedback_rows]
     anchor_valid = [float(row.get("geometry", {}).get("anchor_distance_error") or 0.0) <= 1.0 for row in feedback_rows]
     clash_free = [row.get("geometry", {}).get("clash_count", 0) in (None, 0) for row in feedback_rows]
     return {
         "num_candidates": len(feedback_rows),
+        "num_evaluable_for_repair": sum(evaluable),
+        "repair_evaluable_rate": fraction(evaluable),
         "same_budget_success_rate": fraction(successes),
         "editable_validity": fraction(editable_valid),
         "anchor_validity": fraction(anchor_valid),

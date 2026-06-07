@@ -17,7 +17,7 @@ def make_candidate(
     candidate_id = f"{example.get('complex_id', 'example')}_{failure_type}_{index}"
     failed_ligand_path = example.get("ligand_path")
     if failed_molecules_dir and failed_ligand_path:
-        mol = perturb_failed_molecule(failed_ligand_path, failure_type)
+        mol = perturb_failed_molecule(failed_ligand_path, failure_type, example.get("editable_atoms", []))
         if mol is not None:
             failed_ligand_path = str(write_sdf(failed_molecules_dir / f"{candidate_id}.sdf", mol))
     return {
@@ -37,6 +37,7 @@ def make_candidate(
         "anchor_atoms": example.get("anchor_atoms", []),
         "descriptors": example.get("descriptors", {}),
         "dataset_status": example.get("status"),
+        "sample_quality": example.get("sample_quality", {}),
     }
 
 

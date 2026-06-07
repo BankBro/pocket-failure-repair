@@ -53,14 +53,38 @@ def main() -> int:
     config = load_yaml(args.config)
     metrics = load_json(config["input"]["metrics_path"])
     rows = metrics.get("metrics", [])
+    repaired_metrics = (
+        load_json(config["input"].get("repaired_metrics_path", ""))
+        if config["input"].get("repaired_metrics_path")
+        else {}
+    )
+    repaired_metric_rows = repaired_metrics.get("metrics", [])
+    repaired_evaluations = (
+        read_jsonl(config["input"].get("repaired_evaluations_path", ""))
+        if config["input"].get("repaired_evaluations_path")
+        else []
+    )
+    repaired_eval_by_repair_id = {row.get("repair_id"): row for row in repaired_evaluations}
+    repaired_eval_by_candidate: dict[str, list[dict[str, Any]]] = {}
+    for row in repaired_evaluations:
+        repaired_eval_by_candidate.setdefault(str(row.get("candidate_id")), []).append(row)
     summary = {
         "name": config.get("name"),
         "result_type": config.get("labels", {}).get("result_type"),
         "warning": config.get("labels", {}).get("warning"),
         "num_baselines": len(rows),
-        "num_feedback_records": metrics.get("num_feedback_records"),
+        "num_evaluable_for_repair": metrics.get("num_evaluable_for_repair"),
+        "non_evaluable_feedback_records": max(
+            0, int(metrics.get("num_feedback_records") or 0) - int(metrics.get("num_evaluable_for_repair") or 0)
+        ),
         "baselines": [row.get("baseline") for row in rows],
         "success_rates": {row.get("baseline"): row.get("same_budget_success_rate") for row in rows},
+        "repaired_molecule_success_rates": {
+            row.get("baseline"): row.get("repaired_success_rate") for row in repaired_metric_rows
+        },
+        "repaired_molecule_metrics_path": config["input"].get("repaired_metrics_path"),
+        "repaired_failure_type_metrics_path": config["input"].get("repaired_failure_type_metrics_path"),
+        "repaired_num_records": repaired_metrics.get("num_repaired_records"),
         "notes": metrics.get("notes"),
     }
     candidates = read_jsonl(config["input"].get("candidates_path", "")) if config["input"].get("candidates_path") else []
@@ -73,7 +97,10 @@ def main() -> int:
     )
     repairs_by_candidate: dict[str, list[dict[str, Any]]] = {}
     for repair in repaired_candidates:
-        repairs_by_candidate.setdefault(str(repair.get("candidate_id")), []).append(repair)
+        repair_eval = repaired_eval_by_repair_id.get(repair.get("repair_id"), {})
+        repairs_by_candidate.setdefault(str(repair.get("candidate_id")), []).append(
+            {**repair, "repaired_evaluation": repair_eval}
+        )
     case_rows = []
     for candidate in candidates:
         feedback_row = feedback_by_id.get(candidate.get("candidate_id"), {})
@@ -87,7 +114,9 @@ def main() -> int:
                 "scaffold_smiles": candidate.get("scaffold_smiles"),
                 "source": candidate.get("source"),
                 "feedback_source": feedback_row.get("source"),
-                "geometry": feedback_row.get("geometry", {}),
+                "sample_quality": feedback_row.get("sample_quality", {}),
+                "repair_evaluable": feedback_row.get("sample_quality", {}).get("evaluable_for_repair"),
+                "repair_exclusion_reasons": feedback_row.get("sample_quality", {}).get("exclusion_reasons", []),
                 "global": feedback_row.get("global", {}),
             }
         )
@@ -95,7 +124,7 @@ def main() -> int:
         "result_type": summary["result_type"],
         "warning": summary["warning"],
         "failed_candidate_cases": case_rows,
-        "notes": "Failed molecule SDF files are generated for smoke candidates; repaired molecules are not available until a repair model exists.",
+        "notes": "Failed molecule SDF files and repaired baseline SDF files are generated for smoke candidates; repaired evaluations are RDKit/geometry checks on rule baselines, not learned-model evidence.",
     }
 
     write_json(config["output"]["summary_path"], summary)

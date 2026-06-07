@@ -100,17 +100,56 @@ def test_smoke_pipeline_with_toy_complex(tmp_path: Path) -> None:
     candidates = read_jsonl(candidates_path)
     feedback = read_jsonl(feedback_path)
     metrics = json.loads(metrics_path.read_text(encoding="utf-8"))
+    split = json.loads(split_path.read_text(encoding="utf-8"))
 
     assert len(dataset) == 1
+    assert dataset[0]["schema_version"] == "dataset_entry_v0_1"
+    assert dataset[0]["schema_path"] == "schemas/data/datasets/entries/dataset_entry_v0_1.json"
+    assert dataset[0]["dataset_id"] == "toy_rgroup"
+    assert dataset[0]["dataset_version"] == "v1"
     assert dataset[0]["protein_path"] == str(protein_path)
     assert dataset[0]["ligand_path"] == str(ligand_path)
-    assert dataset[0]["status"] in {"rdkit_ok", "rdkit_read_failed"}
-    assert len(candidates) == 2
+    entry_path = Path(dataset[0]["entry_path"])
+    entry = json.loads(entry_path.read_text(encoding="utf-8"))
+    assert entry["schema_version"] == "dataset_entry_v0_1"
+    assert entry["schema_path"] == "schemas/data/datasets/entries/dataset_entry_v0_1.json"
+    assert entry["sample_id"] == dataset[0]["sample_id"]
+    assert split["schema_version"] == "dataset_split_v0_1"
+    assert split["schema_path"] == "schemas/data/datasets/splits/dataset_split_v0_1.json"
+    assert split["dataset_id"] == "toy_rgroup"
+    assert split["dataset_version"] == "v1"
+    assert all(isinstance(row, dict) and "complex_id" in row and "reasons" in row for row in split["excluded_examples"])
+    assert all("sample_quality" in row for row in dataset)
+    assert all("evaluable_for_repair" in row["sample_quality"] for row in dataset)
+    assert all("sample_quality" in row for row in candidates)
     assert {row["failure_type"] for row in candidates} == {"clash", "anchor_invalid"}
     assert len(feedback) == 2
     assert any(row["geometry"]["clash_count"] == 1 for row in feedback)
     assert any(row["geometry"]["anchor_distance_error"] >= 2.0 for row in feedback)
     assert all("scaffold_present" in row["geometry"] for row in feedback)
+    assert all("sample_quality" in row for row in feedback)
+    assert all("evaluable_for_repair" in row["sample_quality"] for row in feedback)
     assert metrics["num_feedback_records"] == 2
     assert [row["baseline"] for row in metrics["metrics"]] == ["best_of_n", "rerank_only"]
     assert table_path.exists()
+
+
+def test_split_complex_ids_is_deterministic() -> None:
+    from importlib.util import module_from_spec, spec_from_file_location
+
+    script = ROOT / "scripts" / "data" / "build_rgroup_dataset.py"
+    spec = spec_from_file_location("build_rgroup_dataset", script)
+    assert spec is not None and spec.loader is not None
+    module = module_from_spec(spec)
+    spec.loader.exec_module(module)
+    rows = [{"complex_id": f"c{i}"} for i in range(12)]
+
+    split = module.split_complex_ids(rows, seed=0, fractions={"validation": 0.25, "test": 0.25})
+    repeat = module.split_complex_ids(rows, seed=0, fractions={"validation": 0.25, "test": 0.25})
+
+    assert split == repeat
+    assert len(split["train"]) == 6
+    assert len(split["validation"]) == 3
+    assert len(split["test"]) == 3
+    assert set(split["train"]).isdisjoint(split["validation"])
+    assert set(split["train"]).isdisjoint(split["test"])

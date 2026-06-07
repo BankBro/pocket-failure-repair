@@ -15,7 +15,7 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
-def write_docs_manifest(path: Path, rows: list[dict[str, Any]]) -> None:
+def write_docs_manifest(path: Path, rows: list[dict[str, Any]], config_path: str | None = None, raw_dir: str = "data/datasets/rgroup_smoke/raw") -> None:
     lines = [
         "# Smoke Data Manifest",
         "",
@@ -24,20 +24,28 @@ def write_docs_manifest(path: Path, rows: list[dict[str, Any]]) -> None:
         "## 路径约定",
         "",
         "```text",
-        "data/raw/smoke_complexes/<complex_id>/",
+        f"{raw_dir}/<complex_id>/",
         "  <complex_id>_protein.pdb",
+        "  <complex_id>_protein_clean.pdb",
+        "  <complex_id>_ligand.pdb",
         "  <complex_id>_ligand.sdf",
         "```",
         "",
         "## manifest 表",
         "",
-        "| complex_id | protein_path | ligand_path | source | source_url | license / terms | citation | checksum_protein | checksum_ligand | notes |",
-        "|---|---|---|---|---|---|---|---|---|---|",
+        "| complex_id | protein_path | ligand_path | ligand_pdb_path | ligand_residue | source | source_url | license / terms | citation | checksum_protein | checksum_ligand | checksum_ligand_pdb | notes |",
+        "|---|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for row in rows:
+        display_row = {
+            **row,
+            "ligand_pdb_path": row.get("ligand_pdb_path", "N/A"),
+            "ligand_residue": row.get("ligand_residue", "N/A"),
+            "checksum_ligand_pdb": row.get("checksum_ligand_pdb", "N/A"),
+        }
         lines.append(
-            "| {complex_id} | {protein_path} | {ligand_path} | RCSB PDB | {source_url} | RCSB PDB usage policies | cite RCSB PDB entry | {checksum_protein} | {checksum_ligand} | public smoke sample |".format(
-                **row
+            "| {complex_id} | {protein_path} | {ligand_path} | {ligand_pdb_path} | {ligand_residue} | RCSB PDB | {source_url} | RCSB PDB usage policies | cite RCSB PDB entry | {checksum_protein} | {checksum_ligand} | {checksum_ligand_pdb} | public smoke sample |".format(
+                **display_row
             )
         )
     lines.extend(
@@ -46,8 +54,8 @@ def write_docs_manifest(path: Path, rows: list[dict[str, Any]]) -> None:
             "## 当前状态",
             "",
             f"- 已记录 {len(rows)} 个公开 smoke 样本.",
-            "- 原始结构文件位于 `data/raw/smoke_complexes/`, 由 `.gitignore` 排除, 不提交到 git.",
-            "- 机器可复现时应重新运行 `python scripts/data/download_smoke_complexes.py --config configs/data/smoke_download.yaml`.",
+            f"- 原始结构文件位于 `{raw_dir}/`, 由 `.gitignore` 排除, 不提交到 git.",
+            f"- 机器可复现时应重新运行 `python scripts/data/download_smoke_complexes.py --config {config_path or 'configs/data/downloads/rcsb_smoke.yaml'}`.",
         ]
     )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")

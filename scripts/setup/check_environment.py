@@ -35,6 +35,8 @@ MODULES = [
 
 EXECUTABLES = [
     ("vina", False),
+    ("posebusters", False),
+    ("plip", False),
     ("obabel", False),
 ]
 

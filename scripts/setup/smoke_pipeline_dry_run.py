@@ -14,27 +14,27 @@ import yaml
 STEPS = [
     {
         "name": "build_rgroup_dataset",
-        "config": "configs/data/rgroup_smoke.yaml",
+        "config": "configs/data/builds/rgroup_smoke.yaml",
         "script": "scripts/data/build_rgroup_dataset.py",
-        "outputs": ["data/processed/rgroup_smoke.jsonl", "data/splits/rgroup_smoke_split.json"],
+        "outputs": ["data/datasets/rgroup_smoke/entries/index.jsonl", "data/datasets/rgroup_smoke/splits/rgroup_smoke_split_v1.json"],
     },
     {
         "name": "generate_failed_candidates",
-        "config": "configs/data/failed_candidate_smoke.yaml",
+        "config": "experiments/20260531-01-smoke-file-pipeline/configs/resolved/data/failed_candidate_smoke.yaml",
         "script": "scripts/data/generate_failed_candidates.py",
-        "outputs": ["data/processed/failed_candidates_smoke.jsonl"],
+        "outputs": ["outputs/20260531-01-smoke-file-pipeline/processed/failed_candidates_smoke.jsonl"],
     },
     {
         "name": "extract_feedback",
-        "config": "configs/feedback/smoke.yaml",
+        "config": "experiments/20260531-01-smoke-file-pipeline/configs/resolved/feedback/smoke.yaml",
         "script": "scripts/data/extract_feedback.py",
-        "outputs": ["data/processed/feedback_smoke.jsonl"],
+        "outputs": ["outputs/20260531-01-smoke-file-pipeline/processed/feedback_smoke.jsonl"],
     },
     {
         "name": "eval_baselines",
-        "config": "configs/baselines/smoke.yaml",
+        "config": "experiments/20260531-01-smoke-file-pipeline/configs/resolved/baselines/smoke.yaml",
         "script": "scripts/eval/eval_baselines.py",
-        "outputs": ["outputs/metrics/baselines_smoke.json", "outputs/tables/baselines_smoke.csv"],
+        "outputs": ["outputs/20260531-01-smoke-file-pipeline/metrics/baselines_smoke.json", "outputs/20260531-01-smoke-file-pipeline/tables/baselines_smoke.csv"],
     },
 ]
 
@@ -55,7 +55,7 @@ def check_config(path: Path) -> dict[str, Any]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--write-plan", type=Path, default=Path("experiments/smoke/pipeline_plan.json"))
+    parser.add_argument("--write-plan", type=Path, default=None, help="Optional path for writing the dry-run plan. If omitted, the plan is printed only.")
     args = parser.parse_args()
 
     plan: list[dict[str, Any]] = []
@@ -73,15 +73,19 @@ def main() -> int:
         }
         plan.append(entry)
 
-    args.write_plan.parent.mkdir(parents=True, exist_ok=True)
-    args.write_plan.write_text(json.dumps(plan, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    if args.write_plan is not None:
+        args.write_plan.parent.mkdir(parents=True, exist_ok=True)
+        args.write_plan.write_text(json.dumps(plan, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     print("Smoke pipeline dry-run plan:")
     for entry in plan:
         status = "ready" if entry["script_exists"] else "script pending"
         print(f"  - {entry['name']}: {status}")
         print(f"    {entry['command']}")
-    print(f"\nPlan written to {args.write_plan}")
+    if args.write_plan is not None:
+        print(f"\nPlan written to {args.write_plan}")
+    else:
+        print("\nPlan not written; pass --write-plan to persist it.")
     return 0
 
 

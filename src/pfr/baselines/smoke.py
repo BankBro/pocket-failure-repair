@@ -12,6 +12,8 @@ def summarize_baseline(name: str, feedback_rows: list[dict[str, Any]]) -> dict[s
     return {
         "baseline": name,
         "num_candidates": quality["num_candidates"],
+        "num_evaluable_for_repair": quality["num_evaluable_for_repair"],
+        "repair_evaluable_rate": quality["repair_evaluable_rate"],
         "same_budget_success_rate": quality["same_budget_success_rate"],
         "scaffold_preservation": None,
         "editable_validity": quality["editable_validity"],

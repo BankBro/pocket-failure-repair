@@ -15,6 +15,13 @@ FAILURE_DEFAULTS = {
     "interaction_loss": {"clash_count": 0, "anchor_distance_error": 0.0, "editable_region_validity": True},
     "anchor_invalid": {"clash_count": 0, "anchor_distance_error": 2.0, "editable_region_validity": False},
     "geometry_invalid": {"clash_count": 0, "anchor_distance_error": 0.0, "editable_region_validity": False},
+    "linker_too_flexible": {"clash_count": 0, "anchor_distance_error": 0.5, "editable_region_validity": False},
+    "drug_likeness_drop": {"clash_count": 0, "anchor_distance_error": 0.0, "editable_region_validity": True},
+    "score_hacking": {"clash_count": 1, "anchor_distance_error": 1.0, "editable_region_validity": True},
+    "local_proposal_clash": {"clash_count": 1, "anchor_distance_error": 0.0, "editable_region_validity": True},
+    "local_proposal_anchor_drift": {"clash_count": 0, "anchor_distance_error": 1.0, "editable_region_validity": False},
+    "local_proposal_atom_substitution": {"clash_count": 0, "anchor_distance_error": 0.0, "editable_region_validity": True},
+    "local_proposal_geometry_drift": {"clash_count": 0, "anchor_distance_error": 0.5, "editable_region_validity": False},
 }
 
 
@@ -50,8 +57,17 @@ def build_feedback(candidate: dict[str, Any]) -> dict[str, Any]:
         anchor_distance_error_value = max(anchor_distance_error_value, 2.0)
     structure_clash_count = geometry_feedback.get("clash_count")
     clash_count = defaults["clash_count"] if structure_clash_count is None else int(structure_clash_count)
-    if failure_type == "clash":
-        clash_count = max(clash_count, 1)
+    sample_quality = candidate.get("sample_quality", {}) or {}
+    if geometry_feedback.get("clash_count") not in (None, 0):
+        reasons = list(sample_quality.get("exclusion_reasons", []))
+        if "failed_candidate_protein_ligand_overlap" not in reasons:
+            reasons.append("failed_candidate_protein_ligand_overlap")
+        sample_quality = {
+            **sample_quality,
+            "evaluable_for_repair": False,
+            "exclusion_reasons": reasons,
+            "protein_ligand_overlap": True,
+        }
     return {
         "candidate_id": candidate.get("candidate_id"),
         "complex_id": candidate.get("complex_id"),
@@ -83,6 +99,7 @@ def build_feedback(candidate: dict[str, Any]) -> dict[str, Any]:
             "interaction_fingerprint_similarity": None,
         },
         "source": "smoke_rdkit_structure_feedback_plus_failure_template",
+        "sample_quality": sample_quality,
     }
 
 

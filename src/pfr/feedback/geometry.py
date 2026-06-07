@@ -81,6 +81,40 @@ def protein_ligand_geometry(
     return {"min_protein_ligand_distance": min_dist, "clash_count": clash_count}
 
 
+def structure_quality_flags(
+    *,
+    status: str | None,
+    protein_path: str | Path | None,
+    ligand_path: str | Path | None,
+    scaffold_atoms: list[int] | None,
+    anchor_atoms: list[int] | None,
+    editable_atoms: list[int] | None,
+) -> dict[str, Any]:
+    geometry = protein_ligand_geometry(protein_path, ligand_path)
+    clash_count = geometry.get("clash_count")
+    min_distance = geometry.get("min_protein_ligand_distance")
+    reasons: list[str] = []
+    if status != "rdkit_ok":
+        reasons.append("rdkit_read_failed")
+    if not scaffold_atoms:
+        reasons.append("missing_scaffold")
+    if not anchor_atoms:
+        reasons.append("missing_anchor")
+    if not editable_atoms:
+        reasons.append("missing_editable_region")
+    if clash_count is None:
+        reasons.append("protein_ligand_geometry_unavailable")
+    elif int(clash_count) > 0:
+        reasons.append("protein_ligand_overlap")
+    return {
+        "evaluable_for_repair": not reasons,
+        "exclusion_reasons": reasons,
+        "protein_ligand_overlap": "protein_ligand_overlap" in reasons,
+        "min_protein_ligand_distance": min_distance,
+        "protein_ligand_clash_count": clash_count,
+    }
+
+
 def anchor_distance_error(reference_ligand_path: str | Path | None, candidate_ligand_path: str | Path | None, anchors: list[int]) -> float | None:
     if not reference_ligand_path or not candidate_ligand_path or not anchors:
         return None
@@ -107,3 +141,57 @@ def anchor_distance_error(reference_ligand_path: str | Path | None, candidate_li
     if not errors:
         return None
     return max(errors)
+
+
+def contact_fingerprint(
+    protein_path: str | Path | None, ligand_path: str | Path | None, cutoff: float = 4.0, bin_size: float = 2.0
+) -> set[tuple[int, int]]:
+    if not protein_path or not ligand_path:
+        return set()
+    protein = parse_pdb_atom_coords(protein_path)
+    ligand = ligand_atom_coords(ligand_path)
+    contacts: set[tuple[int, int]] = set()
+    for protein_coord in protein:
+        protein_bin = int(min(distance(protein_coord, ligand_coord) for ligand_coord in ligand) // bin_size) if ligand else -1
+        if protein_bin < 0:
+            continue
+        for ligand_index, ligand_coord in enumerate(ligand):
+            if distance(protein_coord, ligand_coord) <= cutoff:
+                contacts.add((protein_bin, ligand_index))
+    return contacts
+
+
+def contact_fingerprint_similarity(
+    protein_path: str | Path | None,
+    reference_ligand_path: str | Path | None,
+    candidate_ligand_path: str | Path | None,
+) -> dict[str, Any]:
+    reference = contact_fingerprint(protein_path, reference_ligand_path)
+    candidate = contact_fingerprint(protein_path, candidate_ligand_path)
+    if not reference and not candidate:
+        return {"contact_similarity": None, "reference_contacts": len(reference), "candidate_contacts": len(candidate)}
+    union = reference | candidate
+    intersection = reference & candidate
+    similarity = len(intersection) / len(union) if union else None
+    recovery = len(intersection) / len(reference) if reference else None
+    return {
+        "contact_similarity": similarity,
+        "contact_recovery": recovery,
+        "reference_contacts": len(reference),
+        "candidate_contacts": len(candidate),
+    }
+
+
+    geometry = protein_ligand_geometry(protein_path, ligand_path)
+    anchor_error = anchor_distance_error(reference_ligand_path, ligand_path, anchor_atoms)
+    clash_count = geometry.get("clash_count")
+    min_distance = geometry.get("min_protein_ligand_distance")
+    score = float(clash_count or 0) * 10.0 + float(anchor_error or 0.0)
+    if min_distance is None:
+        score += 1000.0
+    return {
+        "score": score,
+        "clash_count": clash_count,
+        "min_protein_ligand_distance": min_distance,
+        "anchor_distance_error": anchor_error,
+    }

@@ -41,8 +41,11 @@ def main() -> int:
             "name": config.get("name"),
             "seed": config.get("seed"),
             "num_feedback_records": len(feedback_rows),
+            "num_evaluable_for_repair": sum(
+                row.get("sample_quality", {}).get("evaluable_for_repair") is not False for row in feedback_rows
+            ),
             "metrics": rows,
-            "notes": "Smoke metrics use RDKit descriptors and scaffold/anchor state plus template failure labels; replace with true repaired molecules before model-performance claims.",
+            "notes": "Smoke metrics use RDKit descriptors and scaffold/anchor state plus template failure labels; non-evaluable sample_quality records must be excluded from model-performance claims; replace with true repaired molecules before model-performance claims.",
         },
     )
     write_csv(table_path, rows)
