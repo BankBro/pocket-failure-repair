@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/data/datasets/manifests/entries/dataset_entries_manifest_v0_1.json",
+  "title": "Canonical dataset entries manifest v0.1",
+  "description": "Schema for data/datasets/<dataset_id>/manifests/entries/*.json.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "dataset_id",
+    "dataset_version",
+    "entry_dir",
+    "entry_index_path",
+    "num_records",
+    "raw_dir",
+    "raw_manifest_path"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "dataset_entries_manifest_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/data/datasets/manifests/entries/dataset_entries_manifest_v0_1.json"},
+    "dataset_id": {"type": "string"},
+    "dataset_version": {"type": "string"},
+    "created_or_updated": {"type": ["string", "null"]},
+    "build_config_path": {"type": ["string", "null"]},
+    "build_script_path": {"type": ["string", "null"]},
+    "entry_dir": {"type": "string"},
+    "entry_index_path": {"type": "string"},
+    "entry_index_sha256": {"type": ["string", "null"]},
+    "num_records": {"type": "integer", "minimum": 0},
+    "per_sample_entry_pattern": {"type": ["string", "null"]},
+    "raw_dir": {"type": "string"},
+    "raw_manifest_path": {"type": "string"},
+    "dataset_view_manifest_path": {"type": ["string", "null"]},
+    "split_manifest_path": {"type": ["string", "null"]},
+    "lineage_note": {"type": ["string", "null"]},
+    "status": {"type": ["string", "null"]}
+  }
+}

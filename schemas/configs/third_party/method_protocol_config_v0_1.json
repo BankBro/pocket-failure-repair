@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/configs/third_party/method_protocol_config_v0_1.json",
+  "title": "Third-party method protocol/status config schema v0.1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "schema_path", "method", "protocol_config_version", "status", "run_boundary_label"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "config_third_party_method_protocol_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/configs/third_party/method_protocol_config_v0_1.json"},
+    "method": {"type": "string"},
+    "protocol_config_version": {"type": "string"},
+    "status": {"type": "string"},
+    "created_date": {"type": "string"},
+    "run_boundary_label": {"type": "string"},
+    "algorithm_changed": {"type": "boolean"},
+    "upstream": {"type": "object", "additionalProperties": true},
+    "checkpoint": {"type": "object", "additionalProperties": true}
+  }
+}

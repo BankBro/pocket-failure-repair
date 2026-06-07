@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/data/datasets/manifests/raw/dataset_raw_manifest_v0_1.json",
+  "title": "Canonical dataset raw manifest v0.1",
+  "description": "Schema for data/datasets/<dataset_id>/manifests/raw/*.json. Current smoke manifests record public RCSB complex sources and checksums.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["source", "complexes"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "dataset_raw_manifest_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/data/datasets/manifests/raw/dataset_raw_manifest_v0_1.json"},
+    "source": {"type": "string"},
+    "dataset_id": {"type": "string"},
+    "dataset_version": {"type": "string"},
+    "created_or_updated": {"type": ["string", "null"]},
+    "complexes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["complex_id", "protein_path", "ligand_path", "source_url"],
+        "properties": {
+          "complex_id": {"type": "string"},
+          "protein_path": {"type": "string"},
+          "protein_raw_path": {"type": ["string", "null"]},
+          "ligand_path": {"type": "string"},
+          "ligand_pdb_path": {"type": ["string", "null"]},
+          "ligand_residue": {"type": ["string", "null"]},
+          "source_url": {"type": "string"},
+          "download_urls": {"type": "object", "additionalProperties": true},
+          "checksum_protein": {"type": ["string", "null"]},
+          "checksum_protein_raw": {"type": ["string", "null"]},
+          "checksum_ligand": {"type": ["string", "null"]},
+          "checksum_ligand_pdb": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

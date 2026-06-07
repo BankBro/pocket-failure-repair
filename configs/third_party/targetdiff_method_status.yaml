@@ -1,0 +1,24 @@
+schema_version: config_third_party_method_protocol_v0_1
+schema_path: schemas/configs/third_party/method_protocol_config_v0_1.json
+method: TargetDiff
+protocol_config_version: targetdiff_audit_protocol_v0_1_draft
+status: blocked_pending_user_decision
+created_date: '2026-06-03'
+run_boundary_label: stage_limited_audit_or_instrumented_reproduction_after_resource_decision
+algorithm_changed: false
+upstream:
+  repo_url: https://github.com/guanjq/targetdiff
+  local_path: third_party/targetdiff
+  commit: 142f1eb7178480d435fe0b8cb95a99beb48997c7
+  license: MIT
+blocking_reason:
+  - checkpoint and CrossDocked processed data/test_set are on Google Drive with unknown size in current assessment
+  - pfr environment lacks torch/pyg/lmdb/openbabel Python module
+mvp_value:
+  - official implementation and important SBDD baseline
+  - README provides sampling and evaluation entry points
+required_before_run:
+  - user decision before unknown-size Google Drive downloads
+  - code assessment of raw attempt metadata and output file format
+  - method environment setup and version lock
+  - leakage check against CrossDocked split/training data

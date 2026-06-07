@@ -1,0 +1,35 @@
+schema_version: config_third_party_method_protocol_v0_1
+schema_path: schemas/configs/third_party/method_protocol_config_v0_1.json
+method: DiffSBDD
+protocol_config_version: diffsbdd_original_protocol_v0_1_draft
+status: preparation_only_not_executed
+created_date: '2026-06-03'
+run_boundary_label: original_protocol_reproduction
+claim_boundary: >-
+  This config records original-protocol assets visible from the official README.
+  It is not a completed reproduction. Full CrossDocked or Binding MOAD original-protocol runs require dataset acquisition, split/checksum recording, and method environment setup.
+upstream:
+  repo_url: https://github.com/arneschneuing/DiffSBDD
+  local_path: third_party/diffsbdd
+  commit: 5d0d38d16c8932a0339fd2ce3f67ade98bbdff27
+  license: MIT
+checkpoint:
+  source_url: https://zenodo.org/record/8183747/files/crossdocked_fullatom_cond.ckpt?download=1
+  local_path: third_party/diffsbdd/checkpoints/crossdocked_fullatom_cond.ckpt
+  sha256: 07f86764bf569aafbc40a9c15fc02de8e2550437dd0f17f657eab3abe66c372c
+  size_bytes: 17861341
+data:
+  original_datasets:
+    - CrossDocked via Pocket2Mol data instructions
+    - Binding MOAD via DiffSBDD README
+  acquisition_status: not_acquired_for_full_protocol
+  split_status: partial; repo includes Binding MOAD and time split lists but checksums not frozen
+example_commands_from_readme:
+  de_novo: >-
+    python generate_ligands.py checkpoints/crossdocked_fullatom_cond.ckpt --pdbfile example/3rfm.pdb --outfile example/3rfm_mol.sdf --ref_ligand A:330 --n_samples 20
+  inpainting: >-
+    python inpaint.py checkpoints/crossdocked_fullatom_cond.ckpt --pdbfile example/5ndu.pdb --outfile example/5ndu_linked_mols.sdf --ref_ligand example/5ndu_C_8V2.sdf --fix_atoms example/fragments.sdf --center ligand --add_n_nodes 10
+blocked_until:
+  - method environment with torch/pytorch_lightning/openbabel_python is created and recorded
+  - full original dataset and split checksums are frozen, if original-protocol reproduction is claimed
+  - label/statistics analysis-frozen gate passes before formal output labeling

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/data/datasets/manifests/lineage/dataset_lineage_entry_to_raw_v0_1.json",
+  "title": "Dataset entry-to-raw lineage index v0.1",
+  "description": "Schema for data/datasets/<dataset_id>/manifests/lineage/entry_to_raw_index_v1.json.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["dataset_id", "lookup_key", "entry_to_raw"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "dataset_lineage_entry_to_raw_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/data/datasets/manifests/lineage/dataset_lineage_entry_to_raw_v0_1.json"},
+    "created_or_updated": {"type": ["string", "null"]},
+    "dataset_id": {"type": "string"},
+    "dataset_version": {"type": "string"},
+    "lookup_key": {"type": "string"},
+    "purpose": {"type": ["string", "null"]},
+    "record_count": {"type": ["integer", "null"], "minimum": 0},
+    "entry_index_path": {"type": ["string", "null"]},
+    "entry_manifest_path": {"type": ["string", "null"]},
+    "raw_manifest_path": {"type": ["string", "null"]},
+    "entry_to_raw": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["sample_id", "entry_path", "raw_links"],
+        "properties": {
+          "sample_id": {"type": "string"},
+          "complex_id": {"type": ["string", "null"]},
+          "dataset_id": {"type": "string"},
+          "dataset_version": {"type": ["string", "null"]},
+          "entry_path": {"type": "string"},
+          "entry_index_path": {"type": ["string", "null"]},
+          "entry_line_number": {"type": ["integer", "null"], "minimum": 1},
+          "raw_links": {
+            "type": "array",
+            "items": {"$ref": "#/$defs/raw_link"}
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "raw_link": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["sample_id", "entry_path", "raw_path", "raw_role"],
+      "properties": {
+        "sample_id": {"type": "string"},
+        "complex_id": {"type": ["string", "null"]},
+        "dataset_id": {"type": "string"},
+        "dataset_version": {"type": ["string", "null"]},
+        "entry_path": {"type": "string"},
+        "entry_index_path": {"type": ["string", "null"]},
+        "entry_line_number": {"type": ["integer", "null"], "minimum": 1},
+        "entry_index_sha256": {"type": ["string", "null"]},
+        "entry_manifest_path": {"type": ["string", "null"]},
+        "raw_path": {"type": "string"},
+        "raw_role": {"type": "string"},
+        "raw_sha256": {"type": ["string", "null"]},
+        "raw_manifest_path": {"type": ["string", "null"]},
+        "dataset_view_manifest_path": {"type": ["string", "null"]},
+        "split_manifest_path": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

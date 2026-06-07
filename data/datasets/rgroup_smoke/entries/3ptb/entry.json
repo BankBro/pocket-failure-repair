@@ -1,0 +1,58 @@
+{
+  "anchor_atoms": [
+    0
+  ],
+  "complex_id": "3ptb",
+  "dataset_id": "rgroup_smoke",
+  "dataset_version": "v1",
+  "descriptors": {
+    "heavy_atom_molecular_weight": 112.091,
+    "logp": 0.8102000000000003,
+    "molecular_weight": 128.21900000000002,
+    "num_atoms": 9,
+    "num_heavy_atoms": 9,
+    "qed": 0.5133525670819973,
+    "rotatable_bonds": 1,
+    "tpsa": 52.04
+  },
+  "editable_atoms": [
+    6,
+    7,
+    8
+  ],
+  "editable_smiles": null,
+  "entry_path": "data/datasets/rgroup_smoke/entries/3ptb/entry.json",
+  "has_conformer": true,
+  "ligand_path": "data/datasets/rgroup_smoke/raw/3ptb/3ptb_ligand.pdb",
+  "ligand_smiles": "NC(N)C1CCCCC1",
+  "protein_path": "data/datasets/rgroup_smoke/raw/3ptb/3ptb_protein_clean.pdb",
+  "provenance": {
+    "entry_collection_path": "data/datasets/rgroup_smoke/entries/index.jsonl",
+    "layout_version": "dataset_entries_v1",
+    "migration": {
+      "date": "2026-06-04",
+      "note": "Moved canonical dataset records from top-level processed JSONL into dataset-scoped entries/index.jsonl and per-sample entry.json files.",
+      "type": "data_layout_migration"
+    }
+  },
+  "sample_id": "3ptb",
+  "sample_quality": {
+    "evaluable_for_repair": true,
+    "exclusion_reasons": [],
+    "min_protein_ligand_distance": 2.8153411871387823,
+    "protein_ligand_clash_count": 0,
+    "protein_ligand_overlap": false
+  },
+  "scaffold_atoms": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "scaffold_smiles": "C1CCCCC1",
+  "schema_path": "schemas/data/datasets/entries/dataset_entry_v0_1.json",
+  "schema_version": "dataset_entry_v0_1",
+  "status": "rdkit_ok"
+}

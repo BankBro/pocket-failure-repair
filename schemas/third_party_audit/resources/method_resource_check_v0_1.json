@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/resources/method_resource_check_v0_1.json",
+  "title": "Third-party method resource check v0.1",
+  "description": "Draft schema for pre-inference go/no-go resource checks for third-party audit runs.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "schema_path",
+    "method",
+    "check_id",
+    "resource_budget_config_version",
+    "resource_status",
+    "decision"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "method_resource_check_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/third_party_audit/resources/method_resource_check_v0_1.json"},
+    "experiment_id": {"type": ["string", "null"]},
+    "method": {"type": "string"},
+    "check_id": {"type": "string"},
+    "check_time": {"type": ["string", "null"]},
+    "repo_url": {"type": ["string", "null"]},
+    "repo_commit": {"type": ["string", "null"]},
+    "code_license": {"type": ["string", "null"]},
+    "checkpoint_id": {"type": ["string", "null"]},
+    "checkpoint_source": {"type": ["string", "null"]},
+    "checkpoint_sha256": {"type": ["string", "null"]},
+    "checkpoint_size_bytes": {"type": ["integer", "null"], "minimum": 0},
+    "checkpoint_access_type": {
+      "type": ["string", "null"],
+      "enum": ["public", "gated", "application_required", "paid", "unavailable", "unknown", null]
+    },
+    "dataset_source": {"type": ["string", "null"]},
+    "dataset_license": {"type": ["string", "null"]},
+    "training_data_status": {
+      "type": "string",
+      "enum": ["known", "partial", "training_data_unknown", "not_applicable", "unknown"]
+    },
+    "leakage_check_status": {
+      "type": "string",
+      "enum": ["passed", "possible_overlap", "unknown_risk", "failed", "not_checked"]
+    },
+    "resource_budget_config_version": {"type": "string"},
+    "resource_budget_config_hash": {"type": ["string", "null"]},
+    "resource_status": {
+      "type": "string",
+      "enum": ["ready", "pending", "blocked", "not_checked", "not_applicable"]
+    },
+    "blockers": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["go", "no_go", "blocked_pending_user_decision", "defer", "excluded"]
+    },
+    "risk_note": {"type": ["string", "null"]},
+    "evidence": {"type": "object", "additionalProperties": true}
+  }
+}

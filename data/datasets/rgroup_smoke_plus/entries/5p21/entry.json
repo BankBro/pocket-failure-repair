@@ -1,0 +1,85 @@
+{
+  "anchor_atoms": [
+    14,
+    16,
+    18,
+    25,
+    28
+  ],
+  "complex_id": "5p21",
+  "dataset_id": "rgroup_smoke_plus",
+  "dataset_version": "v1",
+  "descriptors": {
+    "heavy_atom_molecular_weight": 505.0610000000003,
+    "logp": -7.4574000000000025,
+    "molecular_weight": 536.3090000000002,
+    "num_atoms": 32,
+    "num_heavy_atoms": 32,
+    "qed": 0.1280653660441183,
+    "rotatable_bonds": 8,
+    "tpsa": 307.3699999999999
+  },
+  "editable_atoms": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    17,
+    19,
+    26,
+    29
+  ],
+  "editable_smiles": null,
+  "entry_path": "data/datasets/rgroup_smoke_plus/entries/5p21/entry.json",
+  "has_conformer": true,
+  "ligand_path": "data/datasets/rgroup_smoke_plus/raw/5p21/5p21_ligand.pdb",
+  "ligand_smiles": "NC1NC(O)C2NCN([C@@H]3O[C@H](CO[PH](O)(O)O[PH](O)(O)N[PH](O)(O)O)[C@@H](O)[C@H]3O)C2N1",
+  "protein_path": "data/datasets/rgroup_smoke_plus/raw/5p21/5p21_protein_clean.pdb",
+  "provenance": {
+    "entry_collection_path": "data/datasets/rgroup_smoke_plus/entries/index.jsonl",
+    "layout_version": "dataset_entries_v1",
+    "migration": {
+      "date": "2026-06-04",
+      "note": "Moved canonical dataset records from top-level processed JSONL into dataset-scoped entries/index.jsonl and per-sample entry.json files.",
+      "type": "data_layout_migration"
+    }
+  },
+  "sample_id": "5p21",
+  "sample_quality": {
+    "evaluable_for_repair": true,
+    "exclusion_reasons": [],
+    "min_protein_ligand_distance": 2.655550413756061,
+    "protein_ligand_clash_count": 0,
+    "protein_ligand_overlap": false
+  },
+  "scaffold_atoms": [
+    14,
+    15,
+    16,
+    18,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    27,
+    28,
+    30,
+    31
+  ],
+  "scaffold_smiles": "C1CO[C@@H](N2CNC3CNCNC32)C1",
+  "schema_path": "schemas/data/datasets/entries/dataset_entry_v0_1.json",
+  "schema_version": "dataset_entry_v0_1",
+  "status": "rdkit_ok"
+}

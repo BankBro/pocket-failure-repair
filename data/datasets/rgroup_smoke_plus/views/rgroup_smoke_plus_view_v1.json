@@ -1,0 +1,31 @@
+{
+  "complex_ids": [
+    "1a4w",
+    "1hsg",
+    "1hvr",
+    "1m17",
+    "2br1",
+    "2hyy",
+    "3ert",
+    "3g0e",
+    "3ptb",
+    "4dli",
+    "4erw",
+    "5p21"
+  ],
+  "created_or_updated": "2026-06-04",
+  "dataset_id": "rgroup_smoke_plus",
+  "dataset_view_id": "rgroup_smoke_plus_view_v1",
+  "entry_index_path": "data/datasets/rgroup_smoke_plus/entries/index.jsonl",
+  "entry_manifest_path": "data/datasets/rgroup_smoke_plus/manifests/entries/rgroup_smoke_plus_entries_manifest_v1.json",
+  "notes": "Dataset view manifest separates smoke/smoke-plus views from raw file roots.",
+  "raw_manifest_path": "data/datasets/rgroup_smoke_plus/manifests/raw/rcsb_smoke_plus_complexes_raw_manifest_v1.json",
+  "schema_path": "schemas/data/datasets/views/dataset_view_v0_1.json",
+  "schema_version": "dataset_view_v0_1",
+  "split_counts": {
+    "test": 3,
+    "train": 6,
+    "validation": 3
+  },
+  "split_manifest_path": "data/datasets/rgroup_smoke_plus/splits/rgroup_smoke_plus_split_v1.json"
+}

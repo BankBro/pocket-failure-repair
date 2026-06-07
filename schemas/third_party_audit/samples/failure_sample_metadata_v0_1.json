@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/samples/failure_sample_metadata_v0_1.json",
+  "title": "Third-party failure audit sample metadata v0.1",
+  "description": "Draft schema for per-sample metadata in third-party failure audit MVP. This schema is draft-ready and not analysis-frozen.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "schema_path",
+    "sample_id",
+    "run_id",
+    "method",
+    "run_boundary_label",
+    "dataset_name",
+    "dataset_version",
+    "dataset_view_id",
+    "split_id",
+    "complex_id",
+    "stage",
+    "sample_role",
+    "sample_index",
+    "original_status",
+    "audit_labels",
+    "quality_flags"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "failure_sample_metadata_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/third_party_audit/samples/failure_sample_metadata_v0_1.json"},
+    "sample_id": {"type": "string"},
+    "parent_sample_id": {"type": ["string", "null"]},
+    "lineage_id": {"type": ["string", "null"]},
+    "run_id": {"type": "string"},
+    "method": {"type": "string"},
+    "method_repo": {"type": ["string", "null"]},
+    "method_commit": {"type": ["string", "null"]},
+    "run_boundary_label": {
+      "type": "string",
+      "enum": [
+        "original_protocol_reproduction",
+        "instrumented_reproduction",
+        "audit_protocol_run",
+        "adapted_baseline",
+        "stage_limited_audit",
+        "selected_output_residual_audit",
+        "excluded"
+      ]
+    },
+    "dataset_name": {"type": "string"},
+    "dataset_version": {"type": "string"},
+    "dataset_view_id": {"type": "string"},
+    "split_id": {"type": "string"},
+    "complex_id": {"type": "string"},
+    "pdb_id": {"type": ["string", "null"]},
+    "pocket_id": {"type": ["string", "null"]},
+    "stage": {
+      "type": "string",
+      "enum": ["raw", "parsed", "normalized", "filtered", "rejected", "docked", "selected", "final"]
+    },
+    "sample_role": {
+      "type": "string",
+      "enum": [
+        "generation_attempt",
+        "original_failed_sample",
+        "rejected_candidate",
+        "selected_candidate",
+        "final_output",
+        "control_sanity_sample"
+      ]
+    },
+    "sample_index": {"type": "integer", "minimum": 0},
+    "molecule_path": {"type": ["string", "null"]},
+    "pose_path": {"type": ["string", "null"]},
+    "receptor_path": {"type": ["string", "null"]},
+    "raw_sample_id": {"type": ["string", "null"]},
+    "raw_sha256": {"type": ["string", "null"]},
+    "normalized_sha256": {"type": ["string", "null"]},
+    "original_status": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["status"],
+      "properties": {
+        "status": {"type": "string", "enum": ["failed", "rejected", "selected", "final", "passed", "unknown"]},
+        "source_stage_name": {"type": ["string", "null"]},
+        "failure_reason": {"type": ["string", "null"]},
+        "rejection_reason": {"type": ["string", "null"]},
+        "rank": {"type": ["number", "integer", "null"]},
+        "score": {"type": ["number", "integer", "null"]},
+        "source_file": {"type": ["string", "null"]}
+      }
+    },
+    "audit_labels": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "evaluability_status": {
+          "type": ["string", "null"],
+          "enum": [
+            "evaluable",
+            "not_evaluable_missing_data",
+            "not_evaluable_pipeline_failure",
+            "not_evaluable_tool_failure",
+            "not_evaluable_format_error",
+            "not_evaluable_stage_not_applicable",
+            "not_evaluable_unknown",
+            null
+          ]
+        },
+        "primary_label": {
+          "type": ["string", "null"],
+          "enum": [
+            "missing_data",
+            "pipeline_failure",
+            "tool_failure",
+            "chemical_invalid",
+            "graph_or_scaffold_failure",
+            "anchor_failure",
+            "global_pose_failure",
+            "pocket_detachment",
+            "local_geometry_failure",
+            "protein_ligand_clash",
+            "interaction_or_contact_loss",
+            "property_filter_failure",
+            "selected_output_residual_failure",
+            "unknown",
+            null
+          ]
+        },
+        "secondary_labels": {"type": "array", "items": {"type": "string"}},
+        "near_miss_eligible": {"type": ["boolean", "null"]},
+        "label_protocol_version": {"type": ["string", "null"]},
+        "label_config_hash": {"type": ["string", "null"]},
+        "adjudication_status": {"type": ["string", "null"]}
+      }
+    },
+    "quality_flags": {"type": "object", "additionalProperties": true},
+    "created_by_script_commit": {"type": ["string", "null"]}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/configs/data/downloads/rcsb_download_config_v0_1.json",
+  "title": "RCSB download config schema v0.1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "schema_path", "pdb_ids", "output", "rcsb"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "config_data_rcsb_download_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/configs/data/downloads/rcsb_download_config_v0_1.json"},
+    "pdb_ids": {"type": "array", "items": {"type": "string"}},
+    "output": {"type": "object", "additionalProperties": true},
+    "rcsb": {"type": "object", "additionalProperties": true}
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/data/datasets/splits/dataset_split_v0_1.json",
+  "title": "Canonical dataset split v0.1",
+  "description": "Schema for data/datasets/<dataset_id>/splits/*.json.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["name", "train", "validation", "test"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "dataset_split_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/data/datasets/splits/dataset_split_v0_1.json"},
+    "name": {"type": "string"},
+    "dataset_id": {"type": "string"},
+    "dataset_version": {"type": "string"},
+    "seed": {"type": ["integer", "null"]},
+    "train": {"type": "array", "items": {"type": "string"}},
+    "validation": {"type": "array", "items": {"type": "string"}},
+    "test": {"type": "array", "items": {"type": "string"}},
+    "excluded_examples": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {"type": "string"},
+          {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["complex_id", "reasons"],
+            "properties": {
+              "complex_id": {"type": "string"},
+              "reasons": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        ]
+      }
+    },
+    "num_examples": {"type": ["integer", "null"], "minimum": 0},
+    "num_rdkit_ok": {"type": ["integer", "null"], "minimum": 0},
+    "num_evaluable_for_repair": {"type": ["integer", "null"], "minimum": 0},
+    "notes": {"type": ["string", "null"]}
+  }
+}

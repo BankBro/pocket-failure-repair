@@ -1,0 +1,126 @@
+schema_version: config_audit_denominator_statistics_v0_1
+schema_path: schemas/configs/audit/denominator_statistics_config_v0_1.json
+statistics_protocol_version: pfr_failure_statistics_v0_1_draft
+created_date: '2026-06-03'
+status: draft_ready_not_analysis_frozen
+sample_key_fields:
+  - sample_id
+  - method
+  - run_id
+  - seed
+  - dataset_view_id
+  - complex_id
+  - pocket_id
+  - stage
+  - sample_index
+  - lineage_id
+  - sample_role
+  - original_status.status
+required_denominators:
+  N_budget:
+    definition: configured generation or sampling budget
+    raw_prevalence_required: true
+    notes: method crash before generation is recorded as pipeline/missing burden, not silently dropped.
+  N_raw_attempt_metadata:
+    definition: raw attempt metadata rows, including attempts without valid molecule files
+    raw_prevalence_required: true
+  N_raw_captured:
+    definition: attempts with raw molecule or raw artifact captured
+  N_original_failed_samples:
+    definition: upstream samples marked failed through sample_role/original_status, not a default stage
+  N_parsed:
+    definition: records readable as molecule objects
+  N_rdkit_valid:
+    definition: RDKit parse and sanitization pass
+  N_anchor_preserved:
+    definition: anchor/scaffold rule pass under label_config
+  N_docked:
+    definition: docking or pose generation attempted
+  N_pose_available:
+    definition: usable 3D pose exists
+  N_evaluable:
+    definition: required inputs are available for the requested molecular-quality diagnosis
+  N_rejected:
+    definition: candidates rejected by original method filter/rerank or equivalent stage
+  N_selected:
+    definition: candidates selected by original method before final output
+  N_final:
+    definition: final/top-k method outputs
+  N_repair_eligible:
+    definition: near_miss_eligible subset under frozen label_config
+raw_prevalence_gate:
+  required:
+    - N_budget
+    - N_raw_attempt_metadata
+  downgrade_if_missing: stage_limited_audit_or_selected_output_residual_audit
+attrition_table_fields:
+  - method
+  - run_id
+  - seed
+  - dataset_view_id
+  - complex_id
+  - pocket_id
+  - N_budget
+  - N_raw_attempt_metadata
+  - N_raw_captured
+  - N_original_failed_samples
+  - N_parse_fail
+  - N_parsed
+  - N_rdkit_invalid
+  - N_rdkit_valid
+  - N_anchor_fail
+  - N_anchor_preserved
+  - N_docking_attempted
+  - N_docking_failed
+  - N_pose_available
+  - N_not_evaluable
+  - N_evaluable
+  - N_rejected
+  - N_selected
+  - N_final
+  - N_repair_eligible
+prevalence_views:
+  inclusive_failure_burden:
+    denominators:
+      - N_budget
+      - N_raw_attempt_metadata
+    includes_not_evaluable_breakdown: true
+  evaluable_only_molecular_prevalence:
+    denominators:
+      - N_evaluable
+    excludes_pipeline_tool_missing_as_molecular_failure: true
+  selected_output_residual_prevalence:
+    denominators:
+      - N_selected
+      - N_final
+    notes: never infer raw distribution from selected/final only.
+aggregation:
+  required:
+    - per_method
+    - per_complex
+    - per_pocket
+    - sample_weighted
+    - method_weighted
+    - clean_subset
+    - risk_annotated_subset
+bootstrap:
+  enabled_when_sample_size_allows: true
+  default_interval: 0.95
+  minimum_cell_n_for_interpretation: 20
+  preferred_resampling_unit:
+    - complex_id
+    - pocket_id
+  cross_method_plan: nested_bootstrap_method_then_complex_or_pocket
+cooccurrence:
+  secondary_tag_matrix:
+    outputs:
+      - count_ij
+      - P_i_and_j
+      - P_j_given_i
+quality_reporting:
+  separately_report:
+    - not_evaluable
+    - missing_data
+    - pipeline_failure
+    - tool_failure
+    - format_error

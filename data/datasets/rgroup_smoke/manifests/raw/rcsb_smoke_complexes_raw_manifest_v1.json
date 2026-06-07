@@ -1,0 +1,58 @@
+{
+  "complexes": [
+    {
+      "checksum_ligand": "ab0e8eb8f7ba5208efab96464c6ecb45218fce9efa02933febb1edb1ffaa4d3f",
+      "checksum_ligand_pdb": "c90b7e840694a81360dc214c24d04648840f7aad2791fb8afdd6b3ed461083c2",
+      "checksum_protein": "f1e5d730d8da0466d65610eb2ee50df4441b159186b151dc84967753701427e7",
+      "checksum_protein_raw": "11779ea2ad6a87636dd4c86b56660e157a799aef3354e24bbfa991348d473921",
+      "complex_id": "1a4w",
+      "download_urls": {
+        "ligand_sdf": "https://models.rcsb.org/v1/1A4W/ligand?encoding=sdf&copy_all_categories=false",
+        "protein_pdb": "https://files.rcsb.org/download/1A4W.pdb"
+      },
+      "ligand_path": "data/datasets/rgroup_smoke/raw/1a4w/1a4w_ligand.sdf",
+      "ligand_pdb_path": "data/datasets/rgroup_smoke/raw/1a4w/1a4w_ligand.pdb",
+      "ligand_residue": "QWE:H:373",
+      "protein_path": "data/datasets/rgroup_smoke/raw/1a4w/1a4w_protein_clean.pdb",
+      "protein_raw_path": "data/datasets/rgroup_smoke/raw/1a4w/1a4w_protein.pdb",
+      "source_url": "https://www.rcsb.org/structure/1A4W"
+    },
+    {
+      "checksum_ligand": "aad8c7081fff29df75e055490e582591bcdd7252baa11dfaefdebc1a16ceb7d0",
+      "checksum_ligand_pdb": "30eee424f8b7e87c4fcc1adb30dbb152017f940ba76901585bdcda34f5214a47",
+      "checksum_protein": "f7c892e210f0ae6b1808fe3663310a73351b2847b81fb6d77fe595d3a425541e",
+      "checksum_protein_raw": "288f7954d4d013fa8eab3808e1037e2958e2dcd12c9eca65a3f1014404a9f9a2",
+      "complex_id": "3ptb",
+      "download_urls": {
+        "ligand_sdf": "https://models.rcsb.org/v1/3PTB/ligand?encoding=sdf&copy_all_categories=false",
+        "protein_pdb": "https://files.rcsb.org/download/3PTB.pdb"
+      },
+      "ligand_path": "data/datasets/rgroup_smoke/raw/3ptb/3ptb_ligand.sdf",
+      "ligand_pdb_path": "data/datasets/rgroup_smoke/raw/3ptb/3ptb_ligand.pdb",
+      "ligand_residue": "BEN:A:1",
+      "protein_path": "data/datasets/rgroup_smoke/raw/3ptb/3ptb_protein_clean.pdb",
+      "protein_raw_path": "data/datasets/rgroup_smoke/raw/3ptb/3ptb_protein.pdb",
+      "source_url": "https://www.rcsb.org/structure/3PTB"
+    },
+    {
+      "checksum_ligand": "729ca15705d50ac24900eae6bb75c6f5cdfad3981995066dd00a5ee9aa10fd20",
+      "checksum_ligand_pdb": "2317919784d586e1b6c151742ad687836e40b8ef54555df8220916c2ef2ceb77",
+      "checksum_protein": "6d34b641ec8e839e9188000e13c40a80db795d552044410360d807ed2ef341ac",
+      "checksum_protein_raw": "d430675c358060808ef614002cfdcfcfa824714d89f1240adf5749d2ba60fed2",
+      "complex_id": "1hsg",
+      "download_urls": {
+        "ligand_sdf": "https://models.rcsb.org/v1/1HSG/ligand?encoding=sdf&copy_all_categories=false",
+        "protein_pdb": "https://files.rcsb.org/download/1HSG.pdb"
+      },
+      "ligand_path": "data/datasets/rgroup_smoke/raw/1hsg/1hsg_ligand.sdf",
+      "ligand_pdb_path": "data/datasets/rgroup_smoke/raw/1hsg/1hsg_ligand.pdb",
+      "ligand_residue": "MK1:B:902",
+      "protein_path": "data/datasets/rgroup_smoke/raw/1hsg/1hsg_protein_clean.pdb",
+      "protein_raw_path": "data/datasets/rgroup_smoke/raw/1hsg/1hsg_protein.pdb",
+      "source_url": "https://www.rcsb.org/structure/1HSG"
+    }
+  ],
+  "schema_path": "schemas/data/datasets/manifests/raw/dataset_raw_manifest_v0_1.json",
+  "schema_version": "dataset_raw_manifest_v0_1",
+  "source": "RCSB PDB"
+}

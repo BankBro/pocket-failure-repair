@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/diagnosis/evaluator_tool_result_v0_1.json",
+  "title": "Third-party evaluator tool result v0.1",
+  "description": "Draft schema for per-sample evaluator tool results during MVP diagnosis wiring.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "schema_path",
+    "sample_id",
+    "run_id",
+    "method",
+    "evaluator_name",
+    "status",
+    "metrics",
+    "errors"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "evaluator_tool_result_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/third_party_audit/diagnosis/evaluator_tool_result_v0_1.json"},
+    "sample_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "method": {"type": "string"},
+    "stage": {"type": ["string", "null"]},
+    "sample_role": {"type": ["string", "null"]},
+    "evaluator_name": {"type": "string"},
+    "evaluator_version": {"type": ["string", "null"]},
+    "evaluator_config": {"type": ["string", "null"]},
+    "input_paths": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "output_paths": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "command": {"type": ["string", "null"]},
+    "environment": {"type": ["string", "null"]},
+    "status": {
+      "type": "string",
+      "enum": [
+        "passed",
+        "failed",
+        "tool_failure",
+        "input_missing",
+        "format_error",
+        "timeout",
+        "unavailable",
+        "not_applicable",
+        "unknown"
+      ]
+    },
+    "exit_code": {"type": ["integer", "null"]},
+    "stdout_path": {"type": ["string", "null"]},
+    "stderr_path": {"type": ["string", "null"]},
+    "metrics": {"type": "object", "additionalProperties": true},
+    "errors": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "created_time": {"type": ["string", "null"]}
+  }
+}

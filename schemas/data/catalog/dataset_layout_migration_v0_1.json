@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/data/catalog/dataset_layout_migration_v0_1.json",
+  "title": "Dataset layout migration v0.1",
+  "description": "Schema for data/catalog/dataset_layout_migration_*.json records that document data layout migrations.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "schema_path", "purpose", "datasets"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "dataset_layout_migration_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/data/catalog/dataset_layout_migration_v0_1.json"},
+    "created_or_updated": {"type": ["string", "null"]},
+    "purpose": {"type": "string"},
+    "note": {"type": ["string", "null"]},
+    "datasets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "dataset_id",
+          "old_raw_root",
+          "old_entry_index",
+          "new_raw_root",
+          "new_entry_index",
+          "new_manifest_root"
+        ],
+        "properties": {
+          "dataset_id": {"type": "string"},
+          "old_raw_root": {"type": "string"},
+          "old_entry_index": {"type": "string"},
+          "new_raw_root": {"type": "string"},
+          "new_entry_index": {"type": "string"},
+          "new_manifest_root": {"type": "string"}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/data/catalog/dataset_catalog_v0_1.json",
+  "title": "Dataset catalog v0.1",
+  "description": "Schema for data/catalog/dataset_catalog_v1.json.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["datasets", "purpose"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "dataset_catalog_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/data/catalog/dataset_catalog_v0_1.json"},
+    "created_or_updated": {"type": ["string", "null"]},
+    "purpose": {"type": "string"},
+    "datasets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["dataset_id", "dataset_root", "entry_index_path", "raw_dir"],
+        "properties": {
+          "dataset_id": {"type": "string"},
+          "dataset_root": {"type": "string"},
+          "dataset_version": {"type": ["string", "null"]},
+          "entries_dir": {"type": ["string", "null"]},
+          "entry_index_path": {"type": "string"},
+          "entry_manifest_path": {"type": ["string", "null"]},
+          "raw_dir": {"type": "string"},
+          "raw_manifest_path": {"type": ["string", "null"]},
+          "split_manifest_path": {"type": ["string", "null"]},
+          "dataset_view_manifest_path": {"type": ["string", "null"]},
+          "manifest_root": {"type": ["string", "null"]},
+          "lineage_dir": {"type": ["string", "null"]},
+          "raw_to_entry_index_path": {"type": ["string", "null"]},
+          "entry_to_raw_index_path": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "global_or_cross_dataset_manifests": {"type": "array", "items": {"type": "object", "additionalProperties": true}}
+  }
+}

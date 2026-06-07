@@ -1,0 +1,150 @@
+{
+  "created_or_updated": "2026-06-04",
+  "dataset_id": "rgroup_smoke",
+  "dataset_version": "v1",
+  "dataset_view_manifest_path": "data/datasets/rgroup_smoke/views/rgroup_smoke_view_v1.json",
+  "entry_count": 6,
+  "entry_index_path": "data/datasets/rgroup_smoke/entries/index.jsonl",
+  "entry_manifest_path": "data/datasets/rgroup_smoke/manifests/entries/rgroup_smoke_entries_manifest_v1.json",
+  "link_count": 6,
+  "lookup_key": "raw_path",
+  "purpose": "Dataset-scoped lookup from raw protein/ligand files to canonical entry records.",
+  "raw_manifest_path": "data/datasets/rgroup_smoke/manifests/raw/rcsb_smoke_complexes_raw_manifest_v1.json",
+  "raw_to_entry": [
+    {
+      "links": [
+        {
+          "complex_id": "1a4w",
+          "dataset_id": "rgroup_smoke",
+          "dataset_version": "v1",
+          "dataset_view_manifest_path": "data/datasets/rgroup_smoke/views/rgroup_smoke_view_v1.json",
+          "entry_index_path": "data/datasets/rgroup_smoke/entries/index.jsonl",
+          "entry_index_sha256": "74d4d40646a18860bc566695885ce59b64cd1f878c6b0b9435fa94a788599094",
+          "entry_line_number": 1,
+          "entry_manifest_path": "data/datasets/rgroup_smoke/manifests/entries/rgroup_smoke_entries_manifest_v1.json",
+          "entry_path": "data/datasets/rgroup_smoke/entries/1a4w/entry.json",
+          "raw_manifest_path": "data/datasets/rgroup_smoke/manifests/raw/rcsb_smoke_complexes_raw_manifest_v1.json",
+          "raw_path": "data/datasets/rgroup_smoke/raw/1a4w/1a4w_ligand.pdb",
+          "raw_role": "ligand",
+          "raw_sha256": "c90b7e840694a81360dc214c24d04648840f7aad2791fb8afdd6b3ed461083c2",
+          "sample_id": "1a4w",
+          "split_manifest_path": "data/datasets/rgroup_smoke/splits/rgroup_smoke_split_v1.json"
+        }
+      ],
+      "raw_path": "data/datasets/rgroup_smoke/raw/1a4w/1a4w_ligand.pdb"
+    },
+    {
+      "links": [
+        {
+          "complex_id": "1a4w",
+          "dataset_id": "rgroup_smoke",
+          "dataset_version": "v1",
+          "dataset_view_manifest_path": "data/datasets/rgroup_smoke/views/rgroup_smoke_view_v1.json",
+          "entry_index_path": "data/datasets/rgroup_smoke/entries/index.jsonl",
+          "entry_index_sha256": "74d4d40646a18860bc566695885ce59b64cd1f878c6b0b9435fa94a788599094",
+          "entry_line_number": 1,
+          "entry_manifest_path": "data/datasets/rgroup_smoke/manifests/entries/rgroup_smoke_entries_manifest_v1.json",
+          "entry_path": "data/datasets/rgroup_smoke/entries/1a4w/entry.json",
+          "raw_manifest_path": "data/datasets/rgroup_smoke/manifests/raw/rcsb_smoke_complexes_raw_manifest_v1.json",
+          "raw_path": "data/datasets/rgroup_smoke/raw/1a4w/1a4w_protein_clean.pdb",
+          "raw_role": "protein",
+          "raw_sha256": "f1e5d730d8da0466d65610eb2ee50df4441b159186b151dc84967753701427e7",
+          "sample_id": "1a4w",
+          "split_manifest_path": "data/datasets/rgroup_smoke/splits/rgroup_smoke_split_v1.json"
+        }
+      ],
+      "raw_path": "data/datasets/rgroup_smoke/raw/1a4w/1a4w_protein_clean.pdb"
+    },
+    {
+      "links": [
+        {
+          "complex_id": "1hsg",
+          "dataset_id": "rgroup_smoke",
+          "dataset_version": "v1",
+          "dataset_view_manifest_path": "data/datasets/rgroup_smoke/views/rgroup_smoke_view_v1.json",
+          "entry_index_path": "data/datasets/rgroup_smoke/entries/index.jsonl",
+          "entry_index_sha256": "74d4d40646a18860bc566695885ce59b64cd1f878c6b0b9435fa94a788599094",
+          "entry_line_number": 2,
+          "entry_manifest_path": "data/datasets/rgroup_smoke/manifests/entries/rgroup_smoke_entries_manifest_v1.json",
+          "entry_path": "data/datasets/rgroup_smoke/entries/1hsg/entry.json",
+          "raw_manifest_path": "data/datasets/rgroup_smoke/manifests/raw/rcsb_smoke_complexes_raw_manifest_v1.json",
+          "raw_path": "data/datasets/rgroup_smoke/raw/1hsg/1hsg_ligand.pdb",
+          "raw_role": "ligand",
+          "raw_sha256": "2317919784d586e1b6c151742ad687836e40b8ef54555df8220916c2ef2ceb77",
+          "sample_id": "1hsg",
+          "split_manifest_path": "data/datasets/rgroup_smoke/splits/rgroup_smoke_split_v1.json"
+        }
+      ],
+      "raw_path": "data/datasets/rgroup_smoke/raw/1hsg/1hsg_ligand.pdb"
+    },
+    {
+      "links": [
+        {
+          "complex_id": "1hsg",
+          "dataset_id": "rgroup_smoke",
+          "dataset_version": "v1",
+          "dataset_view_manifest_path": "data/datasets/rgroup_smoke/views/rgroup_smoke_view_v1.json",
+          "entry_index_path": "data/datasets/rgroup_smoke/entries/index.jsonl",
+          "entry_index_sha256": "74d4d40646a18860bc566695885ce59b64cd1f878c6b0b9435fa94a788599094",
+          "entry_line_number": 2,
+          "entry_manifest_path": "data/datasets/rgroup_smoke/manifests/entries/rgroup_smoke_entries_manifest_v1.json",
+          "entry_path": "data/datasets/rgroup_smoke/entries/1hsg/entry.json",
+          "raw_manifest_path": "data/datasets/rgroup_smoke/manifests/raw/rcsb_smoke_complexes_raw_manifest_v1.json",
+          "raw_path": "data/datasets/rgroup_smoke/raw/1hsg/1hsg_protein_clean.pdb",
+          "raw_role": "protein",
+          "raw_sha256": "6d34b641ec8e839e9188000e13c40a80db795d552044410360d807ed2ef341ac",
+          "sample_id": "1hsg",
+          "split_manifest_path": "data/datasets/rgroup_smoke/splits/rgroup_smoke_split_v1.json"
+        }
+      ],
+      "raw_path": "data/datasets/rgroup_smoke/raw/1hsg/1hsg_protein_clean.pdb"
+    },
+    {
+      "links": [
+        {
+          "complex_id": "3ptb",
+          "dataset_id": "rgroup_smoke",
+          "dataset_version": "v1",
+          "dataset_view_manifest_path": "data/datasets/rgroup_smoke/views/rgroup_smoke_view_v1.json",
+          "entry_index_path": "data/datasets/rgroup_smoke/entries/index.jsonl",
+          "entry_index_sha256": "74d4d40646a18860bc566695885ce59b64cd1f878c6b0b9435fa94a788599094",
+          "entry_line_number": 3,
+          "entry_manifest_path": "data/datasets/rgroup_smoke/manifests/entries/rgroup_smoke_entries_manifest_v1.json",
+          "entry_path": "data/datasets/rgroup_smoke/entries/3ptb/entry.json",
+          "raw_manifest_path": "data/datasets/rgroup_smoke/manifests/raw/rcsb_smoke_complexes_raw_manifest_v1.json",
+          "raw_path": "data/datasets/rgroup_smoke/raw/3ptb/3ptb_ligand.pdb",
+          "raw_role": "ligand",
+          "raw_sha256": "30eee424f8b7e87c4fcc1adb30dbb152017f940ba76901585bdcda34f5214a47",
+          "sample_id": "3ptb",
+          "split_manifest_path": "data/datasets/rgroup_smoke/splits/rgroup_smoke_split_v1.json"
+        }
+      ],
+      "raw_path": "data/datasets/rgroup_smoke/raw/3ptb/3ptb_ligand.pdb"
+    },
+    {
+      "links": [
+        {
+          "complex_id": "3ptb",
+          "dataset_id": "rgroup_smoke",
+          "dataset_version": "v1",
+          "dataset_view_manifest_path": "data/datasets/rgroup_smoke/views/rgroup_smoke_view_v1.json",
+          "entry_index_path": "data/datasets/rgroup_smoke/entries/index.jsonl",
+          "entry_index_sha256": "74d4d40646a18860bc566695885ce59b64cd1f878c6b0b9435fa94a788599094",
+          "entry_line_number": 3,
+          "entry_manifest_path": "data/datasets/rgroup_smoke/manifests/entries/rgroup_smoke_entries_manifest_v1.json",
+          "entry_path": "data/datasets/rgroup_smoke/entries/3ptb/entry.json",
+          "raw_manifest_path": "data/datasets/rgroup_smoke/manifests/raw/rcsb_smoke_complexes_raw_manifest_v1.json",
+          "raw_path": "data/datasets/rgroup_smoke/raw/3ptb/3ptb_protein_clean.pdb",
+          "raw_role": "protein",
+          "raw_sha256": "f7c892e210f0ae6b1808fe3663310a73351b2847b81fb6d77fe595d3a425541e",
+          "sample_id": "3ptb",
+          "split_manifest_path": "data/datasets/rgroup_smoke/splits/rgroup_smoke_split_v1.json"
+        }
+      ],
+      "raw_path": "data/datasets/rgroup_smoke/raw/3ptb/3ptb_protein_clean.pdb"
+    }
+  ],
+  "schema_path": "schemas/data/datasets/manifests/lineage/dataset_lineage_raw_to_entry_v0_1.json",
+  "schema_version": "dataset_lineage_raw_to_entry_v0_1",
+  "split_manifest_path": "data/datasets/rgroup_smoke/splits/rgroup_smoke_split_v1.json"
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/diagnosis/diagnosis_sanity_v0_1.json",
+  "title": "Third-party diagnosis sanity result v0.1",
+  "description": "Draft schema for MVP diagnosis sanity rows before formal analysis-frozen labeling.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "schema_path",
+    "sample_id",
+    "run_id",
+    "method",
+    "diagnosis_mode",
+    "evaluability_status",
+    "provisional_labels",
+    "evidence",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "diagnosis_sanity_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/third_party_audit/diagnosis/diagnosis_sanity_v0_1.json"},
+    "sample_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "method": {"type": "string"},
+    "stage": {"type": ["string", "null"]},
+    "sample_role": {"type": ["string", "null"]},
+    "diagnosis_mode": {
+      "type": "string",
+      "enum": ["mvp_sanity", "tool_wiring", "pilot_diagnosis"]
+    },
+    "evaluability_status": {
+      "type": "string",
+      "enum": [
+        "evaluable",
+        "not_evaluable_missing_data",
+        "not_evaluable_pipeline_failure",
+        "not_evaluable_tool_failure",
+        "not_evaluable_format_error",
+        "not_evaluable_stage_not_applicable",
+        "not_evaluable_unknown"
+      ]
+    },
+    "provisional_labels": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "primary_label": {"type": ["string", "null"]},
+        "secondary_labels": {"type": "array", "items": {"type": "string"}},
+        "near_miss_candidate": {"type": ["boolean", "null"]}
+      }
+    },
+    "tool_result_refs": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "evidence": {"type": "object", "additionalProperties": true},
+    "label_protocol_version": {"type": ["string", "null"]},
+    "label_config_hash": {"type": ["string", "null"]},
+    "claim_boundary": {
+      "type": "string",
+      "const": "mvp_sanity_not_formal_prevalence"
+    },
+    "notes": {"type": ["string", "null"]}
+  }
+}

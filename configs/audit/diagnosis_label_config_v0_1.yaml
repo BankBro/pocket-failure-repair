@@ -1,0 +1,129 @@
+schema_version: config_audit_diagnosis_label_v0_1
+schema_path: schemas/configs/audit/diagnosis_label_config_v0_1.json
+label_protocol_version: pfr_failure_diagnosis_v0_1_draft
+created_date: '2026-06-03'
+status: draft_ready_not_analysis_frozen
+purpose: third_party_failure_audit_trial_design_and_sanity_only
+notes:
+  - This config is draft-ready for MVP asset preparation and sanity wiring.
+  - It is not analysis-frozen; real third-party output labels must not be reported as formal prevalence until tool_versions, thresholds, and config hash are frozen.
+  - Existing smoke/smoke-plus/control samples are sanity_only and must not enter formal third-party prevalence denominators.
+evaluability_statuses:
+  - evaluable
+  - not_evaluable_missing_data
+  - not_evaluable_pipeline_failure
+  - not_evaluable_tool_failure
+  - not_evaluable_format_error
+  - not_evaluable_stage_not_applicable
+  - not_evaluable_unknown
+primary_labels:
+  - missing_data
+  - pipeline_failure
+  - tool_failure
+  - chemical_invalid
+  - graph_or_scaffold_failure
+  - anchor_failure
+  - global_pose_failure
+  - pocket_detachment
+  - local_geometry_failure
+  - protein_ligand_clash
+  - interaction_or_contact_loss
+  - property_filter_failure
+  - selected_output_residual_failure
+  - unknown
+secondary_labels:
+  - rdkit_parse_failed
+  - rdkit_sanitize_failed
+  - valence_error
+  - disconnected_graph
+  - scaffold_missing
+  - scaffold_changed
+  - anchor_missing
+  - anchor_distance_exceeded
+  - ligand_outside_pocket
+  - centroid_distance_exceeded
+  - posebuster_geometry_failed
+  - internal_clash
+  - protein_ligand_clash
+  - required_interaction_lost
+  - contact_count_drop
+  - docking_failed
+  - vina_score_degraded
+  - qed_filter_failed
+  - sa_filter_failed
+precedence_hierarchy:
+  - missing_data
+  - pipeline_failure
+  - tool_failure
+  - chemical_invalid
+  - graph_or_scaffold_failure
+  - anchor_failure
+  - global_pose_failure
+  - pocket_detachment
+  - local_geometry_failure
+  - protein_ligand_clash
+  - interaction_or_contact_loss
+  - property_filter_failure
+  - selected_output_residual_failure
+  - unknown
+stage_enum:
+  - raw
+  - parsed
+  - normalized
+  - filtered
+  - rejected
+  - docked
+  - selected
+  - final
+sample_role_enum:
+  - generation_attempt
+  - original_failed_sample
+  - rejected_candidate
+  - selected_candidate
+  - final_output
+  - control_sanity_sample
+original_status_enum:
+  - failed
+  - rejected
+  - selected
+  - final
+  - passed
+  - unknown
+near_miss_eligibility:
+  required:
+    rdkit_valid: true
+    scaffold_or_anchor_preserved: true
+    ligand_near_pocket: true
+    pipeline_tool_or_missing_failure: false
+    severe_chemical_invalid: false
+    global_pose_collapse_or_pocket_detachment: false
+  allowed_primary_labels:
+    - local_geometry_failure
+    - protein_ligand_clash
+    - interaction_or_contact_loss
+    - anchor_failure
+  forbidden_primary_labels:
+    - missing_data
+    - pipeline_failure
+    - tool_failure
+    - chemical_invalid
+    - graph_or_scaffold_failure
+    - global_pose_failure
+    - pocket_detachment
+    - property_filter_failure
+thresholds_draft:
+  pocket_centroid_distance_angstrom: null
+  anchor_distance_angstrom: null
+  scaffold_match_rule: fixed_after_method_specific_mapping
+  clash_distance_angstrom: null
+  contact_loss_rule: fixed_by_plip_or_prolif_fingerprint_when_frozen
+  posebusters_columns: []
+evaluator_environment_requirements:
+  formal_plip_vina_env_path: /home/lyj/mnt/project/pfr-eval-tools
+  vina_success_role: auxiliary_metric_only
+  require_error_field_checks:
+    - plip_error
+    - vina_error
+hashing_plan:
+  config_hash_algorithm: sha256_normalized_yaml
+  hash_status: not_computed_until_freeze

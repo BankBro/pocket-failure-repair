@@ -1,0 +1,25 @@
+{
+  "created_or_updated": "2026-06-04",
+  "datasets": [
+    {
+      "dataset_id": "rgroup_smoke",
+      "new_entry_index": "data/datasets/rgroup_smoke/entries/index.jsonl",
+      "new_manifest_root": "data/datasets/rgroup_smoke/manifests",
+      "new_raw_root": "data/datasets/rgroup_smoke/raw",
+      "old_entry_index": "data/processed/rgroup_smoke.jsonl",
+      "old_raw_root": "data/raw/smoke_complexes"
+    },
+    {
+      "dataset_id": "rgroup_smoke_plus",
+      "new_entry_index": "data/datasets/rgroup_smoke_plus/entries/index.jsonl",
+      "new_manifest_root": "data/datasets/rgroup_smoke_plus/manifests",
+      "new_raw_root": "data/datasets/rgroup_smoke_plus/raw",
+      "old_entry_index": "data/processed/rgroup_smoke_plus.jsonl",
+      "old_raw_root": "data/raw/smoke_plus_complexes"
+    }
+  ],
+  "note": "Raw file contents were copied unchanged before old paths were removed.",
+  "purpose": "Record migration from top-level raw/processed/manifests layout to dataset-scoped data/datasets/<dataset_id>/ layout.",
+  "schema_path": "schemas/data/catalog/dataset_layout_migration_v0_1.json",
+  "schema_version": "dataset_layout_migration_v0_1"
+}

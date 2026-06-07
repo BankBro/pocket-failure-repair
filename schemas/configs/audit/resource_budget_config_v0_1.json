@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/configs/audit/resource_budget_config_v0_1.json",
+  "title": "Audit resource budget config schema v0.1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "schema_path", "resource_budget_config_version", "unknown_core_resource_size_policy"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "config_audit_resource_budget_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/configs/audit/resource_budget_config_v0_1.json"},
+    "resource_budget_config_version": {"type": "string"},
+    "created_date": {"type": "string"},
+    "purpose": {"type": "string"},
+    "unknown_core_resource_size_policy": {"type": "string"},
+    "blocking_conditions": {"type": "array", "items": {"type": "string"}}
+  }
+}

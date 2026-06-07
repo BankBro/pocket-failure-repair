@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/configs/audit/tool_versions_lock_v0_1.json",
+  "title": "Audit tool versions lock config schema v0.1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "schema_path", "tool_versions_lock_version", "project_environment", "evaluator_environment"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "config_audit_tool_versions_lock_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/configs/audit/tool_versions_lock_v0_1.json"},
+    "tool_versions_lock_version": {"type": "string"},
+    "created_date": {"type": "string"},
+    "status": {"type": "string"},
+    "project_environment": {"type": "object", "additionalProperties": true},
+    "evaluator_environment": {"type": "object", "additionalProperties": true}
+  }
+}

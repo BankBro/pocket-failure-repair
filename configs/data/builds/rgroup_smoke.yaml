@@ -1,0 +1,21 @@
+schema_version: config_data_rgroup_dataset_v0_1
+schema_path: schemas/configs/data/builds/rgroup_dataset_config_v0_1.json
+name: rgroup_smoke
+seed: 0
+input:
+  complexes_dir: data/datasets/rgroup_smoke/raw
+  max_complexes: 3
+  require_protein: true
+  require_ligand: true
+output:
+  dataset_path: data/datasets/rgroup_smoke/entries/index.jsonl
+  split_path: data/datasets/rgroup_smoke/splits/rgroup_smoke_split_v1.json
+rgroup:
+  min_edit_atoms: 1
+  max_edit_atoms: 12
+  max_anchor_atoms: 2
+  scaffold_min_atoms: 6
+validation:
+  require_3d_conformer: true
+  require_single_fragment: true
+  allow_charged_molecules: true

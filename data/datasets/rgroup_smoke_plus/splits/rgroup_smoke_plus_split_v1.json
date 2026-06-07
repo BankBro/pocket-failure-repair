@@ -1,0 +1,29 @@
+{
+  "excluded_examples": [],
+  "name": "rgroup_smoke_plus",
+  "notes": "Deterministic smoke split by complex ID when split fractions are configured. Examples marked non-evaluable must not be used for model-performance claims.",
+  "num_evaluable_for_repair": 12,
+  "num_examples": 12,
+  "num_rdkit_ok": 12,
+  "schema_path": "schemas/data/datasets/splits/dataset_split_v0_1.json",
+  "schema_version": "dataset_split_v0_1",
+  "seed": 0,
+  "test": [
+    "2br1",
+    "3g0e",
+    "4erw"
+  ],
+  "train": [
+    "1a4w",
+    "1hsg",
+    "1hvr",
+    "1m17",
+    "3ptb",
+    "4dli"
+  ],
+  "validation": [
+    "2hyy",
+    "3ert",
+    "5p21"
+  ]
+}

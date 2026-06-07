@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/attrition/stage_attrition_v0_1.json",
+  "title": "Third-party audit stage attrition v0.1",
+  "description": "Draft schema for stage-wise attrition summaries. Counts must trace back to samples.jsonl rows, not only file counts.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "schema_path", "method", "run_id", "dataset_view_id", "rows"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "stage_attrition_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/third_party_audit/attrition/stage_attrition_v0_1.json"},
+    "method": {"type": "string"},
+    "run_id": {"type": "string"},
+    "dataset_view_id": {"type": "string"},
+    "summary_scope": {"type": "string"},
+    "denominator_policy_version": {"type": "string"},
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["method", "run_id", "complex_id"],
+        "properties": {
+          "method": {"type": "string"},
+          "run_id": {"type": "string"},
+          "seed": {"type": ["integer", "null"]},
+          "dataset_view_id": {"type": "string"},
+          "complex_id": {"type": "string"},
+          "pocket_id": {"type": ["string", "null"]},
+          "N_budget": {"type": ["integer", "null"], "minimum": 0},
+          "N_raw_attempt_metadata": {"type": ["integer", "null"], "minimum": 0},
+          "N_raw_captured": {"type": ["integer", "null"], "minimum": 0},
+          "N_original_failed_samples": {"type": ["integer", "null"], "minimum": 0},
+          "N_parse_fail": {"type": ["integer", "null"], "minimum": 0},
+          "N_parsed": {"type": ["integer", "null"], "minimum": 0},
+          "N_rdkit_invalid": {"type": ["integer", "null"], "minimum": 0},
+          "N_rdkit_valid": {"type": ["integer", "null"], "minimum": 0},
+          "N_anchor_fail": {"type": ["integer", "null"], "minimum": 0},
+          "N_anchor_preserved": {"type": ["integer", "null"], "minimum": 0},
+          "N_docking_attempted": {"type": ["integer", "null"], "minimum": 0},
+          "N_docking_failed": {"type": ["integer", "null"], "minimum": 0},
+          "N_pose_available": {"type": ["integer", "null"], "minimum": 0},
+          "N_not_evaluable": {"type": ["integer", "null"], "minimum": 0},
+          "N_evaluable": {"type": ["integer", "null"], "minimum": 0},
+          "N_rejected": {"type": ["integer", "null"], "minimum": 0},
+          "N_selected": {"type": ["integer", "null"], "minimum": 0},
+          "N_final": {"type": ["integer", "null"], "minimum": 0},
+          "N_repair_eligible": {"type": ["integer", "null"], "minimum": 0},
+          "notes": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

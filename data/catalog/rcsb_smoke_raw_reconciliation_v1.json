@@ -1,0 +1,52 @@
+{
+  "created_or_updated": "2026-06-04",
+  "notes": [
+    "This pass records duplicate raw roots and checksum discrepancies only.",
+    "No data/raw structure files were deleted or rewritten because ligand SDF checksums differ for overlapping complexes."
+  ],
+  "overlap": [
+    {
+      "action": "record_only_no_raw_deletion",
+      "complex_id": "1a4w",
+      "ligand_pdb_sha256_match": true,
+      "ligand_sdf_sha256_match": false,
+      "protein_clean_sha256_match": true,
+      "protein_raw_sha256_match": true,
+      "smoke_ligand_path": "data/datasets/rgroup_smoke/raw/1a4w/1a4w_ligand.sdf",
+      "smoke_ligand_sha256": "ab0e8eb8f7ba5208efab96464c6ecb45218fce9efa02933febb1edb1ffaa4d3f",
+      "smoke_plus_ligand_path": "data/datasets/rgroup_smoke_plus/raw/1a4w/1a4w_ligand.sdf",
+      "smoke_plus_ligand_sha256": "48cfb99482a829995bb487691411856e43d4376d6f537e1a8285d86f798b048a"
+    },
+    {
+      "action": "record_only_no_raw_deletion",
+      "complex_id": "1hsg",
+      "ligand_pdb_sha256_match": true,
+      "ligand_sdf_sha256_match": false,
+      "protein_clean_sha256_match": true,
+      "protein_raw_sha256_match": true,
+      "smoke_ligand_path": "data/datasets/rgroup_smoke/raw/1hsg/1hsg_ligand.sdf",
+      "smoke_ligand_sha256": "729ca15705d50ac24900eae6bb75c6f5cdfad3981995066dd00a5ee9aa10fd20",
+      "smoke_plus_ligand_path": "data/datasets/rgroup_smoke_plus/raw/1hsg/1hsg_ligand.sdf",
+      "smoke_plus_ligand_sha256": "86e8397d9cae1a53189a359bb06ffe02073cb435582ce161878654342e9a4049"
+    },
+    {
+      "action": "record_only_no_raw_deletion",
+      "complex_id": "3ptb",
+      "ligand_pdb_sha256_match": true,
+      "ligand_sdf_sha256_match": false,
+      "protein_clean_sha256_match": true,
+      "protein_raw_sha256_match": true,
+      "smoke_ligand_path": "data/datasets/rgroup_smoke/raw/3ptb/3ptb_ligand.sdf",
+      "smoke_ligand_sha256": "aad8c7081fff29df75e055490e582591bcdd7252baa11dfaefdebc1a16ceb7d0",
+      "smoke_plus_ligand_path": "data/datasets/rgroup_smoke_plus/raw/3ptb/3ptb_ligand.sdf",
+      "smoke_plus_ligand_sha256": "b34cf82dbd453d3fd6a115b443c24d8d25dac5f613ddf4dc957519962c3ed40e"
+    }
+  ],
+  "overlap_complex_count": 3,
+  "raw_manifests": [
+    "data/datasets/rgroup_smoke/manifests/raw/rcsb_smoke_complexes_raw_manifest_v1.json",
+    "data/datasets/rgroup_smoke_plus/manifests/raw/rcsb_smoke_plus_complexes_raw_manifest_v1.json"
+  ],
+  "schema_path": "schemas/data/catalog/dataset_raw_reconciliation_v0_1.json",
+  "schema_version": "dataset_raw_reconciliation_v0_1"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/configs/data/builds/rgroup_dataset_config_v0_1.json",
+  "title": "R-group dataset build config schema v0.1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "schema_path", "name", "input", "output", "rgroup", "validation"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "config_data_rgroup_dataset_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/configs/data/builds/rgroup_dataset_config_v0_1.json"},
+    "name": {"type": "string"},
+    "seed": {"type": "integer"},
+    "input": {"type": "object", "additionalProperties": true},
+    "output": {"type": "object", "additionalProperties": true},
+    "split": {"type": "object", "additionalProperties": true},
+    "rgroup": {"type": "object", "additionalProperties": true},
+    "validation": {"type": "object", "additionalProperties": true}
+  }
+}

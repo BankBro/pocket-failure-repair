@@ -1,0 +1,18 @@
+{
+  "excluded_examples": [],
+  "name": "rgroup_smoke",
+  "notes": "Smoke split only; all discovered examples are assigned to train. Examples marked non-evaluable must not be used for model-performance claims.",
+  "num_evaluable_for_repair": 3,
+  "num_examples": 3,
+  "num_rdkit_ok": 3,
+  "schema_path": "schemas/data/datasets/splits/dataset_split_v0_1.json",
+  "schema_version": "dataset_split_v0_1",
+  "seed": 0,
+  "test": [],
+  "train": [
+    "1a4w",
+    "1hsg",
+    "3ptb"
+  ],
+  "validation": []
+}

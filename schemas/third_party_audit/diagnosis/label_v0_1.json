@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/diagnosis/label_v0_1.json",
+  "title": "Third-party failure audit label schema v0.1",
+  "description": "Draft schema for labels.jsonl rows in third-party failure audit. This version is draft-ready and not analysis-frozen.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "schema_path",
+    "sample_id",
+    "run_id",
+    "method",
+    "complex_id",
+    "stage",
+    "sample_role",
+    "evaluability_status",
+    "primary_label",
+    "secondary_labels",
+    "near_miss_eligible",
+    "evidence",
+    "tool_results",
+    "thresholds",
+    "label_protocol_version",
+    "label_script_commit",
+    "label_config_hash",
+    "adjudication_status"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "label_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/third_party_audit/diagnosis/label_v0_1.json"},
+    "sample_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "method": {"type": "string"},
+    "complex_id": {"type": "string"},
+    "stage": {"type": "string", "enum": ["raw", "parsed", "normalized", "filtered", "rejected", "docked", "selected", "final"]},
+    "sample_role": {
+      "type": "string",
+      "enum": ["generation_attempt", "original_failed_sample", "rejected_candidate", "selected_candidate", "final_output", "control_sanity_sample"]
+    },
+    "evaluability_status": {
+      "type": "string",
+      "enum": [
+        "evaluable",
+        "not_evaluable_missing_data",
+        "not_evaluable_pipeline_failure",
+        "not_evaluable_tool_failure",
+        "not_evaluable_format_error",
+        "not_evaluable_stage_not_applicable",
+        "not_evaluable_unknown"
+      ]
+    },
+    "primary_label": {
+      "type": "string",
+      "enum": [
+        "missing_data",
+        "pipeline_failure",
+        "tool_failure",
+        "chemical_invalid",
+        "graph_or_scaffold_failure",
+        "anchor_failure",
+        "global_pose_failure",
+        "pocket_detachment",
+        "local_geometry_failure",
+        "protein_ligand_clash",
+        "interaction_or_contact_loss",
+        "property_filter_failure",
+        "selected_output_residual_failure",
+        "unknown"
+      ]
+    },
+    "secondary_labels": {"type": "array", "items": {"type": "string"}},
+    "near_miss_eligible": {"type": "boolean"},
+    "evidence": {"type": "object", "additionalProperties": true},
+    "tool_results": {"type": "object", "additionalProperties": true},
+    "thresholds": {"type": "object", "additionalProperties": true},
+    "label_protocol_version": {"type": "string"},
+    "label_script_commit": {"type": ["string", "null"]},
+    "label_config_hash": {"type": ["string", "null"]},
+    "adjudication_status": {"type": "string", "enum": ["not_reviewed", "reviewed", "overridden"]},
+    "manual_adjudication_id": {"type": ["string", "null"]},
+    "quality_notes": {"type": ["string", "null"]}
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "created_or_updated": "2026-06-07",
+  "datasets": [
+    {
+      "dataset_id": "rgroup_smoke",
+      "dataset_root": "data/datasets/rgroup_smoke",
+      "dataset_version": "v1",
+      "dataset_view_manifest_path": "data/datasets/rgroup_smoke/views/rgroup_smoke_view_v1.json",
+      "entries_dir": "data/datasets/rgroup_smoke/entries",
+      "entry_index_path": "data/datasets/rgroup_smoke/entries/index.jsonl",
+      "entry_manifest_path": "data/datasets/rgroup_smoke/manifests/entries/rgroup_smoke_entries_manifest_v1.json",
+      "entry_to_raw_index_path": "data/datasets/rgroup_smoke/manifests/lineage/entry_to_raw_index_v1.json",
+      "lineage_dir": "data/datasets/rgroup_smoke/manifests/lineage",
+      "manifest_root": "data/datasets/rgroup_smoke/manifests",
+      "raw_dir": "data/datasets/rgroup_smoke/raw",
+      "raw_manifest_path": "data/datasets/rgroup_smoke/manifests/raw/rcsb_smoke_complexes_raw_manifest_v1.json",
+      "raw_to_entry_index_path": "data/datasets/rgroup_smoke/manifests/lineage/raw_to_entry_index_v1.json",
+      "split_manifest_path": "data/datasets/rgroup_smoke/splits/rgroup_smoke_split_v1.json"
+    },
+    {
+      "dataset_id": "rgroup_smoke_plus",
+      "dataset_root": "data/datasets/rgroup_smoke_plus",
+      "dataset_version": "v1",
+      "dataset_view_manifest_path": "data/datasets/rgroup_smoke_plus/views/rgroup_smoke_plus_view_v1.json",
+      "entries_dir": "data/datasets/rgroup_smoke_plus/entries",
+      "entry_index_path": "data/datasets/rgroup_smoke_plus/entries/index.jsonl",
+      "entry_manifest_path": "data/datasets/rgroup_smoke_plus/manifests/entries/rgroup_smoke_plus_entries_manifest_v1.json",
+      "entry_to_raw_index_path": "data/datasets/rgroup_smoke_plus/manifests/lineage/entry_to_raw_index_v1.json",
+      "lineage_dir": "data/datasets/rgroup_smoke_plus/manifests/lineage",
+      "manifest_root": "data/datasets/rgroup_smoke_plus/manifests",
+      "raw_dir": "data/datasets/rgroup_smoke_plus/raw",
+      "raw_manifest_path": "data/datasets/rgroup_smoke_plus/manifests/raw/rcsb_smoke_plus_complexes_raw_manifest_v1.json",
+      "raw_to_entry_index_path": "data/datasets/rgroup_smoke_plus/manifests/lineage/raw_to_entry_index_v1.json",
+      "split_manifest_path": "data/datasets/rgroup_smoke_plus/splits/rgroup_smoke_plus_split_v1.json"
+    }
+  ],
+  "global_or_cross_dataset_manifests": [
+    {
+      "datasets": [
+        "rgroup_smoke",
+        "rgroup_smoke_plus"
+      ],
+      "manifest_id": "rcsb_smoke_raw_reconciliation_v1",
+      "path": "data/catalog/rcsb_smoke_raw_reconciliation_v1.json",
+      "scope": "cross_dataset_reconciliation"
+    }
+  ],
+  "purpose": "Dataset-level catalog for data/datasets/<dataset_id>/ roots. Concrete raw files, entries, splits, views, and dataset-scoped manifests live under each dataset root.",
+  "schema_path": "schemas/data/catalog/dataset_catalog_v0_1.json",
+  "schema_version": "dataset_catalog_v0_1"
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/run/output_manifest_v0_1.json",
+  "title": "Third-party audit output manifest v0.1",
+  "description": "Draft schema for per-run captured output manifests in third-party failure audit MVP.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "schema_path", "run_id", "metadata_schemas", "captured_outputs", "logs", "sha256"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "output_manifest_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/third_party_audit/run/output_manifest_v0_1.json"},
+    "run_id": {"type": "string"},
+    "method": {"type": ["string", "null"]},
+    "metadata_schemas": {
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    },
+    "captured_outputs": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "processed_outputs": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "logs": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "manifests": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "evaluator_outputs": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "sha256": {
+      "type": "object",
+      "additionalProperties": {"type": ["string", "null"]}
+    },
+    "n_final_sdf_records": {"type": ["integer", "null"], "minimum": 0},
+    "n_output_artifacts": {"type": ["integer", "null"], "minimum": 0},
+    "notes": {"type": ["string", "null"]}
+  }
+}

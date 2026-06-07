@@ -1,0 +1,24 @@
+schema_version: config_third_party_method_protocol_v0_1
+schema_path: schemas/configs/third_party/method_protocol_config_v0_1.json
+method: Pocket2Mol
+protocol_config_version: pocket2mol_audit_protocol_v0_1_draft
+status: blocked_pending_user_decision
+created_date: '2026-06-03'
+run_boundary_label: instrumented_reproduction_or_audit_protocol_run_after_resource_decision
+algorithm_changed: false
+upstream:
+  repo_url: https://github.com/pengxingang/Pocket2Mol
+  local_path: third_party/pocket2mol
+  commit: 836a0c4ce487297ad24bc54ac2ebd163de13242c
+  license: MIT
+blocking_reason:
+  - pretrained checkpoint is on Google Drive with unknown size in current assessment
+  - CrossDocked pocket10 data archive and split are on Google Drive with unknown size
+  - pfr environment lacks torch/pyg/easydict/lmdb
+positive_auditability_signal:
+  - sample_for_pdb.py stores pool states: queue, failed, finished, duplicate
+  - sample_for_pdb.py saves samples_init.pt and samples_<step>.pt plus SDF outputs
+required_before_run:
+  - user decision if downloading unknown-size Google Drive checkpoint/data
+  - method environment setup and version lock
+  - PT pool-to-samples.jsonl normalizer

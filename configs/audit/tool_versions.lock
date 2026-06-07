@@ -1,0 +1,44 @@
+schema_version: config_audit_tool_versions_lock_v0_1
+schema_path: schemas/configs/audit/tool_versions_lock_v0_1.json
+tool_versions_lock_version: pfr_third_party_audit_tool_versions_v0_1_draft
+created_date: '2026-06-03'
+status: draft_ready_not_analysis_frozen
+scope: third_party_failure_audit_phase1_mvp_preparation
+project_environment:
+  name: pfr
+  python: '3.11.15'
+  rdkit: '2026.03.2'
+  pyyaml: '6.0.3'
+  missing_for_third_party_inference:
+    - torch
+    - torch_geometric
+    - pytorch_lightning
+    - openbabel_python_module
+    - easydict
+    - lmdb
+evaluator_environment:
+  name: pfr-eval-tools
+  path: /home/lyj/mnt/project/pfr-eval-tools
+  python: '3.10.20'
+  rdkit: '2025.09.5'
+  openbabel_python: '3.1.0'
+  cli_paths:
+    plip: /home/lyj/miniconda3/envs/pfr-eval-tools/bin/plip
+    vina: /home/lyj/miniconda3/envs/pfr-eval-tools/bin/vina
+    mk_prepare_ligand.py: /home/lyj/miniconda3/envs/pfr-eval-tools/bin/mk_prepare_ligand.py
+    mk_prepare_receptor.py: /home/lyj/miniconda3/envs/pfr-eval-tools/bin/mk_prepare_receptor.py
+    obabel: /home/lyj/miniconda3/envs/pfr-eval-tools/bin/obabel
+  cli_versions:
+    vina: AutoDock Vina f458505-mod
+    obabel: Open Babel 3.1.0 -- Nov 30 2023 -- 20:43:22
+  formal_plip_vina_rule: eval_official_tools.py must run with pfr-eval-tools PATH active; outputs must inspect plip_error and vina_error.
+method_environment_status:
+  diffsbdd: not_created; use third_party/diffsbdd/environment.yaml if proceeding
+  difflinker: not_created; use third_party/difflinker/environment.yml if proceeding
+  pocket2mol: not_created; resource decision required before environment work
+  targetdiff: not_created; resource decision required before environment work
+analysis_freeze_requirements:
+  - record exact method environment Python/CUDA/PyTorch/PyG/PyTorch-Lightning/RDKit/OpenBabel versions after setup
+  - compute label_config_hash after final thresholds are frozen
+  - run sanity set proving missing_data/tool_failure/pipeline_failure/not_evaluable/original_failed_sample rows are not silently dropped
+  - keep Vina score-only as auxiliary, never sole success gate

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/resources/blocker_log_v0_1.json",
+  "title": "Third-party audit blocker log v0.1",
+  "description": "Draft schema for resource, license, environment, data, and protocol blockers in third-party audit work.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "schema_path",
+    "method",
+    "resource",
+    "failure_type",
+    "evidence",
+    "resource_budget_config_version",
+    "decision"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "blocker_log_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/third_party_audit/resources/blocker_log_v0_1.json"},
+    "experiment_id": {"type": ["string", "null"]},
+    "method": {"type": "string"},
+    "resource": {"type": "string"},
+    "attempted_source": {"type": ["string", "null"]},
+    "failure_type": {
+      "type": "string",
+      "enum": [
+        "resource_size_unknown",
+        "gated_access",
+        "license_unclear",
+        "license_restricted",
+        "license_noncommercial",
+        "license_copyleft",
+        "checksum_mismatch",
+        "non_official_source_required",
+        "environment_unresolved",
+        "inference_failed",
+        "output_format_unstable",
+        "algorithm_change_required",
+        "leakage_unknown",
+        "other"
+      ]
+    },
+    "evidence": {"type": "string"},
+    "resource_budget_config_version": {"type": "string"},
+    "resource_estimate": {"type": ["string", "number", "integer", "null"]},
+    "decision": {
+      "type": "string",
+      "enum": ["blocked_pending_user_decision", "defer", "exclude", "retry_later", "resolved"]
+    },
+    "fallback": {"type": ["string", "null"]},
+    "risk_note": {"type": ["string", "null"]},
+    "created_time": {"type": ["string", "null"]}
+  }
+}

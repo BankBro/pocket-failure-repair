@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/data/datasets/entries/dataset_entry_v0_1.json",
+  "title": "Canonical dataset entry v0.1",
+  "description": "Schema for one canonical dataset entry. Applies to entries/<sample_id>/entry.json and each row of entries/index.jsonl.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "dataset_id",
+    "dataset_version",
+    "sample_id",
+    "complex_id",
+    "protein_path",
+    "ligand_path",
+    "entry_path",
+    "status",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "dataset_entry_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/data/datasets/entries/dataset_entry_v0_1.json"},
+    "dataset_id": {"type": "string"},
+    "dataset_version": {"type": "string"},
+    "sample_id": {"type": "string"},
+    "complex_id": {"type": "string"},
+    "protein_path": {"type": "string"},
+    "ligand_path": {"type": "string"},
+    "entry_path": {"type": "string"},
+    "ligand_smiles": {"type": ["string", "null"]},
+    "scaffold_smiles": {"type": ["string", "null"]},
+    "editable_smiles": {"type": ["string", "null"]},
+    "anchor_atoms": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+    "scaffold_atoms": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+    "editable_atoms": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+    "has_conformer": {"type": "boolean"},
+    "descriptors": {"type": "object", "additionalProperties": true},
+    "sample_quality": {"type": "object", "additionalProperties": true},
+    "provenance": {"type": "object", "additionalProperties": true},
+    "status": {"type": "string"}
+  }
+}

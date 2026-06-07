@@ -1,0 +1,75 @@
+{
+  "anchor_atoms": [
+    4,
+    5,
+    8,
+    12,
+    15
+  ],
+  "complex_id": "3g0e",
+  "dataset_id": "rgroup_smoke_plus",
+  "dataset_version": "v1",
+  "descriptors": {
+    "heavy_atom_molecular_weight": 285.193,
+    "logp": 0.31080000000000135,
+    "molecular_weight": 315.433,
+    "num_atoms": 22,
+    "num_heavy_atoms": 22,
+    "qed": 0.48372855998643466,
+    "rotatable_bonds": 3,
+    "tpsa": 90.54
+  },
+  "editable_atoms": [
+    0,
+    9,
+    10,
+    18,
+    19,
+    20,
+    21
+  ],
+  "editable_smiles": null,
+  "entry_path": "data/datasets/rgroup_smoke_plus/entries/3g0e/entry.json",
+  "has_conformer": true,
+  "ligand_path": "data/datasets/rgroup_smoke_plus/raw/3g0e/3g0e_ligand.pdb",
+  "ligand_smiles": "CC1NC(CC2C(O)NC3CCC(F)CC32)C(C)C1C(N)O",
+  "protein_path": "data/datasets/rgroup_smoke_plus/raw/3g0e/3g0e_protein_clean.pdb",
+  "provenance": {
+    "entry_collection_path": "data/datasets/rgroup_smoke_plus/entries/index.jsonl",
+    "layout_version": "dataset_entries_v1",
+    "migration": {
+      "date": "2026-06-04",
+      "note": "Moved canonical dataset records from top-level processed JSONL into dataset-scoped entries/index.jsonl and per-sample entry.json files.",
+      "type": "data_layout_migration"
+    }
+  },
+  "sample_id": "3g0e",
+  "sample_quality": {
+    "evaluable_for_repair": true,
+    "exclusion_reasons": [],
+    "min_protein_ligand_distance": 2.7430794738760294,
+    "protein_ligand_clash_count": 0,
+    "protein_ligand_overlap": false
+  },
+  "scaffold_atoms": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "scaffold_smiles": "C1CNC(CC2CNC3CCCCC23)C1",
+  "schema_path": "schemas/data/datasets/entries/dataset_entry_v0_1.json",
+  "schema_version": "dataset_entry_v0_1",
+  "status": "rdkit_ok"
+}

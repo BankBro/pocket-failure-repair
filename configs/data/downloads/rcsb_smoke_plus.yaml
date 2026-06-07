@@ -1,0 +1,22 @@
+# Project-level RCSB download config for the rgroup_smoke_plus canonical dataset.
+schema_version: config_data_rcsb_download_v0_1
+schema_path: schemas/configs/data/downloads/rcsb_download_config_v0_1.json
+pdb_ids:
+  - 1a4w
+  - 3ptb
+  - 1hsg
+  - 1hvr
+  - 2br1
+  - 3ert
+  - 1m17
+  - 2hyy
+  - 3g0e
+  - 4dli
+  - 4erw
+  - 5p21
+output:
+  complexes_dir: data/datasets/rgroup_smoke_plus/raw
+  manifest_path: data/datasets/rgroup_smoke_plus/manifests/raw/rcsb_smoke_plus_complexes_raw_manifest_v1.json
+rcsb:
+  pdb_url_template: https://files.rcsb.org/download/{pdb_id}.pdb
+  ligand_sdf_url_template: https://models.rcsb.org/v1/{pdb_id}/ligand?encoding=sdf&copy_all_categories=false

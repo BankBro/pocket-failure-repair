@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/data/datasets/views/dataset_view_v0_1.json",
+  "title": "Canonical dataset view v0.1",
+  "description": "Schema for data/datasets/<dataset_id>/views/*.json.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "dataset_id",
+    "dataset_view_id",
+    "entry_index_path",
+    "raw_manifest_path",
+    "split_manifest_path"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "dataset_view_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/data/datasets/views/dataset_view_v0_1.json"},
+    "dataset_id": {"type": "string"},
+    "dataset_version": {"type": "string"},
+    "dataset_view_id": {"type": "string"},
+    "created_or_updated": {"type": ["string", "null"]},
+    "complex_ids": {"type": "array", "items": {"type": "string"}},
+    "entry_index_path": {"type": "string"},
+    "entry_manifest_path": {"type": ["string", "null"]},
+    "raw_manifest_path": {"type": "string"},
+    "split_manifest_path": {"type": "string"},
+    "split_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "notes": {"type": ["string", "null"]}
+  }
+}

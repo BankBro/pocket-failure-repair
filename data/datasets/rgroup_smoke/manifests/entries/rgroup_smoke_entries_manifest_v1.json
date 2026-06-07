@@ -1,0 +1,20 @@
+{
+  "build_config_path": "configs/data/builds/rgroup_smoke.yaml",
+  "build_script_path": "scripts/data/build_rgroup_dataset.py",
+  "created_or_updated": "2026-06-04",
+  "dataset_id": "rgroup_smoke",
+  "dataset_version": "v1",
+  "dataset_view_manifest_path": "data/datasets/rgroup_smoke/views/rgroup_smoke_view_v1.json",
+  "entry_dir": "data/datasets/rgroup_smoke/entries",
+  "entry_index_path": "data/datasets/rgroup_smoke/entries/index.jsonl",
+  "entry_index_sha256": "74d4d40646a18860bc566695885ce59b64cd1f878c6b0b9435fa94a788599094",
+  "lineage_note": "Canonical dataset entries are stored under data/datasets/<dataset_id>/entries/; molecule/protein structures remain under the dataset-local raw/ directory.",
+  "num_records": 3,
+  "per_sample_entry_pattern": "data/datasets/rgroup_smoke/entries/<sample_id>/entry.json",
+  "raw_dir": "data/datasets/rgroup_smoke/raw",
+  "raw_manifest_path": "data/datasets/rgroup_smoke/manifests/raw/rcsb_smoke_complexes_raw_manifest_v1.json",
+  "schema_path": "schemas/data/datasets/manifests/entries/dataset_entries_manifest_v0_1.json",
+  "schema_version": "dataset_entries_manifest_v0_1",
+  "split_manifest_path": "data/datasets/rgroup_smoke/splits/rgroup_smoke_split_v1.json",
+  "status": "canonical_smoke_fixture"
+}
