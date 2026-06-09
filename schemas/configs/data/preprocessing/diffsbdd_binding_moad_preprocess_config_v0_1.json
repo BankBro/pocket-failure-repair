@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/configs/data/preprocessing/diffsbdd_binding_moad_preprocess_config_v0_1.json",
+  "title": "DiffSBDD Binding MOAD preprocessing config v0.1",
+  "description": "Schema for a resolved experiment-local config that records how Binding MOAD raw files are processed with DiffSBDD's official process_bindingmoad.py script.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "schema_path",
+    "preprocess_config_version",
+    "experiment_id",
+    "dataset_id",
+    "method",
+    "status",
+    "environment",
+    "paths",
+    "official_script_settings",
+    "command",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "config_data_diffsbdd_binding_moad_preprocess_v0_1"
+    },
+    "schema_path": {
+      "type": "string",
+      "const": "schemas/configs/data/preprocessing/diffsbdd_binding_moad_preprocess_config_v0_1.json"
+    },
+    "preprocess_config_version": {"type": "string"},
+    "created_date": {"type": "string"},
+    "updated_time": {"type": "string"},
+    "experiment_id": {"type": "string"},
+    "dataset_id": {"type": "string"},
+    "method": {"type": "string"},
+    "status": {"type": "string"},
+    "environment": {"type": "object", "additionalProperties": true},
+    "paths": {"type": "object", "additionalProperties": true},
+    "split_counts": {"type": "object", "additionalProperties": true},
+    "official_script_settings": {"type": "object", "additionalProperties": true},
+    "preflight_checks": {"type": "object", "additionalProperties": true},
+    "command": {"type": "object", "additionalProperties": true},
+    "expected_outputs": {"type": "array", "items": {"type": "string"}},
+    "pause_conditions": {"type": "array", "items": {"type": "string"}},
+    "claim_boundary": {"type": "string"}
+  }
+}

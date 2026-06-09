@@ -78,6 +78,59 @@ rm data/datasets/binding_moad_zenodo13375913/raw_downloads/every_part_b.zip
 - `raw_downloads/every.csv`: retained as download cache.
 - `raw_downloads/every_part_a.zip`: removed after checksum and extraction.
 - `raw_downloads/every_part_b.zip`: removed after checksum and extraction.
+- `work/diffsbdd/processed_noH_full/`: retained locally as ignored processed output, 当前大小约 1.5G.
+- `work/diffsbdd/processed_noH_full/test/`: retained locally, 已逐项对齐 `third_party/diffsbdd/data/moad_test.txt` 的 130 个 test 条目.
+
+## DiffSBDD 预处理命令
+
+DiffSBDD Binding MOAD full-atom conditional checkpoint 使用 `processed_noH_full/` 输入. 本数据集的官方风格预处理使用 DiffSBDD 自带脚本, CPU 串行执行, 不需要 GPU, 不修改 DiffSBDD 核心处理逻辑.
+
+本次 pilot 的 resolved 配置保存在:
+
+```text
+experiments/20260609-03-diffsbdd-audit-protocol-pilot/configs/resolved/data/binding_moad_preprocess_diffsbdd.yaml
+```
+
+推荐命令:
+
+```bash
+conda run -n pfr-diffsbdd bash -lc '
+cd /home/lyj/mnt/project/pocket-failure-repair/third_party/diffsbdd
+python -W ignore process_bindingmoad.py \
+  /home/lyj/mnt/project/pocket-failure-repair/data/datasets/binding_moad_zenodo13375913/raw \
+  --outdir /home/lyj/mnt/project/pocket-failure-repair/data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full
+'
+```
+
+执行边界:
+
+- 不加 `--make_split`, 使用 DiffSBDD 仓库自带 `data/moad_train.txt`, `data/moad_val.txt`, `data/moad_test.txt`.
+- 不加 `--ca_only`, 因为后续使用 `moad_fullatom_cond.ckpt`.
+- 输出目录 `work/diffsbdd/processed_noH_full/` 是本地处理产物, 不提交.
+- 后续 audit 只使用 `processed_noH_full/test/`, 但官方脚本会同时生成 train/val/test 和训练统计文件.
+- 预处理完成后必须检查 `moad_test.txt` 130 个 test 条目的 PDB/SDF/TXT coverage, 未通过不得进入 inference.
+
+## DiffSBDD 预处理结果
+
+本次预处理已完成, 使用 `pfr-diffsbdd` CPU 串行执行, 主命令 exit code 为 0. 机器可读记录保存在:
+
+```text
+experiments/20260609-03-diffsbdd-audit-protocol-pilot/metadata/binding_moad_preprocess_metadata.json
+```
+
+关键结果:
+
+- 输出目录: `work/diffsbdd/processed_noH_full/`, 大小约 1.5G.
+- 顶层输出: `train.npz`, `val.npz`, `test.npz`, `train_smiles.npy`, `size_distribution.npy`, `summary.txt`.
+- summary before: train `40354`, val `246`, test `130`.
+- summary after: train `40353`, val `246`, test `130`.
+- test coverage: `moad_test.txt` 130 个条目全部具备 SDF/TXT, 并对齐到 92 个 pocket PDB, missing `0`.
+- warning: 日志中有 RDKit explicit valence warning, Open Babel kekulization warning, 以及 1 次非阻断 `libXrender.so.1` 提示; 当前记录为 `completed_with_warnings`.
+
+结论边界:
+
+- 该结果只表示 DiffSBDD Binding MOAD pilot 的 `processed_noH_full/test/` 输入已经可用.
+- 该结果不构成 official/original protocol reproduction, formal failure prevalence, clean-test status 或 repair benchmark result.
 
 ## 关联记录
 

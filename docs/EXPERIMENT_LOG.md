@@ -3921,3 +3921,37 @@ Dry-run artifacts:
   - 轻量语法检查: raw manifest JSON, method_resource_check JSONL 和 manual_decisions YAML 均可解析.
   - `conda run -n pfr pytest -q tests/test_data_schema_refs.py tests/test_config_schema_refs.py tests/test_audit_schemas.py tests/test_schema_io.py` -> `14 passed in 0.24s`.
   - `git diff --check` -> passed.
+
+## 2026-06-09 / DiffSBDD Binding MOAD 官方脚本预处理完成
+
+- 目的: 按 `docs/plan/20260609-03-diffsbdd-audit-protocol-pilot-plan.md` 将已获取的 Binding MOAD raw 结构包处理成 DiffSBDD `moad_fullatom_cond.ckpt` 对应的 `processed_noH_full/`, 为后续官方 test view audit pilot 准备输入.
+- 配置:
+  - resolved config: `experiments/20260609-03-diffsbdd-audit-protocol-pilot/configs/resolved/data/binding_moad_preprocess_diffsbdd.yaml`.
+  - metadata schema: `schemas/third_party_audit/resources/preprocess_metadata_v0_1.json`.
+  - config schema: `schemas/configs/data/preprocessing/diffsbdd_binding_moad_preprocess_config_v0_1.json`.
+- 执行:
+  - 环境: `pfr-diffsbdd`.
+  - 方式: CPU 串行, 不使用 GPU.
+  - 命令: `conda run -n pfr-diffsbdd bash -lc 'cd third_party/diffsbdd && python -W ignore process_bindingmoad.py data/datasets/binding_moad_zenodo13375913/raw --outdir data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full'`, 实际命令使用绝对路径.
+  - 日志: `experiments/20260609-03-diffsbdd-audit-protocol-pilot/logs/binding_moad_preprocess_diffsbdd.log`.
+- 输出:
+  - processed dir: `data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/`, 大小约 `1.5G`, 不提交.
+  - 顶层输出: `train.npz`, `val.npz`, `test.npz`, `train_smiles.npy`, `size_distribution.npy`, `summary.txt`.
+  - metadata: `experiments/20260609-03-diffsbdd-audit-protocol-pilot/metadata/binding_moad_preprocess_metadata.json`.
+- 结果:
+  - 主命令 exit code `0`, 运行时间约 `4193` 秒.
+  - summary before: train `40354`, val `246`, test `130`.
+  - summary after: train `40353`, val `246`, test `130`.
+  - test coverage: `moad_test.txt` 的 `130` 个条目全部具备 SDF/TXT, 并对齐到 `92` 个 pocket PDB; missing `0`.
+  - 记录状态: `completed_with_warnings`.
+- Warning:
+  - train count 比 preflight split 少 `1`; 当前不影响只使用 test view 的 pilot, 但已记录.
+  - 日志出现 RDKit explicit valence warning `1536` 条, Open Babel PerceiveBondOrders/kekulization warning `3157` 条.
+  - 日志出现 1 次非阻断 `libXrender.so.1` 缺失提示; 主进程仍 exit `0` 且生成预期输出.
+- 结论边界:
+  - 本轮只说明 DiffSBDD Binding MOAD pilot 的 `processed_noH_full/test/` 输入已准备好.
+  - 不声明 official/original protocol reproduction, formal failure prevalence, clean-test status 或 repair benchmark result.
+- 下一步:
+  - 冻结 pilot subset: `moad_test.txt` 官方顺序前 20 个 pockets.
+  - 实现或核查 dataset-level DiffSBDD instrumented wrapper, 记录 raw attempt denominator, captured/rejected/selected/final 样本.
+  - 进入 inference 前继续保留 training/leakage unknown 风险, 并使用已冻结的 evaluator policy v0.2, analysis-frozen gate v0.2 和 diagnosis label config v0.3.

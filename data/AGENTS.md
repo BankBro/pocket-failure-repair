@@ -3,6 +3,7 @@
 ## Agent 操作规则
 
 - 不要把单次实验产物写入 `data/`; 默认写入 `outputs/<experiment_id>/`。
+- 若第三方方法需要从 dataset raw 生成可复用的本地 processed 输入, 可以放在 `data/datasets/<dataset_id>/work/<method>/`, 但必须在 `.gitignore` 中排除大文件, 并在对应 `experiments/<experiment_id>/metadata/` 记录命令、环境、checksum、coverage 和结论边界。
 - 新数据集按 `data/datasets/<dataset_id>/` 建立独立 root, 不把多个 dataset 的 raw、entries、splits、views 或 lineage 混在一起。
 - `data/templates/` 已退役; 第三方 audit 规则放入 `configs/audit/`, 第三方方法状态/协议记录放入 `configs/third_party/`, 字段格式合同放入 `schemas/third_party_audit/`, 不放回 `data/`。
 - 不要直接删除、清洗、重命名或覆盖 `data/datasets/<dataset_id>/raw/` 里的原始文件。需要处理时, 先创建 manifest 记录问题和决策。

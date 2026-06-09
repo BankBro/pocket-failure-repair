@@ -56,6 +56,8 @@ configs/
 
 人工决策配置对应 schema 为 `schemas/configs/audit/manual_decisions_v0_1.json`. 它约束人工 decision、reason 和 evidence refs, 不用于记录工具结果、统计计数、pass/fail 或自动标签。
 
+单次数据预处理 resolved config 可以使用 `schemas/configs/data/preprocessing/` 下的 schema, 例如 DiffSBDD Binding MOAD 预处理配置对应 `schemas/configs/data/preprocessing/diffsbdd_binding_moad_preprocess_config_v0_1.json`; 具体 resolved YAML 仍放在 `experiments/<experiment_id>/configs/resolved/data/`, 不放入项目级 `configs/`.
+
 ## 第三方 audit schema refs
 
 第三方 resolved audit protocol 中的 `metadata_schemas` 使用以下 key 到 schema path 的映射。实际协议只需要列出该方法会生成或消费的 metadata 类型, 但已生成的 JSON / JSONL metadata 必须写入同一组 `schema_version` 和 `schema_path`。
@@ -80,6 +82,7 @@ configs/
 | `method_resource_check` | `schemas/third_party_audit/resources/method_resource_check_v0_1.json` |
 | `blocker_log` | `schemas/third_party_audit/resources/blocker_log_v0_1.json` |
 | `official_protocol_checklist` | `schemas/third_party_audit/resources/official_protocol_checklist_v0_1.json` |
+| `preprocess_metadata` | `schemas/third_party_audit/resources/preprocess_metadata_v0_1.json` |
 
 输出文件名、`schema_version` 和 `schema_path` 的完整对应关系见 `schemas/README.md`。
 

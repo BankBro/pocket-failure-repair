@@ -1,0 +1,146 @@
+{
+  "blockers": [],
+  "claim_boundary": "本次预处理只为 DiffSBDD Binding MOAD pilot 准备输入, 不构成 official/original protocol reproduction, formal failure prevalence, clean-test status 或 repair benchmark result.",
+  "command": {
+    "command_string": "conda run -n pfr-diffsbdd bash -lc 'cd /home/lyj/mnt/project/pocket-failure-repair/third_party/diffsbdd && python -W ignore process_bindingmoad.py /home/lyj/mnt/project/pocket-failure-repair/data/datasets/binding_moad_zenodo13375913/raw --outdir /home/lyj/mnt/project/pocket-failure-repair/data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full'",
+    "cwd": ".",
+    "official_script": "third_party/diffsbdd/process_bindingmoad.py",
+    "script_cwd": "third_party/diffsbdd",
+    "used_ca_only": false,
+    "used_make_split": false
+  },
+  "coverage": {
+    "split_counts_from_diffsbdd_files": {
+      "test": 130,
+      "train": 40354,
+      "val": 246
+    },
+    "summary_counts": {
+      "after": {
+        "test": 130,
+        "train": 40353,
+        "val": 246
+      },
+      "before": {
+        "test": 130,
+        "train": 40354,
+        "val": 246
+      }
+    },
+    "test_file_counts": {
+      "pdb_files": 92,
+      "sdf_files": 130,
+      "total_files": 352,
+      "txt_files": 130
+    },
+    "test_split_coverage": {
+      "complete_items": 130,
+      "expected_items": 130,
+      "missing_examples": [],
+      "missing_items": 0,
+      "unique_receptors": 92
+    },
+    "val_file_counts": {
+      "pdb_files": 218,
+      "sdf_files": 245,
+      "total_files": 708,
+      "txt_files": 245
+    }
+  },
+  "dataset_id": "binding_moad_zenodo13375913",
+  "duration_seconds": 4193.0,
+  "end_time": "2026-06-09T18:06:50Z",
+  "environment": {
+    "conda_env": "pfr-diffsbdd",
+    "execution_mode": "cpu_serial_official_script",
+    "python_version": "3.10.19",
+    "requires_gpu": false
+  },
+  "exit_code": 0,
+  "experiment_id": "20260609-03-diffsbdd-audit-protocol-pilot",
+  "input_checks": {
+    "missing_bio_items": {
+      "test": 0,
+      "train": 0,
+      "val": 0
+    },
+    "raw_available_pdb_prefixes": 41360,
+    "raw_bio_file_count": 59346,
+    "split_source_paths": {
+      "test": "third_party/diffsbdd/data/moad_test.txt",
+      "train": "third_party/diffsbdd/data/moad_train.txt",
+      "val": "third_party/diffsbdd/data/moad_val.txt"
+    }
+  },
+  "method": "diffsbdd",
+  "output_checks": {
+    "log_sha256": "a193922c9dac0cc0fe358d0571293d364103f0eaa029fdbcced98b089d97ec4e",
+    "log_warning_counts": {
+      "libxrender_missing_messages": 1,
+      "openbabel_perceive_bond_orders_warnings": 3157,
+      "rdkit_explicit_valence_messages": 1536
+    },
+    "processed_dir_exists": true,
+    "processed_dir_size_human": "1.5G",
+    "top_level_outputs": {
+      "size_distribution.npy": {
+        "exists": true,
+        "path": "data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/size_distribution.npy",
+        "sha256": "43ba57f5a1fe8b8189d9c182bdcffa013e7f0bd0c1e18e91b25af9d184332d61",
+        "size_bytes": 323184
+      },
+      "summary.txt": {
+        "exists": true,
+        "path": "data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/summary.txt",
+        "sha256": "e585769615ed11d80b68c24efd853f1fcc76d3f0426ea7c942c0d6a443a9073b",
+        "size_bytes": 624422
+      },
+      "test.npz": {
+        "exists": true,
+        "path": "data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/test.npz",
+        "sha256": "7613983d5c4e40ad4afac70ec949833d25048ca0c387769ef0bb7ed99b2b7147",
+        "size_bytes": 4316620
+      },
+      "train.npz": {
+        "exists": true,
+        "path": "data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/train.npz",
+        "sha256": "fb937b9280ad63676dbe8d9f57b66d2b9887a38fb9d1387f5490817cb3376a50",
+        "size_bytes": 1426947740
+      },
+      "train_smiles.npy": {
+        "exists": true,
+        "path": "data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/train_smiles.npy",
+        "sha256": "ba789f329a1298e66f2e471bd3dd6e4b3317b5f9f82c966b28012acf593e0f97",
+        "size_bytes": 17390144
+      },
+      "val.npz": {
+        "exists": true,
+        "path": "data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/val.npz",
+        "sha256": "7972de411a32a3213e4e6e553acc1a84b3b27887bd05263d8d364dea8efd2032",
+        "size_bytes": 8326356
+      }
+    }
+  },
+  "paths": {
+    "log_path": "experiments/20260609-03-diffsbdd-audit-protocol-pilot/logs/binding_moad_preprocess_diffsbdd.log",
+    "processed_dir": "data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full",
+    "processed_test_dir": "data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/test",
+    "raw_bio_dir": "data/datasets/binding_moad_zenodo13375913/raw/BindingMOAD_2020",
+    "raw_every_csv": "data/datasets/binding_moad_zenodo13375913/raw/every.csv",
+    "raw_input_dir": "data/datasets/binding_moad_zenodo13375913/raw",
+    "resolved_config_path": "experiments/20260609-03-diffsbdd-audit-protocol-pilot/configs/resolved/data/binding_moad_preprocess_diffsbdd.yaml",
+    "summary_path": "data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/summary.txt"
+  },
+  "preprocess_id": "binding_moad_processed_noH_full_official_script_20260609",
+  "recorded_time": "2026-06-09T18:17:32Z",
+  "schema_path": "schemas/third_party_audit/resources/preprocess_metadata_v0_1.json",
+  "schema_version": "preprocess_metadata_v0_1",
+  "start_time": "2026-06-09T16:56:57Z",
+  "status": "completed_with_warnings",
+  "warnings": [
+    "DiffSBDD 预处理 summary 显示 train count 从 40354 变为 40353; test count 不变.",
+    "预处理日志中出现 RDKit explicit valence warning: 1536 条.",
+    "预处理日志中出现 Open Babel PerceiveBondOrders/kekulization warning: 3157 条.",
+    "日志中出现 1 次非阻断的 libXrender.so.1 missing message; 主进程仍 exit 0 且生成预期输出."
+  ]
+}

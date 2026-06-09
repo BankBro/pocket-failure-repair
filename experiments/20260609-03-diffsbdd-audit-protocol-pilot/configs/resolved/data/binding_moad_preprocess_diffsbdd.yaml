@@ -1,0 +1,66 @@
+schema_version: config_data_diffsbdd_binding_moad_preprocess_v0_1
+schema_path: schemas/configs/data/preprocessing/diffsbdd_binding_moad_preprocess_config_v0_1.json
+preprocess_config_version: diffsbdd_binding_moad_preprocess_v0_1
+created_date: '2026-06-09'
+updated_time: '2026-06-09T18:17:32Z'
+experiment_id: 20260609-03-diffsbdd-audit-protocol-pilot
+dataset_id: binding_moad_zenodo13375913
+method: diffsbdd
+status: resolved_ready
+environment:
+  conda_env: pfr-diffsbdd
+  requires_gpu: false
+  execution_mode: cpu_serial_official_script
+paths:
+  repository_root: /home/lyj/mnt/project/pocket-failure-repair
+  script_cwd: /home/lyj/mnt/project/pocket-failure-repair/third_party/diffsbdd
+  script_path: /home/lyj/mnt/project/pocket-failure-repair/third_party/diffsbdd/process_bindingmoad.py
+  raw_input_dir: /home/lyj/mnt/project/pocket-failure-repair/data/datasets/binding_moad_zenodo13375913/raw
+  raw_every_csv: /home/lyj/mnt/project/pocket-failure-repair/data/datasets/binding_moad_zenodo13375913/raw/every.csv
+  raw_bio_dir: /home/lyj/mnt/project/pocket-failure-repair/data/datasets/binding_moad_zenodo13375913/raw/BindingMOAD_2020
+  output_processed_dir: /home/lyj/mnt/project/pocket-failure-repair/data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full
+  log_path: /home/lyj/mnt/project/pocket-failure-repair/experiments/20260609-03-diffsbdd-audit-protocol-pilot/logs/binding_moad_preprocess_diffsbdd.log
+  metadata_path: /home/lyj/mnt/project/pocket-failure-repair/experiments/20260609-03-diffsbdd-audit-protocol-pilot/metadata/binding_moad_preprocess_metadata.json
+split_counts:
+  train: 40354
+  val: 246
+  test: 130
+split_sources:
+  train: /home/lyj/mnt/project/pocket-failure-repair/third_party/diffsbdd/data/moad_train.txt
+  val: /home/lyj/mnt/project/pocket-failure-repair/third_party/diffsbdd/data/moad_val.txt
+  test: /home/lyj/mnt/project/pocket-failure-repair/third_party/diffsbdd/data/moad_test.txt
+official_script_settings:
+  use_make_split: false
+  use_ca_only: false
+  representation: full_atom
+  output_name: processed_noH_full
+  dist_cutoff: 8.0
+  qed_thresh: 0.3
+  max_occurences: 50
+  random_seed: 42
+preflight_checks:
+  raw_bio_file_count: 59346
+  raw_available_pdb_prefixes: 41360
+  missing_bio_items:
+    train: 0
+    val: 0
+    test: 0
+command:
+  shell: bash
+  cwd: /home/lyj/mnt/project/pocket-failure-repair
+  command_string: >-
+    conda run -n pfr-diffsbdd bash -lc 'cd /home/lyj/mnt/project/pocket-failure-repair/third_party/diffsbdd && python -W ignore process_bindingmoad.py /home/lyj/mnt/project/pocket-failure-repair/data/datasets/binding_moad_zenodo13375913/raw --outdir /home/lyj/mnt/project/pocket-failure-repair/data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full'
+expected_outputs:
+  - data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/train.npz
+  - data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/val.npz
+  - data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/test.npz
+  - data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/train_smiles.npy
+  - data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/size_distribution.npy
+  - data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/summary.txt
+  - data/datasets/binding_moad_zenodo13375913/work/diffsbdd/processed_noH_full/test/
+pause_conditions:
+  - process_bindingmoad.py exits non-zero.
+  - processed_noH_full/test cannot be aligned to moad_test.txt.
+  - preprocessing requires editing DiffSBDD core data processing logic.
+  - processed output exceeds the active resource budget.
+claim_boundary: 本次预处理只为 DiffSBDD Binding MOAD pilot 准备输入, 不构成 official/original protocol reproduction, formal failure prevalence, clean-test status 或 repair benchmark result.

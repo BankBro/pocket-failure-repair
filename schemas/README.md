@@ -38,6 +38,7 @@ schemas/
       blocker_log_v0_1.json
       environment_info_v0_1.json
       official_protocol_checklist_v0_1.json
+      preprocess_metadata_v0_1.json
   configs/
     audit/
       receptor_prep_policy_v0_1.json
@@ -57,6 +58,8 @@ schemas/
         rcsb_download_config_v0_1.json
       builds/
         rgroup_dataset_config_v0_1.json
+      preprocessing/
+        diffsbdd_binding_moad_preprocess_config_v0_1.json
     third_party/
       method_protocol_config_v0_1.json
   data/
@@ -105,6 +108,7 @@ schemas/
 - `third_party_audit/resources/blocker_log_v0_1.json`: 第三方 audit 中资源、license、环境、数据或协议阻塞记录 JSONL 行格式。
 - `third_party_audit/resources/environment_info_v0_1.json`: 第三方方法 inference 或 evaluator 环境快照格式, 用于记录 Python、Conda prefix、核心包版本和 import 错误。
 - `third_party_audit/resources/official_protocol_checklist_v0_1.json`: 第三方方法原协议阅读和忠实度 gate 的核对清单格式, 用于记录论文、README、代码默认值、示例命令、checkpoint、数据、分母和偏离说明是否已检查。
+- `third_party_audit/resources/preprocess_metadata_v0_1.json`: 第三方数据预处理运行 metadata 格式, 用于记录命令、环境、日志、输出、coverage、warning、blocker 和结论边界。
 
 #### 第三方 audit 输出文件映射
 
@@ -129,6 +133,7 @@ schemas/
 | blocker log JSONL | `blocker_log_v0_1` | `schemas/third_party_audit/resources/blocker_log_v0_1.json` |
 | `env_info.json` | `environment_info_v0_1` | `schemas/third_party_audit/resources/environment_info_v0_1.json` |
 | `official_protocol_checklist.json` | `official_protocol_checklist_v0_1` | `schemas/third_party_audit/resources/official_protocol_checklist_v0_1.json` |
+| preprocessing metadata JSON | `preprocess_metadata_v0_1` | `schemas/third_party_audit/resources/preprocess_metadata_v0_1.json` |
 
 ### configs
 
@@ -150,6 +155,7 @@ schemas/
 | audit manual decisions config | `config_audit_manual_decisions_v0_1` | `schemas/configs/audit/manual_decisions_v0_1.json` |
 | R-group dataset build config | `config_data_rgroup_dataset_v0_1` | `schemas/configs/data/builds/rgroup_dataset_config_v0_1.json` |
 | RCSB download config | `config_data_rcsb_download_v0_1` | `schemas/configs/data/downloads/rcsb_download_config_v0_1.json` |
+| DiffSBDD Binding MOAD preprocessing resolved config | `config_data_diffsbdd_binding_moad_preprocess_v0_1` | `schemas/configs/data/preprocessing/diffsbdd_binding_moad_preprocess_config_v0_1.json` |
 | third-party method protocol/status config | `config_third_party_method_protocol_v0_1` | `schemas/configs/third_party/method_protocol_config_v0_1.json` |
 
 ### data

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/resources/preprocess_metadata_v0_1.json",
+  "title": "Third-party audit preprocessing metadata v0.1",
+  "description": "Schema for experiment metadata recording a third-party dataset preprocessing run, including command, logs, outputs, split coverage, blockers and claim boundary.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "schema_path",
+    "experiment_id",
+    "method",
+    "dataset_id",
+    "preprocess_id",
+    "status",
+    "command",
+    "paths",
+    "coverage",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "preprocess_metadata_v0_1"
+    },
+    "schema_path": {
+      "type": "string",
+      "const": "schemas/third_party_audit/resources/preprocess_metadata_v0_1.json"
+    },
+    "experiment_id": {"type": "string"},
+    "method": {"type": "string"},
+    "dataset_id": {"type": "string"},
+    "preprocess_id": {"type": "string"},
+    "status": {
+      "type": "string",
+      "enum": ["planned", "running", "completed", "completed_with_warnings", "failed", "blocked"]
+    },
+    "start_time": {"type": ["string", "null"]},
+    "end_time": {"type": ["string", "null"]},
+    "duration_seconds": {"type": ["number", "null"], "minimum": 0},
+    "exit_code": {"type": ["integer", "null"]},
+    "environment": {"type": "object", "additionalProperties": true},
+    "command": {"type": "object", "additionalProperties": true},
+    "paths": {"type": "object", "additionalProperties": true},
+    "input_checks": {"type": "object", "additionalProperties": true},
+    "output_checks": {"type": "object", "additionalProperties": true},
+    "coverage": {"type": "object", "additionalProperties": true},
+    "blockers": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "claim_boundary": {"type": "string"}
+  }
+}

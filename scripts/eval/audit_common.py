@@ -137,6 +137,7 @@ THIRD_PARTY_AUDIT_METADATA_SCHEMAS: dict[str, str] = {
     "method_resource_check": "schemas/third_party_audit/resources/method_resource_check_v0_1.json",
     "blocker_log": "schemas/third_party_audit/resources/blocker_log_v0_1.json",
     "official_protocol_checklist": "schemas/third_party_audit/resources/official_protocol_checklist_v0_1.json",
+    "preprocess_metadata": "schemas/third_party_audit/resources/preprocess_metadata_v0_1.json",
 }
 
 
