@@ -1,0 +1,104 @@
+schema_version: config_audit_diagnosis_label_v0_2
+schema_path: schemas/configs/audit/diagnosis_label_config_v0_2.json
+label_protocol_version: pfr_failure_diagnosis_v0_2_frozen_target
+created_date: '2026-06-08'
+status: analysis_frozen_target_v0_1
+purpose: unified_third_party_audit_label_mapping
+evaluability_statuses:
+  - evaluable
+  - not_evaluable_missing_data
+  - not_evaluable_pipeline_failure
+  - not_evaluable_tool_failure
+  - not_evaluable_format_error
+  - not_evaluable_stage_not_applicable
+  - not_evaluable_unknown
+primary_labels:
+  - missing_data
+  - pipeline_failure
+  - tool_failure
+  - chemical_invalid
+  - graph_or_scaffold_failure
+  - anchor_failure
+  - global_pose_failure
+  - pocket_detachment
+  - local_geometry_failure
+  - protein_ligand_clash
+  - interaction_or_contact_loss
+  - property_filter_failure
+  - selected_output_residual_failure
+  - unknown
+secondary_labels:
+  - rdkit_parse_failed
+  - rdkit_sanitize_failed
+  - valence_error
+  - disconnected_graph
+  - posebusters_geometry_failed
+  - internal_clash
+  - protein_ligand_clash
+  - ligand_outside_pocket
+  - posebusters_mol_pred_load_failed
+  - posebusters_missing_frozen_column
+  - tool_timeout
+  - vina_ligand_prepare_failed
+  - vina_receptor_prepare_failed
+  - vina_score_non_comparable
+  - plip_reference_recovery_low
+  - receptor_prep_sensitive
+  - final_only_selected_output_view
+label_mapping_rules:
+  mol_pred_loaded_false:
+    evaluability_status: not_evaluable_format_error
+    primary_label: unknown
+    secondary_labels:
+      - posebusters_mol_pred_load_failed
+  rdkit_parse_or_missing:
+    evaluability_status: not_evaluable_format_error
+    primary_label: unknown
+    secondary_labels:
+      - rdkit_parse_failed
+  rdkit_sanitize_failed:
+    evaluability_status: evaluable
+    primary_label: chemical_invalid
+    secondary_labels:
+      - rdkit_sanitize_failed
+  tool_timeout:
+    evaluability_status: not_evaluable_tool_failure
+    primary_label: tool_failure
+    secondary_labels:
+      - tool_timeout
+  protein_ligand_maximum_distance_false:
+    evaluability_status: evaluable
+    primary_label: pocket_detachment
+    secondary_labels:
+      - ligand_outside_pocket
+  pocket_overlap_or_minimum_distance_failed:
+    evaluability_status: evaluable
+    primary_label: protein_ligand_clash
+    secondary_labels:
+      - protein_ligand_clash
+  ligand_core_failed:
+    evaluability_status: evaluable
+    primary_label: local_geometry_failure
+    secondary_labels:
+      - posebusters_geometry_failed
+  plip_reference_recovery:
+    hard_failure_label_by_default: false
+  vina_score_only:
+    hard_failure_label_by_default: false
+near_miss_eligibility:
+  allowed_primary_labels:
+    - local_geometry_failure
+    - protein_ligand_clash
+    - interaction_or_contact_loss
+  forbidden_primary_labels:
+    - missing_data
+    - pipeline_failure
+    - tool_failure
+    - chemical_invalid
+    - graph_or_scaffold_failure
+    - global_pose_failure
+    - pocket_detachment
+    - property_filter_failure
+claim_boundary:
+  no_formal_prevalence_before_analysis_frozen_gate: true
+  selected_output_residual_view_only_when_final_outputs_only: true

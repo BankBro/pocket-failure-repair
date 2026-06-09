@@ -1,0 +1,38 @@
+{
+  "claim_boundary": "selected_output_residual_audit_not_raw_failure_prevalence",
+  "counts": {
+    "evaluability_status": {
+      "evaluable": 20
+    },
+    "near_miss_eligible": {
+      "false": 15,
+      "true": 5
+    },
+    "num_labels": 20,
+    "posebusters_internal_energy": {
+      "internal_energy_false_count": 0,
+      "internal_energy_false_sample_ids": [],
+      "internal_energy_unavailable_count": 2,
+      "internal_energy_unavailable_fraction": 0.1,
+      "internal_energy_unavailable_sample_ids": [
+        "diffsbdd_diffsbdd_example_3rfm_5ndu_v1_3rfm_final_11",
+        "diffsbdd_diffsbdd_example_3rfm_5ndu_v1_3rfm_final_16"
+      ]
+    },
+    "primary_label": {
+      "local_geometry_failure": 5,
+      "unknown": 15
+    },
+    "secondary_label": {
+      "final_only_selected_output_view": 20,
+      "posebusters_geometry_failed": 5,
+      "posebusters_internal_energy_unavailable": 2
+    }
+  },
+  "method": "DiffSBDD",
+  "notes": "Automatic labels without manual adjudication. Vina is auxiliary; PLIP reference recovery is descriptive evidence.",
+  "run_id": "r004_schema_writer_finalizer_e2e_diffsbdd_stage1_3rfm_v02_fbfc8032",
+  "schema_path": "schemas/third_party_audit/diagnosis/label_summary_v0_1.json",
+  "schema_version": "label_summary_v0_1",
+  "summary_type": "frozen_style_label_summary"
+}

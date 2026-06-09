@@ -1,0 +1,141 @@
+{
+  "blocking_failures": [],
+  "checked_inputs": {
+    "num_labels": 20,
+    "num_samples": 20,
+    "num_tool_results": 100,
+    "receptor_prep_records": [
+      "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r004_schema_writer_finalizer_e2e_diffsbdd_stage1_3rfm_v02_fbfc8032/processed/receptors/3rfm_A_330_CFF_receptor_prep.json"
+    ],
+    "required_artifacts_present": true,
+    "run_root": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r004_schema_writer_finalizer_e2e_diffsbdd_stage1_3rfm_v02_fbfc8032"
+  },
+  "claim_boundary": "selected_output_residual_audit_not_raw_failure_prevalence",
+  "config_hashes": {
+    "analysis_frozen_gate": "sha256:e2f58a9a4d9333dad50be9b02c3f536da9af52115e3fa5e0fc7239a1cc69460f",
+    "denominator_config": "sha256:180786d62a64fb37fa02210c8076e14d6a69585afd478705b2c03664384f1bc0",
+    "evaluator_policy": "sha256:fbfc80326331104e12c73e739a1e515913b20ec1c30edf99d3b8e46a108daa17",
+    "label_config": "sha256:84db34ed494fec04aa4d0dd4e00badaea4ac410aa36a82ebb2c97f2c92a5747c",
+    "receptor_prep_policy": "sha256:1a73a113d63566101c438d34467b933f56f12ebe3a9aaa3dcb0b6815e145598b"
+  },
+  "coverage": {
+    "internal_energy_unavailable_threshold": 0.1,
+    "posebusters_internal_energy": {
+      "denominator_posebusters_mol_rows": 20,
+      "internal_energy_false_count": 0,
+      "internal_energy_false_sample_ids": [],
+      "internal_energy_unavailable_count": 2,
+      "internal_energy_unavailable_fraction": 0.1,
+      "internal_energy_unavailable_reasons": {
+        "diffsbdd_diffsbdd_example_3rfm_5ndu_v1_3rfm_final_11": "energy_ratio_conformer_ensemble_unavailable",
+        "diffsbdd_diffsbdd_example_3rfm_5ndu_v1_3rfm_final_16": "energy_ratio_conformer_ensemble_unavailable"
+      },
+      "internal_energy_unavailable_sample_ids": [
+        "diffsbdd_diffsbdd_example_3rfm_5ndu_v1_3rfm_final_11",
+        "diffsbdd_diffsbdd_example_3rfm_5ndu_v1_3rfm_final_16"
+      ]
+    }
+  },
+  "created_time": "2026-06-09T09:31:20Z",
+  "gate_status": "passed_with_warnings",
+  "policy_versions": {
+    "analysis_frozen_gate_version": "pfr_analysis_frozen_gate_v0_2",
+    "evaluator_policy_version": "pfr_audit_evaluator_v0_2",
+    "label_protocol_version": "pfr_failure_diagnosis_v0_3_internal_energy_conditional",
+    "receptor_prep_policy_version": "pfr_receptor_prep_v0_1"
+  },
+  "required_artifacts_present": true,
+  "sanity_set_results": [
+    {
+      "case": "valid final output",
+      "expected_evaluability_status": "evaluable",
+      "expected_primary_label": "unknown",
+      "observed_evaluability_status": "evaluable",
+      "observed_primary_label": "unknown",
+      "passed": true
+    },
+    {
+      "case": "missing ligand",
+      "expected_evaluability_status": "not_evaluable_missing_data",
+      "expected_primary_label": "missing_data",
+      "observed_evaluability_status": "not_evaluable_missing_data",
+      "observed_primary_label": "missing_data",
+      "passed": true
+    },
+    {
+      "case": "broken SDF",
+      "expected_evaluability_status": "not_evaluable_format_error",
+      "expected_primary_label": "unknown",
+      "observed_evaluability_status": "not_evaluable_format_error",
+      "observed_primary_label": "unknown",
+      "passed": true
+    },
+    {
+      "case": "pipeline failure",
+      "expected_evaluability_status": "not_evaluable_pipeline_failure",
+      "expected_primary_label": "pipeline_failure",
+      "observed_evaluability_status": "not_evaluable_pipeline_failure",
+      "observed_primary_label": "pipeline_failure",
+      "passed": true
+    },
+    {
+      "case": "tool timeout",
+      "expected_evaluability_status": "not_evaluable_tool_failure",
+      "expected_primary_label": "tool_failure",
+      "observed_evaluability_status": "not_evaluable_tool_failure",
+      "observed_primary_label": "tool_failure",
+      "passed": true
+    },
+    {
+      "case": "Meeko ligand prepare failure",
+      "expected_evaluability_status": "not_evaluable_format_error",
+      "expected_primary_label": "unknown",
+      "observed_evaluability_status": "not_evaluable_format_error",
+      "observed_primary_label": "unknown",
+      "passed": true
+    },
+    {
+      "case": "Meeko receptor prepare failure",
+      "expected_evaluability_status": "not_evaluable_tool_failure",
+      "expected_primary_label": "tool_failure",
+      "observed_evaluability_status": "not_evaluable_tool_failure",
+      "observed_primary_label": "tool_failure",
+      "passed": true
+    },
+    {
+      "case": "Vina pass trap",
+      "expected_evaluability_status": "evaluable",
+      "expected_primary_label": "protein_ligand_clash",
+      "observed_evaluability_status": "evaluable",
+      "observed_primary_label": "protein_ligand_clash",
+      "passed": true
+    },
+    {
+      "case": "original failed/rejected sample",
+      "expected_evaluability_status": "evaluable",
+      "expected_primary_label": "unknown",
+      "observed_evaluability_status": "evaluable",
+      "observed_primary_label": "unknown",
+      "passed": true
+    },
+    {
+      "case": "final-only outputs",
+      "expected_evaluability_status": "evaluable",
+      "expected_primary_label": "unknown",
+      "observed_evaluability_status": "evaluable",
+      "observed_primary_label": "unknown",
+      "passed": true
+    }
+  ],
+  "schema_path": "schemas/third_party_audit/diagnosis/analysis_frozen_gate_result_v0_1.json",
+  "schema_version": "analysis_frozen_gate_result_v0_1",
+  "tool_versions_lock_hash": "sha256:21a8138b8cd32996e1c56f49a13495d6fc36d95bbf2089a6f9b7cab01c0f72e0",
+  "warnings": [
+    "final_only_outputs_selected_output_residual_view_only",
+    "plip_reference_recovery_descriptive_only",
+    "posebusters_internal_energy_unavailable:diffsbdd_diffsbdd_example_3rfm_5ndu_v1_3rfm_final_11",
+    "posebusters_internal_energy_unavailable:diffsbdd_diffsbdd_example_3rfm_5ndu_v1_3rfm_final_16",
+    "posebusters_internal_energy_unavailable_coverage:2/20",
+    "training_data_or_leakage_status_unknown_claim_boundary_required"
+  ]
+}

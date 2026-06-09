@@ -19,20 +19,39 @@ schemas/
     samples/
       failure_sample_metadata_v0_1.json
     diagnosis/
+      evaluator_input_v0_1.json
       label_v0_1.json
       evaluator_tool_result_v0_1.json
+      posebusters_raw_result_v0_1.json
       diagnosis_sanity_v0_1.json
+      mvp_sanity_summary_v0_1.json
+      label_summary_v0_1.json
+      prevalence_summary_v0_1.json
+      analysis_frozen_gate_result_v0_1.json
     attrition/
       stage_attrition_v0_1.json
+    receptor/
+      receptor_prep_record_v0_1.json
+      receptor_prep_index_v0_1.json
     resources/
       method_resource_check_v0_1.json
       blocker_log_v0_1.json
+      environment_info_v0_1.json
+      official_protocol_checklist_v0_1.json
   configs/
     audit/
+      receptor_prep_policy_v0_1.json
+      evaluator_policy_v0_1.json
+      evaluator_policy_v0_2.json
+      analysis_frozen_gate_v0_1.json
+      analysis_frozen_gate_v0_2.json
       diagnosis_label_config_v0_1.json
+      diagnosis_label_config_v0_2.json
+      diagnosis_label_config_v0_3.json
       denominator_statistics_config_v0_1.json
       resource_budget_config_v0_1.json
       tool_versions_lock_v0_1.json
+      manual_decisions_v0_1.json
     data/
       downloads/
         rcsb_download_config_v0_1.json
@@ -70,12 +89,22 @@ schemas/
 - `third_party_audit/run/run_metadata_v0_1.json`: 第三方方法单次 run 的 metadata 格式, 用于记录 method、run_id、command、checkpoint、commit、tool versions、输出路径等。
 - `third_party_audit/run/output_manifest_v0_1.json`: 单次第三方 run 的输出清单格式, 用于记录 captured outputs、logs、sha256 和关联 metadata schema。
 - `third_party_audit/samples/failure_sample_metadata_v0_1.json`: 第三方方法逐样本 JSONL metadata 格式, 用于记录样本级输出、结构路径、生成状态和诊断字段。
+- `third_party_audit/receptor/receptor_prep_record_v0_1.json`: cleaned receptor 与同名 receptor prep JSON 的字段格式, 用于记录 reference ligand 删除、HETATM 处理、pocket box 和 receptor sha256。
+- `third_party_audit/receptor/receptor_prep_index_v0_1.json`: 单次 run 下 receptor prep record 的轻量索引格式。
+- `third_party_audit/diagnosis/evaluator_input_v0_1.json`: 统一 evaluator 输入 JSONL 行格式, 用于把样本、cleaned receptor、reference ligand、pocket box 和 policy hash 传给评估工具。
 - `third_party_audit/diagnosis/label_v0_1.json`: failure / diagnosis label 的字段格式, 用于统一人工或自动诊断标签。
 - `third_party_audit/diagnosis/evaluator_tool_result_v0_1.json`: MVP evaluator 工具逐样本结果 JSONL 行格式。
+- `third_party_audit/diagnosis/posebusters_raw_result_v0_1.json`: `eval_posebusters_one.py` 生成的 PoseBusters 单样本 raw wrapper JSON 格式, 用于保存 full report 的 JSON-safe 原始列和值。
 - `third_party_audit/diagnosis/diagnosis_sanity_v0_1.json`: analysis-frozen 前 diagnosis sanity / tool wiring 结果 JSONL 行格式, 不用于 formal prevalence。
+- `third_party_audit/diagnosis/mvp_sanity_summary_v0_1.json`: MVP sanity 小结 JSON 格式, 只记录 coverage、工具 wiring 和 denominator 摘要, 不用于 formal prevalence。
+- `third_party_audit/diagnosis/label_summary_v0_1.json`: frozen-style labels 的逐 run 汇总格式。
+- `third_party_audit/diagnosis/prevalence_summary_v0_1.json`: 分母视图和 selected-output residual prevalence 摘要格式。
+- `third_party_audit/diagnosis/analysis_frozen_gate_result_v0_1.json`: analysis-frozen gate 机器可读检查结果格式。
 - `third_party_audit/attrition/stage_attrition_v0_1.json`: stage attrition 统计格式, 用于记录 `N_budget`, `N_raw_captured`, `N_final`, `N_missing_output`, `N_tool_failure` 等阶段计数。
 - `third_party_audit/resources/method_resource_check_v0_1.json`: 第三方方法 inference 前 go/no-go resource check JSONL 行格式。
 - `third_party_audit/resources/blocker_log_v0_1.json`: 第三方 audit 中资源、license、环境、数据或协议阻塞记录 JSONL 行格式。
+- `third_party_audit/resources/environment_info_v0_1.json`: 第三方方法 inference 或 evaluator 环境快照格式, 用于记录 Python、Conda prefix、核心包版本和 import 错误。
+- `third_party_audit/resources/official_protocol_checklist_v0_1.json`: 第三方方法原协议阅读和忠实度 gate 的核对清单格式, 用于记录论文、README、代码默认值、示例命令、checkpoint、数据、分母和偏离说明是否已检查。
 
 #### 第三方 audit 输出文件映射
 
@@ -85,11 +114,21 @@ schemas/
 | `output_manifest.json` | `output_manifest_v0_1` | `schemas/third_party_audit/run/output_manifest_v0_1.json` |
 | `samples.jsonl` | `failure_sample_metadata_v0_1` | `schemas/third_party_audit/samples/failure_sample_metadata_v0_1.json` |
 | `stage_attrition.json` | `stage_attrition_v0_1` | `schemas/third_party_audit/attrition/stage_attrition_v0_1.json` |
+| receptor prep record JSON | `receptor_prep_record_v0_1` | `schemas/third_party_audit/receptor/receptor_prep_record_v0_1.json` |
+| `receptor_prep_index.json` | `receptor_prep_index_v0_1` | `schemas/third_party_audit/receptor/receptor_prep_index_v0_1.json` |
+| `evaluator_input.jsonl` | `evaluator_input_v0_1` | `schemas/third_party_audit/diagnosis/evaluator_input_v0_1.json` |
 | `labels.jsonl` | `label_v0_1` | `schemas/third_party_audit/diagnosis/label_v0_1.json` |
 | evaluator tool result JSONL | `evaluator_tool_result_v0_1` | `schemas/third_party_audit/diagnosis/evaluator_tool_result_v0_1.json` |
+| PoseBusters raw wrapper JSON | `posebusters_raw_result_v0_1` | `schemas/third_party_audit/diagnosis/posebusters_raw_result_v0_1.json` |
 | diagnosis sanity JSONL | `diagnosis_sanity_v0_1` | `schemas/third_party_audit/diagnosis/diagnosis_sanity_v0_1.json` |
+| MVP sanity summary JSON | `mvp_sanity_summary_v0_1` | `schemas/third_party_audit/diagnosis/mvp_sanity_summary_v0_1.json` |
+| `label_summary.json` | `label_summary_v0_1` | `schemas/third_party_audit/diagnosis/label_summary_v0_1.json` |
+| `prevalence_summary.json` | `prevalence_summary_v0_1` | `schemas/third_party_audit/diagnosis/prevalence_summary_v0_1.json` |
+| `analysis_frozen_gate_result.json` | `analysis_frozen_gate_result_v0_1` | `schemas/third_party_audit/diagnosis/analysis_frozen_gate_result_v0_1.json` |
 | method resource check JSONL | `method_resource_check_v0_1` | `schemas/third_party_audit/resources/method_resource_check_v0_1.json` |
 | blocker log JSONL | `blocker_log_v0_1` | `schemas/third_party_audit/resources/blocker_log_v0_1.json` |
+| `env_info.json` | `environment_info_v0_1` | `schemas/third_party_audit/resources/environment_info_v0_1.json` |
+| `official_protocol_checklist.json` | `official_protocol_checklist_v0_1` | `schemas/third_party_audit/resources/official_protocol_checklist_v0_1.json` |
 
 ### configs
 
@@ -98,9 +137,17 @@ schemas/
 | 配置文件类别 | `schema_version` | `schema_path` |
 | --- | --- | --- |
 | audit diagnosis label config | `config_audit_diagnosis_label_v0_1` | `schemas/configs/audit/diagnosis_label_config_v0_1.json` |
+| audit diagnosis label config v0.2 | `config_audit_diagnosis_label_v0_2` | `schemas/configs/audit/diagnosis_label_config_v0_2.json` |
+| audit diagnosis label config v0.3 | `config_audit_diagnosis_label_v0_3` | `schemas/configs/audit/diagnosis_label_config_v0_3.json` |
 | audit denominator statistics config | `config_audit_denominator_statistics_v0_1` | `schemas/configs/audit/denominator_statistics_config_v0_1.json` |
+| audit receptor prep policy config | `config_audit_receptor_prep_policy_v0_1` | `schemas/configs/audit/receptor_prep_policy_v0_1.json` |
+| audit evaluator policy config | `config_audit_evaluator_policy_v0_1` | `schemas/configs/audit/evaluator_policy_v0_1.json` |
+| audit evaluator policy config v0.2 | `config_audit_evaluator_policy_v0_2` | `schemas/configs/audit/evaluator_policy_v0_2.json` |
+| audit analysis-frozen gate config | `config_audit_analysis_frozen_gate_v0_1` | `schemas/configs/audit/analysis_frozen_gate_v0_1.json` |
+| audit analysis-frozen gate config v0.2 | `config_audit_analysis_frozen_gate_v0_2` | `schemas/configs/audit/analysis_frozen_gate_v0_2.json` |
 | audit resource budget config | `config_audit_resource_budget_v0_1` | `schemas/configs/audit/resource_budget_config_v0_1.json` |
 | audit tool versions lock | `config_audit_tool_versions_lock_v0_1` | `schemas/configs/audit/tool_versions_lock_v0_1.json` |
+| audit manual decisions config | `config_audit_manual_decisions_v0_1` | `schemas/configs/audit/manual_decisions_v0_1.json` |
 | R-group dataset build config | `config_data_rgroup_dataset_v0_1` | `schemas/configs/data/builds/rgroup_dataset_config_v0_1.json` |
 | RCSB download config | `config_data_rcsb_download_v0_1` | `schemas/configs/data/downloads/rcsb_download_config_v0_1.json` |
 | third-party method protocol/status config | `config_third_party_method_protocol_v0_1` | `schemas/configs/third_party/method_protocol_config_v0_1.json` |
@@ -123,6 +170,8 @@ schemas/
 - 新增项目自有 JSON / JSONL / YAML 时, 先判断归属: 项目级 config 对应 `schemas/configs/`, canonical data 对应 `schemas/data/`, 第三方 audit 输出对应 `schemas/third_party_audit/`。
 - 已有 schema 能表达时复用现有 schema; 不能表达时先新增或升级 schema, 再写对应 metadata / config。
 - schema-covered 文件应写入 `schema_version` 和 `schema_path`; 明确例外包括 Conda environment 文件和外部工具原生输出。外部工具原生输出不要强行改格式, 项目自有 wrapper metadata / manifest 才写 schema refs。
+- 新增项目自有 JSON / JSONL 写出代码时, 优先使用 `pfr.utils.schema_io` 或 `scripts.eval.audit_common` 暴露的 schema-aware writer, 从 schema `const` 自动注入 `schema_version` 和 `schema_path`; 不要在多个脚本复制双常量。
+- 人工判断应进入 schema-covered YAML, 例如单次实验的 `experiments/<experiment_id>/configs/resolved/audit/manual_decisions.yaml`; 输出 JSON / JSONL 只记录该 YAML 的来源追踪字段, 不嵌入整份 YAML。
 - schema 是版本化合同, 不是可随意覆盖的一次性模板。旧版本一旦被实验 metadata 或报告引用, 不应静默改写语义。
 - 已被使用的版本应尽量固定。旧实验继续指向旧 schema, 新实验可以选择继续使用旧版本或切换到新版本。
 - 需要不兼容变更时, 新建下一个版本, 例如 `*_v0_2.json`, 并在相关实验 metadata 或报告中说明迁移原因。

@@ -1,0 +1,29 @@
+{
+  "claim_boundary": "selected_output_residual_audit_not_raw_failure_prevalence",
+  "counts": {
+    "evaluability_status": {
+      "evaluable": 18,
+      "not_evaluable_tool_failure": 2
+    },
+    "near_miss_eligible": {
+      "false": 17,
+      "true": 3
+    },
+    "num_labels": 20,
+    "primary_label": {
+      "local_geometry_failure": 3,
+      "tool_failure": 2,
+      "unknown": 15
+    },
+    "secondary_label": {
+      "final_only_selected_output_view": 20,
+      "posebusters_geometry_failed": 3
+    }
+  },
+  "method": "DiffSBDD",
+  "notes": "Automatic labels without manual adjudication. Vina is auxiliary; PLIP reference recovery is descriptive evidence.",
+  "run_id": "r001_frozen_eval_diffsbdd_stage1_3rfm_78d8cd91",
+  "schema_path": "schemas/third_party_audit/diagnosis/label_summary_v0_1.json",
+  "schema_version": "label_summary_v0_1",
+  "summary_type": "frozen_style_label_summary"
+}

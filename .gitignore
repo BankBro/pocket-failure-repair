@@ -43,6 +43,7 @@ dist/
 /outputs/**/logs/
 /outputs/**/work/
 /outputs/**/captured_outputs/
+/outputs/**/evaluator/raw_tool_outputs/
 /outputs/**/raw_captured/
 /outputs/**/raw_outputs/
 /outputs/**/normalized_outputs/

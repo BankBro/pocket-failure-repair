@@ -3545,3 +3545,316 @@ Dry-run artifacts:
 - 验证:
   - `find configs/data -maxdepth 1 -type f -print; find schemas/configs/data -maxdepth 1 -type f -print` -> 无输出。
   - `conda run -n pfr env PYTHONPATH=src pytest -q tests/test_config_schema_refs.py tests/test_audit_schemas.py tests/test_download_smoke_complexes.py tests/test_smoke_pipeline.py` -> 10 passed。
+
+## 2026-06-07 / DiffSBDD 单方法 third-party audit MVP sanity run
+
+- 目的: 按 `docs/plan/20260607-01-diffsbdd-single-method-third-party-audit-mvp-plan.md` 只执行 DiffSBDD 单方法 MVP sanity, 跑通最小 inference -> output capture -> metadata/denominator -> evaluator/diagnosis wiring。未执行 DiffLinker, 未做 cross-method comparison, 未声明 formal failure prevalence, official reproduction 或 repair benchmark result。
+- 实验身份:
+  - `experiment_name=diffsbdd-single-method-third-party-audit-mvp`
+  - `experiment_id=20260607-01-diffsbdd-single-method-third-party-audit-mvp`
+  - `run_id=r001_seed0_budget3_3rfm_47b93b20`
+- Go/no-go resource check:
+  - 写入 `experiments/20260607-01-diffsbdd-single-method-third-party-audit-mvp/metadata/method_resource_check.jsonl`, `decision=go`, `resource_status=ready`, `blockers=[]`。
+  - DiffSBDD repo: `third_party/diffsbdd`, remote `https://github.com/arneschneuing/DiffSBDD.git`, commit `5d0d38d16c8932a0339fd2ce3f67ade98bbdff27`, license `MIT`。
+  - Checkpoint: `third_party/diffsbdd/checkpoints/crossdocked_fullatom_cond.ckpt`, size `17861341` bytes, sha256 `07f86764bf569aafbc40a9c15fc02de8e2550437dd0f17f657eab3abe66c372c`, access type `public`, checksum matched configured value。
+  - Example input: `third_party/diffsbdd/example/3rfm.pdb`, reference ligand `A:330`。
+  - Training/leakage: `training_data_status=training_data_unknown`, `leakage_check_status=unknown_risk`; 因此本轮只作为 MVP sanity wiring, 不能作为 clean formal conclusion。
+- 环境:
+  - 创建并使用独立 method inference 环境 `pfr-diffsbdd`, 不与 evaluator 环境混用。
+  - 环境记录写入 `experiments/20260607-01-diffsbdd-single-method-third-party-audit-mvp/metadata/env_info.json`, `conda_export.yml`, `pip_freeze.txt`。
+  - `pfr-diffsbdd` 关键版本: Python `3.10.19`, torch `2.0.1`, CUDA `11.8`, pytorch-lightning `1.8.4`, RDKit `2022.03.2`, OpenBabel `3.1.0`, setuptools pinned to `80.10.2` 以恢复 `pkg_resources` 兼容性。
+- Resolved config:
+  - `experiments/20260607-01-diffsbdd-single-method-third-party-audit-mvp/configs/resolved/third_party/diffsbdd_single_method_mvp_trial.yaml`, sha256 `47b93b2080d6006c3d13210f1e6392154040f1989b2f822ed4a448f244949226`。
+  - 复用并归档 `diffsbdd_method_status.yaml`, 20260603 resolved protocol, `resource_budget_v1.yaml`, `tool_versions.lock`。
+- Inference 与 output capture:
+  - 使用 `scripts/third_party/run_diffsbdd_instrumented.py` 跑官方 3RFM example 的 budget-reduced MVP sanity: `seed=0`, `n_samples=3`。
+  - 首次尝试因 seeded launcher 未把 DiffSBDD repo 加入 `sys.path` 失败, 已归档到 `outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/logs/attempt_001_seed_launcher_sys_path_failure/`。
+  - 修复 launcher 后 run 完成: `status=completed`, `exit_code=0`, `N_budget=3`, `N_raw_attempt_metadata=3`, `N_raw_captured=3`, `N_final=3`, `N_missing_output=0`, `N_pipeline_failure=0`, `N_tool_failure=0`。
+  - raw output 保留在 `captured_outputs/generated.sdf`, sha256 `48cdd08b1d09d5beb2e33638a83254d2d18d2d211e75ca6acafe4abbeebc7d4e`; normalized samples 写入 `processed/normalized_samples/sample_000.sdf` 至 `sample_002.sdf`, 并在 `samples.jsonl` 中逐行保留 sample metadata。
+  - SDF splitting 曾发现空 title line 被剥离导致 RDKit parse 失败, 已修正为保留合法 SDF record 结构; `pfr-eval-tools` 中 3 个 normalized SDF 均 `parsed sanitized`。
+- Evaluator / diagnosis wiring:
+  - 新增实验专用 runner `experiments/20260607-01-diffsbdd-single-method-third-party-audit-mvp/scripts/run_mvp_evaluator.py`。
+  - 使用 `pfr-eval-tools` 跑 RDKit, PoseBusters `mol`, PoseBusters `dock`, optional PLIP, optional Vina。
+  - 输出 `evaluator/evaluator_input.jsonl`, `evaluator/evaluator_tool_results.jsonl`, `evaluator/diagnosis_sanity.jsonl`, `evaluator/raw_tool_outputs/posebusters_*.json`, `summaries/evaluator_summary.json`。
+  - Tool result rows: `15`; diagnosis rows: `3`。
+  - Tool status counts: `rdkit::passed=3`, `plip::passed=3`, `vina::passed=3`, `posebusters_mol::failed=3`, `posebusters_dock::failed=3`。
+  - 代表性 PoseBusters `mol` failure 为 `mol_true_loaded`, 与 MVP 未传 true/reference ligand 给该检查有关; `dock` 代表性 failed checks 包括 `minimum_distance_to_organic_cofactors`, `volume_overlap_with_organic_cofactors`, `mol_true_loaded`, `most_extreme_clash_protein`, `not_too_far_away_inorganic_cofactors`, `not_too_far_away_waters`。这些仅作为 sanity evaluator evidence, 未生成正式 labels。
+- Schema / denominator 验证:
+  - 所有本轮项目自有 JSON/JSONL metadata 均写入 `schema_version` 和 `schema_path`。
+  - 轻量 schema subset validator 检查 `method_resource_check.jsonl`, `env_info.json`, `run_metadata.json`, `samples.jsonl`, `output_manifest.json`, `stage_attrition.json`, `evaluator_tool_results.jsonl`, `diagnosis_sanity.jsonl`, `mvp_generation_summary.json`, `evaluator_summary.json` -> `schema_subset_validation=passed rows_checked=28 files_checked=10`。
+  - `stage_attrition.json` 明确记录 denominator 来自 sample metadata rows, 不是仅按 SDF 文件数推断; post-evaluator `N_evaluable=3`, `N_parsed=3`, `N_rdkit_valid=3`, `N_docking_attempted=3`, `N_docking_failed=3`。
+- 代码与 schema 支撑:
+  - `scripts/third_party/run_diffsbdd_instrumented.py`: 增加 seed/experiment/config 参数, seeded launcher, normalized sample splitting, required output dirs, schema refs, generation summary。
+  - `scripts/eval/eval_posebusters_one.py` 和 `scripts/eval/eval_official_tools.py`: 增加 PoseBusters config 参数, 支持 MVP 使用 `mol` / `dock` 而非默认 `redock`。
+  - 新增 `schemas/third_party_audit/resources/environment_info_v0_1.json` 和 `schemas/third_party_audit/diagnosis/mvp_sanity_summary_v0_1.json`, 并更新 `schemas/README.md`。
+- 验证:
+  - `conda run -n pfr-eval-tools python ...RDKit normalized SDF parse check...` -> `sample_000.sdf parsed sanitized`, `sample_001.sdf parsed sanitized`, `sample_002.sdf parsed sanitized`。
+  - `conda run -n pfr-eval-tools python experiments/20260607-01-diffsbdd-single-method-third-party-audit-mvp/scripts/run_mvp_evaluator.py --run-root outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20` -> `tool_result_rows=15`, `diagnosis_rows=3`。
+  - `python tmp/20260607-diffsbdd-schema-validate/validate_outputs.py` -> `schema_subset_validation=passed rows_checked=28 files_checked=10`。
+  - `conda run -n pfr env PYTHONPATH=src pytest -q` -> `32 passed in 0.79s`。
+- 当前结论:
+  - DiffSBDD 单方法 third-party audit MVP sanity 闭环已跑通: resource check, minimal inference, output capture, sample metadata, denominator, evaluator/diagnosis wiring 和 blocker/coverage 记录均可回溯。
+  - 当前没有 go/no-go active blocker; 仍保留 training/leakage unknown risk, 因此不做 formal prevalence 或 clean generalization claim。
+- 下一步:
+  - 在单独计划中运行 DiffLinker MVP sanity, 不与本轮 DiffSBDD 混合统计。
+  - formal audit 前冻结 PoseBusters/RDKit/PLIP/Vina rule config, 明确 `mol_true_loaded` 等 reference-dependent checks 的解释口径, 再进入 analysis-frozen gate。
+
+## 2026-06-08 / DiffSBDD 阶段 1 原协议健全性与忠实度 sanity
+
+- 目的: 按 `docs/plan/20260608-02-diffsbdd-original-protocol-sanity-plan.md` 落地 DiffSBDD 阶段 1, 先读官方论文, README 和关键代码, 形成原协议摘录, 再运行官方 README 3RFM 示例规模 sanity。未做完整原论文复现, 未做 formal failure prevalence, 未做 cross-method comparison, 未做 repair benchmark。
+- 实验身份:
+  - `experiment_name=diffsbdd-original-protocol-sanity`
+  - `experiment_id=20260608-01-diffsbdd-original-protocol-sanity`
+  - `run_id=r001_official_example_3rfm_seed0_78d8cd91`
+- 官方材料阅读与协议摘录:
+  - 阅读官方论文 `Structure-based drug design with equivariant diffusion models`, DOI `10.1038/s43588-024-00737-x`, arXiv `2210.13695`, 官方 README 和关键代码。
+  - 关键代码包括 `third_party/diffsbdd/generate_ligands.py`, `test.py`, `lightning_modules.py`, `analysis/molecule_builder.py`, `analysis/metrics.py`, `analysis/docking.py`。
+  - 写入 `experiments/20260608-01-diffsbdd-original-protocol-sanity/metadata/official_protocol_excerpt.md`。
+  - 新增并使用 `schemas/third_party_audit/resources/official_protocol_checklist_v0_1.json`, checklist 写入 `experiments/20260608-01-diffsbdd-original-protocol-sanity/metadata/official_protocol_checklist.json`。
+- Resolved config 与资源检查:
+  - 写入 `experiments/20260608-01-diffsbdd-original-protocol-sanity/configs/resolved/third_party/diffsbdd_original_protocol_sanity.yaml`, sha256 `78d8cd918b5d2e6171aaa720ad14be162567f2854c76031d426a48387d927775`。
+  - 复用并归档 `resource_budget_v1.yaml`, `tool_versions.lock`, `diffsbdd_method_status.yaml`, 以及 20260603 DiffSBDD audit protocol source。
+  - `method_resource_check.jsonl`: `decision=go`, 仅针对 README 3RFM 示例 sanity。
+  - Repo: `third_party/diffsbdd`, commit `5d0d38d16c8932a0339fd2ce3f67ade98bbdff27`, license `MIT`。
+  - Checkpoint: `crossdocked_fullatom_cond.ckpt`, official Zenodo source, size `17861341` bytes, sha256 `07f86764bf569aafbc40a9c15fc02de8e2550437dd0f17f657eab3abe66c372c`, access type `public`。
+  - Resource evidence: method tree `30M`, workspace free disk `385G`, GPU `NVIDIA GeForce RTX 3090, 24576 MiB total, 24097 MiB free`。
+  - `r002_official_like_test_subset` deferred, 因为 processed test data, split 和 checksum 未获取或冻结。
+- 环境:
+  - DiffSBDD inference 使用 `pfr-diffsbdd`, evaluator 使用 `pfr-eval-tools`, 两者不混用。
+  - 方法环境记录: `metadata/env_info.json`, `conda_export.yml`, `pip_freeze.txt`。
+  - evaluator 环境记录: `metadata/evaluator_env_info.json`, `evaluator_conda_export.yml`, `evaluator_pip_freeze.txt`。
+- Inference 与 output capture:
+  - 使用 `scripts/third_party/run_diffsbdd_instrumented.py` 运行 README 3RFM example: `--pdbfile example/3rfm.pdb --ref_ligand A:330 --n_samples 20 --seed 0`。
+  - wrapper 仅设置 seed, 捕获输出, 写 metadata, 拆分 SDF, 未修改 DiffSBDD sampling, decoding, filtering, reranking, docking config 或 success definition。
+  - Run 完成: `exit_code=0`, `status=completed`, `N_budget=20`, `N_raw_attempt_metadata=20`, `N_raw_captured=20`, `N_final=20`, `N_missing_output=0`, `N_pipeline_failure=0`。
+  - 输出保留在 `outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/`, 包括 `captured_outputs/generated.sdf`, `processed/normalized_samples/sample_000.sdf` 至 `sample_019.sdf`, `run_metadata.json`, `samples.jsonl`, `output_manifest.json`, `stage_attrition.json`, `logs/`, `manifests/`, `evaluator/`, `summaries/`, `official_like_metrics/`。
+- Official-like 基础指标:
+  - 新增 `experiments/20260608-01-diffsbdd-original-protocol-sanity/scripts/compute_basic_official_like_metrics.py`, 在 `pfr-diffsbdd` 中复用 DiffSBDD `analysis.metrics` 相关逻辑。
+  - `basic_molecular_metrics.json`: `N_budget=20`, `N_parsed=20`, `N_valid=20`, `N_connected=20`, `N_unique_connected_smiles=20`。
+  - `validity_over_budget=1.0`, `connectivity_over_valid=1.0`, `uniqueness_over_connected=1.0`, `novelty=null`, novelty 未计算原因是 training SMILES / official train set provenance 未冻结。
+- Evaluator / diagnosis wiring:
+  - 新增阶段 1 evaluator runner `experiments/20260608-01-diffsbdd-original-protocol-sanity/scripts/run_stage1_evaluator.py`。
+  - 初次 evaluator 在 sample index `11` 的 PoseBusters `mol` 调用外层 75s timeout 后中断, 已修补为超时写 `timeout` tool row 并继续, 同时复用已生成的 raw PoseBusters 输出。
+  - 最终 evaluator 输出: `tool_result_rows=100`, `diagnosis_rows=20`。
+  - Tool status counts: `rdkit::passed=20`, `plip::passed=20`, `vina::passed=20`, `posebusters_mol::failed=19`, `posebusters_dock::failed=19`, `posebusters_mol::timeout=1`, `posebusters_dock::timeout=1`。
+  - Diagnosis evaluability: `evaluable=19`, `not_evaluable_tool_failure=1`, 对应 sample index `11` 的 PoseBusters mol/dock timeout。
+  - PoseBusters failure/timeout 仅作为 stage 1 evaluator wiring evidence, 不解释为 DiffSBDD formal failure prevalence。
+- Schema / metadata 验证:
+  - `pfr` 和 `pfr-eval-tools` 均无 `jsonschema`, 因此本轮做轻量 required/const/schema ref 检查。
+  - 检查 `official_protocol_checklist.json`, `env_info.json`, `evaluator_env_info.json`, `method_resource_check.jsonl`, `run_metadata.json`, `samples.jsonl`, `output_manifest.json`, `stage_attrition.json`, `evaluator_tool_results.jsonl`, `diagnosis_sanity.jsonl`, `evaluator_summary.json`, `mvp_generation_summary.json`, `basic_molecular_metrics.json` -> `passed_lightweight_required_const_check`, `metadata_items=13`, `rows_or_files_checked=150`。
+  - RDKit sanity: 20 个 normalized SDF 均 parse ok, sanitize ok。
+- 报告:
+  - 写入 `docs/report/20260608-02-diffsbdd-original-protocol-sanity-report.md`。
+- 验证:
+  - `conda run -n pfr-diffsbdd python experiments/20260608-01-diffsbdd-original-protocol-sanity/scripts/compute_basic_official_like_metrics.py --run-root outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91` -> `N_parsed=20`, `N_valid=20`, `N_connected=20`。
+  - `conda run -n pfr-eval-tools python experiments/20260608-01-diffsbdd-original-protocol-sanity/scripts/run_stage1_evaluator.py --run-root outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91` -> `tool_result_rows=100`, `diagnosis_rows=20`。
+  - `conda run -n pfr env PYTHONPATH=src pytest -q` -> `32 passed in 0.76s`。
+- 当前结论:
+  - DiffSBDD 阶段 1 的 README 3RFM 官方示例 sanity 已完成。它证明本项目可以按接近官方 README 示例的设置运行 DiffSBDD 并完成 output capture, denominator, official-like basic metrics 和 evaluator wiring。
+  - 这仍不是完整原论文复现。完整 `test.py` 官方风格测试子集需要先冻结数据来源, split, checksum, license 和资源预算。
+- 下一步:
+  - 若继续阶段 1 子任务, 先为 `test.py` 子集做单独 resource/data gate。
+  - 若进入阶段 2, 使用本阶段偏离表更新 DiffSBDD audit protocol, 扩大样本量前冻结 evaluator/diagnosis protocol。
+
+## 2026-06-08 / DiffSBDD 阶段 1 PoseBusters timeout 样本复查
+
+- 目的: 对阶段 1 原始 evaluator 中 sample index `11` 的 PoseBusters `mol` 和 `dock` timeout 做长等待复查, 判断是否只是 timeout 过短.
+- 输入:
+  - run: `outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/`
+  - evaluator input: `evaluator/evaluator_input.jsonl`
+  - sample index: `11`
+  - sample id: `diffsbdd_diffsbdd_example_3rfm_5ndu_v1_3rfm_final_11`
+- 原策略:
+  - stage 1 evaluator 内层 `--timeout=30` 秒, 外层 `subprocess.run(... timeout=45)` 秒.
+  - 原始结果记录为 `posebusters_mol::timeout=1`, `posebusters_dock::timeout=1`.
+- 复查策略:
+  - `timeout 420s conda run -n pfr-eval-tools python scripts/eval/eval_posebusters_one.py ... --index 11 --timeout 300 --config mol`
+  - `timeout 420s conda run -n pfr-eval-tools python scripts/eval/eval_posebusters_one.py ... --index 11 --timeout 300 --config dock`
+- 复查输出:
+  - `evaluator/raw_tool_outputs/retry_timeout300/posebusters_mol_011.json`
+  - `evaluator/raw_tool_outputs/retry_timeout300/posebusters_dock_011.json`
+  - `summaries/posebusters_timeout300_retry_summary.json`
+- 复查结果:
+  - `mol` 完成, `posebusters_full_pass=false`, `posebusters_num_passed=14`, `posebusters_num_checks=16`, failed checks 为 `bond_lengths`, `mol_true_loaded`.
+  - `dock` 完成, `posebusters_full_pass=false`, `posebusters_num_passed=23`, `posebusters_num_checks=30`, failed checks 为 `bond_lengths`, `minimum_distance_to_organic_cofactors`, `volume_overlap_with_organic_cofactors`, `mol_true_loaded`, `most_extreme_clash_protein`, `not_too_far_away_inorganic_cofactors`, `not_too_far_away_waters`.
+- 结论:
+  - sample index `11` 的 PoseBusters 原始 timeout 主要说明 45 秒外层 timeout 对该样本过短.
+  - 延长等待后工具可以完成, 结果从 timeout 转为 failed checks.
+  - 原始 evaluator rows 保留当时 timeout 策略下的事实, 不静默改写正式阶段 1 outputs.
+  - 该复查仍只作为 stage 1 sanity/evaluator evidence, 不作为 formal failure prevalence.
+
+## 2026-06-08 / 统一评估流水线对齐落地
+
+- 目的: 按 `docs/plan/20260608-03-unified-evaluation-pipeline-alignment-plan.md` 落地第三方审计统一评估流水线 v0.1. 本轮不重新运行 DiffSBDD inference, 使用阶段 1 README 3RFM 示例 20 个 final SDF 样本作为输入.
+- 实验身份:
+  - `experiment_name=unified-evaluation-pipeline-alignment`
+  - `experiment_id=20260608-02-unified-evaluation-pipeline-alignment`
+  - `run_id=r001_frozen_eval_diffsbdd_stage1_3rfm_78d8cd91`
+- 新增配置和 schema:
+  - `configs/audit/receptor_prep_policy_v0_1.yaml`
+  - `configs/audit/evaluator_policy_v0_1.yaml`
+  - `configs/audit/analysis_frozen_gate_v0_1.yaml`
+  - `configs/audit/diagnosis_label_config_v0_2.yaml`
+  - 新增 receptor prep record/index, evaluator input, label summary, prevalence summary 和 analysis-frozen gate result schema.
+- 新增脚本:
+  - `scripts/eval/audit_common.py`
+  - `scripts/eval/prepare_receptor.py`
+  - `scripts/eval/run_audit_evaluators.py`
+  - `scripts/eval/build_audit_labels.py`
+  - `scripts/eval/summarize_audit_labels.py`
+  - `scripts/eval/check_analysis_frozen_gate.py`
+  - `scripts/eval/eval_official_tools.py` 更新为优先使用 frozen pocket box, 并记录 Vina box source, PDBQT sha256 和 score comparability.
+- Receptor preparation:
+  - 输入 `third_party/diffsbdd/example/3rfm.pdb`, reference ligand `A:330`.
+  - 输出 `outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r001_frozen_eval_diffsbdd_stage1_3rfm_78d8cd91/processed/receptors/`.
+  - 删除 `CFF A:330`, cleaned receptor atom count `2250`, raw hetero group count `1`, cleaned hetero group count `0`, `unresolved_review_required_count=0`.
+  - Vina box center `[7.7566, -33.4076, -32.8478]`, size `[14.054, 12.0, 12.299]`, source `reference_ligand_heavy_atom_centroid`.
+- Frozen evaluator:
+  - 输入源 run: `outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/`.
+  - 输出 run: `outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r001_frozen_eval_diffsbdd_stage1_3rfm_78d8cd91/`.
+  - 使用 `pfr-eval-tools` 运行 RDKit, PoseBusters `mol`, PoseBusters `dock`, PLIP, Vina score-only.
+  - Tool result rows `100`.
+  - Tool status counts: `rdkit::passed=20`, `posebusters_mol::passed=15`, `posebusters_mol::failed=3`, `posebusters_mol::tool_failure=2`, `posebusters_dock::passed=20`, `plip::passed=20`, `vina::passed=20`.
+- Labels / summaries:
+  - `labels.jsonl`: 20 rows.
+  - `label_summary.json`: `evaluable=18`, `not_evaluable_tool_failure=2`, primary labels `unknown=15`, `local_geometry_failure=3`, `tool_failure=2`, `near_miss_eligible=3`.
+  - `prevalence_summary.json`: selected-output residual view `5/20=0.25`; evaluable-only selected-scope view `3/18=0.1667`; inclusive failure burden downgraded, 不声明 raw prevalence.
+- Gate:
+  - `analysis_frozen_gate_result.json`: `gate_status=failed`.
+  - Blocking failures:
+    - `posebusters_mol_missing_frozen_columns:diffsbdd_diffsbdd_example_3rfm_5ndu_v1_3rfm_final_11`
+    - `posebusters_mol_missing_frozen_columns:diffsbdd_diffsbdd_example_3rfm_5ndu_v1_3rfm_final_16`
+  - 原因: v0.1 evaluator policy 把 `internal_energy` 列列入 PoseBusters ligand core frozen columns, 但这两个样本的 PoseBusters `mol` 输出缺少该列. 按规则不能默认 pass, 必须阻塞 formal analysis.
+  - Warnings: final-only outputs 只能作为 selected-output residual view; PLIP reference recovery 仅为描述性 evidence; training/leakage status 仍为 unknown risk.
+  - Gate sanity set 全部通过.
+- 环境记录:
+  - `experiments/20260608-02-unified-evaluation-pipeline-alignment/metadata/conda_export.yml`
+  - `metadata/pip_freeze.txt`
+  - `metadata/env_info.json`
+  - `metadata/evaluator_conda_export.yml`
+  - `metadata/evaluator_pip_freeze.txt`
+  - `metadata/evaluator_env_info.json`
+- 报告:
+  - `docs/report/20260608-03-unified-evaluation-pipeline-alignment-report.md`.
+- 验证:
+  - `conda run -n pfr env PYTHONPATH=src pytest -q` -> `36 passed in 0.77s`.
+- 当前结论:
+  - 统一评估流水线落地完成, 但 analysis-frozen gate 未通过. 当前不能进入更大样本 DiffSBDD formal audit, 不能声明正式 failure prevalence.
+  - 下一步应调研 PoseBusters `internal_energy` 缺列条件, 决定保留为 required frozen column, 改为 optional diagnostic column, 或新增 evaluator policy v0.2 后重跑 gate.
+
+## 2026-06-09 / PoseBusters internal_energy 条件冻结规则 v0.2 落地
+
+- 目的: 按 `docs/plan/20260609-01-posebusters-internal-energy-conditional-gate-plan.md` 修正 PoseBusters `internal_energy=NaN` 被 v0.1 wrapper/gate 误表达为 missing frozen column 的问题.
+- 版本化规则:
+  - 保留 v0.1 配置和 r001 结果语义不变.
+  - 新增 `configs/audit/evaluator_policy_v0_2.yaml`, 将 PoseBusters ligand core 的 `internal_energy` 从无条件 required frozen column 改为 conditional column.
+  - 新增 `configs/audit/analysis_frozen_gate_v0_2.yaml`, 对 `internal_energy_unavailable_fraction` 设置 MVP sanity 阈值 `0.10`, formal analysis 阈值 `0.05`.
+  - 新增 `configs/audit/diagnosis_label_config_v0_3.yaml`, 记录 `posebusters_internal_energy_unavailable`, `high_internal_energy_evidence` 和 `no_core_failure_detected_with_energy_unavailable`.
+  - 新增对应 config schema, 并更新 `configs/audit/README.md` 和 `schemas/README.md`.
+- 代码改动:
+  - `scripts/eval/eval_posebusters_one.py` 保存 JSON-safe full report 值, non-boolean checks, unavailable columns 和 unavailable reasons.
+  - `scripts/eval/run_audit_evaluators.py` 区分 required, conditional, failed, missing 和 unavailable columns.
+  - `scripts/eval/build_audit_labels.py` 将 `internal_energy=false` 作为高内部能量证据, 将 `internal_energy=NaN/null` 作为附加 unavailable 诊断.
+  - `scripts/eval/summarize_audit_labels.py` 和 `scripts/eval/check_analysis_frozen_gate.py` 输出 internal energy coverage.
+  - `tests/test_unified_evaluation_pipeline.py` 增加 v0.2 语义和 v0.1 回归测试.
+- r002 evaluator:
+  - `experiment_id=20260608-02-unified-evaluation-pipeline-alignment`.
+  - `run_id=r002_frozen_eval_diffsbdd_stage1_3rfm_v02_fbfc8032`.
+  - 输出路径: `outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r002_frozen_eval_diffsbdd_stage1_3rfm_v02_fbfc8032/`.
+  - 输入源 run 仍为 `outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/`.
+  - 使用 v0.1 receptor prep record, 不重新运行 DiffSBDD inference.
+- r002 结果:
+  - Tool result rows `100`.
+  - Tool status counts: `rdkit::passed=20`, `posebusters_mol::passed=15`, `posebusters_mol::failed=5`, `posebusters_dock::passed=20`, `plip::passed=20`, `vina::passed=20`.
+  - Labels `20`, 全部 `evaluable`.
+  - Primary labels: `unknown=15`, `local_geometry_failure=5`.
+  - near_miss_eligible `5`.
+  - `internal_energy_false_count=0`.
+  - `internal_energy_unavailable_count=2`, fraction `0.10`, sample ids 为 `*_final_11` 和 `*_final_16`.
+  - `*_final_11`: `local_geometry_failure`, 主证据 `bond_lengths=false`, 附加 `posebusters_internal_energy_unavailable`.
+  - `*_final_16`: `local_geometry_failure`, 主证据 `bond_lengths=false`, `bond_angles=false`, 附加 `posebusters_internal_energy_unavailable`.
+- Gate:
+  - `analysis_frozen_gate_result.json`: `gate_status=passed_with_warnings`, blocking failures `0`.
+  - Warnings: final-only selected-output residual view, training/leakage unknown, PLIP descriptive only, `posebusters_internal_energy_unavailable:*_final_11`, `posebusters_internal_energy_unavailable:*_final_16`, `posebusters_internal_energy_unavailable_coverage:2/20`.
+  - `passed_with_warnings` 只表示 required evaluator wiring 和 required frozen columns 可用, 且 conditional `internal_energy` 有 coverage warning; 不表示 PoseBusters 全部评估项完整通过.
+- 报告:
+  - `docs/report/20260609-01-posebusters-internal-energy-conditional-gate-report.md`.
+- 验证:
+  - `conda run -n pfr env PYTHONPATH=src pytest -q` -> `43 passed in 0.80s`.
+- 当前结论:
+  - v0.2 已解决 r001 的 `internal_energy` missing frozen column blocker, 将两个样本从 `tool_failure` 更正为可评价的 `local_geometry_failure` 加 unavailable 诊断.
+  - 本轮仍是 selected-output residual 分析, 不能解释为正式 failure prevalence, official reproduction 或 repair benchmark result.
+
+## 2026-06-09 / PoseBusters raw wrapper 输出 schema 化
+
+- 目的: 为 `evaluator/raw_tool_outputs/posebusters_*.json` 补充项目自有 raw PoseBusters result schema, 让 raw wrapper 输出也具备 `schema_version` 和 `schema_path`.
+- 新增 schema:
+  - `schemas/third_party_audit/diagnosis/posebusters_raw_result_v0_1.json`.
+- 代码和文档更新:
+  - `scripts/eval/eval_posebusters_one.py` 的 `base_result` 写入 `schema_version=posebusters_raw_result_v0_1` 和 `schema_path=schemas/third_party_audit/diagnosis/posebusters_raw_result_v0_1.json`.
+  - `scripts/eval/run_audit_evaluators.py` 和 `scripts/eval/check_analysis_frozen_gate.py` 的 output manifest schema 映射增加 `posebusters_raw_result`.
+  - `schemas/README.md` 的第三方 audit 输出文件映射增加 PoseBusters raw wrapper JSON.
+  - `configs/README.md` 的 `metadata_schemas` key 映射增加 `posebusters_raw_result`.
+  - `tests/test_unified_evaluation_pipeline.py` 增加 raw result schema refs 测试.
+- r003 验证 run:
+  - `run_id=r003_frozen_eval_diffsbdd_stage1_3rfm_v02_rawschema_fbfc8032`.
+  - 输出路径: `outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r003_frozen_eval_diffsbdd_stage1_3rfm_v02_rawschema_fbfc8032/`.
+  - 重新运行 v0.2 evaluator, labels, summaries 和 gate, 不重新运行 DiffSBDD inference.
+  - 40 个 `evaluator/raw_tool_outputs/posebusters_*.json` 均写入 `posebusters_raw_result_v0_1` schema refs.
+  - `output_manifest.json` 的 `metadata_schemas.posebusters_raw_result` 指向 `schemas/third_party_audit/diagnosis/posebusters_raw_result_v0_1.json`.
+  - Gate: `passed_with_warnings`, blocking `0`, internal energy unavailable coverage 仍为 `2/20`.
+- 验证:
+  - `conda run -n pfr env PYTHONPATH=src pytest -q` -> `44 passed in 0.78s`.
+
+## 2026-06-09 / 基于 schema 的 JSON 自动填充第一版落地
+
+- 目的: 按 `docs/plan/20260609-02-schema-aware-json-writer-automation-plan.md` 落地 schema-aware writer, 减少项目自有 JSON / JSONL 中手写 `schema_version` 和 `schema_path` 的重复维护.
+- 新增:
+  - `src/pfr/utils/schema_io.py`: 从 JSON Schema `const` 自动读取 schema refs, 提供 `with_schema_ref`, `write_json_with_schema`, `write_jsonl_with_schema` 和轻量 required/const 校验.
+  - `schemas/configs/audit/manual_decisions_v0_1.json`: 后续人工拍板 YAML 的 config schema.
+  - `tests/test_schema_io.py`: 覆盖 schema ref 注入, 冲突报错, required 校验, JSONL 失败不写半截输出, manual decisions schema 和 manifest finalizer.
+- 迁移:
+  - `scripts/eval/eval_posebusters_one.py`: PoseBusters raw wrapper JSON 通过 schema-aware writer 写出.
+  - `scripts/eval/run_audit_evaluators.py`: `evaluator_input.jsonl` 和 `evaluator_tool_results.jsonl` 通过 schema-aware JSONL writer 写出.
+  - `scripts/eval/build_audit_labels.py`: `labels.jsonl` 通过 schema-aware JSONL writer 写出.
+  - `scripts/eval/summarize_audit_labels.py`: `label_summary.json` 和 `prevalence_summary.json` 通过 schema-aware writer 写出.
+  - `scripts/eval/check_analysis_frozen_gate.py`: `analysis_frozen_gate_result.json` 通过 schema-aware writer 写出, gate 末尾调用 `finalize_output_manifest()` 刷新 manifest sha256.
+- 暂缓:
+  - `run_metadata.json`, `samples.jsonl`, `stage_attrition.json` 和初始 `output_manifest.json` 的统一 builder, 因为它们跨阶段语义不同或需要最终 finalizer 统一处理.
+  - 未重写历史 outputs.
+- 文档:
+  - 更新 `docs/plan/20260609-02-schema-aware-json-writer-automation-plan.md`, 明确不在 `configs/audit/` 放空模板.
+  - 更新 `schemas/README.md`, `configs/README.md`, `src/README.md`, `AGENTS.md`.
+  - 新增报告 `docs/report/20260609-02-schema-aware-json-writer-automation-report.md`.
+- 验证:
+  - `conda run -n pfr env PYTHONPATH=src pytest -q` -> `51 passed in 0.79s`.
+
+## 2026-06-09 / schema-aware writer 端到端验证 run r004
+
+- 目的: 按 `docs/plan/20260609-02-schema-aware-json-writer-automation-plan.md` 的下一步, 用真实 evaluator run 验证 schema-aware writer, PoseBusters raw schema, labels, summaries, analysis-frozen gate 和 `output_manifest.json` finalizer 能端到端协同.
+- 输入:
+  - 源 run: `outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/`.
+  - receptor prep record: `outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r003_frozen_eval_diffsbdd_stage1_3rfm_v02_rawschema_fbfc8032/processed/receptors/3rfm_A_330_CFF_receptor_prep.json`.
+  - configs: `experiments/20260608-02-unified-evaluation-pipeline-alignment/configs/resolved/audit/` 下 v0.2 evaluator/gate 和 v0.3 label config.
+- 输出:
+  - `run_id=r004_schema_writer_finalizer_e2e_diffsbdd_stage1_3rfm_v02_fbfc8032`.
+  - 输出路径: `outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r004_schema_writer_finalizer_e2e_diffsbdd_stage1_3rfm_v02_fbfc8032/`.
+- 执行:
+  - `pfr-eval-tools`: `scripts/eval/run_audit_evaluators.py`, tools `rdkit,posebusters,plip,vina`.
+  - `pfr`: `scripts/eval/build_audit_labels.py`, `scripts/eval/summarize_audit_labels.py`, `scripts/eval/check_analysis_frozen_gate.py`.
+- 结果:
+  - evaluator tool rows `100`.
+  - raw PoseBusters JSON `40`, 均写入 `schema_version=posebusters_raw_result_v0_1`.
+  - `evaluator_input.jsonl` `20` 行, `evaluator_tool_results.jsonl` `100` 行, `labels.jsonl` `20` 行, 均带对应 schema refs.
+  - Labels: `evaluable=20`, primary labels `unknown=15`, `local_geometry_failure=5`, `near_miss_eligible=5`.
+  - PoseBusters `internal_energy_unavailable_count=2/20`, sample ids 为 `*_final_11` 和 `*_final_16`; `internal_energy_false_count=0`.
+  - Gate: `passed_with_warnings`, blocking failures `0`.
+  - Warnings: final-only selected-output residual view, training/leakage unknown, PLIP descriptive only, `internal_energy` unavailable coverage `2/20`.
+  - `output_manifest.json`: `n_output_artifacts=293`, `sha256` 条目 `293`, 缺失 `0`, checksum mismatch `0`, 未把 `output_manifest.json` 自身列入 sha256.
+- 报告:
+  - `docs/report/20260609-03-schema-aware-json-writer-e2e-validation-report.md`.
+- 验证:
+  - `conda run -n pfr env PYTHONPATH=src pytest -q` -> `51 passed in 0.77s`.
+- 当前结论:
+  - schema-aware writer 第一版已通过真实统一评估流水线验证.
+  - 该 run 仍是 selected-output residual view, 不能解释为 DiffSBDD 正式 failure prevalence, official protocol reproduction 或 repair benchmark result.

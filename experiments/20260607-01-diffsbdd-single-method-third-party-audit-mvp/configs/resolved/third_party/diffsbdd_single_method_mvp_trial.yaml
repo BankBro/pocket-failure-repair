@@ -1,0 +1,65 @@
+schema_version: config_third_party_method_protocol_v0_1
+schema_path: schemas/configs/third_party/method_protocol_config_v0_1.json
+method: DiffSBDD
+protocol_config_version: diffsbdd_single_method_mvp_trial_v0_1
+status: resource_checked_ready_for_minimal_trial
+created_date: '2026-06-07'
+run_boundary_label: instrumented_reproduction
+algorithm_changed: false
+claim_boundary: >-
+  Single-method MVP sanity only. This run does not claim official/original
+  protocol reproduction, formal failure prevalence, cross-method comparison, or
+  repair benchmark results.
+experiment:
+  experiment_name: diffsbdd-single-method-third-party-audit-mvp
+  experiment_id: 20260607-01-diffsbdd-single-method-third-party-audit-mvp
+  output_root: outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp
+upstream:
+  repo_url: https://github.com/arneschneuing/DiffSBDD
+  local_path: third_party/diffsbdd
+  commit: 5d0d38d16c8932a0339fd2ce3f67ade98bbdff27
+  license: MIT
+checkpoint:
+  source_url: https://zenodo.org/record/8183747/files/crossdocked_fullatom_cond.ckpt?download=1
+  local_path: third_party/diffsbdd/checkpoints/crossdocked_fullatom_cond.ckpt
+  sha256: 07f86764bf569aafbc40a9c15fc02de8e2550437dd0f17f657eab3abe66c372c
+  size_bytes: 17861341
+  access_type: public
+dataset_view:
+  dataset_name: third_party_repo_examples_v1
+  dataset_version: cloned_repo_examples
+  dataset_view_id: diffsbdd_example_3rfm_5ndu_v1
+  split_id: example_only_no_formal_split
+  example_input:
+    case: 3rfm
+    pdbfile: third_party/diffsbdd/example/3rfm.pdb
+    pdbfile_sha256: 383fd20f8c37463896ddfa1af7f29b9e13adb840501466cfa9a917315d812bf5
+    ref_ligand: A:330
+  training_data_status: training_data_unknown
+  leakage_check_status: unknown_risk
+mvp_trial:
+  method: diffsbdd
+  case: 3rfm
+  seed: 0
+  n_samples: 3
+  n_samples_boundary: budget_reduced_mvp_sanity
+  primary_trial_type: de_novo_generation
+  command_template: >-
+    python scripts/third_party/run_diffsbdd_instrumented.py --repo third_party/diffsbdd
+    --checkpoint third_party/diffsbdd/checkpoints/crossdocked_fullatom_cond.ckpt
+    --pdbfile example/3rfm.pdb --ref-ligand A:330 --seed 0 --n-samples 3
+    --run-id {run_id}
+    --output-root outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/{run_id}
+environment:
+  project_env: pfr
+  method_env: pfr-diffsbdd
+  evaluator_env: pfr-eval-tools
+  separation_required: true
+metadata_schemas:
+  run_metadata: schemas/third_party_audit/run/run_metadata_v0_1.json
+  output_manifest: schemas/third_party_audit/run/output_manifest_v0_1.json
+  sample_metadata: schemas/third_party_audit/samples/failure_sample_metadata_v0_1.json
+  stage_attrition: schemas/third_party_audit/attrition/stage_attrition_v0_1.json
+  evaluator_tool_result: schemas/third_party_audit/diagnosis/evaluator_tool_result_v0_1.json
+  diagnosis_sanity: schemas/third_party_audit/diagnosis/diagnosis_sanity_v0_1.json
+  method_resource_check: schemas/third_party_audit/resources/method_resource_check_v0_1.json

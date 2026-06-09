@@ -1,0 +1,29 @@
+schema_version: config_audit_resource_budget_v0_1
+schema_path: schemas/configs/audit/resource_budget_config_v0_1.json
+resource_budget_config_version: pfr_third_party_audit_resource_budget_v1
+created_date: '2026-06-03'
+purpose: third_party_failure_audit_phase1_mvp
+max_download_per_method_gb: 10
+max_total_download_gb_for_first_stage: 50
+max_storage_per_method_gb: 30
+max_total_storage_gb_for_first_stage: 100
+max_env_setup_wallclock_hours_per_method: 4
+max_paper_code_assessment_hours_per_method: 4
+max_output_capture_assessment_hours_per_method: 8
+max_minimal_inference_trial_wallclock_hours_per_method: 8
+max_gpu_hours_per_method_for_mvp: 24
+max_cpu_hours_per_method_for_mvp: 24
+max_checkpoint_count_per_method_for_mvp: 1
+allow_gated_data_without_user_decision: false
+allow_non_official_mirror_without_user_decision: false
+allow_paid_resource_without_user_decision: false
+allow_contact_author_without_user_decision: false
+unknown_core_resource_size_policy: blocked_pending_user_decision
+blocking_conditions:
+  - restricted_or_login_required_data
+  - unclear_or_incompatible_license
+  - non_official_mirror_required
+  - per_method_resource_over_budget
+  - core_dataset_replacement
+  - sampling_decoding_filtering_reranking_docking_or_success_definition_change
+  - training_data_unknown_checkpoint_as_clean_main_evidence

@@ -1,0 +1,15 @@
+{
+  "receptor_preps": [
+    {
+      "case_id": "3rfm",
+      "cleaned_receptor_path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r001_frozen_eval_diffsbdd_stage1_3rfm_78d8cd91/processed/receptors/3rfm_A_330_CFF_cleaned_receptor.pdb",
+      "receptor_prep_id": "3rfm_a_330_cff_pfr_receptor_prep_v0_1",
+      "receptor_prep_record_path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r001_frozen_eval_diffsbdd_stage1_3rfm_78d8cd91/processed/receptors/3rfm_A_330_CFF_receptor_prep.json",
+      "reference_ligand_path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r001_frozen_eval_diffsbdd_stage1_3rfm_78d8cd91/processed/receptors/3rfm_A_330_CFF_reference_ligand.pdb",
+      "unresolved_review_required_count": 0
+    }
+  ],
+  "run_id": "r001_frozen_eval_diffsbdd_stage1_3rfm_78d8cd91",
+  "schema_path": "schemas/third_party_audit/receptor/receptor_prep_index_v0_1.json",
+  "schema_version": "receptor_prep_index_v0_1"
+}

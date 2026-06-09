@@ -1,0 +1,49 @@
+{
+  "claim_boundary": "mvp_sanity_not_formal_prevalence",
+  "counts": {
+    "N_budget": 20,
+    "N_connected": 20,
+    "N_parse_failures": 0,
+    "N_parsed": 20,
+    "N_sanitize_failures": 0,
+    "N_unique_connected_smiles": 20,
+    "N_valid": 20
+  },
+  "method": "DiffSBDD",
+  "metrics": {
+    "connectivity_over_valid": 1.0,
+    "diversity": 0.7785974304252096,
+    "lipinski": {
+      "mean": 5.0,
+      "n": 20,
+      "std": 0.0
+    },
+    "logp": {
+      "mean": 1.7743405000000003,
+      "n": 20,
+      "std": 1.2515205604482702
+    },
+    "novelty": null,
+    "novelty_note": "Not computed because training SMILES / official train set provenance is not frozen in this stage.",
+    "parse_success_over_budget": 1.0,
+    "qed": {
+      "mean": 0.6455304407061536,
+      "n": 20,
+      "std": 0.11876842855497151
+    },
+    "sa": {
+      "mean": 0.6755,
+      "n": 20,
+      "std": 0.14790114942082092
+    },
+    "uniqueness_over_connected": 1.0,
+    "validity_over_budget": 1.0
+  },
+  "notes": "Lightweight stage 1 sanity metrics computed from captured README-example outputs. This is not a full original paper benchmark reproduction.",
+  "parse_failures": [],
+  "run_id": "r001_official_example_3rfm_seed0_78d8cd91",
+  "sanitize_failures": [],
+  "schema_path": "schemas/third_party_audit/diagnosis/mvp_sanity_summary_v0_1.json",
+  "schema_version": "mvp_sanity_summary_v0_1",
+  "summary_type": "official_like_basic_molecular_metrics"
+}

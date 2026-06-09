@@ -1,0 +1,81 @@
+{
+  "case_id": "3rfm",
+  "cleaned_atom_count": 2250,
+  "cleaned_hetero_group_count": 0,
+  "cleaned_receptor_path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r003_frozen_eval_diffsbdd_stage1_3rfm_v02_rawschema_fbfc8032/processed/receptors/3rfm_A_330_CFF_cleaned_receptor.pdb",
+  "cleaned_receptor_sha256": "1981a7960f08f75611dea062e74020602197d94d1021f4922c89d44aea5bc825",
+  "pocket_box": {
+    "atom_selection": "reference_ligand_heavy_atoms",
+    "box_policy_version": "pfr_vina_box_v0_1",
+    "box_source": "reference_ligand_heavy_atom_centroid",
+    "center_angstrom": [
+      7.7566,
+      -33.4076,
+      -32.8478
+    ],
+    "generated_ligand_centroid_fallback_used": false,
+    "minimum_size_angstrom": 12.0,
+    "padding_angstrom": 8.0,
+    "size_angstrom": [
+      14.054,
+      12.0,
+      12.299
+    ]
+  },
+  "raw_atom_count": 2264,
+  "raw_hetero_group_count": 1,
+  "raw_receptor_path": "/home/lyj/mnt/project/pocket-failure-repair/third_party/diffsbdd/example/3rfm.pdb",
+  "raw_receptor_sha256": "383fd20f8c37463896ddfa1af7f29b9e13adb840501466cfa9a917315d812bf5",
+  "receptor_prep_id": "3rfm_a_330_cff_pfr_receptor_prep_v0_1",
+  "receptor_prep_policy_hash": "sha256:1a73a113d63566101c438d34467b933f56f12ebe3a9aaa3dcb0b6815e145598b",
+  "receptor_prep_policy_version": "pfr_receptor_prep_v0_1",
+  "reference_ligand": {
+    "altloc": "",
+    "bounding_box_span_angstrom": [
+      6.054,
+      3.296,
+      4.299
+    ],
+    "centroid_angstrom": [
+      7.7566,
+      -33.4076,
+      -32.8478
+    ],
+    "chain_id": "A",
+    "heavy_atom_count": 14,
+    "insertion_code": "",
+    "residue_name": "CFF",
+    "residue_number": 330,
+    "role": "removed_reference_ligand",
+    "source_path": "/home/lyj/mnt/project/pocket-failure-repair/third_party/diffsbdd/example/3rfm.pdb"
+  },
+  "reference_ligand_path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r003_frozen_eval_diffsbdd_stage1_3rfm_v02_rawschema_fbfc8032/processed/receptors/3rfm_A_330_CFF_reference_ligand.pdb",
+  "reference_ligand_sha256": "1eceba1eeb7311b2975e33253354bd48ee33c6c239e4dd53b54d54829fdbf880",
+  "removed_hetero_atoms": [
+    {
+      "action": "remove_reference_ligand",
+      "altloc": "",
+      "atom_count": 14,
+      "chain_id": "A",
+      "classification": "reference_ligand",
+      "elements": [
+        "C",
+        "N",
+        "O"
+      ],
+      "heavy_atom_count": 14,
+      "insertion_code": "",
+      "min_distance_to_reference_ligand_angstrom": 0.0,
+      "reason": "reference ligand removed from cleaned receptor",
+      "residue_name": "CFF",
+      "residue_number": 330,
+      "rule_id": "remove_reference_ligand_v0_1"
+    }
+  ],
+  "retained_hetero_atoms": [],
+  "review_required_hetero_atoms": [],
+  "schema_path": "schemas/third_party_audit/receptor/receptor_prep_record_v0_1.json",
+  "schema_version": "receptor_prep_record_v0_1",
+  "unresolved_review_required_count": 0,
+  "warnings": []
+}

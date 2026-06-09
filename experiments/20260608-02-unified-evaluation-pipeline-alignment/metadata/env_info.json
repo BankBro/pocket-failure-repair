@@ -1,0 +1,19 @@
+{
+  "conda_prefix": "/home/lyj/miniconda3/envs/pfr",
+  "created_time": "2026-06-08T19:27:02Z",
+  "cuda_available": null,
+  "environment_name": "pfr",
+  "environment_role": "project",
+  "errors": [],
+  "experiment_id": "20260608-02-unified-evaluation-pipeline-alignment",
+  "method": "DiffSBDD",
+  "packages": {
+    "rdkit": "2026.03.2",
+    "yaml": "6.0.3"
+  },
+  "python_executable": "/home/lyj/miniconda3/envs/pfr/bin/python",
+  "python_version": "3.11.15",
+  "run_id": "r001_frozen_eval_diffsbdd_stage1_3rfm_78d8cd91",
+  "schema_path": "schemas/third_party_audit/resources/environment_info_v0_1.json",
+  "schema_version": "environment_info_v0_1"
+}

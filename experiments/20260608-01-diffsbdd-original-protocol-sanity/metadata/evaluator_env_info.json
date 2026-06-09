@@ -1,0 +1,23 @@
+{
+  "schema_version": "environment_info_v0_1",
+  "schema_path": "schemas/third_party_audit/resources/environment_info_v0_1.json",
+  "experiment_id": "20260608-01-diffsbdd-original-protocol-sanity",
+  "run_id": null,
+  "method": "DiffSBDD",
+  "environment_name": "pfr-eval-tools",
+  "environment_role": "evaluator",
+  "python_executable": "/home/lyj/miniconda3/envs/pfr-eval-tools/bin/python",
+  "python_version": "3.10.20 | packaged by conda-forge | (main, Mar  5 2026, 16:42:22) [GCC 14.3.0]",
+  "conda_prefix": "/home/lyj/miniconda3/envs/pfr-eval-tools",
+  "cuda_available": null,
+  "packages": {
+    "rdkit": "2025.09.5",
+    "posebusters": "0.6.5",
+    "plip": "imported",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3"
+  },
+  "errors": [],
+  "created_time": "2026-06-08T04:43:15Z",
+  "platform": "Linux-6.17.0-29-generic-x86_64-with-glibc2.35"
+}

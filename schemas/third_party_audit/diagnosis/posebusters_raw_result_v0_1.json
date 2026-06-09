@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/diagnosis/posebusters_raw_result_v0_1.json",
+  "title": "PoseBusters raw wrapper result v0.1",
+  "description": "Project-owned raw JSON output from scripts/eval/eval_posebusters_one.py. This wraps PoseBusters full_report=True output for one sample and preserves JSON-safe raw columns before frozen evaluator normalization.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "schema_path",
+    "input_index",
+    "posebusters_config",
+    "source"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "posebusters_raw_result_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/third_party_audit/diagnosis/posebusters_raw_result_v0_1.json"},
+    "input_index": {"type": "integer"},
+    "repair_id": {"type": ["string", "null"]},
+    "candidate_id": {"type": ["string", "null"]},
+    "complex_id": {"type": ["string", "null"]},
+    "baseline": {"type": ["string", "null"]},
+    "failure_type": {"type": ["string", "null"]},
+    "repaired_ligand_path": {"type": ["string", "null"]},
+    "posebusters_config": {"type": "string"},
+    "source": {"type": "string"},
+    "posebusters_available": {"type": ["boolean", "null"]},
+    "posebusters_error": {"type": "string"},
+    "posebusters_exception": {"type": "string"},
+    "posebusters_traceback_head": {"type": "string"},
+    "posebusters_full_pass": {"type": ["boolean", "null"]},
+    "posebusters_num_checks": {"type": "integer"},
+    "posebusters_num_passed": {"type": "integer"},
+    "posebusters_failed_checks": {"type": "array", "items": {"type": "string"}},
+    "posebusters_passed_checks": {"type": "array", "items": {"type": "string"}},
+    "posebusters_bool_checks": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "posebusters_columns": {"type": "array", "items": {"type": "string"}},
+    "posebusters_report_values": {"type": "object", "additionalProperties": true},
+    "posebusters_non_boolean_checks": {"type": "object", "additionalProperties": true},
+    "posebusters_unavailable_columns": {"type": "array", "items": {"type": "string"}},
+    "posebusters_unavailable_reasons": {"type": "object", "additionalProperties": {"type": "string"}}
+  }
+}

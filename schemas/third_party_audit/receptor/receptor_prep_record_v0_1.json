@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/receptor/receptor_prep_record_v0_1.json",
+  "title": "Third-party audit receptor preparation record v0.1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "schema_path",
+    "receptor_prep_id",
+    "case_id",
+    "receptor_prep_policy_version",
+    "receptor_prep_policy_hash",
+    "raw_receptor_path",
+    "raw_receptor_sha256",
+    "cleaned_receptor_path",
+    "cleaned_receptor_sha256",
+    "reference_ligand",
+    "pocket_box",
+    "unresolved_review_required_count"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "receptor_prep_record_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/third_party_audit/receptor/receptor_prep_record_v0_1.json"},
+    "receptor_prep_id": {"type": "string"},
+    "case_id": {"type": "string"},
+    "receptor_prep_policy_version": {"type": "string"},
+    "receptor_prep_policy_hash": {"type": "string"},
+    "raw_receptor_path": {"type": "string"},
+    "raw_receptor_sha256": {"type": "string"},
+    "cleaned_receptor_path": {"type": "string"},
+    "cleaned_receptor_sha256": {"type": "string"},
+    "reference_ligand_path": {"type": ["string", "null"]},
+    "reference_ligand": {"type": "object", "additionalProperties": true},
+    "pocket_box": {"type": "object", "additionalProperties": true},
+    "removed_hetero_atoms": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+    "retained_hetero_atoms": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+    "review_required_hetero_atoms": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+    "unresolved_review_required_count": {"type": "integer", "minimum": 0},
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "blocking_failures": [
+    "posebusters_mol_missing_frozen_columns:diffsbdd_diffsbdd_example_3rfm_5ndu_v1_3rfm_final_11",
+    "posebusters_mol_missing_frozen_columns:diffsbdd_diffsbdd_example_3rfm_5ndu_v1_3rfm_final_16"
+  ],
+  "checked_inputs": {
+    "num_labels": 20,
+    "num_samples": 20,
+    "num_tool_results": 100,
+    "receptor_prep_records": [
+      "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r001_frozen_eval_diffsbdd_stage1_3rfm_78d8cd91/processed/receptors/3rfm_A_330_CFF_receptor_prep.json"
+    ],
+    "required_artifacts_present": true,
+    "run_root": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r001_frozen_eval_diffsbdd_stage1_3rfm_78d8cd91"
+  },
+  "claim_boundary": "selected_output_residual_audit_not_raw_failure_prevalence",
+  "config_hashes": {
+    "analysis_frozen_gate": "sha256:ddb17de44fbc8f92524af2ac5303a34f77f434e0b838258801bfc8931b18fece",
+    "denominator_config": "sha256:180786d62a64fb37fa02210c8076e14d6a69585afd478705b2c03664384f1bc0",
+    "evaluator_policy": "sha256:7e6e59111f80b05a43b2273e5d9d1f933ef59e81dce2d02e6ca787969f4fd007",
+    "label_config": "sha256:70d34cb66a0b32e8353417af8dc3296c4661283bfc1d5516fed7515ae67b8d69",
+    "receptor_prep_policy": "sha256:1a73a113d63566101c438d34467b933f56f12ebe3a9aaa3dcb0b6815e145598b"
+  },
+  "created_time": "2026-06-08T19:25:33Z",
+  "gate_status": "failed",
+  "policy_versions": {
+    "analysis_frozen_gate_version": "pfr_analysis_frozen_gate_v0_1",
+    "evaluator_policy_version": "pfr_audit_evaluator_v0_1",
+    "label_protocol_version": "pfr_failure_diagnosis_v0_2_frozen_target",
+    "receptor_prep_policy_version": "pfr_receptor_prep_v0_1"
+  },
+  "required_artifacts_present": true,
+  "sanity_set_results": [
+    {
+      "case": "valid final output",
+      "expected_evaluability_status": "evaluable",
+      "expected_primary_label": "unknown",
+      "observed_evaluability_status": "evaluable",
+      "observed_primary_label": "unknown",
+      "passed": true
+    },
+    {
+      "case": "missing ligand",
+      "expected_evaluability_status": "not_evaluable_missing_data",
+      "expected_primary_label": "missing_data",
+      "observed_evaluability_status": "not_evaluable_missing_data",
+      "observed_primary_label": "missing_data",
+      "passed": true
+    },
+    {
+      "case": "broken SDF",
+      "expected_evaluability_status": "not_evaluable_format_error",
+      "expected_primary_label": "unknown",
+      "observed_evaluability_status": "not_evaluable_format_error",
+      "observed_primary_label": "unknown",
+      "passed": true
+    },
+    {
+      "case": "pipeline failure",
+      "expected_evaluability_status": "not_evaluable_pipeline_failure",
+      "expected_primary_label": "pipeline_failure",
+      "observed_evaluability_status": "not_evaluable_pipeline_failure",
+      "observed_primary_label": "pipeline_failure",
+      "passed": true
+    },
+    {
+      "case": "tool timeout",
+      "expected_evaluability_status": "not_evaluable_tool_failure",
+      "expected_primary_label": "tool_failure",
+      "observed_evaluability_status": "not_evaluable_tool_failure",
+      "observed_primary_label": "tool_failure",
+      "passed": true
+    },
+    {
+      "case": "Meeko ligand prepare failure",
+      "expected_evaluability_status": "not_evaluable_format_error",
+      "expected_primary_label": "unknown",
+      "observed_evaluability_status": "not_evaluable_format_error",
+      "observed_primary_label": "unknown",
+      "passed": true
+    },
+    {
+      "case": "Meeko receptor prepare failure",
+      "expected_evaluability_status": "not_evaluable_tool_failure",
+      "expected_primary_label": "tool_failure",
+      "observed_evaluability_status": "not_evaluable_tool_failure",
+      "observed_primary_label": "tool_failure",
+      "passed": true
+    },
+    {
+      "case": "Vina pass trap",
+      "expected_evaluability_status": "evaluable",
+      "expected_primary_label": "protein_ligand_clash",
+      "observed_evaluability_status": "evaluable",
+      "observed_primary_label": "protein_ligand_clash",
+      "passed": true
+    },
+    {
+      "case": "original failed/rejected sample",
+      "expected_evaluability_status": "evaluable",
+      "expected_primary_label": "unknown",
+      "observed_evaluability_status": "evaluable",
+      "observed_primary_label": "unknown",
+      "passed": true
+    },
+    {
+      "case": "final-only outputs",
+      "expected_evaluability_status": "evaluable",
+      "expected_primary_label": "unknown",
+      "observed_evaluability_status": "evaluable",
+      "observed_primary_label": "unknown",
+      "passed": true
+    }
+  ],
+  "schema_path": "schemas/third_party_audit/diagnosis/analysis_frozen_gate_result_v0_1.json",
+  "schema_version": "analysis_frozen_gate_result_v0_1",
+  "tool_versions_lock_hash": "sha256:21a8138b8cd32996e1c56f49a13495d6fc36d95bbf2089a6f9b7cab01c0f72e0",
+  "warnings": [
+    "final_only_outputs_selected_output_residual_view_only",
+    "plip_reference_recovery_descriptive_only",
+    "training_data_or_leakage_status_unknown_claim_boundary_required"
+  ]
+}

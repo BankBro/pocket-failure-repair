@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/diagnosis/mvp_sanity_summary_v0_1.json",
+  "title": "Third-party MVP sanity summary v0.1",
+  "description": "Small summary JSON for third-party audit MVP sanity runs. Not a formal label or prevalence result.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "schema_path",
+    "run_id",
+    "method",
+    "summary_type",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "mvp_sanity_summary_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/third_party_audit/diagnosis/mvp_sanity_summary_v0_1.json"},
+    "run_id": {"type": "string"},
+    "method": {"type": "string"},
+    "summary_type": {"type": "string"},
+    "claim_boundary": {"type": "string", "const": "mvp_sanity_not_formal_prevalence"},
+    "counts": {"type": "object", "additionalProperties": true},
+    "notes": {"type": ["string", "null"]}
+  }
+}

@@ -1,0 +1,26 @@
+schema_version: config_audit_analysis_frozen_gate_v0_1
+schema_path: schemas/configs/audit/analysis_frozen_gate_v0_1.json
+analysis_frozen_gate_version: pfr_analysis_frozen_gate_v0_1
+created_date: '2026-06-08'
+status: analysis_frozen_target_v0_1
+blocking_checks:
+  - required_configs_exist_and_hashes_recorded
+  - tool_versions_lock_exists_and_hash_recorded
+  - receptor_prep_records_exist
+  - receptor_prep_has_no_unresolved_hetero_atoms
+  - evaluator_inputs_use_cleaned_receptor
+  - posebusters_uses_frozen_columns
+  - vina_box_not_generated_ligand_centroid
+  - denominator_rows_match_samples
+  - output_manifest_contains_required_artifacts
+  - label_rows_match_samples
+  - sanity_set_passed
+warning_checks:
+  - final_only_outputs_downgrade_to_selected_output_residual_view
+  - training_data_or_leakage_status_unknown_claim_boundary
+  - vina_zero_charge_retry_non_comparable
+  - plip_reference_recovery_descriptive_only
+claim_boundary:
+  gate_failed: no_formal_failure_prevalence
+  gate_passed_with_warnings: selected_scope_only_no_global_prevalence
+  gate_passed: specified_scope_only_no_global_extrapolation

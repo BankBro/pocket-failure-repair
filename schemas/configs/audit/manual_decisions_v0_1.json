@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/configs/audit/manual_decisions_v0_1.json",
+  "title": "Audit manual decisions config schema v0.1",
+  "description": "Schema for human decisions that are explicit inputs to third-party audit runs. This is a config schema for YAML files, not an output metadata schema.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "schema_path",
+    "manual_decisions_version",
+    "status",
+    "decisions"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "config_audit_manual_decisions_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/configs/audit/manual_decisions_v0_1.json"},
+    "manual_decisions_version": {"type": "string"},
+    "created_date": {"type": "string"},
+    "updated_time": {"type": "string"},
+    "status": {
+      "type": "string",
+      "enum": ["draft_ready", "analysis_frozen_target", "frozen", "superseded"]
+    },
+    "purpose": {"type": ["string", "null"]},
+    "scope": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "experiment_id": {"type": ["string", "null"]},
+        "run_id": {"type": ["string", "null"]},
+        "method": {"type": ["string", "null"]},
+        "dataset_view_id": {"type": ["string", "null"]}
+      }
+    },
+    "applies_to_configs": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "evaluator_policy_hash": {"type": ["string", "null"]},
+        "label_config_hash": {"type": ["string", "null"]},
+        "receptor_prep_policy_hash": {"type": ["string", "null"]},
+        "denominator_policy_hash": {"type": ["string", "null"]},
+        "analysis_frozen_gate_hash": {"type": ["string", "null"]}
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "decision_id",
+          "decision_type",
+          "status",
+          "target",
+          "decision",
+          "reason",
+          "evidence_refs",
+          "made_time"
+        ],
+        "properties": {
+          "decision_id": {"type": "string"},
+          "decision_type": {
+            "type": "string",
+            "enum": [
+              "resource_access",
+              "protocol_boundary",
+              "receptor_reference_ligand",
+              "receptor_hetero_atom",
+              "label_adjudication",
+              "denominator_membership",
+              "claim_boundary"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": ["active", "superseded", "retracted"]
+          },
+          "target": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": ["target_type"],
+            "properties": {
+              "target_type": {
+                "type": "string",
+                "enum": ["method", "run", "sample", "receptor", "hetero_atom", "output_row"]
+              },
+              "run_id": {"type": ["string", "null"]},
+              "sample_id": {"type": ["string", "null"]},
+              "complex_id": {"type": ["string", "null"]},
+              "receptor_prep_id": {"type": ["string", "null"]},
+              "file_ref": {"type": ["string", "null"]},
+              "line_ref": {"type": ["string", "null"]}
+            }
+          },
+          "decision": {"type": "string"},
+          "reason": {"type": "string"},
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "path": {"type": "string"},
+                "note": {"type": ["string", "null"]}
+              }
+            }
+          },
+          "made_by": {"type": ["string", "null"]},
+          "made_time": {"type": "string"},
+          "supersedes": {"type": ["string", "null"]},
+          "risk_note": {"type": ["string", "null"]}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+schema_version: config_audit_receptor_prep_policy_v0_1
+schema_path: schemas/configs/audit/receptor_prep_policy_v0_1.json
+receptor_prep_policy_version: pfr_receptor_prep_v0_1
+created_date: '2026-06-08'
+status: analysis_frozen_target_v0_1
+purpose: unified_third_party_audit_receptor_preparation
+reference_ligand_rule:
+  action: remove_from_cleaned_receptor
+  accepted_specs:
+    - chain_residue_number
+    - ligand_file
+  record_reference_ligand_coordinates: true
+  write_extracted_reference_ligand_pdb: true
+hetero_atom_rules:
+  unknown_review_distance_angstrom: 8.0
+  ordinary_water_residue_names:
+    - HOH
+    - WAT
+    - H2O
+    - DOD
+  crystallization_additive_residue_names:
+    - ACT
+    - EDO
+    - GOL
+    - MPD
+    - PEG
+    - PG4
+    - SO4
+    - PO4
+    - DMS
+    - TRS
+  retained_metal_or_ion_residue_names:
+    - ZN
+    - MG
+    - MN
+    - CA
+    - FE
+    - CU
+    - NI
+    - CO
+    - NA
+    - K
+    - CL
+  retained_key_cofactor_residue_names:
+    - HEM
+    - FAD
+    - FMN
+    - NAD
+    - NAP
+    - PLP
+    - SAM
+  unknown_near_pocket_action: review_required
+  unknown_far_from_pocket_action: remove_as_unrelated_hetero
+  whitelist_update_rule: only_when_review_decision_is_retain_and_add_to_whitelist
+pocket_box_policy:
+  box_policy_version: pfr_vina_box_v0_1
+  box_source: reference_ligand_heavy_atom_centroid
+  padding_angstrom: 8.0
+  minimum_size_angstrom: 12.0
+  atom_selection: reference_ligand_heavy_atoms
+  generated_ligand_centroid_fallback_allowed: false
+formal_analysis_requirements:
+  unresolved_review_required_count: 0
+  cleaned_receptor_must_exclude_reference_ligand: true
+  cleaned_receptor_sha256_required: true
+  raw_receptor_sha256_required: true

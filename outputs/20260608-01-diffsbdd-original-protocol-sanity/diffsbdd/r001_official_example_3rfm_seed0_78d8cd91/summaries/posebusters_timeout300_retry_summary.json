@@ -1,0 +1,43 @@
+{
+  "schema_version": "mvp_sanity_summary_v0_1",
+  "schema_path": "schemas/third_party_audit/diagnosis/mvp_sanity_summary_v0_1.json",
+  "run_id": "r001_official_example_3rfm_seed0_78d8cd91",
+  "method": "DiffSBDD",
+  "summary_type": "posebusters_timeout_retry",
+  "claim_boundary": "mvp_sanity_not_formal_prevalence",
+  "counts": {
+    "retry_sample_index": 11,
+    "retry_sample_id": "diffsbdd_diffsbdd_example_3rfm_5ndu_v1_3rfm_final_11",
+    "original_outer_timeout_seconds": 45,
+    "retry_inner_timeout_seconds": 300,
+    "retry_outer_timeout_seconds": 420,
+    "posebusters_mol_completed": true,
+    "posebusters_mol_full_pass": false,
+    "posebusters_mol_num_passed": 14,
+    "posebusters_mol_num_checks": 16,
+    "posebusters_dock_completed": true,
+    "posebusters_dock_full_pass": false,
+    "posebusters_dock_num_passed": 23,
+    "posebusters_dock_num_checks": 30
+  },
+  "retry_outputs": {
+    "posebusters_mol": "outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/evaluator/raw_tool_outputs/retry_timeout300/posebusters_mol_011.json",
+    "posebusters_dock": "outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/evaluator/raw_tool_outputs/retry_timeout300/posebusters_dock_011.json"
+  },
+  "failed_checks": {
+    "posebusters_mol": [
+      "bond_lengths",
+      "mol_true_loaded"
+    ],
+    "posebusters_dock": [
+      "bond_lengths",
+      "minimum_distance_to_organic_cofactors",
+      "volume_overlap_with_organic_cofactors",
+      "mol_true_loaded",
+      "most_extreme_clash_protein",
+      "not_too_far_away_inorganic_cofactors",
+      "not_too_far_away_waters"
+    ]
+  },
+  "notes": "Post-run retry for the original PoseBusters timeout sample. With longer timeout, both mol and dock completed and returned failed checks rather than timeout. Original evaluator rows are preserved as evidence for the 45s timeout policy used in the stage 1 run."
+}

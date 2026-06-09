@@ -1,0 +1,27 @@
+{
+  "claim_boundary": "mvp_sanity_not_formal_prevalence",
+  "counts": {
+    "evaluability_counts": {
+      "evaluable": 19,
+      "not_evaluable_tool_failure": 1
+    },
+    "num_diagnosis_rows": 20,
+    "num_samples": 20,
+    "num_tool_result_rows": 100,
+    "tool_status_counts": {
+      "plip::passed": 20,
+      "posebusters_dock::failed": 19,
+      "posebusters_dock::timeout": 1,
+      "posebusters_mol::failed": 19,
+      "posebusters_mol::timeout": 1,
+      "rdkit::passed": 20,
+      "vina::passed": 20
+    }
+  },
+  "method": "DiffSBDD",
+  "notes": "Stage 1 evaluator wiring summary only. No formal labels, prevalence, cross-method comparison, or repair benchmark claims.",
+  "run_id": "r001_official_example_3rfm_seed0_78d8cd91",
+  "schema_path": "schemas/third_party_audit/diagnosis/mvp_sanity_summary_v0_1.json",
+  "schema_version": "mvp_sanity_summary_v0_1",
+  "summary_type": "evaluator_wiring"
+}

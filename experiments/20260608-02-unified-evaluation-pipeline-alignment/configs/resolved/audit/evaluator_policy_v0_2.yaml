@@ -1,0 +1,78 @@
+schema_version: config_audit_evaluator_policy_v0_2
+schema_path: schemas/configs/audit/evaluator_policy_v0_2.json
+evaluator_policy_version: pfr_audit_evaluator_v0_2
+created_date: '2026-06-09'
+status: analysis_frozen_target_v0_2
+purpose: unified_third_party_audit_evaluator_policy_with_internal_energy_conditional_gate
+tools:
+  rdkit:
+    role: core_evaluability_and_chemical_validity
+    supplier: Chem.SDMolSupplier
+    sanitize_on_read: false
+    remove_hs: false
+    explicit_sanitize_step: true
+  posebusters:
+    role: core_ligand_and_pocket_sanity
+    full_report_saved: true
+    full_report_all_boolean_pass_is_not_formal_gate: true
+    inner_timeout_seconds: 300
+    outer_timeout_seconds: 420
+    ligand_core:
+      evaluator_name: posebusters_mol
+      config: mol
+      formal_metric_name: posebusters_ligand_core_pass
+      required_columns:
+        - mol_pred_loaded
+        - sanitization
+        - inchi_convertible
+        - all_atoms_connected
+        - no_radicals
+        - bond_lengths
+        - bond_angles
+        - internal_steric_clash
+        - aromatic_ring_flatness
+        - non-aromatic_ring_non-flatness
+        - double_bond_flatness
+      conditional_columns:
+        - internal_energy
+      conditional_unavailable_allowed:
+        internal_energy:
+          allowed_when_raw_column_present: true
+          required_true_checks:
+            - mol_pred_loaded
+            - sanitization
+            - inchi_convertible
+          required_raw_columns:
+            - internal_energy
+            - energy_ratio
+            - ensemble_avg_energy
+          default_reason: energy_ratio_unavailable
+          stderr_reason_patterns:
+            Failed to generate conformations.: energy_ratio_conformer_ensemble_unavailable
+    pocket_core:
+      evaluator_name: posebusters_dock
+      config: dock
+      formal_metric_name: posebusters_pocket_core_pass
+      frozen_columns:
+        - mol_pred_loaded
+        - mol_cond_loaded
+        - protein-ligand_maximum_distance
+        - minimum_distance_to_protein
+        - volume_overlap_with_protein
+  plip:
+    role: reference_relative_interaction_evidence
+    hard_failure_label_by_default: false
+    input_complex: cleaned_receptor_plus_single_generated_ligand
+    reference_complex: cleaned_receptor_plus_single_reference_ligand
+    fingerprint_key: interaction_type_chain_residue_number_residue_name
+  vina:
+    role: auxiliary_score_only
+    no_score_threshold_v0_2: true
+    box_source_required: reference_ligand_or_dataset_fixed_box
+    generated_ligand_centroid_fallback_allowed: false
+    zero_charge_retry_comparability: non_comparable
+claim_boundary:
+  no_formal_failure_prevalence_before_gate: true
+  no_repair_benchmark_claim: true
+  no_official_protocol_reproduction_claim: true
+  final_only_outputs_downgrade_to_selected_output_residual_view: true

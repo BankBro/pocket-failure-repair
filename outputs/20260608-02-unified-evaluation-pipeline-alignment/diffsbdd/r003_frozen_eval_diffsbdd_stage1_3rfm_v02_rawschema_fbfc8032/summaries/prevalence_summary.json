@@ -1,0 +1,36 @@
+{
+  "claim_boundary": "selected_output_residual_audit_not_raw_failure_prevalence",
+  "method": "DiffSBDD",
+  "notes": "These summaries do not claim DiffSBDD global failure prevalence, official reproduction, clean-test generalization or repair benchmark results.",
+  "prevalence_views": {
+    "evaluable_only_molecular_prevalence": {
+      "denominator": 20,
+      "failure_like_count": 5,
+      "prevalence": 0.25,
+      "status": "descriptive_selected_scope_only"
+    },
+    "inclusive_failure_burden": {
+      "denominators": {
+        "N_budget": 20,
+        "N_raw_attempt_metadata": 20
+      },
+      "failure_like_count": 5,
+      "notes": "Not claimed for final-only DiffSBDD stage 1 source outputs.",
+      "prevalence": null,
+      "status": "downgraded_final_only_source"
+    },
+    "selected_output_residual_prevalence": {
+      "denominator": 20,
+      "failure_like_count": 5,
+      "prevalence": 0.25,
+      "primary_label_counts": {
+        "local_geometry_failure": 5,
+        "unknown": 15
+      },
+      "status": "available"
+    }
+  },
+  "run_id": "r003_frozen_eval_diffsbdd_stage1_3rfm_v02_rawschema_fbfc8032",
+  "schema_path": "schemas/third_party_audit/diagnosis/prevalence_summary_v0_1.json",
+  "schema_version": "prevalence_summary_v0_1"
+}

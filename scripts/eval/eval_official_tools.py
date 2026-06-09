@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import shutil
@@ -71,6 +72,17 @@ def command_summary(result: subprocess.CompletedProcess[str], command: list[str]
 
 def run_command(command: list[str], timeout: int = 120) -> subprocess.CompletedProcess[str]:
     return subprocess.run(command, check=False, capture_output=True, text=True, timeout=timeout)
+
+
+def sha256_file(path: str | Path) -> str | None:
+    input_path = Path(path)
+    if not input_path.exists() or not input_path.is_file():
+        return None
+    digest = hashlib.sha256()
+    with input_path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 class Timeout:
@@ -222,7 +234,7 @@ def merge_complex_pdb(protein_path: str | Path | None, ligand_path: str | Path |
     return True
 
 
-def run_posebusters(row: dict[str, Any], buster: Any | None, timeout: int, work_dir: Path | None = None) -> dict[str, Any]:
+def run_posebusters(row: dict[str, Any], buster: Any | None, timeout: int, config: str, work_dir: Path | None = None) -> dict[str, Any]:
     if work_dir is not None:
         input_path = work_dir / "posebusters_input.jsonl"
         output_path = work_dir / "posebusters_output.jsonl"
@@ -238,6 +250,8 @@ def run_posebusters(row: dict[str, Any], buster: Any | None, timeout: int, work_
             str(output_path),
             "--timeout",
             str(timeout),
+            "--config",
+            config,
         ]
         try:
             result = run_command(command, timeout=timeout + 5)
@@ -254,7 +268,7 @@ def run_posebusters(row: dict[str, Any], buster: Any | None, timeout: int, work_
             return rows[0]
         return {"posebusters_available": True, "posebusters_error": "subprocess_output_missing", **metadata}
     if buster is None:
-        return {"posebusters_available": False, "posebusters_error": "posebusters_import_failed"}
+        return {"posebusters_available": False, "posebusters_error": "posebusters_import_failed", "posebusters_config": config}
     repaired = row.get("repaired_ligand_path")
     reference = row.get("reference_ligand_path")
     protein = row.get("protein_path")
@@ -265,13 +279,14 @@ def run_posebusters(row: dict[str, Any], buster: Any | None, timeout: int, work_
         bool_values = [bool(value) for value in record.values() if isinstance(value, (bool,))]
         return {
             "posebusters_available": True,
+            "posebusters_config": config,
             "posebusters_full_pass": all(bool_values) if bool_values else None,
             "posebusters_num_checks": len(bool_values),
             "posebusters_num_passed": sum(bool_values),
             "posebusters_columns": list(record.keys()),
         }
     except Exception as exc:
-        return {"posebusters_available": True, "posebusters_error": str(exc)}
+        return {"posebusters_available": True, "posebusters_config": config, "posebusters_error": str(exc)}
 
 
 PLIP_INTERACTION_TAGS = {
@@ -451,10 +466,26 @@ def run_vina(row: dict[str, Any], work_dir: Path) -> dict[str, Any]:
         return {"vina_available": False, "vina_error": f"missing_cli:{','.join(missing)}", "vina_tool_paths": tool_paths}
     repaired = row.get("repaired_ligand_path")
     protein = row.get("protein_path")
-    center = ligand_centroid(row.get("reference_ligand_path")) or ligand_centroid(repaired)
+    pocket_box = row.get("pocket_box") if isinstance(row.get("pocket_box"), dict) else None
+    generated_fallback_used = False
+    if pocket_box:
+        center_values = pocket_box.get("center_angstrom")
+        size_values = pocket_box.get("size_angstrom")
+        center = tuple(float(value) for value in center_values) if isinstance(center_values, list) and len(center_values) == 3 else None
+        size = tuple(float(value) for value in size_values) if isinstance(size_values, list) and len(size_values) == 3 else None
+        box_source = str(pocket_box.get("box_source") or "pocket_box")
+    else:
+        center = ligand_centroid(row.get("reference_ligand_path"))
+        box_source = "reference_ligand_file_centroid"
+        if center is None:
+            center = ligand_centroid(repaired)
+            generated_fallback_used = center is not None
+            box_source = "generated_ligand_centroid_fallback" if generated_fallback_used else "missing_box_center"
+        size = box_size_from_ligand(row.get("reference_ligand_path"))
     if not repaired or not protein or center is None:
         return {"vina_available": True, "vina_error": "missing_input_or_box_center", "vina_tool_paths": tool_paths}
-    size = box_size_from_ligand(row.get("reference_ligand_path"))
+    if size is None:
+        return {"vina_available": True, "vina_error": "missing_box_size", "vina_tool_paths": tool_paths}
     ligand_sdf = work_dir / "ligand_explicit_h.sdf"
     if not write_explicit_h_ligand(repaired, ligand_sdf):
         return {"vina_available": True, "vina_error": "ligand_explicit_h_failed", "vina_tool_paths": tool_paths}
@@ -549,6 +580,13 @@ def run_vina(row: dict[str, Any], work_dir: Path) -> dict[str, Any]:
         "vina_ligand_command": command_summary(ligand_result, ligand_command),
         "vina_receptor_command": command_summary(receptor_result, receptor_command),
         "vina_score_command": command_summary(vina_result, vina_command),
+        "vina_box_definition_source": box_source,
+        "vina_generated_ligand_centroid_fallback_used": generated_fallback_used,
+        "vina_ligand_pdbqt_path": str(ligand_pdbqt),
+        "vina_ligand_pdbqt_sha256": sha256_file(ligand_pdbqt),
+        "vina_receptor_pdbqt_path": str(receptor_pdbqt),
+        "vina_receptor_pdbqt_sha256": sha256_file(receptor_pdbqt),
+        "vina_score_comparability": "non_comparable" if ligand_retry_command is not None else "standard_score_only",
     }
     if ligand_retry_command is not None and ligand_retry_result is not None:
         command_metadata["vina_ligand_retry_command"] = command_summary(ligand_retry_result, ligand_retry_command)
@@ -562,6 +600,9 @@ def run_vina(row: dict[str, Any], work_dir: Path) -> dict[str, Any]:
         "vina_score_only_energy": score,
         "vina_box_center": center,
         "vina_box_size": size,
+        "vina_box_definition_source": box_source,
+        "vina_generated_ligand_centroid_fallback_used": generated_fallback_used,
+        "vina_score_parse_status": "parsed" if score is not None else "not_found",
         **command_metadata,
     }
 
@@ -574,6 +615,7 @@ def evaluate_row(
     run_plip_flag: bool,
     run_vina_flag: bool,
     posebusters_timeout: int,
+    posebusters_config: str,
 ) -> dict[str, Any]:
     base = {
         "repair_id": row.get("repair_id"),
@@ -597,7 +639,7 @@ def evaluate_row(
     def run_selected(work_dir: Path) -> dict[str, Any]:
         result = dict(base)
         if run_posebusters_flag:
-            result.update(run_posebusters(row, buster, posebusters_timeout, work_dir))
+            result.update(run_posebusters(row, buster, posebusters_timeout, posebusters_config, work_dir))
         if run_plip_flag:
             result.update(run_plip(row, work_dir))
         if run_vina_flag:
@@ -620,6 +662,7 @@ def main() -> int:
     parser.add_argument("--keep-work-dir", default=None)
     parser.add_argument("--tools", default="posebusters,plip,vina")
     parser.add_argument("--posebusters-timeout", type=int, default=60)
+    parser.add_argument("--posebusters-config", default="redock")
     args = parser.parse_args()
 
     selected_tools = {tool.strip() for tool in args.tools.split(",") if tool.strip()}
@@ -630,7 +673,7 @@ def main() -> int:
     rows = read_jsonl(args.repaired_candidates)
     if args.limit is not None:
         rows = rows[: args.limit]
-    buster = PoseBusters(config="redock", max_workers=0) if PoseBusters is not None and run_posebusters_flag else None
+    buster = PoseBusters(config=args.posebusters_config, max_workers=0) if PoseBusters is not None and run_posebusters_flag else None
     keep_work = Path(args.keep_work_dir) if args.keep_work_dir else None
     output_path = Path(args.output)
     if output_path.exists():
@@ -645,6 +688,7 @@ def main() -> int:
             run_plip_flag,
             run_vina_flag,
             args.posebusters_timeout,
+            args.posebusters_config,
         )
         result["input_index"] = index
         append_jsonl(output_path, result)

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/resources/environment_info_v0_1.json",
+  "title": "Third-party method environment info v0.1",
+  "description": "Environment snapshot for third-party method inference or evaluator runs.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "schema_path",
+    "experiment_id",
+    "environment_name",
+    "environment_role",
+    "python_executable",
+    "python_version",
+    "packages",
+    "created_time"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "environment_info_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/third_party_audit/resources/environment_info_v0_1.json"},
+    "experiment_id": {"type": "string"},
+    "run_id": {"type": ["string", "null"]},
+    "method": {"type": ["string", "null"]},
+    "environment_name": {"type": "string"},
+    "environment_role": {
+      "type": "string",
+      "enum": ["project", "method_inference", "evaluator", "other"]
+    },
+    "python_executable": {"type": "string"},
+    "python_version": {"type": "string"},
+    "conda_prefix": {"type": ["string", "null"]},
+    "cuda_available": {"type": ["boolean", "null"]},
+    "packages": {"type": "object", "additionalProperties": true},
+    "errors": {"type": "array", "items": {"type": "string"}},
+    "created_time": {"type": ["string", "null"]}
+  }
+}

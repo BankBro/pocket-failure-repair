@@ -1,0 +1,49 @@
+{
+  "captured_outputs": [
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/captured_outputs/generated.sdf"
+  ],
+  "evaluator_outputs": [
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/evaluator/diagnosis_sanity.jsonl",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/evaluator/evaluator_input.jsonl",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/evaluator/evaluator_tool_results.jsonl",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/summaries/evaluator_summary.json"
+  ],
+  "logs": [
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/logs/stdout.log",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/logs/stderr.log"
+  ],
+  "manifests": [
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/manifests/normalized_samples_manifest.json"
+  ],
+  "metadata_schemas": {
+    "diagnosis_sanity": "schemas/third_party_audit/diagnosis/diagnosis_sanity_v0_1.json",
+    "evaluator_tool_result": "schemas/third_party_audit/diagnosis/evaluator_tool_result_v0_1.json",
+    "mvp_sanity_summary": "schemas/third_party_audit/diagnosis/mvp_sanity_summary_v0_1.json",
+    "output_manifest": "schemas/third_party_audit/run/output_manifest_v0_1.json",
+    "run_metadata": "schemas/third_party_audit/run/run_metadata_v0_1.json",
+    "samples": "schemas/third_party_audit/samples/failure_sample_metadata_v0_1.json",
+    "stage_attrition": "schemas/third_party_audit/attrition/stage_attrition_v0_1.json"
+  },
+  "method": "DiffSBDD",
+  "n_final_sdf_records": 3,
+  "n_output_artifacts": 4,
+  "notes": "Output capture and evaluator sanity manifest. No formal labels generated.",
+  "processed_outputs": [
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/processed/normalized_samples/sample_000.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/processed/normalized_samples/sample_001.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/processed/normalized_samples/sample_002.sdf"
+  ],
+  "run_id": "r001_seed0_budget3_3rfm_47b93b20",
+  "schema_path": "schemas/third_party_audit/run/output_manifest_v0_1.json",
+  "schema_version": "output_manifest_v0_1",
+  "sha256": {
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/captured_outputs/generated.sdf": "48cdd08b1d09d5beb2e33638a83254d2d18d2d211e75ca6acafe4abbeebc7d4e",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/evaluator/diagnosis_sanity.jsonl": "2bad327a2256b012cfdbd09077169c5659374c330e526105c38bc4de5dabb1ac",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/evaluator/evaluator_input.jsonl": "d43c64d3bfd849c9b2bfc7e5503c1d569f338f9fb0fa65c2a51dae1084e8e7f1",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/evaluator/evaluator_tool_results.jsonl": "a2477219adbd0a9f0f5cd7c478a5d167cfd091c08e09c387eedf7ff9c5397588",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/processed/normalized_samples/sample_000.sdf": "2d5eb7a051299bb9ecba96d7f4abc3efb33a1308e9cb8d0408ef0382ce02f281",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/processed/normalized_samples/sample_001.sdf": "1ffd018026bf3d0ae83e1db4090c460911cace27f3b908c969486bdb4fd372e9",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/processed/normalized_samples/sample_002.sdf": "27eae67445c7ba76c72f4fe3c64000a47ffeb6970b883ee7118c0f329ef6a0ae",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/summaries/evaluator_summary.json": "13347d2ad24883fd44b11566e7169ef2986327f829616cbf1fbe8f14d7bb7f03"
+  }
+}

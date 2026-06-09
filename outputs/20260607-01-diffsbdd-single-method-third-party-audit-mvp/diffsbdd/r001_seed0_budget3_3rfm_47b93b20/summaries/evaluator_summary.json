@@ -1,0 +1,24 @@
+{
+  "claim_boundary": "mvp_sanity_not_formal_prevalence",
+  "counts": {
+    "evaluability_counts": {
+      "evaluable": 3
+    },
+    "num_diagnosis_rows": 3,
+    "num_samples": 3,
+    "num_tool_result_rows": 15,
+    "tool_status_counts": {
+      "plip::passed": 3,
+      "posebusters_dock::failed": 3,
+      "posebusters_mol::failed": 3,
+      "rdkit::passed": 3,
+      "vina::passed": 3
+    }
+  },
+  "method": "DiffSBDD",
+  "notes": "Evaluator wiring summary only. No formal labels or prevalence claims.",
+  "run_id": "r001_seed0_budget3_3rfm_47b93b20",
+  "schema_path": "schemas/third_party_audit/diagnosis/mvp_sanity_summary_v0_1.json",
+  "schema_version": "mvp_sanity_summary_v0_1",
+  "summary_type": "evaluator_wiring"
+}

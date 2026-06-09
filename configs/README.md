@@ -42,6 +42,7 @@ configs/
 
 - 项目级配置不应默认写入具体 `outputs/<experiment_id>/`; 单次运行路径应进入 `experiments/<experiment_id>/configs/resolved/`。
 - 运行前应将实际 resolved config 复制或生成到 `experiments/<experiment_id>/configs/resolved/`。
+- 人工拍板内容使用 schema-covered `manual_decisions.yaml` 时, 应保存为单次实验 resolved config, 例如 `experiments/<experiment_id>/configs/resolved/audit/manual_decisions.yaml`; `configs/` 只保留可复用规则, 不保存空模板。
 - 配置里的运行产物路径应落在对应 `outputs/<experiment_id>/`。
 - 配置里的实验资产、命令快照、resolved config 和 metadata 应落在 `experiments/<experiment_id>/`。
 - 第三方 output capture 使用 `captured_outputs/`; normalized 或转换结果使用 `processed/normalized_samples/`。
@@ -53,6 +54,8 @@ configs/
 
 具体映射见 `schemas/README.md` 的 `configs` 小节。
 
+人工决策配置对应 schema 为 `schemas/configs/audit/manual_decisions_v0_1.json`. 它约束人工 decision、reason 和 evidence refs, 不用于记录工具结果、统计计数、pass/fail 或自动标签。
+
 ## 第三方 audit schema refs
 
 第三方 resolved audit protocol 中的 `metadata_schemas` 使用以下 key 到 schema path 的映射。实际协议只需要列出该方法会生成或消费的 metadata 类型, 但已生成的 JSON / JSONL metadata 必须写入同一组 `schema_version` 和 `schema_path`。
@@ -63,11 +66,20 @@ configs/
 | `output_manifest` | `schemas/third_party_audit/run/output_manifest_v0_1.json` |
 | `sample_metadata` | `schemas/third_party_audit/samples/failure_sample_metadata_v0_1.json` |
 | `stage_attrition` | `schemas/third_party_audit/attrition/stage_attrition_v0_1.json` |
+| `receptor_prep_record` | `schemas/third_party_audit/receptor/receptor_prep_record_v0_1.json` |
+| `receptor_prep_index` | `schemas/third_party_audit/receptor/receptor_prep_index_v0_1.json` |
+| `evaluator_input` | `schemas/third_party_audit/diagnosis/evaluator_input_v0_1.json` |
 | `label` | `schemas/third_party_audit/diagnosis/label_v0_1.json` |
 | `evaluator_tool_result` | `schemas/third_party_audit/diagnosis/evaluator_tool_result_v0_1.json` |
+| `posebusters_raw_result` | `schemas/third_party_audit/diagnosis/posebusters_raw_result_v0_1.json` |
 | `diagnosis_sanity` | `schemas/third_party_audit/diagnosis/diagnosis_sanity_v0_1.json` |
+| `mvp_sanity_summary` | `schemas/third_party_audit/diagnosis/mvp_sanity_summary_v0_1.json` |
+| `label_summary` | `schemas/third_party_audit/diagnosis/label_summary_v0_1.json` |
+| `prevalence_summary` | `schemas/third_party_audit/diagnosis/prevalence_summary_v0_1.json` |
+| `analysis_frozen_gate_result` | `schemas/third_party_audit/diagnosis/analysis_frozen_gate_result_v0_1.json` |
 | `method_resource_check` | `schemas/third_party_audit/resources/method_resource_check_v0_1.json` |
 | `blocker_log` | `schemas/third_party_audit/resources/blocker_log_v0_1.json` |
+| `official_protocol_checklist` | `schemas/third_party_audit/resources/official_protocol_checklist_v0_1.json` |
 
 输出文件名、`schema_version` 和 `schema_path` 的完整对应关系见 `schemas/README.md`。
 

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/receptor/receptor_prep_index_v0_1.json",
+  "title": "Third-party audit receptor preparation index v0.1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "schema_path", "run_id", "receptor_preps"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "receptor_prep_index_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/third_party_audit/receptor/receptor_prep_index_v0_1.json"},
+    "run_id": {"type": "string"},
+    "receptor_preps": {"type": "array", "items": {"type": "object", "additionalProperties": true}}
+  }
+}

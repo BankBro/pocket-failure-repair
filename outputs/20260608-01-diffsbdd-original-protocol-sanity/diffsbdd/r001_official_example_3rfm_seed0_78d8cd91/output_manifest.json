@@ -1,0 +1,87 @@
+{
+  "captured_outputs": [
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/captured_outputs/generated.sdf"
+  ],
+  "evaluator_outputs": [
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/evaluator/diagnosis_sanity.jsonl",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/evaluator/evaluator_input.jsonl",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/evaluator/evaluator_tool_results.jsonl",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/summaries/evaluator_summary.json"
+  ],
+  "logs": [
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/logs/stdout.log",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/logs/stderr.log"
+  ],
+  "manifests": [
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/manifests/normalized_samples_manifest.json"
+  ],
+  "metadata_schemas": {
+    "diagnosis_sanity": "schemas/third_party_audit/diagnosis/diagnosis_sanity_v0_1.json",
+    "evaluator_tool_result": "schemas/third_party_audit/diagnosis/evaluator_tool_result_v0_1.json",
+    "mvp_sanity_summary": "schemas/third_party_audit/diagnosis/mvp_sanity_summary_v0_1.json",
+    "output_manifest": "schemas/third_party_audit/run/output_manifest_v0_1.json",
+    "run_metadata": "schemas/third_party_audit/run/run_metadata_v0_1.json",
+    "samples": "schemas/third_party_audit/samples/failure_sample_metadata_v0_1.json",
+    "stage_attrition": "schemas/third_party_audit/attrition/stage_attrition_v0_1.json"
+  },
+  "method": "DiffSBDD",
+  "n_final_sdf_records": 20,
+  "n_output_artifacts": 21,
+  "notes": "Output capture, evaluator sanity and official-like basic metric manifest. No formal labels generated.",
+  "official_like_metrics": [
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/official_like_metrics/basic_molecular_metrics.json"
+  ],
+  "processed_outputs": [
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_000.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_001.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_002.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_003.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_004.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_005.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_006.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_007.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_008.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_009.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_010.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_011.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_012.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_013.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_014.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_015.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_016.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_017.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_018.sdf",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_019.sdf"
+  ],
+  "run_id": "r001_official_example_3rfm_seed0_78d8cd91",
+  "schema_path": "schemas/third_party_audit/run/output_manifest_v0_1.json",
+  "schema_version": "output_manifest_v0_1",
+  "sha256": {
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/captured_outputs/generated.sdf": "3b7c1e237ef103d250025667020634568a9369a6ae6d4773be06ef5ea1025b11",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/evaluator/diagnosis_sanity.jsonl": "bca64c64ce97ca7b90482a81b57c22d618a6f424130e724d5d6d9122e574316f",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/evaluator/evaluator_input.jsonl": "9e9c40bd3dc493a76e5cdf4134a2888a3b313cb93227c1531ddee0c006629b69",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/evaluator/evaluator_tool_results.jsonl": "5148ca0af084ce0e7e41b813336e58d98e1f53ef04f92b906acb34aa28fda127",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/official_like_metrics/basic_molecular_metrics.json": "fd233b8df4891114ae4f65f424b6e7e6a76008da77689377bb0cc4d35ad30c81",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_000.sdf": "2d5eb7a051299bb9ecba96d7f4abc3efb33a1308e9cb8d0408ef0382ce02f281",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_001.sdf": "1ffd018026bf3d0ae83e1db4090c460911cace27f3b908c969486bdb4fd372e9",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_002.sdf": "bfc0cca85d377dd278992eec50589864b00e6c7c45656ffdadec3e5a23c14bc8",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_003.sdf": "c9baf813c18499673aba2262ca4351c8fe37d19f34ba28d32fec5eae145d3bde",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_004.sdf": "b7f7c36de3d0cbdc7af4e0471947cb1e3aa179e85185305f66c2932821144358",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_005.sdf": "9d12730803d85123fcaa888b5d785bcb765f6378bfc5c45f6ea2044188f2ed14",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_006.sdf": "8ed5e7a2cd500fe397735376eed505d9385a28e107e41450c8ea4fcccddc42ab",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_007.sdf": "bfcee65919d85aecb374c4c79b191b9315549cd5a1d73c3ed2df66347548a62a",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_008.sdf": "0abe044ac0568d24623a712041bac0955b354fba8d80fdd79993c97dc331d660",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_009.sdf": "6953a649b6be7c40a4fb98cab0c8958eca0b8c6a08180340104f55d9de7bb2c2",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_010.sdf": "4c0855a173a97a1562b4505dfe096732b985a59c751b860f6d85719ffc3e342c",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_011.sdf": "314e3c180ff93e00b4df023b27627a688f78d5824a19653221377dcb06aec19a",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_012.sdf": "321d291e9223caf15f8c2183d0da77e583accbf1a3f2586e89d1b8ff794a0be1",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_013.sdf": "213baf8e0a876ee9ef0838b452e2ed1998f69d486a91dae0c9749a35983bc518",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_014.sdf": "3ad29737cbe2cf0b85cf9f7338dc1ab37490e21fec20877a2bd84f2faf8d77d1",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_015.sdf": "0d46155549092af0b7624fe16ab17bf9550d168e19352274562b8cda853cb50f",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_016.sdf": "44e13073f4c91b0395a0f50ac05b7273c5c533f88f7d49226c8dd0f3663f3b91",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_017.sdf": "6ccb9b13bf489488b12cd269132fe237a7f0008997a152713f4afbfdd70ad453",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_018.sdf": "fc07db170b083a898bf112b297987f019669fd94ba1b378fe9015e9cbfeccf29",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_019.sdf": "63c1cb8e4b62f8bb32f52224c4dd290271e3d2c3f7577ced25e9c006907981e6",
+    "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/summaries/evaluator_summary.json": "81a7f5a66f761067acfa60c8016d6fe28e6ab06dd44068777f2b945f69190d4d"
+  }
+}

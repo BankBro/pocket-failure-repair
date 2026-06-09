@@ -1,0 +1,55 @@
+{
+  "dataset_view_id": "diffsbdd_example_3rfm_5ndu_v1",
+  "denominator_policy_version": "pfr_failure_statistics_v0_1_draft",
+  "method": "DiffSBDD",
+  "mvp_required_counts": {
+    "N_budget": 3,
+    "N_final": 3,
+    "N_missing_output": 0,
+    "N_not_evaluable_by_reason": {
+      "format_error": 0,
+      "missing_output": 0,
+      "pipeline_failure": 0,
+      "tool_failure": 0,
+      "unknown": 0
+    },
+    "N_pipeline_failure": 0,
+    "N_raw_attempt_metadata": 3,
+    "N_raw_captured": 3,
+    "N_tool_failure": 0
+  },
+  "rows": [
+    {
+      "N_anchor_fail": null,
+      "N_anchor_preserved": null,
+      "N_budget": 3,
+      "N_docking_attempted": 3,
+      "N_docking_failed": 3,
+      "N_evaluable": 3,
+      "N_final": 3,
+      "N_not_evaluable": 0,
+      "N_original_failed_samples": 0,
+      "N_parse_fail": 0,
+      "N_parsed": 3,
+      "N_pose_available": 3,
+      "N_raw_attempt_metadata": 3,
+      "N_raw_captured": 3,
+      "N_rdkit_invalid": 0,
+      "N_rdkit_valid": 3,
+      "N_rejected": 0,
+      "N_repair_eligible": null,
+      "N_selected": 0,
+      "complex_id": "3rfm",
+      "dataset_view_id": "diffsbdd_example_3rfm_5ndu_v1",
+      "method": "DiffSBDD",
+      "notes": "MVP post-evaluator attrition. Denominator is sample metadata rows, not only SDF file count.",
+      "pocket_id": null,
+      "run_id": "r001_seed0_budget3_3rfm_47b93b20",
+      "seed": 0
+    }
+  ],
+  "run_id": "r001_seed0_budget3_3rfm_47b93b20",
+  "schema_path": "schemas/third_party_audit/attrition/stage_attrition_v0_1.json",
+  "schema_version": "stage_attrition_v0_1",
+  "summary_scope": "mvp_sanity_post_evaluator"
+}

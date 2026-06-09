@@ -1,0 +1,67 @@
+biopython @ file:///home/conda/feedstock_root/build_artifacts/biopython_1666879192007/work
+Bottleneck @ file:///home/task_176193794808509/conda-bld/bottleneck_1761937988290/work
+brotlicffi @ file:///home/task_176496125431831/conda-bld/brotlicffi_1764961387175/work
+certifi @ file:///home/task_177937030087534/croot/certifi_1779370327170/work/certifi
+cffi @ file:///tmp/abs_98z5h56wf8/croots/recipe/cffi_1659598650955/work
+charset-normalizer @ file:///home/task_176174482135433/conda-bld/charset-normalizer_1761744871447/work
+click @ file:///home/task_176433224254364/conda-bld/click_1764332289389/work
+contourpy @ file:///croot/contourpy_1732540045555/work
+cycler @ file:///home/task_176606789361081/croot/cycler_1766067914492/work
+docker-pycreds @ file:///Users/ktietz/demo/mc3/conda-bld/docker-pycreds_1630654474270/work
+filelock @ file:///home/task_176943957887863/croot/filelock_1769440496799/work
+fonttools @ file:///home/task_177425656495804/croot/fonttools_1774256604770/work
+fsspec @ file:///home/task_178040220709199/croot/fsspec_1780402922138/work
+gitdb @ file:///croot/gitdb_1753362118172/work
+GitPython @ file:///home/task_177866579955084/croot/gitpython_1778665828254/work
+gmpy2 @ file:///home/task_176474799466805/conda-bld/gmpy2_1764748040727/work
+greenlet @ file:///home/task_177494887511785/croot/greenlet_1774949545293/work
+idna @ file:///home/task_178056146130747/croot/idna_1780561512929/work
+imageio @ file:///home/conda/feedstock_root/build_artifacts/imageio_1661789389824/work
+Jinja2 @ file:///croot/jinja2_1741710844255/work
+kiwisolver @ file:///home/task_176415926973141/conda-bld/kiwisolver_1764159298569/work
+lightning-utilities @ file:///home/task_177304528219025/croot/lightning-utilities_1773045304945/work
+MarkupSafe @ file:///croot/markupsafe_1738584038848/work
+matplotlib==3.10.9
+mkl-service==2.4.0
+mkl_fft @ file:///io/mkl313/mkl_fft_1730824109137/work
+mkl_random @ file:///io/mkl313/mkl_random_1730823916628/work
+mpmath @ file:///croot/mpmath_1690848262763/work
+networkx @ file:///croot/networkx_1720002482208/work
+numexpr @ file:///croot/numexpr_1752521720723/work
+numpy @ file:///croot/numpy_and_numpy_base_1708638617955/work/dist/numpy-1.26.4-cp310-cp310-linux_x86_64.whl#sha256=d8cd837ed43e87f77e6efaa08e8de927ca030a1c9c5d04624432d6fb9a74a5ee
+packaging==26.0
+pandas @ file:///croot/pandas_1718308974269/work/dist/pandas-2.2.2-cp310-cp310-linux_x86_64.whl#sha256=a2434a313a5eb5b4fdbec6c770abfde859f643eff7b3a703791bf8b73e54c394
+pathtools @ file:///Users/ktietz/demo/mc3/conda-bld/pathtools_1629713893697/work
+pillow @ file:///croot/pillow_1744613067434/work
+promise @ file:///home/builder/ci_310/promise_1640792568485/work
+protobuf==3.20.3
+psutil @ file:///home/task_176189642285093/conda-bld/psutil_1761896463775/work
+pycairo==1.23.0
+pycparser @ file:///home/task_177495969016250/croot/pycparser_1774959730411/work
+pyparsing @ file:///home/task_176397361890982/conda-bld/pyparsing_1763973787669/work
+PySocks @ file:///home/task_176175228103966/conda-bld/pysocks_1761753009555/work
+python-dateutil @ file:///croot/python-dateutil_1716495738603/work
+pytorch-lightning @ file:///home/conda/feedstock_root/build_artifacts/pytorch-lightning_1674870322049/work
+pytz @ file:///home/task_178064931208873/croot/pytz_1780649963816/work
+PyYAML @ file:///home/task_176346546342115/conda-bld/pyyaml_1763465494987/work
+reportlab @ file:///home/task_177021307953638/croot/reportlab_1770213150525/work
+requests @ file:///home/task_178034862743279/croot/requests_1780348748638/work
+scipy @ file:///croot/scipy_1733756309941/work/dist/scipy-1.13.1-cp310-cp310-linux_x86_64.whl#sha256=a39b9671f4d733a6876feb8ac50b142f773950f9ec37f504d12a0e86e51d6cab
+seaborn @ file:///croot/seaborn_1749110291192/work
+sentry-sdk @ file:///home/task_176372076604670/conda-bld/sentry-sdk_1763721149645/work
+setproctitle @ file:///home/task_176795098911751/croot/setproctitle_1767951142440/work
+shortuuid @ file:///home/conda/feedstock_root/build_artifacts/shortuuid_1734272317000/work
+six @ file:///croot/six_1744271502820/work
+smmap @ file:///croot/smmap_1752748938695/work
+SQLAlchemy @ file:///home/task_177375496562554/croot/sqlalchemy_1773754994109/work
+sympy @ file:///home/task_176476278707978/conda-bld/sympy_1764762918518/work
+tensorboardX @ file:///tmp/build/80754af9/tensorboardx_1621440489103/work
+torch==2.0.1
+torch-scatter @ file:///usr/share/miniconda/envs/test/conda-bld/pytorch-scatter_1696521102019/work
+torchmetrics @ file:///home/conda/feedstock_root/build_artifacts/torchmetrics_1726295998187/work
+tqdm @ file:///croot/tqdm_1724853939799/work
+triton==2.0.0
+typing_extensions @ file:///croot/typing_extensions_1756280817316/work
+tzdata @ file:///home/task_177806041933677/croot/python-tzdata_1778060738968/work
+urllib3 @ file:///home/task_177853563669491/croot/urllib3_1778536188789/work
+wandb @ file:///home/conda/feedstock_root/build_artifacts/wandb_1659759599370/work

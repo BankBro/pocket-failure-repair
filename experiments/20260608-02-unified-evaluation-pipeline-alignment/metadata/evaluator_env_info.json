@@ -1,0 +1,28 @@
+{
+  "conda_prefix": "/home/lyj/miniconda3/envs/pfr-eval-tools",
+  "created_time": "2026-06-08T19:27:03Z",
+  "cuda_available": null,
+  "environment_name": "pfr-eval-tools",
+  "environment_role": "evaluator",
+  "errors": [],
+  "experiment_id": "20260608-02-unified-evaluation-pipeline-alignment",
+  "method": "DiffSBDD",
+  "packages": {
+    "cli_paths": {
+      "mk_prepare_ligand.py": "/home/lyj/miniconda3/envs/pfr-eval-tools/bin/mk_prepare_ligand.py",
+      "mk_prepare_receptor.py": "/home/lyj/miniconda3/envs/pfr-eval-tools/bin/mk_prepare_receptor.py",
+      "obabel": "/home/lyj/miniconda3/envs/pfr-eval-tools/bin/obabel",
+      "plip": "/home/lyj/miniconda3/envs/pfr-eval-tools/bin/plip",
+      "vina": "/home/lyj/miniconda3/envs/pfr-eval-tools/bin/vina"
+    },
+    "meeko": "0.7.1",
+    "openbabel": "3.1.0",
+    "posebusters": "0.6.5",
+    "rdkit": "2025.09.5"
+  },
+  "python_executable": "/home/lyj/miniconda3/envs/pfr-eval-tools/bin/python",
+  "python_version": "3.10.20",
+  "run_id": "r001_frozen_eval_diffsbdd_stage1_3rfm_78d8cd91",
+  "schema_path": "schemas/third_party_audit/resources/environment_info_v0_1.json",
+  "schema_version": "environment_info_v0_1"
+}

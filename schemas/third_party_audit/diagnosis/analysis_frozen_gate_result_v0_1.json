@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/diagnosis/analysis_frozen_gate_result_v0_1.json",
+  "title": "Third-party audit analysis-frozen gate result v0.1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "schema_path",
+    "gate_status",
+    "blocking_failures",
+    "warnings",
+    "checked_inputs",
+    "config_hashes",
+    "tool_versions_lock_hash",
+    "created_time"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "analysis_frozen_gate_result_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/third_party_audit/diagnosis/analysis_frozen_gate_result_v0_1.json"},
+    "gate_status": {"type": "string", "enum": ["passed", "passed_with_warnings", "failed"]},
+    "blocking_failures": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "checked_inputs": {"type": "object", "additionalProperties": true},
+    "config_hashes": {"type": "object", "additionalProperties": true},
+    "tool_versions_lock_hash": {"type": "string"},
+    "created_time": {"type": "string"}
+  }
+}

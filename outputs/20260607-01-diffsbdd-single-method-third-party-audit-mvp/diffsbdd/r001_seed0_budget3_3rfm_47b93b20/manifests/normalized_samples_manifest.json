@@ -1,0 +1,26 @@
+{
+  "method": "DiffSBDD",
+  "notes": "Experiment-local manifest; normalized sample SDF files are split from captured aggregate SDF without changing molecule content.",
+  "raw_output_path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/captured_outputs/generated.sdf",
+  "raw_sha256": "48cdd08b1d09d5beb2e33638a83254d2d18d2d211e75ca6acafe4abbeebc7d4e",
+  "records": [
+    {
+      "index": 0,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/processed/normalized_samples/sample_000.sdf",
+      "sha256": "2d5eb7a051299bb9ecba96d7f4abc3efb33a1308e9cb8d0408ef0382ce02f281"
+    },
+    {
+      "index": 1,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/processed/normalized_samples/sample_001.sdf",
+      "sha256": "1ffd018026bf3d0ae83e1db4090c460911cace27f3b908c969486bdb4fd372e9"
+    },
+    {
+      "index": 2,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260607-01-diffsbdd-single-method-third-party-audit-mvp/diffsbdd/r001_seed0_budget3_3rfm_47b93b20/processed/normalized_samples/sample_002.sdf",
+      "sha256": "27eae67445c7ba76c72f4fe3c64000a47ffeb6970b883ee7118c0f329ef6a0ae"
+    }
+  ],
+  "run_id": "r001_seed0_budget3_3rfm_47b93b20",
+  "schema_path": null,
+  "schema_version": "diffsbdd_normalized_samples_manifest_v0_1"
+}

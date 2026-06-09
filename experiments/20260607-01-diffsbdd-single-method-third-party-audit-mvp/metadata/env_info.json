@@ -1,0 +1,32 @@
+{
+  "conda_prefix": "/home/lyj/miniconda3/envs/pfr-diffsbdd",
+  "created_time": "2026-06-07T19:33:02Z",
+  "cuda_available": true,
+  "environment_name": "pfr-diffsbdd",
+  "environment_role": "method_inference",
+  "environment_setup_notes": [
+    "Created from third_party/diffsbdd/environment.yaml with env name pfr-diffsbdd. Added setuptools after pytorch_lightning import initially failed because pkg_resources was missing. Conda updated Python from 3.10.4 to 3.10.19 while installing setuptools. Pinned setuptools to 80.10.2 because setuptools 82.0.1 no longer exposed pkg_resources required by pytorch_lightning 1.8.4."
+  ],
+  "errors": [],
+  "experiment_id": "20260607-01-diffsbdd-single-method-third-party-audit-mvp",
+  "method": "DiffSBDD",
+  "packages": {
+    "Bio": "1.79",
+    "numpy": "1.26.4",
+    "openbabel": "3.1.0",
+    "pandas": "2.2.2",
+    "pkg_resources": "imported",
+    "pytorch_lightning": "1.8.4",
+    "rdkit": "2022.03.2",
+    "scipy": "1.13.1",
+    "setuptools": "80.10.2",
+    "torch": "2.0.1",
+    "torch_cuda": "11.8"
+  },
+  "platform": "Linux-6.17.0-29-generic-x86_64-with-glibc2.35",
+  "python_executable": "/home/lyj/miniconda3/envs/pfr-diffsbdd/bin/python",
+  "python_version": "3.10.19 (main, Oct 21 2025, 16:43:05) [GCC 11.2.0]",
+  "run_id": null,
+  "schema_path": "schemas/third_party_audit/resources/environment_info_v0_1.json",
+  "schema_version": "environment_info_v0_1"
+}

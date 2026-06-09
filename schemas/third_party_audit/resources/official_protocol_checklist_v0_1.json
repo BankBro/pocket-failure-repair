@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/third_party_audit/resources/official_protocol_checklist_v0_1.json",
+  "title": "Third-party official protocol checklist v0.1",
+  "description": "Checklist metadata for recording whether official papers, README instructions, example commands, code defaults, checkpoints, datasets, denominators and run deviations have been reviewed before an official-protocol sanity run.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "schema_path",
+    "experiment_id",
+    "method",
+    "checklist_id",
+    "created_time",
+    "review_status",
+    "sources_reviewed",
+    "protocol_items",
+    "stage0_comparison",
+    "stage1_decision"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "official_protocol_checklist_v0_1"
+    },
+    "schema_path": {
+      "type": "string",
+      "const": "schemas/third_party_audit/resources/official_protocol_checklist_v0_1.json"
+    },
+    "experiment_id": {
+      "type": "string"
+    },
+    "method": {
+      "type": "string"
+    },
+    "checklist_id": {
+      "type": "string"
+    },
+    "created_time": {
+      "type": ["string", "null"]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "complete_for_stage_gate",
+        "partial_with_blockers",
+        "blocked",
+        "not_started"
+      ]
+    },
+    "sources_reviewed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["source_type", "source", "status"],
+        "properties": {
+          "source_type": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["reviewed", "partially_reviewed", "not_available", "not_applicable"]
+          },
+          "evidence": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "protocol_items": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "stage0_comparison": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "item",
+          "official_code_default",
+          "official_example_command",
+          "paper_setting",
+          "stage0_mvp_setting",
+          "stage1_planned_setting",
+          "deviation_note"
+        ],
+        "properties": {
+          "item": {
+            "type": "string"
+          },
+          "official_code_default": {
+            "type": ["string", "number", "integer", "boolean", "null"]
+          },
+          "official_example_command": {
+            "type": ["string", "number", "integer", "boolean", "null"]
+          },
+          "paper_setting": {
+            "type": ["string", "number", "integer", "boolean", "null"]
+          },
+          "stage0_mvp_setting": {
+            "type": ["string", "number", "integer", "boolean", "null"]
+          },
+          "stage1_planned_setting": {
+            "type": ["string", "number", "integer", "boolean", "null"]
+          },
+          "deviation_note": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "stage1_decision": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["decision", "reason"],
+      "properties": {
+        "decision": {
+          "type": "string",
+          "enum": ["go", "no_go", "defer", "blocked_pending_user_decision"]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "planned_runs": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "blockers": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    }
+  }
+}

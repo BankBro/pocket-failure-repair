@@ -1,0 +1,217 @@
+{
+  "schema_version": "official_protocol_checklist_v0_1",
+  "schema_path": "schemas/third_party_audit/resources/official_protocol_checklist_v0_1.json",
+  "experiment_id": "20260608-01-diffsbdd-original-protocol-sanity",
+  "method": "DiffSBDD",
+  "checklist_id": "20260608-diffsbdd-stage1-official-protocol-checklist",
+  "created_time": "2026-06-08T04:43:15Z",
+  "review_status": "complete_for_stage_gate",
+  "sources_reviewed": [
+    {
+      "source_type": "paper",
+      "source": "Nature Computational Science article, Structure-based drug design with equivariant diffusion models, DOI https://doi.org/10.1038/s43588-024-00737-x",
+      "status": "reviewed",
+      "evidence": "Open-access article reviewed for method scope, publication metadata, dataset and sampling notes."
+    },
+    {
+      "source_type": "preprint",
+      "source": "arXiv 2210.13695, https://arxiv.org/abs/2210.13695",
+      "status": "reviewed",
+      "evidence": "Used for version and abstract provenance."
+    },
+    {
+      "source_type": "official_repo_readme",
+      "source": "third_party/diffsbdd/README.md",
+      "status": "reviewed",
+      "evidence": "Reviewed dependency, checkpoint, example command, benchmark, inference and metrics sections."
+    },
+    {
+      "source_type": "official_code",
+      "source": "third_party/diffsbdd/generate_ligands.py",
+      "status": "reviewed",
+      "evidence": "Reviewed CLI defaults for single-pocket generation."
+    },
+    {
+      "source_type": "official_code",
+      "source": "third_party/diffsbdd/test.py",
+      "status": "reviewed",
+      "evidence": "Reviewed test-set generation loop, valid molecule collection and output directories."
+    },
+    {
+      "source_type": "official_code",
+      "source": "third_party/diffsbdd/lightning_modules.py",
+      "status": "reviewed",
+      "evidence": "Reviewed pocket preparation, conditional sampling, molecule size sampling and postprocessing call."
+    },
+    {
+      "source_type": "official_code",
+      "source": "third_party/diffsbdd/analysis/molecule_builder.py",
+      "status": "reviewed",
+      "evidence": "Reviewed sanitize, largest fragment and UFF relax behavior."
+    },
+    {
+      "source_type": "official_code",
+      "source": "third_party/diffsbdd/analysis/metrics.py",
+      "status": "reviewed",
+      "evidence": "Reviewed validity, connectivity, uniqueness, novelty, QED, SA, LogP, Lipinski and diversity metrics."
+    },
+    {
+      "source_type": "checkpoint_record",
+      "source": "Zenodo record https://zenodo.org/records/8183747",
+      "status": "reviewed",
+      "evidence": "Reviewed checkpoint list, size, md5 listing and CC-BY-4.0 record license."
+    }
+  ],
+  "protocol_items": {
+    "repo": {
+      "url": "https://github.com/arneschneuing/DiffSBDD",
+      "local_path": "third_party/diffsbdd",
+      "commit": "5d0d38d16c8932a0339fd2ce3f67ade98bbdff27",
+      "license": "MIT"
+    },
+    "checkpoint": {
+      "checkpoint_id": "crossdocked_fullatom_cond.ckpt",
+      "source_url": "https://zenodo.org/record/8183747/files/crossdocked_fullatom_cond.ckpt?download=1",
+      "local_path": "third_party/diffsbdd/checkpoints/crossdocked_fullatom_cond.ckpt",
+      "sha256": "07f86764bf569aafbc40a9c15fc02de8e2550437dd0f17f657eab3abe66c372c",
+      "size_bytes": 17861341,
+      "access_type": "public",
+      "official_source_status": "official_zenodo_record"
+    },
+    "data_and_input": {
+      "official_training_datasets": ["CrossDocked", "Binding MOAD"],
+      "stage1_input": "official README 3RFM example",
+      "pdbfile": "third_party/diffsbdd/example/3rfm.pdb",
+      "ref_ligand": "A:330",
+      "pocket_definition": "residues with any atom within 8 angstrom of reference ligand atoms",
+      "training_data_status": "training_data_unknown",
+      "leakage_check_status": "unknown_risk"
+    },
+    "generate_ligands_defaults": {
+      "n_samples": 20,
+      "batch_size": "defaults_to_n_samples",
+      "num_nodes_lig": null,
+      "all_frags": false,
+      "sanitize": false,
+      "relax": false,
+      "resamplings": 10,
+      "jump_length": 1,
+      "timesteps": null,
+      "largest_frag": true
+    },
+    "test_py_defaults": {
+      "n_samples": 100,
+      "batch_size": 120,
+      "sanitize": false,
+      "relax": false,
+      "all_frags": false,
+      "max_iterations_per_pocket": 10,
+      "max_retries_per_pocket": 10,
+      "collection_policy": "repeat_generation_until_n_valid_processed_molecules"
+    },
+    "official_metrics": [
+      "validity",
+      "connectivity",
+      "uniqueness",
+      "novelty",
+      "QED",
+      "SA",
+      "LogP",
+      "Lipinski",
+      "diversity",
+      "docking score",
+      "inference time"
+    ],
+    "denominator_notes": {
+      "generate_ligands": "attempts are requested by n_samples, but molecules returning None after postprocessing are not written by utils.write_sdf_file",
+      "test_py": "raw generation repeats until n_samples valid processed molecules are collected or MAXITER/MAXNTRIES fail",
+      "stage1_policy": "metadata denominator remains requested N_budget, not only final SDF records"
+    }
+  },
+  "stage0_comparison": [
+    {
+      "item": "input case",
+      "official_code_default": null,
+      "official_example_command": "3RFM README example with ref_ligand A:330",
+      "paper_setting": "benchmark uses CrossDocked and Binding MOAD test sets, not just the README example",
+      "stage0_mvp_setting": "3rfm",
+      "stage1_planned_setting": "3rfm",
+      "deviation_note": "Stage 1 stays on README example, not full benchmark dataset."
+    },
+    {
+      "item": "n_samples",
+      "official_code_default": 20,
+      "official_example_command": 20,
+      "paper_setting": "not reduced to 3 in paper benchmark context",
+      "stage0_mvp_setting": 3,
+      "stage1_planned_setting": 20,
+      "deviation_note": "Stage 1 restores README example sample count."
+    },
+    {
+      "item": "batch_size",
+      "official_code_default": "defaults_to_n_samples",
+      "official_example_command": "not specified, so 20",
+      "paper_setting": "not fully resolved from paper text",
+      "stage0_mvp_setting": "not specified, so 3",
+      "stage1_planned_setting": "not specified, so 20",
+      "deviation_note": "Matches generate_ligands.py default behavior."
+    },
+    {
+      "item": "sanitize",
+      "official_code_default": false,
+      "official_example_command": false,
+      "paper_setting": "test.py README command for test set shows --sanitize",
+      "stage0_mvp_setting": false,
+      "stage1_planned_setting": false,
+      "deviation_note": "README 3RFM example does not enable sanitize. Test-set flow differs."
+    },
+    {
+      "item": "relax",
+      "official_code_default": false,
+      "official_example_command": false,
+      "paper_setting": "not used in README 3RFM example",
+      "stage0_mvp_setting": false,
+      "stage1_planned_setting": false,
+      "deviation_note": "No deviation for README example."
+    },
+    {
+      "item": "largest fragment",
+      "official_code_default": true,
+      "official_example_command": true,
+      "paper_setting": "not fully resolved from paper text",
+      "stage0_mvp_setting": true,
+      "stage1_planned_setting": true,
+      "deviation_note": "generate_ligands.py passes largest_frag=not all_frags."
+    },
+    {
+      "item": "repeat until enough valid molecules",
+      "official_code_default": "generate_ligands.py no, test.py yes",
+      "official_example_command": "no",
+      "paper_setting": "benchmark denominator requires further full-protocol resolution",
+      "stage0_mvp_setting": "no",
+      "stage1_planned_setting": "no for r001, deferred for r002",
+      "deviation_note": "r001 follows README example. r002 test.py subset deferred until test data are frozen."
+    },
+    {
+      "item": "denominator policy",
+      "official_code_default": "SDF records can be fewer than requested when molecules are dropped",
+      "official_example_command": "n_samples=20 requested",
+      "paper_setting": "paper metrics require benchmark-specific denominator resolution",
+      "stage0_mvp_setting": "N_budget=3 sample metadata rows",
+      "stage1_planned_setting": "N_budget=20 sample metadata rows",
+      "deviation_note": "Project metadata preserves requested attempts even if final SDF count differs."
+    }
+  ],
+  "stage1_decision": {
+    "decision": "go",
+    "reason": "Official README 3RFM example can be run within local resource budget using official repo, MIT code license and official Zenodo checkpoint with matching checksum. No core sampling, decoding, filtering, reranking, docking config or success definition change is required.",
+    "planned_runs": ["r001_official_example_3rfm_seed0_78d8cd91"],
+    "blockers": [],
+    "deferred_runs": [
+      {
+        "run": "r002_official_like_test_subset",
+        "reason": "processed test_dir and frozen split/checksum resources are not available for this stage 1 landing run"
+      }
+    ]
+  }
+}

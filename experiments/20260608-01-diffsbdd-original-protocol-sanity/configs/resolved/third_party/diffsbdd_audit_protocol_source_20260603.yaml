@@ -1,0 +1,42 @@
+schema_version: config_third_party_method_protocol_v0_1
+schema_path: schemas/configs/third_party/method_protocol_config_v0_1.json
+method: DiffSBDD
+protocol_config_version: diffsbdd_audit_protocol_v0_1_draft
+status: mvp_trial_prepared_not_executed
+created_date: '2026-06-03'
+run_boundary_label: instrumented_reproduction
+algorithm_changed: false
+purpose: minimal output-capture sanity using official repo examples and official Zenodo checkpoint
+upstream:
+  repo_url: https://github.com/arneschneuing/DiffSBDD
+  local_path: third_party/diffsbdd
+  commit: 5d0d38d16c8932a0339fd2ce3f67ade98bbdff27
+  license: MIT
+checkpoint:
+  local_path: third_party/diffsbdd/checkpoints/crossdocked_fullatom_cond.ckpt
+  source_url: https://zenodo.org/record/8183747/files/crossdocked_fullatom_cond.ckpt?download=1
+  sha256: 07f86764bf569aafbc40a9c15fc02de8e2550437dd0f17f657eab3abe66c372c
+dataset_view:
+  dataset_view_id: diffsbdd_example_3rfm_5ndu_v1
+  split_id: example_only_no_formal_split
+  leakage_check_status: unknown_risk
+mvp_trial:
+  run_id_template: diffsbdd_example_3rfm_n{n_samples}_seed{seed}_v0_1
+  primary_trial_type: de_novo_generation
+  command_template: >-
+    python scripts/third_party/run_diffsbdd_instrumented.py --repo third_party/diffsbdd --checkpoint third_party/diffsbdd/checkpoints/crossdocked_fullatom_cond.ckpt --pdbfile example/3rfm.pdb --ref-ligand A:330 --n-samples 10 --run-id {run_id} --output-root outputs/20260603-01-third-party-failure-audit-mvp/diffsbdd/{run_id}
+  output_expectations:
+    metadata_schemas:
+      run_metadata: schemas/third_party_audit/run/run_metadata_v0_1.json
+      output_manifest: schemas/third_party_audit/run/output_manifest_v0_1.json
+      sample_metadata: schemas/third_party_audit/samples/failure_sample_metadata_v0_1.json
+      stage_attrition: schemas/third_party_audit/attrition/stage_attrition_v0_1.json
+    captured_outputs: outputs/20260603-01-third-party-failure-audit-mvp/diffsbdd/<run_id>/captured_outputs/generated.sdf
+    run_metadata: outputs/20260603-01-third-party-failure-audit-mvp/diffsbdd/<run_id>/run_metadata.json
+    sample_metadata: outputs/20260603-01-third-party-failure-audit-mvp/diffsbdd/<run_id>/samples.jsonl
+    logs: outputs/20260603-01-third-party-failure-audit-mvp/diffsbdd/<run_id>/logs/
+  denominator_plan:
+    N_budget: n_samples
+    N_raw_attempt_metadata: wrapper emits one metadata row per configured sample index when possible; if method returns fewer mols, missing rows are flagged missing_data/pipeline_unknown
+    N_final: count SDF molecules after generation
+  no_formal_labeling_until: configs/audit/diagnosis_label_config_v0_1.yaml is promoted to frozen label_config with hash and sanity check

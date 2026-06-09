@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/configs/audit/receptor_prep_policy_v0_1.json",
+  "title": "Audit receptor preparation policy config schema v0.1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "schema_path", "receptor_prep_policy_version", "status", "reference_ligand_rule", "hetero_atom_rules"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "config_audit_receptor_prep_policy_v0_1"},
+    "schema_path": {"type": "string", "const": "schemas/configs/audit/receptor_prep_policy_v0_1.json"},
+    "receptor_prep_policy_version": {"type": "string"},
+    "created_date": {"type": "string"},
+    "status": {"type": "string"},
+    "reference_ligand_rule": {"type": "object", "additionalProperties": true},
+    "hetero_atom_rules": {"type": "object", "additionalProperties": true},
+    "pocket_box_policy": {"type": "object", "additionalProperties": true}
+  }
+}

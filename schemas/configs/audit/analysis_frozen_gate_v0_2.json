@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/configs/audit/analysis_frozen_gate_v0_2.json",
+  "title": "Audit analysis-frozen gate config schema v0.2",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "schema_path", "analysis_frozen_gate_version", "status", "blocking_checks"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "config_audit_analysis_frozen_gate_v0_2"},
+    "schema_path": {"type": "string", "const": "schemas/configs/audit/analysis_frozen_gate_v0_2.json"},
+    "analysis_frozen_gate_version": {"type": "string"},
+    "created_date": {"type": "string"},
+    "status": {"type": "string"},
+    "blocking_checks": {"type": "array", "items": {"type": "string"}},
+    "warning_checks": {"type": "array", "items": {"type": "string"}},
+    "coverage_thresholds": {"type": "object", "additionalProperties": true}
+  }
+}

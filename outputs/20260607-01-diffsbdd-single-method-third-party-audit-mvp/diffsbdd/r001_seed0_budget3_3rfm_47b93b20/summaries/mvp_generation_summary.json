@@ -1,0 +1,16 @@
+{
+  "claim_boundary": "mvp_sanity_not_formal_prevalence",
+  "counts": {
+    "exit_code": 0,
+    "n_budget": 3,
+    "n_final_sdf_records": 3,
+    "n_sample_metadata_rows": 3,
+    "status": "completed"
+  },
+  "method": "DiffSBDD",
+  "notes": "Generation/output-capture summary only. No formal labels or prevalence claims.",
+  "run_id": "r001_seed0_budget3_3rfm_47b93b20",
+  "schema_path": "schemas/third_party_audit/diagnosis/mvp_sanity_summary_v0_1.json",
+  "schema_version": "mvp_sanity_summary_v0_1",
+  "summary_type": "generation_capture"
+}

@@ -1,0 +1,118 @@
+schema_version: config_third_party_method_protocol_v0_1
+schema_path: schemas/configs/third_party/method_protocol_config_v0_1.json
+method: DiffSBDD
+protocol_config_version: diffsbdd_original_protocol_sanity_v0_1
+status: protocol_review_complete_resource_check_pending
+created_date: '2026-06-08'
+run_boundary_label: instrumented_reproduction
+algorithm_changed: false
+claim_boundary: >-
+  DiffSBDD stage 1 original-protocol sanity and fidelity check only. This
+  experiment may support that the official example can run under settings close
+  to the README command, but it does not claim full original paper reproduction,
+  formal failure prevalence, cross-method comparison, or repair benchmark
+  results.
+experiment:
+  experiment_name: diffsbdd-original-protocol-sanity
+  experiment_id: 20260608-01-diffsbdd-original-protocol-sanity
+  output_root: outputs/20260608-01-diffsbdd-original-protocol-sanity
+upstream:
+  repo_url: https://github.com/arneschneuing/DiffSBDD
+  local_path: third_party/diffsbdd
+  commit: 5d0d38d16c8932a0339fd2ce3f67ade98bbdff27
+  license: MIT
+paper_and_resource_sources:
+  paper:
+    title: Structure-based drug design with equivariant diffusion models
+    journal: Nature Computational Science
+    doi: https://doi.org/10.1038/s43588-024-00737-x
+    arxiv: https://arxiv.org/abs/2210.13695
+  official_repo: https://github.com/arneschneuing/DiffSBDD
+  model_zenodo: https://zenodo.org/records/8183747
+checkpoint:
+  checkpoint_id: crossdocked_fullatom_cond.ckpt
+  source_url: https://zenodo.org/record/8183747/files/crossdocked_fullatom_cond.ckpt?download=1
+  local_path: third_party/diffsbdd/checkpoints/crossdocked_fullatom_cond.ckpt
+  sha256: 07f86764bf569aafbc40a9c15fc02de8e2550437dd0f17f657eab3abe66c372c
+  size_bytes: 17861341
+  access_type: public
+dataset_view:
+  dataset_name: third_party_repo_examples_v1
+  dataset_version: cloned_repo_examples
+  dataset_view_id: diffsbdd_example_3rfm_5ndu_v1
+  split_id: example_only_no_formal_split
+  example_input:
+    case: 3rfm
+    pdbfile: third_party/diffsbdd/example/3rfm.pdb
+    ref_ligand: A:330
+    pocket_definition: residues within 8 angstrom of reference ligand atoms, as implemented in DiffSBDD utils.get_pocket_from_ligand
+  training_data_status: training_data_unknown
+  leakage_check_status: unknown_risk
+official_code_defaults:
+  generate_ligands:
+    n_samples: 20
+    batch_size: defaults_to_n_samples
+    num_nodes_lig: null
+    all_frags: false
+    sanitize: false
+    relax: false
+    resamplings: 10
+    jump_length: 1
+    timesteps: null
+    largest_frag: true
+  test_py:
+    n_samples: 100
+    batch_size: 120
+    sanitize: false
+    relax: false
+    all_frags: false
+    max_iterations_per_pocket: 10
+    max_retries_per_pocket: 10
+    collection_policy: repeat_generation_until_n_valid_processed_molecules
+official_example_command: >-
+  python generate_ligands.py checkpoints/crossdocked_fullatom_cond.ckpt
+  --pdbfile example/3rfm.pdb --outfile example/3rfm_mol.sdf
+  --ref_ligand A:330 --n_samples 20
+stage0_mvp_setting:
+  experiment_id: 20260607-01-diffsbdd-single-method-third-party-audit-mvp
+  run_id: r001_seed0_budget3_3rfm_47b93b20
+  n_samples: 3
+  seed: 0
+  n_samples_boundary: budget_reduced_mvp_sanity
+  output_capture_status: completed
+stage1_planned_runs:
+  r001:
+    run_id_template: r001_official_example_3rfm_seed0_<configHash8>
+    run_type: official_readme_example_with_instrumented_output_capture
+    checkpoint: third_party/diffsbdd/checkpoints/crossdocked_fullatom_cond.ckpt
+    pdbfile: example/3rfm.pdb
+    ref_ligand: A:330
+    n_samples: 20
+    batch_size: null
+    seed: 0
+    timesteps: null
+    sanitize: false
+    relax: false
+    all_frags: false
+    expected_difference_from_readme: output path is redirected to outputs and command is launched through a seed-setting wrapper
+  r002:
+    run_type: official_like_test_subset
+    status: deferred
+    defer_reason: >-
+      test.py requires processed test data. Full CrossDocked or Binding MOAD
+      acquisition and split checksum freezing are outside this stage 1 landing
+      run unless later approved as a separate resource task.
+environment:
+  project_env: pfr
+  method_env: pfr-diffsbdd
+  evaluator_env: pfr-eval-tools
+  separation_required: true
+metadata_schemas:
+  run_metadata: schemas/third_party_audit/run/run_metadata_v0_1.json
+  output_manifest: schemas/third_party_audit/run/output_manifest_v0_1.json
+  sample_metadata: schemas/third_party_audit/samples/failure_sample_metadata_v0_1.json
+  stage_attrition: schemas/third_party_audit/attrition/stage_attrition_v0_1.json
+  evaluator_tool_result: schemas/third_party_audit/diagnosis/evaluator_tool_result_v0_1.json
+  diagnosis_sanity: schemas/third_party_audit/diagnosis/diagnosis_sanity_v0_1.json
+  method_resource_check: schemas/third_party_audit/resources/method_resource_check_v0_1.json
+  official_protocol_checklist: schemas/third_party_audit/resources/official_protocol_checklist_v0_1.json

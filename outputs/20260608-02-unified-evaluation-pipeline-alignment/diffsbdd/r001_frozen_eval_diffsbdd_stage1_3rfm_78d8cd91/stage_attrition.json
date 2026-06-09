@@ -1,0 +1,40 @@
+{
+  "dataset_view_id": "diffsbdd_example_3rfm_5ndu_v1",
+  "denominator_policy_hash": "sha256:180786d62a64fb37fa02210c8076e14d6a69585afd478705b2c03664384f1bc0",
+  "denominator_policy_version": "pfr_failure_statistics_v0_1_draft",
+  "method": "DiffSBDD",
+  "rows": [
+    {
+      "N_anchor_fail": null,
+      "N_anchor_preserved": null,
+      "N_budget": 20,
+      "N_docking_attempted": 20,
+      "N_docking_failed": 0,
+      "N_evaluable": 18,
+      "N_final": 20,
+      "N_not_evaluable": 2,
+      "N_original_failed_samples": 0,
+      "N_parse_fail": 0,
+      "N_parsed": 20,
+      "N_pose_available": 20,
+      "N_raw_attempt_metadata": 20,
+      "N_raw_captured": 20,
+      "N_rdkit_invalid": 0,
+      "N_rdkit_valid": 20,
+      "N_rejected": 0,
+      "N_repair_eligible": null,
+      "N_selected": 0,
+      "complex_id": "3rfm",
+      "dataset_view_id": "diffsbdd_example_3rfm_5ndu_v1",
+      "method": "DiffSBDD",
+      "notes": "Frozen-style post-label attrition. N_evaluable follows labels.jsonl, including tool failures from frozen evaluator requirements.",
+      "pocket_id": null,
+      "run_id": "r001_frozen_eval_diffsbdd_stage1_3rfm_78d8cd91",
+      "seed": 0
+    }
+  ],
+  "run_id": "r001_frozen_eval_diffsbdd_stage1_3rfm_78d8cd91",
+  "schema_path": "schemas/third_party_audit/attrition/stage_attrition_v0_1.json",
+  "schema_version": "stage_attrition_v0_1",
+  "summary_scope": "frozen_style_post_label_selected_output_residual"
+}

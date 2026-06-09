@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pfr.local/schemas/configs/audit/diagnosis_label_config_v0_2.json",
+  "title": "Audit diagnosis label config schema v0.2",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "schema_path", "label_protocol_version", "status", "evaluability_statuses", "primary_labels", "secondary_labels"],
+  "properties": {
+    "schema_version": {"type": "string", "const": "config_audit_diagnosis_label_v0_2"},
+    "schema_path": {"type": "string", "const": "schemas/configs/audit/diagnosis_label_config_v0_2.json"},
+    "label_protocol_version": {"type": "string"},
+    "created_date": {"type": "string"},
+    "status": {"type": "string"},
+    "evaluability_statuses": {"type": "array", "items": {"type": "string"}},
+    "primary_labels": {"type": "array", "items": {"type": "string"}},
+    "secondary_labels": {"type": "array", "items": {"type": "string"}},
+    "label_mapping_rules": {"type": "object", "additionalProperties": true}
+  }
+}

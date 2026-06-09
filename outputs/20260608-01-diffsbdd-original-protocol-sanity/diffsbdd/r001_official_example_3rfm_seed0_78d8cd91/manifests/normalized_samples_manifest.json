@@ -1,0 +1,111 @@
+{
+  "schema_version": "diffsbdd_normalized_samples_manifest_v0_1",
+  "schema_path": null,
+  "run_id": "r001_official_example_3rfm_seed0_78d8cd91",
+  "method": "DiffSBDD",
+  "raw_output_path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/captured_outputs/generated.sdf",
+  "raw_sha256": "3b7c1e237ef103d250025667020634568a9369a6ae6d4773be06ef5ea1025b11",
+  "records": [
+    {
+      "index": 0,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_000.sdf",
+      "sha256": "2d5eb7a051299bb9ecba96d7f4abc3efb33a1308e9cb8d0408ef0382ce02f281"
+    },
+    {
+      "index": 1,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_001.sdf",
+      "sha256": "1ffd018026bf3d0ae83e1db4090c460911cace27f3b908c969486bdb4fd372e9"
+    },
+    {
+      "index": 2,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_002.sdf",
+      "sha256": "bfc0cca85d377dd278992eec50589864b00e6c7c45656ffdadec3e5a23c14bc8"
+    },
+    {
+      "index": 3,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_003.sdf",
+      "sha256": "c9baf813c18499673aba2262ca4351c8fe37d19f34ba28d32fec5eae145d3bde"
+    },
+    {
+      "index": 4,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_004.sdf",
+      "sha256": "b7f7c36de3d0cbdc7af4e0471947cb1e3aa179e85185305f66c2932821144358"
+    },
+    {
+      "index": 5,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_005.sdf",
+      "sha256": "9d12730803d85123fcaa888b5d785bcb765f6378bfc5c45f6ea2044188f2ed14"
+    },
+    {
+      "index": 6,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_006.sdf",
+      "sha256": "8ed5e7a2cd500fe397735376eed505d9385a28e107e41450c8ea4fcccddc42ab"
+    },
+    {
+      "index": 7,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_007.sdf",
+      "sha256": "bfcee65919d85aecb374c4c79b191b9315549cd5a1d73c3ed2df66347548a62a"
+    },
+    {
+      "index": 8,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_008.sdf",
+      "sha256": "0abe044ac0568d24623a712041bac0955b354fba8d80fdd79993c97dc331d660"
+    },
+    {
+      "index": 9,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_009.sdf",
+      "sha256": "6953a649b6be7c40a4fb98cab0c8958eca0b8c6a08180340104f55d9de7bb2c2"
+    },
+    {
+      "index": 10,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_010.sdf",
+      "sha256": "4c0855a173a97a1562b4505dfe096732b985a59c751b860f6d85719ffc3e342c"
+    },
+    {
+      "index": 11,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_011.sdf",
+      "sha256": "314e3c180ff93e00b4df023b27627a688f78d5824a19653221377dcb06aec19a"
+    },
+    {
+      "index": 12,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_012.sdf",
+      "sha256": "321d291e9223caf15f8c2183d0da77e583accbf1a3f2586e89d1b8ff794a0be1"
+    },
+    {
+      "index": 13,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_013.sdf",
+      "sha256": "213baf8e0a876ee9ef0838b452e2ed1998f69d486a91dae0c9749a35983bc518"
+    },
+    {
+      "index": 14,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_014.sdf",
+      "sha256": "3ad29737cbe2cf0b85cf9f7338dc1ab37490e21fec20877a2bd84f2faf8d77d1"
+    },
+    {
+      "index": 15,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_015.sdf",
+      "sha256": "0d46155549092af0b7624fe16ab17bf9550d168e19352274562b8cda853cb50f"
+    },
+    {
+      "index": 16,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_016.sdf",
+      "sha256": "44e13073f4c91b0395a0f50ac05b7273c5c533f88f7d49226c8dd0f3663f3b91"
+    },
+    {
+      "index": 17,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_017.sdf",
+      "sha256": "6ccb9b13bf489488b12cd269132fe237a7f0008997a152713f4afbfdd70ad453"
+    },
+    {
+      "index": 18,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_018.sdf",
+      "sha256": "fc07db170b083a898bf112b297987f019669fd94ba1b378fe9015e9cbfeccf29"
+    },
+    {
+      "index": 19,
+      "path": "/home/lyj/mnt/project/pocket-failure-repair/outputs/20260608-01-diffsbdd-original-protocol-sanity/diffsbdd/r001_official_example_3rfm_seed0_78d8cd91/processed/normalized_samples/sample_019.sdf",
+      "sha256": "63c1cb8e4b62f8bb32f52224c4dd290271e3d2c3f7577ced25e9c006907981e6"
+    }
+  ],
+  "notes": "Experiment-local manifest; normalized sample SDF files are split from captured aggregate SDF without changing molecule content."
+}
