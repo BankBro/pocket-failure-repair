@@ -36,6 +36,7 @@ dist/
 
 # Canonical dataset raw/heavy local files; keep entries, splits, views, manifests, catalog, templates visible
 /data/datasets/*/raw/
+/data/datasets/*/raw_downloads/
 /data/datasets/*/work/
 /data/datasets/*/downloads/
 

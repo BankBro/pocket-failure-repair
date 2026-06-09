@@ -3858,3 +3858,66 @@ Dry-run artifacts:
 - 当前结论:
   - schema-aware writer 第一版已通过真实统一评估流水线验证.
   - 该 run 仍是 selected-output residual view, 不能解释为 DiffSBDD 正式 failure prevalence, official protocol reproduction 或 repair benchmark result.
+
+## 2026-06-09 / DiffSBDD 官方数据集审计协议 pilot 计划冻结
+
+- 目的: 将下一轮 DiffSBDD 审计从 README 单 pocket 小测试推进到官方数据集 test view 的直接审计输出.
+- 新增计划:
+  - `docs/plan/20260609-03-diffsbdd-audit-protocol-pilot-plan.md`.
+- 冻结主轨道:
+  - dataset: Binding MOAD.
+  - checkpoint: `moad_fullatom_cond.ckpt`, 执行前必须做官方来源, license, size 和 sha256 resource check.
+  - split: `third_party/diffsbdd/data/moad_test.txt`.
+  - pilot subset: 官方 test split 顺序前 20 个 pockets.
+  - 每 pocket 使用 seed `0`, official `test.py` 风格目标 `100` 个 final samples, `batch_size=120`, `sanitize=true`, `n_nodes_bias=10`.
+- denominator 规则:
+  - 主分母来自 `samples.jsonl`, 每个 raw attempt 都必须有 metadata 行.
+  - raw attempts 按真实 batch 请求数记录, 每 pocket/seed 最少 `120`, 最多 `1200`.
+  - candidate, rejected, selected 和 final 样本分开保存, 不从 SDF 数量倒推分母.
+- evaluator:
+  - 继续使用 `evaluator_policy_v0_2`, `analysis_frozen_gate_v0_2`, `diagnosis_label_config_v0_3`.
+- 重要边界:
+  - 这只是 protocol pilot plan, 尚未启动 inference.
+  - CrossDocked 被列为第二轨道, 需要 `split_by_name.pt` 和 processed test data resource check 后再执行.
+  - 计划明确 formal 前置条件, 包括 training/leakage 状态, receptor prep 无 unresolved HETATM, output manifest 完整, 以及 formal analysis 下 `internal_energy_unavailable_fraction <= 0.05`.
+
+## 2026-06-09 / Binding MOAD raw 数据和 DiffSBDD MOAD checkpoint 获取记录补齐
+
+- 目的: 为 DiffSBDD Binding MOAD audit protocol pilot 补齐 resource/provenance 记录, 避免只留下下载文件而缺少来源、checksum、删除压缩包策略和 claim boundary.
+- 数据来源:
+  - Binding MOAD 结构实验文件: Zenodo `10.5281/zenodo.13375913`, `every.csv`, `every_part_a.zip`, `every_part_b.zip`.
+  - DiffSBDD checkpoint: Zenodo `10.5281/zenodo.8183747`, `moad_fullatom_cond.ckpt`.
+- 本地资产:
+  - dataset root: `data/datasets/binding_moad_zenodo13375913/`.
+  - raw data: `raw/every.csv`, `raw/BindingMOAD_2020/`.
+  - checkpoint: `third_party/diffsbdd/checkpoints/moad_fullatom_cond.ckpt`.
+  - checksum: `manifests/downloaded_files.md5`, `manifests/downloaded_files.sha256`.
+  - logs: `logs/download_extract_20260609T122121Z.log`, `logs/download_resume_20260609T145128Z.log`, `logs/wget_resume_20260609T145306Z.log`.
+- 校验和规模:
+  - `raw/BindingMOAD_2020/*.bio*` 文件数: `59346`.
+  - `moad_fullatom_cond.ckpt` sha256: `58bd5f6c532e64a727f92779c6d3d7f274e5df7b0d345e4900a99dd341192561`.
+  - `every.csv` sha256: `4567a4a1fef9ddc58fe4ecab8ac8c829661943481ba67daf6ea9f962769812a9`.
+  - `every_part_a.zip` sha256: `329ae164168a20c7831b7f06515d84252659c560ab6a2fc6c01acf88d7349cb5`.
+  - `every_part_b.zip` sha256: `0768cfd8d365443031c750c72e3f379bad99ac3443fa905aace8da0cad9bd1de`.
+- 保留/删除策略:
+  - `every_part_a.zip` 和 `every_part_b.zip` 已在 checksum 校验和解压后删除, 以控制单方法存储占用.
+  - `every.csv`, checksum 文件, 下载/解压日志和 raw manifest 保留.
+- 新增记录:
+  - `data/datasets/binding_moad_zenodo13375913/README.md`.
+  - `data/datasets/binding_moad_zenodo13375913/manifests/raw/binding_moad_zenodo13375913_raw_manifest_v1.json`.
+  - `data/datasets/binding_moad_zenodo13375913/entries/index.jsonl`, 当前为空, 表示 raw 已获取但 canonical sample entries 尚未 materialize.
+  - `data/datasets/binding_moad_zenodo13375913/manifests/entries/binding_moad_zenodo13375913_entries_manifest_v1.json`.
+  - `experiments/20260609-03-diffsbdd-audit-protocol-pilot/configs/resolved/audit/manual_decisions.yaml`.
+  - `experiments/20260609-03-diffsbdd-audit-protocol-pilot/metadata/method_resource_check.jsonl`.
+- 下载命令记录:
+  - 实际完成过程的断点续传日志在 `data/datasets/binding_moad_zenodo13375913/logs/wget_resume_20260609T145306Z.log`.
+  - 可复现的 `aria2c` 下载, checksum, copy 和 unzip 命令已补入 `data/datasets/binding_moad_zenodo13375913/README.md` 和 raw manifest 的 `download_session.reproducible_commands`.
+- 计划修正:
+  - `docs/plan/20260609-03-diffsbdd-audit-protocol-pilot-plan.md` 中 `moad_test.txt` 非空条目数从 `129` 更正为 `130`, 对应 full view run id 从 `moad_test129` 更正为 `moad_test130`.
+- 结论边界:
+  - 本轮 resource check 的 `decision=go` 只表示可以进入 DiffSBDD Binding MOAD audit pilot 的数据处理准备.
+  - 由于 Zenodo 结构包是第三方归档副本, 且 processed test coverage, split 对齐和 training/leakage 状态尚未冻结, 不能据此声明 official/original protocol reproduction, formal failure prevalence, clean-test status 或 repair benchmark result.
+- 验证:
+  - 轻量语法检查: raw manifest JSON, method_resource_check JSONL 和 manual_decisions YAML 均可解析.
+  - `conda run -n pfr pytest -q tests/test_data_schema_refs.py tests/test_config_schema_refs.py tests/test_audit_schemas.py tests/test_schema_io.py` -> `14 passed in 0.24s`.
+  - `git diff --check` -> passed.

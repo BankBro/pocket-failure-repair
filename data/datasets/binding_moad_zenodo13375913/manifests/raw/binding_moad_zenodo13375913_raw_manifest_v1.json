@@ -1,0 +1,89 @@
+{
+  "schema_version": "dataset_raw_manifest_v0_1",
+  "schema_path": "schemas/data/datasets/manifests/raw/dataset_raw_manifest_v0_1.json",
+  "source": "Zenodo 10.5281/zenodo.13375913",
+  "dataset_id": "binding_moad_zenodo13375913",
+  "dataset_version": "zenodo_record_13375913_v1_5_0",
+  "created_or_updated": "2026-06-09T16:16:30Z",
+  "source_record": {
+    "title": "Replication Data for: Geometry-Complete Diffusion for 3D Molecule Generation and Optimization",
+    "doi": "10.5281/zenodo.13375913",
+    "record_url": "https://zenodo.org/records/13375913",
+    "access_type": "public",
+    "license": "Creative Commons Attribution 4.0 International",
+    "source_role": "third_party_archived_copy_of_binding_moad_structural_files_for_sbdd_experiments",
+    "source_boundary": "This is not the original BindingMOAD.org download endpoint and is not the DiffSBDD official dataset hosting endpoint."
+  },
+  "download_session": {
+    "downloaded_or_verified_time": "2026-06-09T15:51:00Z",
+    "preferred_resume_tool_after_install": "aria2c",
+    "actual_completed_resume_tool": "wget -c",
+    "actual_completed_log": "data/datasets/binding_moad_zenodo13375913/logs/wget_resume_20260609T145306Z.log",
+    "reproducible_commands": [
+      "mkdir -p data/datasets/binding_moad_zenodo13375913/raw_downloads data/datasets/binding_moad_zenodo13375913/raw third_party/diffsbdd/checkpoints",
+      "aria2c -c -x 8 -s 8 -k 1M --retry-wait=30 --max-tries=0 -d data/datasets/binding_moad_zenodo13375913/raw_downloads -o every.csv \"https://zenodo.org/record/13375913/files/every.csv?download=1\"",
+      "aria2c -c -x 8 -s 8 -k 1M --retry-wait=30 --max-tries=0 -d data/datasets/binding_moad_zenodo13375913/raw_downloads -o every_part_a.zip \"https://zenodo.org/record/13375913/files/every_part_a.zip?download=1\"",
+      "aria2c -c -x 8 -s 8 -k 1M --retry-wait=30 --max-tries=0 -d data/datasets/binding_moad_zenodo13375913/raw_downloads -o every_part_b.zip \"https://zenodo.org/record/13375913/files/every_part_b.zip?download=1\"",
+      "aria2c -c -x 8 -s 8 -k 1M --retry-wait=30 --max-tries=0 -d third_party/diffsbdd/checkpoints -o moad_fullatom_cond.ckpt \"https://zenodo.org/record/8183747/files/moad_fullatom_cond.ckpt?download=1\"",
+      "md5sum -c data/datasets/binding_moad_zenodo13375913/manifests/downloaded_files.md5",
+      "sha256sum -c data/datasets/binding_moad_zenodo13375913/manifests/downloaded_files.sha256",
+      "cp data/datasets/binding_moad_zenodo13375913/raw_downloads/every.csv data/datasets/binding_moad_zenodo13375913/raw/every.csv",
+      "unzip data/datasets/binding_moad_zenodo13375913/raw_downloads/every_part_a.zip -d data/datasets/binding_moad_zenodo13375913/raw",
+      "unzip data/datasets/binding_moad_zenodo13375913/raw_downloads/every_part_b.zip -d data/datasets/binding_moad_zenodo13375913/raw"
+    ],
+    "logs": [
+      "data/datasets/binding_moad_zenodo13375913/logs/download_extract_20260609T122121Z.log",
+      "data/datasets/binding_moad_zenodo13375913/logs/download_resume_20260609T145128Z.log",
+      "data/datasets/binding_moad_zenodo13375913/logs/wget_resume_20260609T145306Z.log"
+    ],
+    "checksum_files": {
+      "md5": "data/datasets/binding_moad_zenodo13375913/manifests/downloaded_files.md5",
+      "sha256": "data/datasets/binding_moad_zenodo13375913/manifests/downloaded_files.sha256"
+    }
+  },
+  "downloaded_files": [
+    {
+      "file_id": "every_csv",
+      "source_url": "https://zenodo.org/record/13375913/files/every.csv?download=1",
+      "download_cache_path": "data/datasets/binding_moad_zenodo13375913/raw_downloads/every.csv",
+      "raw_path": "data/datasets/binding_moad_zenodo13375913/raw/every.csv",
+      "size_bytes": 18307396,
+      "md5": "bc03984fb3bdfeac3179ae41a05a85aa",
+      "sha256": "4567a4a1fef9ddc58fe4ecab8ac8c829661943481ba67daf6ea9f962769812a9",
+      "retention_status": "retained_in_raw_downloads_and_raw"
+    },
+    {
+      "file_id": "every_part_a_zip",
+      "source_url": "https://zenodo.org/record/13375913/files/every_part_a.zip?download=1",
+      "download_cache_path": "data/datasets/binding_moad_zenodo13375913/raw_downloads/every_part_a.zip",
+      "size_bytes": 3315455002,
+      "md5": "5d41b5c02159f986a985406d9afbf1ba",
+      "sha256": "329ae164168a20c7831b7f06515d84252659c560ab6a2fc6c01acf88d7349cb5",
+      "retention_status": "removed_after_checksum_and_extraction",
+      "extracted_to": "data/datasets/binding_moad_zenodo13375913/raw/BindingMOAD_2020"
+    },
+    {
+      "file_id": "every_part_b_zip",
+      "source_url": "https://zenodo.org/record/13375913/files/every_part_b.zip?download=1",
+      "download_cache_path": "data/datasets/binding_moad_zenodo13375913/raw_downloads/every_part_b.zip",
+      "size_bytes": 2940114726,
+      "md5": "231b7c3759975acc5aae562f0d6cf3a1",
+      "sha256": "0768cfd8d365443031c750c72e3f379bad99ac3443fa905aace8da0cad9bd1de",
+      "retention_status": "removed_after_checksum_and_extraction",
+      "extracted_to": "data/datasets/binding_moad_zenodo13375913/raw/BindingMOAD_2020"
+    }
+  ],
+  "extracted_data": {
+    "binding_moad_2020_dir": "data/datasets/binding_moad_zenodo13375913/raw/BindingMOAD_2020",
+    "bio_file_count": 59346,
+    "apparent_size_bytes": 25292861912,
+    "human_size": "24G"
+  },
+  "claim_boundaries": [
+    "This manifest records data acquisition and extraction provenance only.",
+    "This manifest does not establish official DiffSBDD original-protocol reproduction.",
+    "This manifest does not establish clean-test status or leakage-free status.",
+    "This manifest does not establish formal failure prevalence."
+  ],
+  "complexes": []
+}

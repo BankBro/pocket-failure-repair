@@ -1,0 +1,20 @@
+{
+  "schema_version": "dataset_entries_manifest_v0_1",
+  "schema_path": "schemas/data/datasets/manifests/entries/dataset_entries_manifest_v0_1.json",
+  "dataset_id": "binding_moad_zenodo13375913",
+  "dataset_version": "zenodo_record_13375913_v1_5_0",
+  "created_or_updated": "2026-06-09T16:16:30Z",
+  "build_config_path": null,
+  "build_script_path": null,
+  "entry_dir": "data/datasets/binding_moad_zenodo13375913/entries",
+  "entry_index_path": "data/datasets/binding_moad_zenodo13375913/entries/index.jsonl",
+  "entry_index_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "num_records": 0,
+  "per_sample_entry_pattern": "data/datasets/binding_moad_zenodo13375913/entries/<sample_id>/entry.json",
+  "raw_dir": "data/datasets/binding_moad_zenodo13375913/raw",
+  "raw_manifest_path": "data/datasets/binding_moad_zenodo13375913/manifests/raw/binding_moad_zenodo13375913_raw_manifest_v1.json",
+  "dataset_view_manifest_path": null,
+  "split_manifest_path": null,
+  "lineage_note": "Raw Binding MOAD files have been acquired and verified, but canonical sample entries have not been materialized yet. Keep index.jsonl empty until processed_noH_full/test coverage and split alignment are built.",
+  "status": "raw_acquired_entries_not_materialized"
+}

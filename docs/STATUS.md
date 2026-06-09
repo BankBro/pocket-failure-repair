@@ -5,8 +5,8 @@
 ## 当前主线
 
 - 项目主线: Failure-feedback-conditioned repair for pocket-aware 3D local molecular editing。
-- 当前阶段: `schema_aware_writer_e2e_validated_on_unified_evaluator_v0_2`。
-- 当前优先事项: 基于已端到端验证的 evaluator policy v0.2 和 schema-aware writer, 规划下一轮 DiffSBDD 更大样本 audit, 同时保持 selected-output residual / training leakage unknown 的 claim boundary; 进入 formal analysis 前需冻结 raw attempt denominator 和更严格 coverage 阈值。
+- 当前阶段: `diffsbdd_binding_moad_resource_acquired_for_pilot`。
+- 当前优先事项: 按 `docs/plan/20260609-03-diffsbdd-audit-protocol-pilot-plan.md` 进入 DiffSBDD Binding MOAD test view 审计 pilot. Binding MOAD raw 结构包和 `moad_fullatom_cond.ckpt` 已下载, 校验和 provenance/resource check 已记录; 下一步先构建或定位 `processed_noH_full/test/`, 校验 `moad_test.txt` coverage 和 split 对齐, 再决定是否运行前 20 个 pockets 的数据集审计输出。
 - 重要边界: 现在不是 formal failure prevalence audit, 不是 repair benchmark, 不能宣称第三方方法正式失败率或论文主结果。
 
 ## 关键文档
@@ -18,6 +18,7 @@
 - DiffSBDD 单方法 MVP 计划: `docs/plan/20260607-01-diffsbdd-single-method-third-party-audit-mvp-plan.md`
 - DiffSBDD 审计阶段路线图: `docs/plan/20260608-01-diffsbdd-audit-progression-plan.md`
 - DiffSBDD 阶段 1 计划: `docs/plan/20260608-02-diffsbdd-original-protocol-sanity-plan.md`
+- DiffSBDD 官方数据集审计协议 pilot 计划: `docs/plan/20260609-03-diffsbdd-audit-protocol-pilot-plan.md`
 - 统一评估流水线对齐计划: `docs/plan/20260608-03-unified-evaluation-pipeline-alignment-plan.md`
 - PoseBusters `internal_energy` 条件冻结计划: `docs/plan/20260609-01-posebusters-internal-energy-conditional-gate-plan.md`
 - schema-aware JSON writer 自动化计划: `docs/plan/20260609-02-schema-aware-json-writer-automation-plan.md`
@@ -45,6 +46,7 @@
 - PoseBusters raw wrapper 输出已 schema 化: schema `schemas/third_party_audit/diagnosis/posebusters_raw_result_v0_1.json`, 验证 run `outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r003_frozen_eval_diffsbdd_stage1_3rfm_v02_rawschema_fbfc8032/`, 40 个 `evaluator/raw_tool_outputs/posebusters_*.json` 均写入 schema refs, gate status `passed_with_warnings`。
 - schema-aware JSON writer 第一版已落地并完成真实端到端验证: `src/pfr/utils/schema_io.py` 和 `scripts/eval/audit_common.py` 可从 schema `const` 自动注入 `schema_version` / `schema_path`; PoseBusters raw wrapper, evaluator input/tool result, labels, label/prevalence summary 和 gate result 已迁移. 新增人工拍板 YAML schema `schemas/configs/audit/manual_decisions_v0_1.json`. 自动化报告见 `docs/report/20260609-02-schema-aware-json-writer-automation-report.md`.
 - schema-aware writer 端到端验证 run 已完成: run `outputs/20260608-02-unified-evaluation-pipeline-alignment/diffsbdd/r004_schema_writer_finalizer_e2e_diffsbdd_stage1_3rfm_v02_fbfc8032/`, evaluator tool rows `100`, raw PoseBusters JSON `40`, labels `20`, gate status `passed_with_warnings`, blocking `0`, `output_manifest.json` finalizer 校验 `n_output_artifacts=293`, sha256 mismatch `0`. 报告见 `docs/report/20260609-03-schema-aware-json-writer-e2e-validation-report.md`.
+- DiffSBDD Binding MOAD pilot resource acquisition 已完成: dataset root `data/datasets/binding_moad_zenodo13375913/`, raw manifest `manifests/raw/binding_moad_zenodo13375913_raw_manifest_v1.json`, entries manifest `manifests/entries/binding_moad_zenodo13375913_entries_manifest_v1.json`, manual decisions `experiments/20260609-03-diffsbdd-audit-protocol-pilot/configs/resolved/audit/manual_decisions.yaml`, resource check `experiments/20260609-03-diffsbdd-audit-protocol-pilot/metadata/method_resource_check.jsonl`. 当前 raw `BindingMOAD_2020/*.bio*` 文件数为 `59346`; `every_part_a.zip` 和 `every_part_b.zip` 已在 checksum 校验和解压后删除; `moad_test.txt` 非空条目数为 `130`.
 - DiffSBDD 阶段 1 协议摘录和 checklist 已记录在 `experiments/20260608-01-diffsbdd-original-protocol-sanity/metadata/official_protocol_excerpt.md` 和 `official_protocol_checklist.json`。
 - DiffLinker 官方 repo、小型 checkpoint 和 wrapper dry-run metadata 已准备; 真实 inference 尚未执行。
 - 第三方 audit schema 已统一放入 `schemas/third_party_audit/`, 覆盖 run metadata、sample metadata、output manifest、stage attrition、labels、resource check、blocker log、evaluator result、diagnosis sanity、receptor prep、evaluator input、label/prevalence summary 和 gate result。
@@ -63,8 +65,8 @@
 
 ## 当前阻塞与风险
 
-- DiffSBDD checkpoint 训练数据 / leakage 状态仍为未知风险; 当前结果只支持 MVP / 阶段 1 sanity, 不支持 clean formal conclusion。
-- DiffSBDD `r002_official_like_test_subset` 已 deferred; processed test data, split, checksum, license 和资源预算尚未冻结。
+- DiffSBDD checkpoint 训练数据 / leakage 状态仍为未知风险; 当前结果只支持 MVP / 阶段 1 sanity 和 resource-acquired pilot 准备, 不支持 clean formal conclusion。
+- DiffSBDD `r002_official_like_test_subset` 已 deferred; Binding MOAD raw 和 checkpoint 已获取, 但 `processed_noH_full/test/`, split coverage, processed file checksum 和 leakage/training overlap 仍未冻结。
 - DiffSBDD 阶段 1 原始 evaluator 在 45 秒外层 timeout 策略下有 `posebusters_mol::failed=19`, `posebusters_dock::failed=19`, sample index `11` mol/dock timeout; 后续 300 秒内层 timeout 复查 sample index `11` 可完成, 结果为 failed checks 而非 timeout. 这些只作为 evaluator wiring evidence, 不能解释成正式失败率.
 - DiffLinker 的 method-specific inference Conda env 尚未创建, 真实第三方 inference 尚未运行。
 - v0.2 analysis-frozen gate 当前为 `passed_with_warnings`, 不是无 warning 的正式通过. Warning 包括 final-only selected-output residual view, training/leakage unknown, PLIP descriptive only, 以及 `internal_energy_unavailable_count=2/20`。
@@ -76,11 +78,11 @@
 
 ## 下一步
 
-1. 基于 evaluator policy v0.2 规划 DiffSBDD under audit protocol 的更大样本 run, 但先明确 raw attempt denominator, candidate budget 和 selected/final 输出记录口径。
-2. 若进入 formal analysis, 将 `internal_energy_unavailable_fraction` 阈值从 MVP sanity 的 `0.10` 收紧到 `0.05`, 并保留 coverage warning 解释。
-3. 继续处理 DiffSBDD checkpoint training/leakage unknown 风险, 不把当前结果解释为 clean-test 或全局 failure prevalence。
-4. 保留 v0.1 r001 结果作为历史保守 gate failed 对照, 新分析默认使用 v0.2 r002/r004 口径。
-5. 若需要人工拍板, 在实验 resolved config 中新增 `manual_decisions.yaml`, 不手改输出 JSON。
+1. 用已下载的 `data/datasets/binding_moad_zenodo13375913/raw/` 构建或定位 DiffSBDD 需要的 `processed_noH_full/test/`, 并保留 processing command, log, env 和 checksum。
+2. 校验 `third_party/diffsbdd/data/moad_test.txt` 的 130 个非空条目与 processed test 目录 coverage; pilot 先冻结官方顺序前 20 个 pockets。
+3. 新增 dataset-level DiffSBDD instrumented wrapper, 复刻 `test.py` 的 valid-target loop, 但完整记录 raw attempt denominator, candidate, rejected, selected 和 final 样本。
+4. 默认使用 evaluator policy v0.2, analysis-frozen gate v0.2 和 diagnosis label config v0.3; 若进入 formal analysis, 将 `internal_energy_unavailable_fraction` 阈值从 MVP sanity 的 `0.10` 收紧到 `0.05`。
+5. 继续保持 claim boundary: 当前阶段只做数据集审计 pilot, 不声明 clean-test formal failure prevalence, official/original protocol reproduction 或 repair benchmark result。
 
 ## 暂停条件
 

@@ -1,0 +1,4 @@
+bc03984fb3bdfeac3179ae41a05a85aa  data/datasets/binding_moad_zenodo13375913/raw_downloads/every.csv
+5d41b5c02159f986a985406d9afbf1ba  data/datasets/binding_moad_zenodo13375913/raw_downloads/every_part_a.zip
+231b7c3759975acc5aae562f0d6cf3a1  data/datasets/binding_moad_zenodo13375913/raw_downloads/every_part_b.zip
+49e0c0a3ca7468bd8998e353308e6cec  third_party/diffsbdd/checkpoints/moad_fullatom_cond.ckpt

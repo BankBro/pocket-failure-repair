@@ -1,0 +1,83 @@
+schema_version: config_audit_manual_decisions_v0_1
+schema_path: schemas/configs/audit/manual_decisions_v0_1.json
+manual_decisions_version: diffsbdd_audit_protocol_pilot_manual_decisions_v0_1
+created_date: '2026-06-09'
+updated_time: '2026-06-09T16:16:30Z'
+status: draft_ready
+purpose: DiffSBDD audit protocol pilot resource and claim-boundary decisions.
+scope:
+  experiment_id: 20260609-03-diffsbdd-audit-protocol-pilot
+  run_id: null
+  method: diffsbdd
+  dataset_view_id: binding_moad_moad_test_pilot
+decisions:
+  - decision_id: use_zenodo_13375913_binding_moad_structural_copy
+    decision_type: resource_access
+    status: active
+    target:
+      target_type: method
+      run_id: null
+      sample_id: null
+      complex_id: null
+      receptor_prep_id: null
+      file_ref: data/datasets/binding_moad_zenodo13375913
+      line_ref: null
+    decision: 使用 Zenodo 10.5281/zenodo.13375913 中的 Binding MOAD 结构实验文件副本作为 DiffSBDD audit pilot 的数据处理输入.
+    reason: 原 BindingMOAD.org 已关闭, DiffSBDD README 中的旧下载入口不可作为稳定来源; Zenodo 记录公开可访问, 提供 every.csv, every_part_a.zip, every_part_b.zip, md5 和 CC-BY-4.0 license.
+    evidence_refs:
+      - path: https://zenodo.org/records/13375913
+        note: Zenodo source record and file md5/license page.
+      - path: data/datasets/binding_moad_zenodo13375913/manifests/raw/binding_moad_zenodo13375913_raw_manifest_v1.json
+        note: Local raw manifest with checksum and retention status.
+      - path: data/datasets/binding_moad_zenodo13375913/logs/wget_resume_20260609T145306Z.log
+        note: Download, checksum, extraction, and zip removal log.
+    made_by: user_approved_with_agent_record
+    made_time: '2026-06-09T16:16:30Z'
+    supersedes: null
+    risk_note: 该来源是第三方归档副本, 不能单独支撑 official/original protocol reproduction 声明.
+  - decision_id: delete_large_binding_moad_archives_after_verified_extraction
+    decision_type: resource_access
+    status: active
+    target:
+      target_type: method
+      run_id: null
+      sample_id: null
+      complex_id: null
+      receptor_prep_id: null
+      file_ref: data/datasets/binding_moad_zenodo13375913/raw_downloads
+      line_ref: null
+    decision: 在 md5/sha256 校验通过并成功解压后删除 every_part_a.zip 和 every_part_b.zip, 保留 every.csv, checksum, 日志和 raw manifest.
+    reason: 解压后数据目录约 24G, 同时保留两个 zip 会不必要地占用约 6.3G; 删除压缩包有助于保持单方法存储预算内, 且 checksum 和日志足以记录下载 provenance.
+    evidence_refs:
+      - path: data/datasets/binding_moad_zenodo13375913/manifests/downloaded_files.md5
+        note: md5 verification records for the deleted archives.
+      - path: data/datasets/binding_moad_zenodo13375913/manifests/downloaded_files.sha256
+        note: sha256 records for the deleted archives.
+      - path: data/datasets/binding_moad_zenodo13375913/raw/BindingMOAD_2020
+        note: Extracted structural files retained for processing.
+    made_by: user_approved_with_agent_record
+    made_time: '2026-06-09T16:16:30Z'
+    supersedes: null
+    risk_note: 如需重新校验压缩包本体, 需按 manifest 中 URL 和 checksum 重新下载.
+  - decision_id: pilot_claim_boundary_for_binding_moad_resource_use
+    decision_type: claim_boundary
+    status: active
+    target:
+      target_type: method
+      run_id: null
+      sample_id: null
+      complex_id: null
+      receptor_prep_id: null
+      file_ref: docs/plan/20260609-03-diffsbdd-audit-protocol-pilot-plan.md
+      line_ref: null
+    decision: 资源获取通过后只允许进入 DiffSBDD Binding MOAD audit pilot, 不声明 formal failure prevalence, official/original protocol reproduction, repair benchmark result, 或 clean-test 结论.
+    reason: 仍需冻结 processed test 目录, split 对齐, leakage/training data 状态, evaluator coverage, internal energy conditional gate 覆盖率和 diagnosis protocol.
+    evidence_refs:
+      - path: docs/plan/20260609-03-diffsbdd-audit-protocol-pilot-plan.md
+        note: Pilot plan and formal前置条件.
+      - path: configs/audit/resource_budget_v1.yaml
+        note: Non-official mirror and budget decision policy.
+    made_by: user_approved_with_agent_record
+    made_time: '2026-06-09T16:16:30Z'
+    supersedes: null
+    risk_note: 该决策限制结论边界, 不限制后续进行可追溯 pilot 实验.
